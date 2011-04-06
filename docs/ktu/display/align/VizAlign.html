@@ -1,0 +1,1099 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="VizAlign,ktu.display.align.VizAlign,ADJACENT_BL,ADJACENT_BOTTOM,ADJACENT_BR,ADJACENT_HORIZONTAL,ADJACENT_LEFT,ADJACENT_RIGHT,ADJACENT_TL,ADJACENT_TOP,ADJACENT_TR,ADJACENT_VERTICAL,BOTTOM,BOTTOM_LEFT,BOTTOM_RIGHT,CENTER,DIST_BOTTOM,DIST_HORIZONTAL,DIST_LEFT,DIST_RIGHT,DIST_TOP,DIST_VERTICAL,HORIZONTAL,LEFT,MATCH_HEIGHT,MATCH_SIZE,MATCH_WIDTH,RIGHT,SCALE_TO_FIT,SPACE_HORIZONTAL,SPACE_VERTICAL,TOP,TOP_LEFT,TOP_RIGHT,TO_TARGETS,VERTICAL,truePixel,align,applyOriginal,applyResults,cloneObject" name="keywords">
+<title>ktu.display.align.VizAlign</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'VizAlign - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">VizAlign docs</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?ktu/display/align/VizAlign.html&amp;ktu/display/align/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;VizAlign</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class VizAlign"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">ktu.display.align</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class VizAlign</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">VizAlign <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="AlignMethods.html">AlignMethods</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+</table>
+<p></p>
+    Duplicates all of the align panel functions you see
+  inside the Flash IDE and more. Added functionality allows you to align any number
+  of objects to another (like toStage, but with any other display object).
+      There are 33 alignment methods to choose from, some of them may seem redundant, but choosing them may save you CPU time...
+    VizAlign has all the functionality of the Flash IDE align panel. All of your standard alignment methods are here plus
+  a bunch of other useful ones.
+    <p></p>
+<br>
+<span class="label">Example</span>
+<br>  This will align the two objects to the left edge of the bounding area the targets create.                <br/>
+  With two objects on the stage labeled mc1, and mc2, call this code:                      <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var param:AlignParam = new AlignParam( VizAlign.LEFT, VizAlign.TO_TARGETS );
+    VizAlign.align( [mc1, mc2], [ param ], true, stage );                        </pre></div><br/>
+                                        <br/>
+  This will align the two objects to the right edge of the stage.                       <br/>
+  With two objects on the stage labeled mc1, and mc2, call this code:                      <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var param:AlignParam = new AlignParam( VizAlign.RIGHT, stage );
+    VizAlign.align( [mc1, mc2], [ param ], true, stage );                        </pre></div><br/>
+                                        <br/>
+                                        <br/>
+  Lets say you want to align your targets to space evenly along the stage, and then to align                <br/>
+  bottom to the bounding area the targets create: (you need four objects from mc1...mc4)                 <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var param1:AlignParam = new AlignParam( VizAlign.SPACE_HORIZONTALLY, stage);
+    var param1:AlignParam = new AlignParam( VizAlign.BOTTOM, VizAlign.TO_TARGETS);
+   VizAlign.align( [mc1, mc2, mc3, mc4], [ param1, param2 ], true, stage );                     </pre></div><br/>
+                                        <br/>
+                                        <br/>
+                                         <br/>
+      Simple: Align targets, to one targetCoordinateSpace                        <br/>
+    Multiple: Align targets, with multiple methods                         <br/>
+      Groups: Align groups of targets, with any of the above.                       <br/>
+                                        <br/>
+  Simple:                                     <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var param:AlignParam = new AlignParam (VizAlign.LEFT, VizAlign.TO_TARGETS);
+    VizAlign.align( [mc1, mc2], [ param ], true, stage );                        </pre></div><br/>
+                                        <br/>
+  Multiple:                                    <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var param1:AlignParam = new AlignParam (VizAlign.LEFT, VizAlign.TO_TARGETS);
+    var param2:AlignParam = new AlignParam (VizAlign.TOP, VizAlign.TO_TARGETS);
+    VizAlign.align( [mc1, mc2], [ param1, param2 ], true );                        </pre></div><br/>
+                                        <br/>                                     <br/>
+  Groups:                                     <br/><div class='listing'><pre>
+    import com.crp.display.utils.VizAlign;
+    import com.crp.display.utils.AlignParam;                           <br/>
+    var group1:Array = [mc1, mc2];
+    var group2:Array = [mc3, mc4];
+    var group3:Array = [mc5, mc6, mc7];
+    var param:AlignParam = new AlignParam (VizAlign.LEFT, VizAlign.TO_TARGETS);
+    VizAlign.align( [ group1, group2, group3 ], [ param ], true, stage );                    </pre></div><br/>
+  To treat multiple targets as a group, pass an array of each grouping as an element of the targets
+  paramater. Return array for this example would be: results[0] is an Array of AlignObjects, with
+  the targets for the first group, and so on.
+                                        <br/>
+                                        <br/>
+  Author: Ktu                                    <br/>
+  Version: 1.4                                   <br/>
+  Last Update: 06.19.09                                 <br/>
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="AlignUtils.html#stageRef">stageRef</a> : Stage<div class="summaryTableDescription">[static]
+   A reference to the Stage, this must be set for this class to function.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#truePixel">truePixel</a> : Boolean<div class="summaryTableDescription">[static]
+   Specifies whether to round the end results of alignment
+   </div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#align()">align</a>(targets:Array, alignmentObjects:Array, applyResults:Boolean = false, stageRef:Stage = null):Array</div>
+<div class="summaryTableDescription">[static]
+      Align DisplayObject like when using the Align Panel in the IDE
+      </div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignMethods.html#alignMethod()">alignMethod</a>(targets:Array, targetCoordinateSpace:DisplayObject, type:String):Array</div>
+<div class="summaryTableDescription">[static]
+        This method will call the appropriate alignment function according to the type paramater.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignMethods.html">AlignMethods</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#applyOriginal()">applyOriginal</a>(targets:Array):void</div>
+<div class="summaryTableDescription">[static]
+      Apply Orig properties of AlignObjects to target
+      </div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#applyResults()">applyResults</a>(targets:Array):void</div>
+<div class="summaryTableDescription">[static]
+      Apply End properties of AlignObjects to target
+      </div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#cloneObject()">cloneObject</a>(target:DisplayObject):Sprite</div>
+<div class="summaryTableDescription">[static]
+      Clone a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getBottomEdge()">getBottomEdge</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the farthest bottom pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getCenterX()">getCenterX</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the center x pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getCenterY()">getCenterY</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the center y pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getHeight()">getHeight</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the pixel height of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getLeftEdge()">getLeftEdge</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the farthest left pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getOriginX()">getOriginX</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+    returns the difference between the left edge of the item, and the origin of the item
+       This is a significant method when doing alignment.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getOriginY()">getOriginY</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+    returns the difference between the top edge of the item, and the origin of the item
+       This is a significant method when doing alignment.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getRightEdge()">getRightEdge</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the farthest right pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getTopEdge()">getTopEdge</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the farthest top pixel value of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#getWidth()">getWidth</a>(item:DisplayObject):Number</div>
+<div class="summaryTableDescription">[static]
+   returns the pixel width of the passed in DisplayObject in relation to the Stage
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignMethods.html#isKnownMethod()">isKnownMethod</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">[static]
+        This method will check if the alignment method you wish to apply is defined in this class.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignMethods.html">AlignMethods</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortAdjacentBottom()">sortAdjacentBottom</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their bottom edge, if bottom edge matches, the items are then
+   sorted by their top edge.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortAdjacentLeft()">sortAdjacentLeft</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their left edge, if left edge matches, the items are then
+   sorted by their right edge.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortAdjacentRight()">sortAdjacentRight</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their right edge, if right edge matches, the items are then
+   sorted by their left edge.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortAdjacentTop()">sortAdjacentTop</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their top edge, if top edge matches, the items are then
+   sorted by their bottom edge.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalBottom()">sortGlobalBottom</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the bottom edge in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalCenterX()">sortGlobalCenterX</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the center pixel of each object in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalCenterY()">sortGlobalCenterY</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the center pixel in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalHeight()">sortGlobalHeight</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their height.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalRight()">sortGlobalRight</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the right edge in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalWidth()">sortGlobalWidth</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by their width.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalX()">sortGlobalX</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the left edge in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="AlignUtils.html#sortGlobalY()">sortGlobalY</a>(A:<a href="../align/AlignObject.html">AlignObject</a>, B:<a href="../align/AlignObject.html">AlignObject</a>):Number</div>
+<div class="summaryTableDescription">[static]
+   Method to be used with Array.sort() for sorting objects by the top edge in relation to the stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="AlignUtils.html">AlignUtils</a></td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_BL">ADJACENT_BL</a> : String = "adjacentBottomLeft"<div class="summaryTableDescription">[static]
+   Place the targets top and right edge againts the bottom and left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_BOTTOM">ADJACENT_BOTTOM</a> : String = "adjacentBottom"<div class="summaryTableDescription">[static]
+   Place the targets top edge againts the bottom edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_BR">ADJACENT_BR</a> : String = "adjacentBottomRight"<div class="summaryTableDescription">[static]
+   Place the targets top and left edge againts the bottom and right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_HORIZONTAL">ADJACENT_HORIZONTAL</a> : String = "adjacentHorizontal"<div class="summaryTableDescription">[static]
+   Stack the targets side by side around the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_LEFT">ADJACENT_LEFT</a> : String = "adjacentLeft"<div class="summaryTableDescription">[static]
+   Place the targets right edge against the left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_RIGHT">ADJACENT_RIGHT</a> : String = "adjacentRight"<div class="summaryTableDescription">[static]
+   Place the targets left edge against the right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_TL">ADJACENT_TL</a> : String = "adjacentTopLeft"<div class="summaryTableDescription">[static]
+   Place the targets bottom and right edge against the top and left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_TOP">ADJACENT_TOP</a> : String = "adjacentTop"<div class="summaryTableDescription">[static]
+   Place the targets bottom edge against the top edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_TR">ADJACENT_TR</a> : String = "adjacentTopRight"<div class="summaryTableDescription">[static]
+   Place the targets bottom and left edge against the top and right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ADJACENT_VERTICAL">ADJACENT_VERTICAL</a> : String = "adjacentVertical"<div class="summaryTableDescription">[static]
+   Stack the targets on top of each other around the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BOTTOM">BOTTOM</a> : String = "bottom"<div class="summaryTableDescription">[static]
+   Align the targets bottom edge to macth the bottom edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BOTTOM_LEFT">BOTTOM_LEFT</a> : String = "bottomLeft"<div class="summaryTableDescription">[static]
+   Align the targets bottom and left edge to macth the bottom and left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BOTTOM_RIGHT">BOTTOM_RIGHT</a> : String = "bottomRight"<div class="summaryTableDescription">[static]
+   Align the targets bottom and right edge to macth the bottom and right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CENTER">CENTER</a> : String = "center"<div class="summaryTableDescription">[static]
+   Align both the targets x center and y center to match the x and y center of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_BOTTOM">DIST_BOTTOM</a> : String = "distBottom"<div class="summaryTableDescription">[static]
+   Distribute the bottom edge of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_HORIZONTAL">DIST_HORIZONTAL</a> : String = "distHorizontal"<div class="summaryTableDescription">[static]
+   Distribute the x center of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_LEFT">DIST_LEFT</a> : String = "distLeft"<div class="summaryTableDescription">[static]
+   Distribute the left edge of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_RIGHT">DIST_RIGHT</a> : String = "distRight"<div class="summaryTableDescription">[static]
+   Distribute the right edge of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_TOP">DIST_TOP</a> : String = "distTop"<div class="summaryTableDescription">[static]
+   Distribute the top edge of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DIST_VERTICAL">DIST_VERTICAL</a> : String = "distVertical"<div class="summaryTableDescription">[static]
+   Distribute the y center of the targets evenly inside the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#HORIZONTAL">HORIZONTAL</a> : String = "horizontal"<div class="summaryTableDescription">[static]
+   Align the x center of each target to match the x center of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LEFT">LEFT</a> : String = "left"<div class="summaryTableDescription">[static]
+   Align the targets left edge to match the left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MATCH_HEIGHT">MATCH_HEIGHT</a> : String = "matchHeight"<div class="summaryTableDescription">[static]
+   Make all targets have the same height as the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MATCH_SIZE">MATCH_SIZE</a> : String = "matchSize"<div class="summaryTableDescription">[static]
+   Make all targets have the same width and height as the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MATCH_WIDTH">MATCH_WIDTH</a> : String = "matchWidth"<div class="summaryTableDescription">[static]
+   Make all targets have the same width as the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RIGHT">RIGHT</a> : String = "right"<div class="summaryTableDescription">[static]
+   Align the targets right edge to match the right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SCALE_TO_FIT">SCALE_TO_FIT</a> : String = "scaleToFit"<div class="summaryTableDescription">[static]
+   Make all the targets match the size of the target coordinate space object while maintaining the original width/height ratio.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SPACE_HORIZONTAL">SPACE_HORIZONTAL</a> : String = "spaceHorizontal"<div class="summaryTableDescription">[static]
+   Evenly space the targets along the y axis inside of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SPACE_VERTICAL">SPACE_VERTICAL</a> : String = "spaceVertical"<div class="summaryTableDescription">[static]
+   Evenly space the targets along the y axis inside of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TOP">TOP</a> : String = "top"<div class="summaryTableDescription">[static]
+   Align the targets top edge to match the top edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TOP_LEFT">TOP_LEFT</a> : String = "topLeft"<div class="summaryTableDescription">[static]
+   Align the targets top and left edge to match the top and left edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TOP_RIGHT">TOP_RIGHT</a> : String = "topRight"<div class="summaryTableDescription">[static]
+   Align the targets top and right edge to match the top and right edge of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TO_TARGETS">TO_TARGETS</a> : Sprite<div class="summaryTableDescription">[static]
+   Used when wishing to align targets to the bounding box they create.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#VERTICAL">VERTICAL</a> : String = "vertical"<div class="summaryTableDescription">[static]
+   Align the y center of each target to match the x center of the target coordinate space object.</div>
+</td><td class="summaryTableOwnerCol">VizAlign</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="truePixel"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">truePixel</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>truePixel:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Specifies whether to round the end results of alignment
+   </p><p>The default value is <code>true When truePixel = true, x,y,width, and height values are rounded using Math.round(); This is suggested and the default because when DisplayObject positioning end up on anything but an int, visuals can become blurred as Flash Player will try to blend colors. When TextField end up on a partial pixel, the anti ailiasing becomes poor.</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get truePixel():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set truePixel(value:Boolean):void</code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="align()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">align</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function align(targets:Array, alignmentObjects:Array, applyResults:Boolean = false, stageRef:Stage = null):Array</code><p>
+      Align DisplayObject like when using the Align Panel in the IDE
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">targets</span>:Array</code> &mdash;    Array of DisplayObject/AlignObject/Array list of targets you wish to align
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">alignmentObjects</span>:Array</code> &mdash; Array of AlignParam objects with specified parameters for each aligment to be applied to the targets <br/>
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">applyResults</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;  Boolean specifies whether to move objects to their end result
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stageRef</span>:Stage</code> (default = <code>null</code>)<code></code> &mdash;   Stage a reference to the stage.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash;      Array of AlignObject containing targets with end result of alignment math
+         </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">verifyInput() for full list of thrown errors</div>
+</div>
+<a name="applyOriginal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">applyOriginal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function applyOriginal(targets:Array):void</code><p>
+      Apply Orig properties of AlignObjects to target
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">targets</span>:Array</code> &mdash; targets  Array of AlignObject  comma seperrated list of targets you wish to apply their original values
+      </td>
+</tr>
+</table>
+</div>
+<a name="applyResults()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">applyResults</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function applyResults(targets:Array):void</code><p>
+      Apply End properties of AlignObjects to target
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">targets</span>:Array</code> &mdash; targets  Array of AlignObject  comma seperrated list of targets you wish to apply their end values
+      </td>
+</tr>
+</table>
+</div>
+<a name="cloneObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cloneObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function cloneObject(target:DisplayObject):Sprite</code><p>
+      Clone a DisplayObject.
+      This may be useful when needed to eliminate the tcs issues.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:DisplayObject</code> &mdash; target  DisplayObject object you wish to duplicate in x, y, width, and height
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Sprite</code> &mdash;    Sprite    Dummy object duplicate of the target
+      </td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="ADJACENT_BL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_BL</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_BL:String = "adjacentBottomLeft"</code><p>
+   Place the targets top and right edge againts the bottom and left edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_BOTTOM"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_BOTTOM</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_BOTTOM:String = "adjacentBottom"</code><p>
+   Place the targets top edge againts the bottom edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_BR"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_BR</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_BR:String = "adjacentBottomRight"</code><p>
+   Place the targets top and left edge againts the bottom and right edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_HORIZONTAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_HORIZONTAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_HORIZONTAL:String = "adjacentHorizontal"</code><p>
+   Stack the targets side by side around the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_LEFT:String = "adjacentLeft"</code><p>
+   Place the targets right edge against the left edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_RIGHT:String = "adjacentRight"</code><p>
+   Place the targets left edge against the right edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_TL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_TL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_TL:String = "adjacentTopLeft"</code><p>
+   Place the targets bottom and right edge against the top and left edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_TOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_TOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_TOP:String = "adjacentTop"</code><p>
+   Place the targets bottom edge against the top edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_TR"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_TR</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_TR:String = "adjacentTopRight"</code><p>
+   Place the targets bottom and left edge against the top and right edge of the target coordinate space object.
+   </p></div>
+<a name="ADJACENT_VERTICAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ADJACENT_VERTICAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ADJACENT_VERTICAL:String = "adjacentVertical"</code><p>
+   Stack the targets on top of each other around the target coordinate space object.
+   </p></div>
+<a name="BOTTOM"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BOTTOM</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BOTTOM:String = "bottom"</code><p>
+   Align the targets bottom edge to macth the bottom edge of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="BOTTOM_LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BOTTOM_LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BOTTOM_LEFT:String = "bottomLeft"</code><p>
+   Align the targets bottom and left edge to macth the bottom and left edge of the target coordinate space object.
+   This method is a combination of BOTTOM, and LEFT.
+   </p></div>
+<a name="BOTTOM_RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BOTTOM_RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BOTTOM_RIGHT:String = "bottomRight"</code><p>
+   Align the targets bottom and right edge to macth the bottom and right edge of the target coordinate space object.
+   This method is a combination of BOTTOM, and RIGHT.
+   </p></div>
+<a name="CENTER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CENTER</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const CENTER:String = "center"</code><p>
+   Align both the targets x center and y center to match the x and y center of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_BOTTOM"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_BOTTOM</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_BOTTOM:String = "distBottom"</code><p>
+   Distribute the bottom edge of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_HORIZONTAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_HORIZONTAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_HORIZONTAL:String = "distHorizontal"</code><p>
+   Distribute the x center of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_LEFT:String = "distLeft"</code><p>
+   Distribute the left edge of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_RIGHT:String = "distRight"</code><p>
+   Distribute the right edge of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_TOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_TOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_TOP:String = "distTop"</code><p>
+   Distribute the top edge of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="DIST_VERTICAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DIST_VERTICAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DIST_VERTICAL:String = "distVertical"</code><p>
+   Distribute the y center of the targets evenly inside the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="HORIZONTAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HORIZONTAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const HORIZONTAL:String = "horizontal"</code><p>
+   Align the x center of each target to match the x center of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const LEFT:String = "left"</code><p>
+   Align the targets left edge to match the left edge of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="MATCH_HEIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MATCH_HEIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MATCH_HEIGHT:String = "matchHeight"</code><p>
+   Make all targets have the same height as the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="MATCH_SIZE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MATCH_SIZE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MATCH_SIZE:String = "matchSize"</code><p>
+   Make all targets have the same width and height as the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="MATCH_WIDTH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MATCH_WIDTH</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MATCH_WIDTH:String = "matchWidth"</code><p>
+   Make all targets have the same width as the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RIGHT:String = "right"</code><p>
+   Align the targets right edge to match the right edge of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="SCALE_TO_FIT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SCALE_TO_FIT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SCALE_TO_FIT:String = "scaleToFit"</code><p>
+   Make all the targets match the size of the target coordinate space object while maintaining the original width/height ratio.
+   </p></div>
+<a name="SPACE_HORIZONTAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SPACE_HORIZONTAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SPACE_HORIZONTAL:String = "spaceHorizontal"</code><p>
+   Evenly space the targets along the y axis inside of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="SPACE_VERTICAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SPACE_VERTICAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SPACE_VERTICAL:String = "spaceVertical"</code><p>
+   Evenly space the targets along the y axis inside of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="TOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const TOP:String = "top"</code><p>
+   Align the targets top edge to match the top edge of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<a name="TOP_LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TOP_LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const TOP_LEFT:String = "topLeft"</code><p>
+   Align the targets top and left edge to match the top and left edge of the target coordinate space object.
+   This method is a combination of TOP, and LEFT.
+   </p></div>
+<a name="TOP_RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TOP_RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const TOP_RIGHT:String = "topRight"</code><p>
+   Align the targets top and right edge to match the top and right edge of the target coordinate space object.
+   This method is a combination of TOP, and RIGHT.
+   </p></div>
+<a name="TO_TARGETS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TO_TARGETS</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const TO_TARGETS:Sprite</code><p>
+   Used when wishing to align targets to the bounding box they create.
+      </p><br>
+<span class="label">Example</span>
+<br>                                   <div class='listing'><pre>
+     import com.crp.utils.align.VizAlign;
+     import com.crp.utils.align.AlignParam;                           <br/>
+     var param:AlignParam = new AlignParam ( VizAlign.LEFT, VizAlign.TO_TARGETS );
+     VizAlign.align ( [mc1, mc2, mc3], [ param ], true, stage);                      </pre></div>
+   <p></p>
+</div>
+<a name="VERTICAL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VERTICAL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const VERTICAL:String = "vertical"</code><p>
+   Align the y center of each target to match the x center of the target coordinate space object.
+   This method works exactly like the align panel.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

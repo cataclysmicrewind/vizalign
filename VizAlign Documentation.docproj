@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<docProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <pageTitle>VizAlign docs</pageTitle>
+  <classPaths>D:\ktu\git\VizAlign\src</classPaths>
+  <sourcesList />
+  <outputDirectory>D:\ktu\git\VizAlign\docs</outputDirectory>
+  <activeCompiler>1</activeCompiler>
+  <extraOptions />
+</docProject>
