@@ -30,7 +30,7 @@ package ktu.display.align {
 	 * 09.28.09	0.1 : First Created																																<br/>
 	 *
 	 */
-	public class AlignParam extends Object {
+	public class VizAlignment extends Object {
 		
 		private var _type	:String;
 		private var _tcs	:DisplayObject;
@@ -55,7 +55,7 @@ package ktu.display.align {
 		 * @param	type 	String			represents the type of alignment math to be used.
 		 * @param	tcs		DisplayObject	represents the what object to align the targets to.
 		 */
-		public function AlignParam (type:String = null, tcs:DisplayObject = null):void {
+		public function VizAlignment (type:String = null, tcs:DisplayObject = null) {
 			_type = type;
 			_tcs = tcs;
 		}

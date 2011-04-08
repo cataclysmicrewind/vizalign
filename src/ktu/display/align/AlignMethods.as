@@ -93,7 +93,7 @@ package ktu.display.align {
 		*  Align: x  *
 		**************
 		*/
-		private static function left ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function left ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsLeftEdge:Number = getLeftEdge (targetCoordinateSpace);							// get left edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -103,7 +103,7 @@ package ktu.display.align {
 			}																						// end loop
 			return targets;																			// return array
 		};
-		private static function horizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function horizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var mid:Number = getCenterX ( targetCoordinateSpace ) ;									// get center x value of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -113,7 +113,7 @@ package ktu.display.align {
 			}																						// end loop
 			return targets;																			// return array
 		};
-		private static function right ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function right ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );						// get right edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -129,7 +129,7 @@ package ktu.display.align {
 		*  Center  *
 		************
 		*/
-		private static function center (targetCoordinateSpace:DisplayObject, targets:Array):Array {
+		public static function center (targetCoordinateSpace:DisplayObject, targets:Array):Array {
 			targets = horizontal(targetCoordinateSpace, targets);									// align targets horizontally
 			targets = vertical(targetCoordinateSpace, targets);										// align targets vertically
 			return targets;																			// return array
@@ -140,7 +140,7 @@ package ktu.display.align {
 		*  Align: y  *
 		**************
 		*/
-		private static function top ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function top ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -150,7 +150,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function vertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function vertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var mid:Number = getCenterY ( targetCoordinateSpace ) ;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -160,7 +160,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function bottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function bottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -176,7 +176,7 @@ package ktu.display.align {
 		*  Combo: x,y  *
 		****************
 		*/
-		private static function topLeft ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
+		public static function topLeft ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -189,7 +189,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function topRight ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
+		public static function topRight ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -202,7 +202,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function bottomLeft ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
+		public static function bottomLeft ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -215,7 +215,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function bottomRight ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
+		public static function bottomRight ( targetCoordinateSpace:DisplayObject, targets:Array ):Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -234,7 +234,7 @@ package ktu.display.align {
 		*  Adjacent: x  *
 		*****************
 		*/
-		private static function adjacentLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -244,7 +244,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -254,7 +254,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var before:Array = new Array ( ) ;													// array to hold objects to the left of the tcs
 			var after:Array = new Array ( ) ;													// array to hold objects to the right of the tcs
 			var left:Number = 0;																// holds where I placed the previous target for before array
@@ -308,7 +308,7 @@ package ktu.display.align {
 		*  Adjacent: y  *
 		*****************
 		*/
-		private static function adjacentTop ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentTop ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -318,7 +318,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentBottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentBottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -328,7 +328,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var above:Array = new Array ( ) ;
 			var below:Array = new Array ( ) ;
 			for ( var i:int = 0; i < targets.length; i++ ) {
@@ -379,7 +379,7 @@ package ktu.display.align {
 		*  Combo Adjacent: x,y  *
 		*************************
 		*/
-		private static function adjacentTopLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentTopLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -392,7 +392,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentTopRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentTopRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -405,7 +405,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentBottomLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentBottomLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -418,7 +418,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function adjacentBottomRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function adjacentBottomRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsBottomEdge:Number = getBottomEdge ( targetCoordinateSpace );
 			var tcsRightEdge:Number = getRightEdge ( targetCoordinateSpace );
 			var length:int = targets.length;														// targets length for optimized looping
@@ -437,7 +437,7 @@ package ktu.display.align {
 		*  Distribute: x  *
 		*******************
 		*/
-		private static function distLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distLeft ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalX ) ;
 			var lastIndex:int = targets.length - 1;
 			var lastTarget:DisplayObject = targets [ lastIndex ] .target;
@@ -451,7 +451,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function distHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalCenterX ) ;
 			var lastIndex:int = targets.length - 1;
 			var first:Number = getLeftEdge ( targetCoordinateSpace ) + ( getWidth ( targets [ 0 ] .target ) / 2 ) ;
@@ -465,7 +465,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function distRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distRight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalRight ) ;
 			var tcsLeftEdge:Number = getLeftEdge ( targetCoordinateSpace );
 			var first:Number = tcsLeftEdge + getWidth ( targets [ 0 ] .target );
@@ -485,7 +485,7 @@ package ktu.display.align {
 		*  Distribute: y  *
 		*******************
 		*/
-		private static function distTop ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distTop ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalY ) ;
 			var lastIndex:int = targets.length - 1;
 			var first:Number = getTopEdge ( targetCoordinateSpace ) ;
@@ -499,7 +499,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function distVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalCenterY ) ;
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
 			var first:Number = tcsTopEdge + ( getHeight ( targets [ 0 ] .target ) / 2 ) ;
@@ -513,10 +513,10 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function distBottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function distBottom ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets.sort ( sortGlobalBottom ) ;
 			var tcsTopEdge:Number = getTopEdge ( targetCoordinateSpace );
-			var first:Number = tcsTopEdge + getHeight ( targets [ 0 ] .target ); ;
+			var first:Number = tcsTopEdge + getHeight ( targets [ 0 ] .target );
 			var last:Number = getBottomEdge ( targetCoordinateSpace ) ;
 			var spread:Number = ( ( last - first ) / ( targets.length - 1 ) ) ;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -533,7 +533,7 @@ package ktu.display.align {
 		*  Match Sizes  *
 		*****************
 		*/
-		private static function matchWidth ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function matchWidth ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var endW:Number = getWidth ( targetCoordinateSpace ) ;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -542,7 +542,7 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function matchHeight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function matchHeight ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var endH:Number = getHeight ( targetCoordinateSpace ) ;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -551,12 +551,12 @@ package ktu.display.align {
 			}
 			return targets;
 		};
-		private static function matchSize ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function matchSize ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = matchWidth ( targetCoordinateSpace, targets ) ;
 			targets = matchHeight ( targetCoordinateSpace, targets ) ;
 			return targets;
 		};
-		private static function scaleToFit ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function scaleToFit ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			var tcsWidth:Number = getWidth ( targetCoordinateSpace ) ;
 			var tcsHeight:Number = getHeight ( targetCoordinateSpace ) ;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;
@@ -588,7 +588,7 @@ package ktu.display.align {
 		*  Space Evenly  *
 		******************
 		*/
-		private static function spaceVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function spaceVertical ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalY ) ;
 			var objsHeight:Number = 0;
 			var totalHeight:Number = getHeight ( targetCoordinateSpace ) ;
@@ -609,7 +609,7 @@ package ktu.display.align {
 			}
 			return targets;
 		}
-		private static function spaceHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
+		public static function spaceHorizontal ( targetCoordinateSpace:DisplayObject, targets:Array ) :Array {
 			targets = targets.sort ( sortGlobalX ) ;
 			var objsWidth:Number = 0;
 			var totalWidth:Number = getWidth ( targetCoordinateSpace ) ;

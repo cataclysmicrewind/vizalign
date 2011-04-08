@@ -39,7 +39,7 @@ package ktu.display.align {
 	 * 11.10.08	0.1 : First Created																																<br/>
 	 *
 	*/
-	public class AlignObject extends Object {
+	public class VizAlignTarget extends Object {
 		
 		private var _target:DisplayObject;
 		private var _uid:int;
@@ -78,7 +78,7 @@ package ktu.display.align {
 		 * @param	target		the target DisplayObject who'se values will be modified
 		 * @param	uid			unique identifier for each alignment call
 		 */
-		public function AlignObject ( target:DisplayObject, uid:int = 0 ) :void {
+		public function VizAlignTarget ( target:DisplayObject, uid:int = 0 ) {
 			_target = target;
 			_uid 	= uid;	//used for mainting original order of targets
 			//save current initial values
