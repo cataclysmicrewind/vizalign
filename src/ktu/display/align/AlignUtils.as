@@ -185,38 +185,38 @@ package ktu.display.align {
 		*/
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the left edge in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalX (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalX (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getLeftEdge ( A.target ) , getLeftEdge ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the center pixel of each object in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalCenterX (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalCenterX (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getCenterX ( A.target ) , getCenterX ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the right edge in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalRight (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalRight (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getRightEdge ( A.target ) , getRightEdge ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by their width.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalWidth (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalWidth (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getWidth ( A.target ) , getWidth ( B.target ) ) ;
 		}
 		/*
@@ -229,38 +229,38 @@ package ktu.display.align {
 		*/
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the top edge in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalY (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalY (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getTopEdge ( A.target ) , getTopEdge ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the center pixel in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalCenterY (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalCenterY (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getCenterY ( A.target ) , getCenterY ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the bottom edge in relation to the stage.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalBottom (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalBottom (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getBottomEdge ( A.target ) , getBottomEdge ( B.target ) ) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by their height.
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalHeight (A:AlignObject, B:AlignObject):Number {
+		public static function sortGlobalHeight (A:VizAlignTarget, B:VizAlignTarget):Number {
 			return check ( getHeight ( A.target ) , getHeight ( B.target ) ) ;
 		}
 		/*
@@ -275,11 +275,11 @@ package ktu.display.align {
 		 * Method to be used with Array.sort() for sorting objects by their left edge, if left edge matches, the items are then
 		 * sorted by their right edge.
 		 *
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentLeft ( A:AlignObject, B:AlignObject ) :Number {
+		public static function sortAdjacentLeft ( A:VizAlignTarget, B:VizAlignTarget ) :Number {
 			var i:int = sortGlobalX ( A, B ) ;
 			if ( i == 0 ) i = sortGlobalRight ( A, B ) ;
 			return i;
@@ -288,11 +288,11 @@ package ktu.display.align {
 		 * Method to be used with Array.sort() for sorting objects by their right edge, if right edge matches, the items are then
 		 * sorted by their left edge.
 		 *
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentRight (A:AlignObject, B:AlignObject):Number {
+		public static function sortAdjacentRight (A:VizAlignTarget, B:VizAlignTarget):Number {
 			var i:int = sortGlobalRight ( A, B ) ;
 			if ( i == 0 ) i = sortGlobalX ( A, B ) ;
 			return i;
@@ -301,11 +301,11 @@ package ktu.display.align {
 		 * Method to be used with Array.sort() for sorting objects by their top edge, if top edge matches, the items are then
 		 * sorted by their bottom edge.
 		 *
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentTop (A:AlignObject, B:AlignObject):Number {
+		public static function sortAdjacentTop (A:VizAlignTarget, B:VizAlignTarget):Number {
 			var i:int = sortGlobalY ( A, B ) ;
 			if ( i == 0 ) i = sortGlobalBottom ( A, B ) ;
 			return i;
@@ -314,11 +314,11 @@ package ktu.display.align {
 		 * Method to be used with Array.sort() for sorting objects by their bottom edge, if bottom edge matches, the items are then
 		 * sorted by their top edge.
 		 *
-		 * Note: Array must be filled with AlignObject.
+		 * Note: Array must be filled with VizAlignTarget.
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentBottom (A:AlignObject, B:AlignObject):Number {
+		public static function sortAdjacentBottom (A:VizAlignTarget, B:VizAlignTarget):Number {
 			var i:int = sortGlobalBottom ( A, B ) ;
 			if ( i == 0 ) i = sortGlobalY ( A, B ) ;
 			return i;
