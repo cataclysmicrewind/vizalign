@@ -1,0 +1,25 @@
+import ktu.utils.align.AlignParam;
+
+											Transition
+
+	Tranny.transition(targets, new Fade ("in"));
+	Tranny.transition(targets, new Wipe (new AlignParam (VizAlign.CENTER, stage));
+	Tranny.transition(targets, new Rotate ());
+	Tranny.transition(targets, new ());
+	
+	
+	
+	
+	
+	
+	tcs = dosplayObject.gertBounds(stage);
+	
+	targetBounds = target.getBounds(stage)
+	targetBounds.x += AlignUtils.getOriginX (target);
+	targetBounds.y += AlignUtils.getOriginY (target);
+	
+	
+	targetBounds = BoundsUtil.getIgnoredOrigin(target:DisplayObject):Rectangle;
+	
+	left (tcs:Rectangle, targets:Array);
+	
