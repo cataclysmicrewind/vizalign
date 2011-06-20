@@ -3,6 +3,8 @@
 package ktu.utils.align {
 	
 	import flash.display.DisplayObject;
+	import flash.display.Stage;
+	import flash.geom.Rectangle;
 
 	/**
 	 * 
@@ -21,42 +23,42 @@ package ktu.utils.align {
 	 * 		var param:AlignParam = new AlignParam(VizAlign.LEFT, stage);
 	 * 		VizAlign.align([mc1, mc2], [param], true, stage);
 	 * 																																							</listing>
-	 * 																																							<br/>
-	 * Author: Ktu																																				<br/>
-	 * Version: 0.1 *																																			<br/>
-	 * Last Update: 09.28.09																																	<br/>
-	 *																																							<br/>
-	 * version history:																																			<br/>
-	 * 09.28.09	0.1 : First Created																																<br/>
-	 * 
 	 */
-	public class VizAlignment extends Object {
+	public class VizAlignment {
 		
-		private var _type	:String;
-		private var _tcs	:DisplayObject;
+		private var _type	:Function;
+		private var _tcs	:*;
 		
 		/**
 		 * 
 		 * Alignment method type to be used in VizAlign.align()
 		 * This value should be a const from VizAlign class.
 		 */
-		public function set type (v:String)	:void 	{ _type = v; 	}
-		public function get type ()			:String	{ return _type; }
+		public function set type (v:Function)	:void 		{ _type = v; 	}
+		public function get type ()				:Function	{ return _type; }
 		/**
 		 * 
 		 * Target Coordinate Space for the type in the align() call
 		 * This is any DisplayObject. In Flash IDE terminoligy it is the same as saying align to the left of the [stage]. The tcs is [].
 		 */
-		public function set tcs (v:DisplayObject)	:void 			{ _tcs = v;		}
-		public function get tcs ()					:DisplayObject	{ return _tcs;  }
+		public function set tcs (v:*)	:void 	{ _tcs = v;		}
+		public function get tcs ()		:* 		{ return _tcs;  }
 		
 		/**
 		 *  The constructor needs to have both the type and tcs passed in, this makes sure that no AlignParam objects will be unsuitable for any VizAlign.align() call
 		 * @param	type 	String			represents the type of alignment math to be used.
 		 * @param	tcs		DisplayObject	represents the what object to align the targets to.
 		 */
-		public function VizAlignment (type:String = null, tcs:DisplayObject = null):void {
-			_type = type;	
+		public function VizAlignment (type:Function = null, tcs:* = null):void {
+			switch (true) {
+				case tcs is DisplayObject:
+				case tcs is Stage:
+				case tcs is Rectangle:
+					break;
+				default:
+					throw new Error ("VizAlignment tcs must be a DisplayObject, Stage, or Rectangle");
+			}
+			_type = type;
 			_tcs = tcs;
 		}
 		

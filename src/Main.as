@@ -1,4 +1,4 @@
-package ktu.utils.align.test {
+package  {
 	import com.bit101.components.CheckBox;
 	import com.bit101.components.ComboBox;
 	import com.bit101.components.PushButton;
@@ -12,6 +12,9 @@ package ktu.utils.align.test {
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
 	import flash.utils.describeType;
+	import ktu.utils.align.AlignMethods;
+	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignment;
 	import ktu.utils.BoundsUtils;
 	import ktu.utils.DisplayObjectUtils;
 	import ktu.utils.StageUtils;
@@ -30,7 +33,7 @@ package ktu.utils.align.test {
 	 * 
 	 * @author Ktu
 	 */
-	public class AlignMethodsTest extends Sprite {
+	public class Main extends Sprite {
 		
 		private var sp1:Sprite;
 		private var sp2:Sprite;
@@ -47,7 +50,7 @@ package ktu.utils.align.test {
 		private var toStage:RadioButton;
 		private var grid:Sprite;
 		
-		public function AlignMethodsTest() {
+		public function Main() {
 			stage.scaleMode = "noScale";
 			createQuadrents ();
 			addControls();
