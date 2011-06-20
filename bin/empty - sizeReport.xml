@@ -1,0 +1,13 @@
+<report>
+  <scripts>
+    <script name="L:\lib\VizAlign\src\OriginOffsetTest.as" mod="1308603714529" size="502" optimizedsize="270">
+      <def id="OriginOffsetTest" />
+      <pre id="flash.display:Sprite" />
+      <dep id="AS3" />
+    </script>
+  </scripts>
+  <external-defs>
+    <ext id="AS3" />
+    <ext id="flash.display:Sprite" />
+  </external-defs>
+</report>

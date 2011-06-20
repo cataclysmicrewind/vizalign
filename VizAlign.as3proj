@@ -4,7 +4,7 @@
   <output>
     <movie disabled="False" />
     <movie input="" />
-    <movie path="bin\VizAlign.swf" />
+    <movie path="bin\full-release.swf" />
     <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
@@ -37,7 +37,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional="-link-report bin\sizeReport.xml" />
     <option compilerConstants="" />
     <option customSDK="" />
   </build>
@@ -48,6 +48,7 @@
   <!-- SWC Libraries -->
   <libraryPaths>
     <element path="lib\MinimalComps_0_9_9.swc" />
+    <element path="lib\TweensyOriginalCS4.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

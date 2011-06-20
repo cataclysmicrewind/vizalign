@@ -70,11 +70,16 @@ package ktu.utils.align {
 		/** @private */
 		public function toString ( ) :String {
 			var str:String = "";
-			str += "AlignObject:\ttarget:" + _target.name + "\t";
-			str += "eX:" + _end.x + " ";
-			str += "eY:" + _end.y + " ";
-			str += "eW:" + _end.width + " ";
-			str += "eH:" + _end.height + "\n";
+			str += "VizAlignTarget:\ttarget:" + _target.name;
+			str += "\t";
+			str += "orig: " + _orig + " ";
+			str += "end: " + _end + " ";
+			//str += "eX:" + _end.x + " ";
+			//str += "eY:" + _end.y + " ";
+			//str += "eW:" + _end.width + " ";
+			//str += "eH:" + _end.height + " ";
+			str += "originOffset: " + _originOffset;
+			str += "\n";
 			return str;
 		}
 	}
