@@ -40,6 +40,19 @@ package ktu.utils {
 		 * @param	item	item you wish to retrieve the difference between the left edge and origin, according to the Stage
 		 * @return			returns the difference of the left edge of the item paramater and its origin.
 		 */
+		public static function getOriginOffsetX (item:DisplayObject):Number {
+			var bounds:Rectangle = item.getBounds(stageRef);
+			return bounds.left - item.x;
+		}
+		/**
+		 *  returns the difference between the left edge of the item, and the origin of the item
+		 *
+		 *  This is a significant method when doing alignment. If the origin of a DisplayObject is not 0,0 the x or y
+		 *  values of the object do not reflect the edge of the pixels in the DisplayObject.
+		 *
+		 * @param	item	item you wish to retrieve the difference between the left edge and origin, according to the Stage
+		 * @return			returns the difference of the left edge of the item paramater and its origin.
+		 */
 		public static function getOriginX (item:DisplayObject):Number {
 			return item.x - item.getBounds(stageRef).left;
 		}
@@ -70,6 +83,18 @@ package ktu.utils {
 		 * @param	item	item you wish to retrieve the difference between the top edge and origin, according to the Stage
 		 * @return			returns the difference of the top edge of the item paramater and its origin.
 		 */
+		public static function getOriginOffsetY (item:DisplayObject):Number {
+			return item.getBounds(stageRef).y - item.y;
+		}
+		/**
+		 *  returns the difference between the top edge of the item, and the origin of the item
+		 *
+		 *  This is a significant method when doing alignment. If the origin of a DisplayObject is not 0,0 the x or y
+		 *  values of the object do not reflect the edge of the pixels in the DisplayObject.
+		 *
+		 * @param	item	item you wish to retrieve the difference between the top edge and origin, according to the Stage
+		 * @return			returns the difference of the top edge of the item paramater and its origin.
+		 */
 		public static function getOriginY (item:DisplayObject):Number {
 			return item.y - item.getBounds(stageRef).top;
 		}
@@ -84,7 +109,7 @@ package ktu.utils {
 			}
 			return boundsArray;
 		}
-		public static function offsetNewBoundsByOrigin (targets:Array/* of DisplayObject */, newBounds:Array/* of Rectangle*/, stage:Stage):void {
+		public static function offsetBoundsByOrigin (targets:Array/* of DisplayObject */, newBounds:Array/* of Rectangle*/, stage:Stage):void {
 			for (var i:int = 0; i < targets.length; i++) {
 				var target:DisplayObject = targets[i];
 				var targetBounds:Rectangle = target.getBounds(stage);
@@ -93,7 +118,7 @@ package ktu.utils {
 				bounds.y += target.y - targetBounds.y;
 			}
 		}
-		public static function applyNewBounds (targets:Array/* of DisplayObject */, newBounds:Array/* of Rectangle */):void {
+		public static function applyBounds (targets:Array/* of DisplayObject */, newBounds:Array/* of Rectangle */):void {
 			for (var i:int = 0; i < targets.length; i++) {
 				var target:DisplayObject = targets[i];
 				var bounds:Rectangle = newBounds[i];

@@ -49,7 +49,7 @@ package ktu.utils.align {
 		 * @param	type 	String			represents the type of alignment math to be used.
 		 * @param	tcs		DisplayObject	represents the what object to align the targets to.
 		 */
-		public function VizAlignment (type:Function = null, tcs:* = null):void {
+		public function VizAlignment (type:Function, tcs:*):void {
 			switch (true) {
 				case tcs is DisplayObject:
 				case tcs is Stage:

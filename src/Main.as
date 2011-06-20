@@ -3,6 +3,7 @@ package  {
 	import com.bit101.components.ComboBox;
 	import com.bit101.components.PushButton;
 	import com.bit101.components.RadioButton;
+	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
@@ -15,6 +16,7 @@ package  {
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
+	import ktu.utils.align.VizAlignTarget;
 	import ktu.utils.BoundsUtils;
 	import ktu.utils.DisplayObjectUtils;
 	import ktu.utils.StageUtils;
@@ -49,6 +51,7 @@ package  {
 		private var toGrid:RadioButton;
 		private var toStage:RadioButton;
 		private var grid:Sprite;
+		private var multi:PushButton;
 		
 		public function Main() {
 			stage.scaleMode = "noScale";
@@ -79,6 +82,26 @@ package  {
 			pixelHinting_chk = new CheckBox(this, ignoreOrigin_chk.x, ignoreOrigin_chk.y + ignoreOrigin_chk.height + 10, "pixelHinting?");
 			apply = new PushButton(this, ignoreOrigin_chk.x + ignoreOrigin_chk.width + 10, 10, "Apply", onApply);
 			reset = new PushButton(this, apply.x, apply.y + apply.height + 10, "Reset", onReset);
+			multi = new PushButton(this, reset.x + reset.width + 10, 10, "Multi", onMulti);
+		}
+		
+		private function onMulti(e:Event):void {
+			// apply a multi version of the shit
+			var targets:Array = [sp1, sp2, sp3];
+			var vizAlignments:Array = [];
+			vizAlignments[0] = new VizAlignment(AlignMethods.left, grid);
+			vizAlignments[1] = new VizAlignment(AlignMethods.bottom, grid);
+			var results:Array = VizAlign.align(targets, vizAlignments, false, true, stage);
+			trace(results);
+			for (var i:int = 0; i < results.length; i++) {
+				var vat:VizAlignTarget = results[i];
+				var to:Object = { };
+				to.x = vat.end.x;
+				to.y = vat.end.y;
+				to.width = vat.end.width;
+				to.height = vat.end.height;
+				Tweensy.to(vat.target, to, .3);
+			}
 		}
 		
 		private function createQuadrents():void {
@@ -97,7 +120,7 @@ package  {
 				g.moveTo(0, i * hgap);
 				g.lineTo(w, i * hgap);
 			}
-			VizAlign.align([grid], new VizAlignment(AlignMethods.center, stage), true, true, stage);
+			VizAlign.align([grid], [new VizAlignment(AlignMethods.center, stage)], true, true, stage);
 			addChild(grid);
 		}
 		
@@ -122,13 +145,9 @@ package  {
 			addChild(sp3);
 		}
 		private function placeTargets():void {
-			// put them in their default location
-			sp1.x = sp1.y = 100;
-			sp1.scaleX = sp1.scaleY = 1;
-			sp2.x = sp2.y = 200;
-			sp2.scaleX = sp2.scaleY = 1;
-			sp3.x = sp3.y = 300;
-			sp3.scaleX = sp3.scaleY = 1;
+			sp1.x = sp1.y = 100; sp1.scaleX = sp1.scaleY = 1;
+			sp2.x = sp2.y = 200; sp2.scaleX = sp2.scaleY = 1;
+			sp3.x = sp3.y = 300; sp3.scaleX = sp3.scaleY = 1;
 		}
 		
 		private function onReset(e:Event):void {
@@ -146,7 +165,7 @@ package  {
 			var pixelHinting:Boolean = pixelHinting_chk.selected;
 			
 			VizAlign.pixelHinting = pixelHinting;
-			VizAlign.align ([sp1, sp2, sp3], new VizAlignment(method, tcs), applyResults, ignoreOrigin, stage);
+			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], applyResults, ignoreOrigin, stage);
 		}
 		
 		
