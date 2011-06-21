@@ -7,14 +7,6 @@ package ktu.utils.align {
 	import ktu.utils.RectangleUtils;
 	
 	public class AlignMethods {
-		/**
-		 * 
-		 * utlity function for batch VizAlignTarget creation...
-		 * 	generateVizAlignTargets(displayObjects:Array, endRectangles:Array = null):Array of VizAlignTarget
-		 * 
-		 * 
-		 * 
-		 */
 		/*
 		*
 		**************
@@ -48,7 +40,7 @@ package ktu.utils.align {
 			var tcsRightEdge:Number = targetCoordinateSpace.right;									// get right edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
-				var target:Rectangle = targets[i];												// 		grab current target as item
+				var target:Rectangle = targets[i];													// 		grab current target as item
 				var endX:Number = tcsRightEdge - target.width;										// 		calculate end x value for current item
 				target.x = endX;																	// 		apply math to target
 			}																						// end loop
@@ -62,12 +54,12 @@ package ktu.utils.align {
 		*/
 		public static function center (targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
 			targets = RectangleUtils.cloneRectangleArray(targets);
-			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);		// get center x value of target coordinate space object
+			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var tcsCenterY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height/ 2);
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
 				var target:Rectangle = targets[i];													// 		grab current target as item
-				var endX:Number = tcsCenterX - (target.width / 2);										// 		calculate end x value for current item
+				var endX:Number = tcsCenterX - (target.width / 2);									// 		calculate end x value for current item
 				var endY:Number = tcsCenterY - (target.height / 2);
 				target.x = endX;																	// 		apply math to target
 				target.y = endY;
@@ -211,50 +203,50 @@ package ktu.utils.align {
 			var after:Array = new Array ( ) ;													// array to hold objects to the right of the tcs
 			var left:Number = 0;																// holds where I placed the previous target for before array
 			var right:Number = 0;																// holds where I placed the previous target for after array
-			var item:Rectangle;																// var for holding current target
+			var item:Rectangle;																	// var for holding current target
 			var endX:Number;																	// endX is the value used for the placement of target
-			var tcsLeftEdge:Number = targetCoordinateSpace.left;						// save left edge of tcs
-			var tcsRightEdge:Number = targetCoordinateSpace.right;					// save right edge of tcs
-			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);						// save the centerX value of the tcs
+			var tcsLeftEdge:Number = targetCoordinateSpace.left;								// save left edge of tcs
+			var tcsRightEdge:Number = targetCoordinateSpace.right;								// save right edge of tcs
+			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);// save the centerX value of the tcs
 			// put targets in approriate array depending on position relative to the tcs
 			for (var i:int = 0; i < targets.length; i++) {										// loop through all targets
 				var target:Rectangle = targets[i];
 				var targetCenterX:Number = target.left + (target.width / 2);
-				if ( targetCenterX < tcsCenterX ) {						//		If the centerX of target is < centerX of tcs
-					before.push(targets[i]);												//			add to before array (targets sits to left of tcs)
+				if ( targetCenterX < tcsCenterX ) {												//		If the centerX of target is < centerX of tcs
+					before.push(targets[i]);													//			add to before array (targets sits to left of tcs)
 				} else {																		// 		else
-					after.push(targets[i]) ;												//			otherwise, add to after array
+					after.push(targets[i]) ;													//			otherwise, add to after array
 				}																				//		end if
 			}																					// end loop
-			before.sort ( RectangleUtils.sortAdjacentRight ) ;													// sort before array
-			after.sort ( RectangleUtils.sortAdjacentLeft ) ;													// sort after array
+			before.sort ( RectangleUtils.sortAdjacentRight ) ;									// sort before array
+			after.sort ( RectangleUtils.sortAdjacentLeft ) ;									// sort after array
 			before.reverse ( ) ;																// reverse the before array so its in the order I need
 			// place before array
-			var firstTarget:Rectangle = before[0];													// save ref to first target in before array
-			endX = tcsLeftEdge - firstTarget.width;				// first time, endX = the left edge of the tcs - width of first target
-			left = tcsLeftEdge - firstTarget.width;										// first time, left = left edge of first target
-			firstTarget.x = endX;												// move the first target because it requires diff math
+			var firstTarget:Rectangle = before[0];												// save ref to first target in before array
+			endX = tcsLeftEdge - firstTarget.width;												// first time, endX = the left edge of the tcs - width of first target
+			left = tcsLeftEdge - firstTarget.width;												// first time, left = left edge of first target
+			firstTarget.x = endX;																// move the first target because it requires diff math
 			for ( i = 1; i < before.length; i++ ) {												// loop through all targets in before array
-				item = before[i];													//		save ref to target
-				endX = left - item.width;							//		this says the left - the width of item
-				left -= item.width;														//		save the new left edge value of targets already aligned
-				item.x = endX;											//		apply the math
+				item = before[i];																//		save ref to target
+				endX = left - item.width;														//		this says the left - the width of item
+				left -= item.width;																//		save the new left edge value of targets already aligned
+				item.x = endX;																	//		apply the math
 			}																					// end loop
 			// place after array
-			firstTarget = after[0];														// save re to first target in after array
-			endX = tcsRightEdge ;									// first time, endX = the right edge of tcs
-			right = tcsRightEdge + firstTarget.width;									// first time, right = the right edge of first target after alignment
-			firstTarget.x = endX;												// apply this math
+			firstTarget = after[0];																// save re to first target in after array
+			endX = tcsRightEdge ;																// first time, endX = the right edge of tcs
+			right = tcsRightEdge + firstTarget.width;											// first time, right = the right edge of first target after alignment
+			firstTarget.x = endX;																// apply this math
 			for ( i = 1; i < after.length; i++ ) {												// loop through all targets in after array
-				item = after[i];														//		save ref to target
-				endX = right;												//		endX = right edge of last targed placed
-				right += item.width;													//		update right = right edge of last placed target
-				item.x = endX;												//		apply the math
+				item = after[i];																//		save ref to target
+				endX = right;																	//		endX = right edge of last targed placed
+				right += item.width;															//		update right = right edge of last placed target
+				item.x = endX;																	//		apply the math
 			}																					// end loop
 			//reset & return
 			targets = before;																	// targets = before array
 			targets = targets.concat ( after ) ;												// targets = before array + after array
-			return ArrayUtils.reorderArray(targets, origOrderedDic);																		// return targets!
+			return ArrayUtils.reorderArray(targets, origOrderedDic);							// return targets!
 		}
 		/*
 		*
@@ -265,7 +257,7 @@ package ktu.utils.align {
 		public static function adjacentTop ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */ ) :Array {
 			targets = RectangleUtils.cloneRectangleArray(targets);
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
-			var length:int = targets.length;														// targets length for optimized looping
+			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
 				var item:Rectangle = targets[i];
 				var endY:Number = tcsTopEdge - item.height;
@@ -276,7 +268,7 @@ package ktu.utils.align {
 		public static function adjacentBottom ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
 			targets = RectangleUtils.cloneRectangleArray(targets);
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
-			var length:int = targets.length;														// targets length for optimized looping
+			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
 				var item:Rectangle = targets[i];
 				var endY:Number = tcsBottomEdge;

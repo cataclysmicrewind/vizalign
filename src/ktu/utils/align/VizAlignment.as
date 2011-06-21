@@ -46,8 +46,8 @@ package ktu.utils.align {
 		
 		/**
 		 *  The constructor needs to have both the type and tcs passed in, this makes sure that no AlignParam objects will be unsuitable for any VizAlign.align() call
-		 * @param	type 	String			represents the type of alignment math to be used.
-		 * @param	tcs		DisplayObject	represents the what object to align the targets to.
+		 * @param	type 	Function	a function from the AlignMethods class
+		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
 		 */
 		public function VizAlignment (type:Function, tcs:*):void {
 			switch (true) {
