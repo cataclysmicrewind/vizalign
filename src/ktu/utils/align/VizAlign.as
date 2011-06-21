@@ -2,35 +2,30 @@
 
 package ktu.utils.align {
 
-	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Sprite;
 	import flash.display.Stage;
-	import flash.display.StageDisplayState;
 	import flash.geom.Rectangle;
-	import flash.utils.Dictionary;
 	import ktu.utils.BoundsUtils;
 	import ktu.utils.DisplayObjectUtils;
-	import ktu.utils.RectangleUtils;
-	import ktu.utils.StageUtils;
 	
 	public class VizAlign {
 		
-		public static const LEFT:Function = AlignMethods.left;
 		
-		public static const TO_TARGETS			:Rectangle	= new Rectangle( -1, -1, -1, -1);// place holder when aligning targets to the bounding area they create
 		
-		public static var pixelHinting			:Boolean 	= true;
+		static public const TO_TARGETS			:Rectangle	= new Rectangle( -1, -1, -1, -1);// place holder when aligning targets to the bounding area they create
 		
-		private static var _stageRef			:Stage;
+		static public var pixelHinting			:Boolean 	= true;
 		
+		
+		static private var _stageRef			:Stage;
+		static private const LEFT				:Function 	= AlignMethods.left;		// so that the AlignMethods class is always compiled with VizAlign... yuck
 		/**
 		 * 	TODO:
 		 * 		Make sure TO_TARGETS works
+		 * 	  +		build function
+		 * 			test
 		 * 		verifyInput
-		 * 		+ return VizAlignTargets properly
+		 * 	  + return VizAlignTargets properly
 		 * 		think about the right way to get them converted to VizAlignTargets and how
 		 * 		groups
 		 * 			refactor copy of array
@@ -45,28 +40,28 @@ package ktu.utils.align {
 		 * @param	ignoreOrigin
 		 * @param	stage
 		 */
-		public static function align (targets:Array, vizAlignments:Array/* of VizAlignment */, applyResults:Boolean = false, ignoreOrigin:Boolean = false, stage:Stage = null):Array {
+		static public function align (targets:Array, vizAlignments:Array/* of VizAlignment */, applyResults:Boolean = false, ignoreOrigin:Boolean = false, stage:Stage = null):Array {
 			targets = targets.concat();																				// copy array so we have new one (refactor when doing groups)
 			verifyInput(targets, vizAlignments, stage);																// verify that all the input is acceptable
 			
-			var alignTargets:Array/* of VizAlignTarget */ = convertToAlignTargets(targets);							// convert all targets to VizAlignTarget
-			var alignedTargetBounds:Array/* of Rectangle */ = getBoundsFromVizAlignTargets(alignTargets);			// get all rectangles to move
+			var vizAlignTargets:Array/* of VizAlignTarget */ = convertToAlignTargets(targets);						// convert all targets to VizAlignTarget
+			var alignedTargetBounds:Array/* of Rectangle */ = getBoundsFromVizAlignTargets(vizAlignTargets);		// get all rectangles to move
 			
 			
 			var length:uint = vizAlignments.length;																	// get lenght of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {																	// for each vizAlignment
 				var alignment:VizAlignment = vizAlignments[i];														// 		store ref to vizAlignment
-				var tcsBounds:Rectangle = BoundsUtils.getBounds(alignment.tcs, stage);								// 		get the tcs Bounds
+				var tcsBounds:Rectangle = getTCSBounds(vizAlignTargets, alignment.tcs, stage);						// 		get the tcs Bounds
 				alignedTargetBounds = alignment.type(tcsBounds, alignedTargetBounds);								// 		align them and get the new Bounds for the targets
 			}																										// end loop
 			
-			updateEndRectanglesForVizAlignTargets(alignTargets, alignedTargetBounds);								// apply the changes to each VizAlignTarget
+			updateEndRectanglesForVizAlignTargets(vizAlignTargets, alignedTargetBounds);							// apply the changes to each VizAlignTarget
 			// apply options
-			if (pixelHinting) roundResults (alignedTargetBounds);													// if pixelHinting, round the results
-			if (ignoreOrigin) offsetOrigins(alignTargets);															// if ignoreOrigin, offset the results by their origin
-			if (applyResults) applyEnds(alignTargets);																// if applyResults, tell all VizAlignTarget to go to end
+			if (pixelHinting) roundResults (vizAlignTargets);														// if pixelHinting, round the results
+			if (ignoreOrigin) offsetOrigins(vizAlignTargets);														// if ignoreOrigin, offset the results by their origin
+			if (applyResults) applyEnds(vizAlignTargets);															// if applyResults, tell all VizAlignTarget to go to end
 			
-			return alignTargets;																					// return VizAlignTarget s
+			return vizAlignTargets;																					// return VizAlignTarget s
 		}
 		
 		/**
@@ -111,13 +106,13 @@ package ktu.utils.align {
 		 * 
 		 * @param	alignedTargetBounds
 		 */
-		static public function roundResults(alignedTargetBounds:Array):void {
-			for (var i:int = 0; i < alignedTargetBounds.length; i++) {
-				var item:Rectangle = alignedTargetBounds[i];
-				item.x = Math.round(item.x);
-				item.y = Math.round(item.y);
-				item.width = Math.round(item.width);
-				item.height = Math.round(item.height);
+		static public function roundResults(vizAlignTargets:Array):void {
+			for (var i:int = 0; i < vizAlignTargets.length; i++) {
+				var end:Rectangle = VizAlignTarget(vizAlignTargets[i]).end;
+				end.x = Math.round(end.x);
+				end.y = Math.round(end.y);
+				end.width = Math.round(end.width);
+				end.height = Math.round(end.height);
 			}
 		}
 		
@@ -125,7 +120,18 @@ package ktu.utils.align {
 		
 		
 		
-		
+		/*
+		**************************************************************************************************
+		*
+		*  Utility Methods
+		*
+		* 			convertToVizAlignTargets
+		* 			getBoundsFromVizAlignTargets
+		* 			updateEndRectanglesForVizAlignTargets
+		*
+		*
+		**************************************************************************************************
+		*/
 		
 		
 		
@@ -148,7 +154,7 @@ package ktu.utils.align {
 		}
 		
 		
-		private static function getBoundsFromVizAlignTargets(vizAlignTargets:Array):Array {
+		static private function getBoundsFromVizAlignTargets(vizAlignTargets:Array):Array {
 			var bounds:Array = [];
 			for (var i:int = 0; i < vizAlignTargets.length; i++) {
 				bounds[i] = vizAlignTargets[i].end;
@@ -156,7 +162,7 @@ package ktu.utils.align {
 			return bounds;
 		}
 		
-		private static function convertToAlignTargets(targets:Array):Array {
+		static private function convertToAlignTargets(targets:Array):Array {
 			var alignTargets:Array = [];
 			for (var i:int = 0; i < targets.length; i++) {
 				var item:* = targets[i];
@@ -169,7 +175,6 @@ package ktu.utils.align {
 						break;
 					case item is VizAlignTarget:
 						alignTargets[i] = item;
-						VizAlignTarget(item).applyEndBounds();
 						break;
 					default:												// object passed in was not a DisplayObject
 						VizAlignError.e(VizAlignError.BAD_TARGET);			// shouldn't even happen but still
@@ -179,7 +184,18 @@ package ktu.utils.align {
 			return alignTargets;
 		}
 		
-		
+		static private function getTCSBounds(vizAlignTargets:Array, tcs:*, stage:Stage):Rectangle {
+			var tcsBounds:Rectangle = new Rectangle();
+			
+			if (tcs === TO_TARGETS) {
+				for (var i:int = 0; i < vizAlignTargets.length; i++) {
+					tcsBounds.union(VizAlignTarget(vizAlignTargets[i].end));
+				}
+			} else {
+				tcsBounds = BoundsUtils.getBounds(tcs, stage);
+			}
+			return tcsBounds;
+		}
 		
 		
 		
@@ -210,7 +226,7 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @param	alignmentObjects
 		 */
-		private static function verifyInput(targets:Array, alignmentObjects:Array, stage:Stage = null):void {
+		static private function verifyInput(targets:Array, alignmentObjects:Array, stage:Stage = null):void {
 			checkStageRef(stage);																			// make sure we have a reference to the stage
 			if ( targets.length == 0 )			VizAlignError.e (VizAlignError.NO_TARGETS);					// if no targets in array, throw error
 			if ( alignmentObjects.length == 0 )	VizAlignError.e (VizAlignError.NO_ALIGNPARAM);				// if not vizAlignemtns in array, throw error
@@ -233,7 +249,7 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @param	passedRef
 		 */
-		private static function checkStageRef (passedRef:Stage = null):void {
+		static private function checkStageRef (passedRef:Stage = null):void {
 			if (_stageRef) {								// if I already have it set, stop
 				DisplayObjectUtils.stageRef = _stageRef;	// 		set the stage ref for the DisplayObjectUtils for getting origin offsets;
 				return;										// 		return cause we have a reference
@@ -252,7 +268,7 @@ package ktu.utils.align {
 		 * @param	ar
 		 * @return
 		 */
-		private static function checkDuplicateTargets (ar:Array):String {
+		static private function checkDuplicateTargets (ar:Array):String {
 			var length:int = ar.length;															// get length of targets for optimized looping
 			for (var i:int = 0; i < length; ++i) {												// loop through all targets
 				var outerI:DisplayObject = (ar[i] is VizAlignTarget) ? ar[i].target : ar[i];	//		save ref to DisplayObject of target
@@ -271,7 +287,7 @@ package ktu.utils.align {
 		 * @param	alignmentObjects
 		 * @return
 		 */
-		private static function checkTCSOverlap (targets:Array, alignmentObjects:Array):String {
+		static private function checkTCSOverlap (targets:Array, alignmentObjects:Array):String {
 			var length:int = targets.length;															// get length of targets for optimized looping
 			var alignlength:int = alignmentObjects.length;												// get length of alignmentObjects
 			for (var j:int = 0; j < length; ++j) {														// loop through targets passed in
@@ -291,7 +307,7 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @return
 		 */
-		private static function getAllTargets(targets:Array):Array/* of DisplayObject */ {
+		static private function getAllTargets(targets:Array):Array/* of DisplayObject */ {
 			var returns:Array = new Array ();									// create return array
 			for (var elmnt:String in targets) {									// for every element in targets...
 				var item:* = targets[elmnt];									//		keep reference to current item
@@ -313,6 +329,11 @@ package ktu.utils.align {
 }
 
 
+/**
+ * 
+ * 	This class made it more clear as to how the Errors occur in VizAlign
+ * 
+ */
 class VizAlignError {
 	
 	public static const NO_STAGE		:String = "VizAlign : Must have a reference to the stage";
@@ -322,7 +343,7 @@ class VizAlignError {
 	public static const TCS_OVERLAP		:String = "VizAlign : Targets cannot also be a targetCoordinateSpace";
 	public static const BAD_TARGET		:String = "VizAlign : Target must be a DisplayObject/VizAlignTarget";
 	
-	public static function e (type:String, extraInfo:String = "") :void {
+	static public function e (type:String, extraInfo:String = "") :void {
 		var str:String = type
 		str += (extraInfo.length > 0) ? " - " + extraInfo : "";
 		throw new ArgumentError (str);
