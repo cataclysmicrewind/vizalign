@@ -6,7 +6,6 @@ package ktu.utils.align {
 	import flash.display.Stage;
 	import flash.geom.Rectangle;
 	import ktu.utils.BoundsUtils;
-	import ktu.utils.DisplayObjectUtils;
 	
 	public class VizAlign {
 		
@@ -40,9 +39,9 @@ package ktu.utils.align {
 		 * @param	ignoreOrigin
 		 * @param	stage
 		 */
-		static public function align (targets:Array, vizAlignments:Array/* of VizAlignment */, applyResults:Boolean = false, ignoreOrigin:Boolean = false, stage:Stage = null):Array {
+		static public function align (targets:Array, vizAlignments:Array/* of VizAlignment */, applyResults:Boolean = false, ignoreOrigin:Boolean = false):Array {
 			targets = targets.concat();																				// copy array so we have new one (refactor when doing groups)
-			verifyInput(targets, vizAlignments, stage);																// verify that all the input is acceptable
+			verifyInput(targets, vizAlignments);																	// verify that all the input is acceptable
 			
 			var vizAlignTargets:Array/* of VizAlignTarget */ = convertToAlignTargets(targets);						// convert all targets to VizAlignTarget
 			var alignedTargetBounds:Array/* of Rectangle */ = getBoundsFromVizAlignTargets(vizAlignTargets);		// get all rectangles to move
@@ -51,7 +50,7 @@ package ktu.utils.align {
 			var length:uint = vizAlignments.length;																	// get lenght of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {																	// for each vizAlignment
 				var alignment:VizAlignment = vizAlignments[i];														// 		store ref to vizAlignment
-				var tcsBounds:Rectangle = getTCSBounds(vizAlignTargets, alignment.tcs, stage);						// 		get the tcs Bounds
+				var tcsBounds:Rectangle = getTCSBounds(vizAlignTargets, alignment.tcs);								// 		get the tcs Bounds
 				alignedTargetBounds = alignment.type(tcsBounds, alignedTargetBounds);								// 		align them and get the new Bounds for the targets
 			}																										// end loop
 			
@@ -184,15 +183,15 @@ package ktu.utils.align {
 			return alignTargets;
 		}
 		
-		static private function getTCSBounds(vizAlignTargets:Array, tcs:*, stage:Stage):Rectangle {
+		static private function getTCSBounds(vizAlignTargets:Array, tcs:*):Rectangle {
 			var tcsBounds:Rectangle = new Rectangle();
 			
 			if (tcs === TO_TARGETS) {
 				for (var i:int = 0; i < vizAlignTargets.length; i++) {
-					tcsBounds.union(VizAlignTarget(vizAlignTargets[i].end));
+					tcsBounds.union(VizAlignTarget(vizAlignTargets[i]).end);
 				}
 			} else {
-				tcsBounds = BoundsUtils.getBounds(tcs, stage);
+				tcsBounds = BoundsUtils.getBounds(tcs, tcs);
 			}
 			return tcsBounds;
 		}
@@ -226,8 +225,7 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @param	alignmentObjects
 		 */
-		static private function verifyInput(targets:Array, alignmentObjects:Array, stage:Stage = null):void {
-			checkStageRef(stage);																			// make sure we have a reference to the stage
+		static private function verifyInput(targets:Array, alignmentObjects:Array):void {
 			if ( targets.length == 0 )			VizAlignError.e (VizAlignError.NO_TARGETS);					// if no targets in array, throw error
 			if ( alignmentObjects.length == 0 )	VizAlignError.e (VizAlignError.NO_ALIGNPARAM);				// if not vizAlignemtns in array, throw error
 			var allTargets:Array = getAllTargets(targets);													// grab all the targets in a one dimmension array
@@ -242,25 +240,6 @@ package ktu.utils.align {
 		*  Error Util Methods  *
 		************************
 		*/
-		/** @private
-		 * 
-		 * 		checkStageRef is called at the beginning of every align() call. This checks to see if the stage reference
-		 * has been set for the AlignUtils class which is required for that class to function properly.
-		 * @param	targets
-		 * @param	passedRef
-		 */
-		static private function checkStageRef (passedRef:Stage = null):void {
-			if (_stageRef) {								// if I already have it set, stop
-				DisplayObjectUtils.stageRef = _stageRef;	// 		set the stage ref for the DisplayObjectUtils for getting origin offsets;
-				return;										// 		return cause we have a reference
-			}												// end if 
-			if (passedRef) { 								// if it was passed in , stop
-				_stageRef = passedRef; 						//		save the reference
-				DisplayObjectUtils.stageRef = _stageRef;	// 		set the stage ref for the DisplayObjectUtils for getting origin offsets;
-				return; 									// 		return cause we have a reference
-			}	    										// end if
-			VizAlignError.e(VizAlignError.NO_STAGE);		// if we get here, then we do not have a reference to the stage so throw an error
-		}
 		/** @private
 		 * 
 		 * 		checkDuplicateTargets checks the targets array to see if any of the targets is duplicated. Having one DisplayObject
@@ -336,7 +315,6 @@ package ktu.utils.align {
  */
 class VizAlignError {
 	
-	public static const NO_STAGE		:String = "VizAlign : Must have a reference to the stage";
 	public static const NO_TARGETS		:String = "VizAlign : Must have at least one target";
 	public static const NO_ALIGNPARAM	:String = "VizAlign : Must have at least one alignment method";
 	public static const DUP_TARGETS		:String = "VizAlign : Cannot have duplicate targets";
