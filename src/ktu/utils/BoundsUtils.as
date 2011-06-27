@@ -1,6 +1,7 @@
 package ktu.utils {
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	/**
 	 * ...
@@ -16,7 +17,11 @@ package ktu.utils {
 				case target is Stage:
 					return StageUtils.getStageBounds(target);
 				case target is DisplayObject:
-					return DisplayObject(target).getBounds(targetCoordinateSpace);
+					var rect:Rectangle = DisplayObject(target).getBounds(targetCoordinateSpace);
+					var dx:Point = target.localToGlobal(new Point(rect.x, rect.y));
+					rect.x = dx.x;
+					rect.y = dx.y;
+					return rect;
 				default:
 					return null;
 			}
