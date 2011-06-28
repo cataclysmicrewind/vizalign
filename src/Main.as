@@ -6,29 +6,19 @@ package  {
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.Graphics;
-	import flash.display.InteractiveObject;
 	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
 	import flash.text.TextField;
 	import flash.utils.describeType;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
-	import ktu.utils.BoundsUtils;
-	import ktu.utils.DisplayObjectUtils;
-	import ktu.utils.StageUtils;
 	/**
 	 * ...
 	 * 
-	 * 		//TODO: Test Using VizAlignments to setup the align call
-	 * 		//TODO: Test using VizAlignTarget to setup the align call
-	 * 		//TODO: VizAlign has the option to account for origin offsets
 	 * 		//TODO: Have VizAlign know how to work with TextFields properly
-	 * 		//TODO: Have VizAlign get the Rectangle for the tcs
 	 * 
 	 * 
 	 * 
