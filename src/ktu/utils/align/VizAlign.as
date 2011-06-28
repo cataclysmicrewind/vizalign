@@ -4,8 +4,9 @@ package ktu.utils.align {
 
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
+	import flash.display.StageDisplayState;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import ktu.utils.BoundsUtils;
 	
 	public class VizAlign {
 		
@@ -22,10 +23,10 @@ package ktu.utils.align {
 		 * 	TODO:
 		 * 		Make sure TO_TARGETS works
 		 * 	  +		build function
-		 * 			test
-		 * 		verifyInput
+		 * 	  +  	test
+		 * 	  + verifyInput
 		 * 	  + return VizAlignTargets properly
-		 * 		think about the right way to get them converted to VizAlignTargets and how
+		 * 	  + think about the right way to get them converted to VizAlignTargets and how
 		 * 		groups
 		 * 			refactor copy of array
 		 * 			implement the logic for getting a groups bounds
@@ -182,20 +183,59 @@ package ktu.utils.align {
 			}
 			return alignTargets;
 		}
-		
+		/*
+		**************************************************************************************************
+		*
+		*  Coordinate Space Functions
+		*
+		* 			getTCSBounds
+		* 			getStageBounds
+		*
+		*
+		**************************************************************************************************
+		*/
 		static private function getTCSBounds(vizAlignTargets:Array, tcs:*):Rectangle {
 			var tcsBounds:Rectangle = new Rectangle();
-			
-			if (tcs === TO_TARGETS) {
-				for (var i:int = 0; i < vizAlignTargets.length; i++) {
-					tcsBounds.union(VizAlignTarget(vizAlignTargets[i]).end);
-				}
-			} else {
-				tcsBounds = BoundsUtils.getBounds(tcs, tcs);
+			switch (true) {
+				case tcs === TO_TARGETS:
+					tcsBounds = getToTargetsBounds(vizAlignTargets);
+					break;
+				case tcs is Rectangle:
+					tcsBounds = tcs;
+					break;
+				case tcs is Stage:
+					tcsBounds = getStageBounds(tcs);
+					break;
+				case tcs is DisplayObject:
+					tcsBounds = getDisplayObjectBounds(tcs);
+					break;
+				default:
+					return null;
 			}
 			return tcsBounds;
 		}
+		static private function getToTargetsBounds(targets:Array/* of VizAlignTarget */):Rectangle {
+			var tcsBounds:Rectangle = new Rectangle();
+			for (var i:int = 0; i < targets.length; i++) {
+					tcsBounds.union(VizAlignTarget(targets[i]).end);
+				}
+			return tcsBounds;
+		}
 		
+		static private function getDisplayObjectBounds(tcs:DisplayObject):Rectangle {
+			var rect:Rectangle = DisplayObject(tcs).getBounds(tcs);
+			var dx:Point = tcs.localToGlobal(new Point(rect.x, rect.y));
+			rect.x = dx.x;
+			rect.y = dx.y;
+			return rect;
+		}
+		public static function getStageBounds(stage:Stage):Rectangle {
+			if (stage.displayState == StageDisplayState.FULL_SCREEN) {
+				return new Rectangle (0, 0, stage.fullScreenSourceRect.width, stage.fullScreenSourceRect.height);
+			} else {
+				return new Rectangle (0, 0, stage.stageWidth, stage.stageHeight);
+			}
+		}
 		
 		
 		/*

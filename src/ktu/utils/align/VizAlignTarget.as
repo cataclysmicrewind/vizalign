@@ -2,7 +2,6 @@ package ktu.utils.align {
 	import flash.display.DisplayObject;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import ktu.utils.DisplayObjectUtils;
 	
 	
 	public class VizAlignTarget {

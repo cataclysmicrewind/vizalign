@@ -8,7 +8,7 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * AlignParam holds the neccessary values for each alingment.																								<br/>
+	 * AlignParam holds the neccessary values for each alignment.																								<br/>
 	 * 																																							<br/>
 	 * Each alignment needs three (3) things:																													<br/>
 	 * First, the targets you wish to align.																													<br/>
@@ -60,6 +60,20 @@ package ktu.utils.align {
 			}
 			_type = type;
 			_tcs = tcs;
+		}
+		
+		/**
+		 * 	This function will align the targets based of the specifications of this VizAlignment
+		 *  
+		 * 	Give it some rectanges, and it will spit them back aligned... awesome idea.
+		 * 
+		 * 
+		 * @param	targets
+		 * @return
+		 */
+		public function align (targets:Array/* of Rectangle */):Array {
+			
+			return []
 		}
 		
 		/** @private **/

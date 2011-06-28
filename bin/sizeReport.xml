@@ -1,6 +1,6 @@
 <report>
   <scripts>
-    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1309202586545" size="5586" optimizedsize="3110">
+    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1309271758044" size="6391" optimizedsize="3572">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignment" />
@@ -8,11 +8,12 @@
       <dep id="ArgumentError" />
       <dep id="ktu.utils.align:AlignMethods" />
       <dep id="AS3" />
-      <dep id="ktu.utils:BoundsUtils" />
       <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:StageDisplayState" />
       <dep id="flash.display:DisplayObject" />
       <dep id="Math" />
       <dep id="flash.display:Stage" />
+      <dep id="flash.geom:Point" />
     </script>
     <script name="L:\lib\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:ObjectPool)" mod="1232273744000" size="1405" optimizedsize="725">
       <def id="com.flashdynamix.utils:ObjectPool" />
@@ -218,12 +219,11 @@
       <dep id="flash.display:DisplayObject" />
       <dep id="Math" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1309201213457" size="12338" optimizedsize="6007">
+    <script name="L:\lib\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1309271600715" size="13418" optimizedsize="6460">
       <def id="ktu.utils.align:AlignMethods" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObject" />
       <dep id="flash.utils:Dictionary" />
       <dep id="ktu.utils:ArrayUtils" />
       <dep id="ktu.utils:RectangleUtils" />
@@ -242,14 +242,6 @@
       <dep id="com.bit101.components:Style" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\StageUtils.as" mod="1309201213449" size="672" optimizedsize="415">
-      <def id="ktu.utils:StageUtils" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:StageDisplayState" />
-      <dep id="flash.display:Stage" />
-    </script>
     <script name="L:\lib\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:SoundTween)" mod="1232241758000" size="2961" optimizedsize="1469">
       <def id="com.flashdynamix.motion.plugins:SoundTween" />
       <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
@@ -257,7 +249,7 @@
       <dep id="flash.media:SoundTransform" />
       <dep id="Math" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1309202213371" size="2259" optimizedsize="1219">
+    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1309208491452" size="2264" optimizedsize="1224">
       <def id="ktu.utils.align:VizAlignTarget" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -309,7 +301,7 @@
       <dep id="flash.display:DisplayObjectContainer" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1309201213467" size="1359" optimizedsize="723">
+    <script name="L:\lib\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1309208510392" size="1358" optimizedsize="723">
       <def id="ktu.utils.align:VizAlignment" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -318,11 +310,16 @@
       <dep id="flash.display:Stage" />
       <dep id="Error" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1309201213441" size="884" optimizedsize="444">
+    <script name="L:\lib\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1309201213441" size="883" optimizedsize="444">
       <def id="ktu.utils:ArrayUtils" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="L:\lib\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Style)" mod="1302418241000" size="1734" optimizedsize="1038">
+      <def id="com.bit101.components:Style" />
+      <pre id="Object" />
+      <dep id="AS3" />
     </script>
     <script name="L:\lib\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:DisplayTween)" mod="1232241384000" size="3395" optimizedsize="1838">
       <def id="com.flashdynamix.motion.plugins:DisplayTween" />
@@ -331,11 +328,6 @@
       <dep id="AS3" />
       <dep id="flash.display:DisplayObject" />
       <dep id="Math" />
-    </script>
-    <script name="L:\lib\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Style)" mod="1302418241000" size="1734" optimizedsize="1038">
-      <def id="com.bit101.components:Style" />
-      <pre id="Object" />
-      <dep id="AS3" />
     </script>
     <script name="L:\lib\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:ScrollBar)" mod="1302418241000" size="8571" optimizedsize="4245">
       <def id="com.bit101.components:ScrollBar" />
@@ -353,17 +345,7 @@
       <dep id="com.bit101.components:Style" />
       <dep id="flash.display:Shape" />
     </script>
-    <script name="L:\lib\VizAlign\src\ktu\utils\BoundsUtils.as" mod="1309204067835" size="1737" optimizedsize="922">
-      <def id="ktu.utils:BoundsUtils" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="ktu.utils:StageUtils" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="L:\lib\VizAlign\src\Main.as" mod="1309204378797" size="4670" optimizedsize="3156">
+    <script name="L:\lib\VizAlign\src\Main.as" mod="1309271770018" size="4666" optimizedsize="3156">
       <def id="Main" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align:VizAlignment" />
