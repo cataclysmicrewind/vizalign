@@ -106,7 +106,7 @@ package ktu.utils.align {
 		}
 		public static function vertical ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
 			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
-			var mid:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);
+			var mid:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height / 2);
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
 				var item:Rectangle = targets[i];
