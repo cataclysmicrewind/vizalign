@@ -16,7 +16,7 @@ package ktu.utils.align.capabilities.ui {
 		public var animate:CheckBox;
 		
 		public function VizAlignOptions() {
-			var spacer:int = 20;
+			var spacer:int = 10;
 			header = new Label(this, 0, 0);
 			var fmt:TextFormat = header.textField.getTextFormat();
 			fmt.bold = true;
@@ -24,8 +24,8 @@ package ktu.utils.align.capabilities.ui {
 			header.textField.defaultTextFormat = fmt;
 			header.text = "and:";
 			
-			ignoreOrigin = new CheckBox(this, 10, header.height + 30, "ignore origins");
-			pixelHinting = new CheckBox(this, 10, ignoreOrigin.y + ignoreOrigin.height + spacer, "pixel hinting");
+			ignoreOrigin = new CheckBox(this, 10, header.height + 20, "ignore origins");
+			pixelHinting = new CheckBox(this, 10, ignoreOrigin.y + ignoreOrigin.height + spacer, "round results");
 			animate = new CheckBox(this, 10, pixelHinting.y + pixelHinting.height + spacer, "animate");
 		}
 		
