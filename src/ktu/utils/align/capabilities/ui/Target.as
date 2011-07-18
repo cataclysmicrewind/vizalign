@@ -1,8 +1,26 @@
+
 package ktu.utils.align.capabilities.ui {
+	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
 	/**
+	 *
+	 * 	A target used in the TargetArena.
+	 *
+	 * 	They can be dragged around anywhere (no boundaries)
+	 * 	They can be double clicked on to show the origin
+	 *
+	 * 	You can set the color, size, and orignOffset
+	 *
+	 *
+	 * 	TODO:
+	 * 		Make the origin Offset better
+	 * 		Add a txt field to it to show the origin offest always
+	 * 			What do I do if the target is too small?
+	 *
+	 *
+	 *
 	 * ...
 	 * @author Keelan
 	 */
