@@ -8,6 +8,18 @@ package ktu.utils.align.capabilities {
 	 * 	This swf is designed to show off what VizAlign can do
 	 *
 	 *
+	 *
+	 *
+	 * Coding Concept:
+	 *
+	 * 		This class will put a TargetArena in the stage,
+	 * 		then a ControlPanel. The control panel is told about
+	 * 		all possible Targets and TCSs in the TargetArena
+	 * 		The ControlPanel has some TCSs of its own (STAGE, inputs?)
+	 *
+	 * 		That is all that this class has to do.
+	 *
+	 *
 	 * ...
 	 * @author Keelan
 	 */
