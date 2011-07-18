@@ -1,5 +1,11 @@
 <report>
   <scripts>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\ui\CapabilitiesControls.as" mod="1310978052091" size="1128" optimizedsize="561">
+      <def id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
+      <pre id="flash.display:Sprite" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+    </script>
     <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\VizAlignLogo.as" mod="1310973401756" size="667" optimizedsize="297">
       <def id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
       <pre id="flash.display:Bitmap" />
@@ -17,28 +23,33 @@
       <dep id="flash.display:Graphics" />
       <dep id="AS3" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1310977647202" size="1696" optimizedsize="1006">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1310977856852" size="1800" optimizedsize="1084">
       <def id="ktu.utils.align.capabilities:VizAlignCapabilities" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align.capabilities.gfx:Grid" />
       <dep id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
       <dep id="ktu.utils.align.capabilities.gfx:Target" />
       <dep id="AS3" />
+      <dep id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
       <dep id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\Target.as" mod="1310977341437" size="3365" optimizedsize="1881">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\Target.as" mod="1310989754298" size="4761" optimizedsize="2765">
       <def id="ktu.utils.align.capabilities.gfx:Target" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.geom:Point" />
     </script>
   </scripts>
   <external-defs>
     <ext id="flash.display:Bitmap" />
     <ext id="AS3" />
+    <ext id="flash.geom:Rectangle" />
     <ext id="flash.display:DisplayObject" />
     <ext id="flash.display:Graphics" />
     <ext id="flash.display:Sprite" />
+    <ext id="flash.geom:Point" />
     <ext id="flash.events:MouseEvent" />
   </external-defs>
 </report>
