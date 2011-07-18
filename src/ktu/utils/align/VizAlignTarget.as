@@ -2,7 +2,6 @@ package ktu.utils.align {
 	import flash.display.DisplayObject;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import ktu.utils.DisplayObjectUtils;
 	
 	
 	public class VizAlignTarget {
@@ -27,7 +26,7 @@ package ktu.utils.align {
 			_orig.width 	= _end.width 	= target.width;
 			_orig.height 	= _end.height 	= target.height;
 			
-			_originOffset = new Point(DisplayObjectUtils.getOriginX(target), DisplayObjectUtils.getOriginY(target));
+			_originOffset = new Point(target.getBounds(target).x, target.getBounds(target).y);
 		}
 		
 		public function applyOrigBounds ( ) :void {
@@ -44,6 +43,10 @@ package ktu.utils.align {
 			_target.height 	= _end.height;
 		}
 		public function applyOriginOffestToEnd():void {
+			_end.x -= _originOffset.x;
+			_end.y -= _originOffset.y;
+		}
+		public function removeOriginOffsetToEnd():void {
 			_end.x += _originOffset.x;
 			_end.y += _originOffset.y;
 		}
