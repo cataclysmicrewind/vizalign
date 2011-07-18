@@ -7,27 +7,18 @@ package  {
 	import flash.display.DisplayObject;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
 	import flash.text.TextField;
 	import flash.utils.describeType;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
-	import ktu.utils.BoundsUtils;
-	import ktu.utils.DisplayObjectUtils;
-	import ktu.utils.StageUtils;
 	/**
 	 * ...
 	 * 
-	 * 		//TODO: Test Using VizAlignments to setup the align call
-	 * 		//TODO: Test using VizAlignTarget to setup the align call
-	 * 		//TODO: VizAlign has the option to account for origin offsets
 	 * 		//TODO: Have VizAlign know how to work with TextFields properly
-	 * 		//TODO: Have VizAlign get the Rectangle for the tcs
 	 * 
 	 * 
 	 * 
@@ -91,7 +82,7 @@ package  {
 			var vizAlignments:Array = [];
 			vizAlignments[0] = new VizAlignment(AlignMethods.left, grid);
 			vizAlignments[1] = new VizAlignment(AlignMethods.bottom, grid);
-			var results:Array = VizAlign.align(targets, vizAlignments, false, true, stage);
+			var results:Array = VizAlign.align(targets, vizAlignments, false, true);
 			trace(results);
 			for (var i:int = 0; i < results.length; i++) {
 				var vat:VizAlignTarget = results[i];
@@ -111,6 +102,12 @@ package  {
 			var w:int = 200;
 			var hgap:int = 10;
 			var vgap:int = 10;
+			
+			//draw white bg
+			g.beginFill(0xFFFFFF);
+			g.drawRect( -.5, -.5, w, h);
+			
+			// draw grid
 			g.lineStyle(1);
 			for (var i:int = 0; i < w / hgap+1; i++) {	//columns
 				g.moveTo(i * hgap, 0);
@@ -120,9 +117,12 @@ package  {
 				g.moveTo(0, i * hgap);
 				g.lineTo(w, i * hgap);
 			}
-			VizAlign.align([grid], [new VizAlignment(AlignMethods.center, stage)], true, true, stage);
+			VizAlign.align([grid], [new VizAlignment(AlignMethods.center, stage)], true, true);
 			addChild(grid);
+			
+			grid.addEventListener(MouseEvent.MOUSE_DOWN, dragSomething);
 		}
+		
 		
 		private function createTargets():void {
 			// make a few sprites on the stage
@@ -165,9 +165,21 @@ package  {
 			var pixelHinting:Boolean = pixelHinting_chk.selected;
 			
 			VizAlign.pixelHinting = pixelHinting;
-			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], applyResults, ignoreOrigin, stage);
+			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], applyResults, ignoreOrigin);
 		}
 		
+		private var dragging:Object;
+		
+		private function dragSomething(e:MouseEvent):void {
+			Sprite(e.target).startDrag();
+			dragging = e.target;
+			stage.addEventListener(MouseEvent.MOUSE_UP, dropSomething);
+		}
+		
+		private function dropSomething(e:MouseEvent):void {
+			stage.removeEventListener(MouseEvent.MOUSE_UP, dropSomething);
+			e.target.stopDrag();
+		}
 		
 		
 	}
