@@ -7,6 +7,7 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.geom.ColorTransform;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import ktu.utils.align.capabilities.utils.ColorUtils;
 	
 	/**
 	 *
@@ -18,10 +19,6 @@ package ktu.utils.align.capabilities.gfx {
 	 * 	You can set the color, size, and orignOffset
 	 *
 	 *
-	 * 	TODO:
-	 * 		Make the origin Offset better
-	 * 		Add a txt field to it to show the origin offest always
-	 * 			What do I do if the target is too small?
 	 *
 	 *
 	 *
@@ -30,10 +27,10 @@ package ktu.utils.align.capabilities.gfx {
 	 */
 	public class Target extends Sprite {
 		
-		private var originX:int = 0;
-		private var originY:int = 0;
-		private var w:int = 100;
-		private var h:int = 100;
+		public var originX:int = 0;
+		public var originY:int = 0;
+		public var w:int = 100;
+		public var h:int = 100;
 		private var color:uint = 0x333333;
 		
 		private var showOrigin:Boolean = false;
@@ -79,7 +76,7 @@ package ktu.utils.align.capabilities.gfx {
 			graphics.drawRect( -originX, -originY, w, h);
 			graphics.endFill();
 			
-			var dcolor:Number = darken(color, .5);
+			var dcolor:Number = ColorUtils.darken(color, .5);
 			// draw drop
 			graphics.beginFill(dcolor);
 			graphics.drawRect( -originX + w - 1, -originY, 1, h);
@@ -106,9 +103,7 @@ package ktu.utils.align.capabilities.gfx {
 			// show origin ?
 			if (showOrigin) {
 				graphics.lineStyle(2, 0xFF0000, 1, true, "none", "none", "none");
-				
 				graphics.moveTo(corner.x, corner.y);
-				//graphics.moveTo( -originX, -originY);
 				graphics.lineTo(0, 0);
 				
 				graphics.moveTo( -5, 0);
@@ -125,34 +120,36 @@ package ktu.utils.align.capabilities.gfx {
 					return new Point (2, 2);
 					break;
 				case "topRight":
-					return new Point (-2, 2);
+					return new Point (-3, 2);
 					break;
 				case "bottomLeft":
-					return new Point (2, -2);
+					return new Point (2, -3);
 					break;
 				case "bottomRight":
-					return new Point (-2, -2);
+					return new Point (-3, -3);
 					break;
 			}
 			return new Point();
 		}
 		private function getHuskSizeOffset(closestCorner:Object, part:int):Point {
+			var small:int = 3;
+			var big:int = 8;
 			switch (closestCorner.corner) {
 				case "topLeft":
-					if (part == 1) return new Point (6, 2);
-					else return new Point(2, 6);
+					if (part == 1) return new Point (big, small);
+					else return new Point(small, big);
 					break;
 				case "topRight":
-					if (part == 1) return new Point (-6, 2);
-					else return new Point(-2, 6);
+					if (part == 1) return new Point (-big, small);
+					else return new Point(-small, big);
 					break;
 				case "bottomLeft":
-					if (part == 1) return new Point (6, -2);
-					else return new Point(2, -6);
+					if (part == 1) return new Point (big, -small);
+					else return new Point(small, -big);
 					break;
 				case "bottomRight":
-					if (part == 1) return new Point (-6, -2);
-					else return new Point(-2, -6);
+					if (part == 1) return new Point (-big, -small);
+					else return new Point(-small, -big);
 					break;
 			}
 			return new Point();
@@ -188,6 +185,8 @@ package ktu.utils.align.capabilities.gfx {
 		
 		private function onMouseUp(e:MouseEvent):void {
 			stopDrag();
+			x = int(x);
+			y = int(y);
 		}
 		
 		
@@ -203,22 +202,6 @@ package ktu.utils.align.capabilities.gfx {
 			redraw();
 		}
 		
-		public static function darken(color:Number, ratio:Number):Number{
-            var rgb:Object = getRGB(color);
-            for (var ele:String in rgb){
-                rgb[ele] = rgb[ele] * (1-ratio);
-            }
-            return (getHex(rgb.r, rgb.g, rgb.b));
-        }
-		public static function getRGB(color:Number):Object{
-            var r:Number = color >> 16 & 0xFF;
-            var g:Number = color >> 8 & 0xFF;
-            var b:Number = color & 0xFF;
-            return {r:r, g:g, b:b};
-        }
-		public static function getHex(r:Number, g:Number, b:Number):Number{
-            var rgb:String = "0x" + (r<16?"0":"") + r.toString(16) + (g<16?"0":"") + g.toString(16) + (b<16?"0":"") + b.toString(16);
-            return Number(rgb);
-        }
+		
 	}
 }

@@ -14,6 +14,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
+    <class path="lib" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -34,10 +35,10 @@
     <option useResourceBundleMetadata="True" />
     <option warnings="True" />
     <option verboseStackTraces="False" />
-    <option linkReport="" />
+    <option linkReport="bin/capabilities_size_report.xml" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="-link-report bin\sizeReport.xml" />
+    <option additional="" />
     <option compilerConstants="" />
     <option customSDK="" />
   </build>
@@ -47,7 +48,6 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <element path="lib\MinimalComps_0_9_9.swc" />
     <element path="lib\TweensyOriginalCS4.swc" />
   </libraryPaths>
   <!-- External Libraries -->
