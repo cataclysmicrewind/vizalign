@@ -20,7 +20,7 @@ package ktu.utils.align.capabilities.ui {
 			header.text = "to:";
 			
 			var list:List = new List(this, 10, header.height + 20);
-			list.width += 70;
+			list.width += 90;
 			
 			var up:PushButton = new PushButton(this, list.x + list.width, list.y, "△", onUpClicked);
 			up.width = 20,

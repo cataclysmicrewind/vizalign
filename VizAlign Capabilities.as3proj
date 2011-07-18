@@ -13,8 +13,9 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="src" />
     <class path="lib" />
+    <class path="capabilities" />
+    <class path="src" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -68,7 +69,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\ktu\utils\align\capabilities\VizAlignCapabilities.as" />
+    <compile path="capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
