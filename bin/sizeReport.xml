@@ -1,22 +1,43 @@
 <report>
   <scripts>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\ui\Target.as" mod="1310960372963" size="2289" optimizedsize="1230">
-      <def id="ktu.utils.align.capabilities.ui:Target" />
-      <pre id="flash.display:Sprite" />
-      <dep id="flash.events:MouseEvent" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\VizAlignLogo.as" mod="1310973401756" size="667" optimizedsize="297">
+      <def id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
+      <pre id="flash.display:Bitmap" />
       <dep id="AS3" />
-      <dep id="trace" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1310960386007" size="809" optimizedsize="452">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\VizAlignArena.as" mod="1310977769742" size="1579" optimizedsize="813">
+      <def id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
+      <pre id="flash.display:Sprite" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\Grid.as" mod="1310973882244" size="2287" optimizedsize="1297">
+      <def id="ktu.utils.align.capabilities.gfx:Grid" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.display:Graphics" />
+      <dep id="AS3" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1310977647202" size="1696" optimizedsize="1006">
       <def id="ktu.utils.align.capabilities:VizAlignCapabilities" />
       <pre id="flash.display:Sprite" />
-      <dep id="ktu.utils.align.capabilities.ui:Target" />
+      <dep id="ktu.utils.align.capabilities.gfx:Grid" />
+      <dep id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
+      <dep id="ktu.utils.align.capabilities.gfx:Target" />
+      <dep id="AS3" />
+      <dep id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\capabilities\gfx\Target.as" mod="1310977341437" size="3365" optimizedsize="1881">
+      <def id="ktu.utils.align.capabilities.gfx:Target" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
     </script>
   </scripts>
   <external-defs>
+    <ext id="flash.display:Bitmap" />
     <ext id="AS3" />
-    <ext id="trace" />
+    <ext id="flash.display:DisplayObject" />
+    <ext id="flash.display:Graphics" />
     <ext id="flash.display:Sprite" />
     <ext id="flash.events:MouseEvent" />
   </external-defs>
