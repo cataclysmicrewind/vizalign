@@ -102,7 +102,7 @@ package ktu.utils.align.capabilities.gfx {
 			
 			// show origin ?
 			if (showOrigin) {
-				graphics.lineStyle(2, 0xFF0000, 1, true, "none", "none", "none");
+				graphics.lineStyle(2, dcolor, 1, true, "none", "none", "none");
 				graphics.moveTo(corner.x, corner.y);
 				graphics.lineTo(0, 0);
 				

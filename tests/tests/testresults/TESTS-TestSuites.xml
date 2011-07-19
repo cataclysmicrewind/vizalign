@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="BusterSword" id="0" name="Left" package="ktu.utils.align.methods" skipped="0" tests="1" time="0.057" timestamp="2011-07-19T22:16:31">
+      <testcase classname="ktu.utils.align.methods::Left" name="simple" time="0.057" />
+
+  </testsuite>
+</testsuites>
