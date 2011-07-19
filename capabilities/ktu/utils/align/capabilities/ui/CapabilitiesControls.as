@@ -60,16 +60,25 @@ package ktu.utils.align.capabilities.ui {
 			var alignmentSelector:VizAlignmentSelector = new VizAlignmentSelector();
 			alignmentSelector.x = 310;
 			alignmentSelector.y = 20;
-			addChild(alignmentSelector);
+			
 			
 			options = new VizAlignOptions();
 			options.x = 550;
 			options.y = 20;
 			addChild(options);
 			
-			alignButton = new PushButton(this, 670, 60, "align", onAlignButtonClick);
+			addChild(alignmentSelector);
+			
+			var vrule2:Sprite = new Sprite ();
+			vrule2.graphics.lineStyle(1, 0x000000, 1, true, "none", "none", "none");
+			vrule2.graphics.lineTo(0, 180);
+			vrule2.x = 650;
+			vrule2.y = 10;
+			addChild(vrule2);
+			
+			alignButton = new PushButton(this, 670, 40, "align", onAlignButtonClick);
 			alignButton.width = 60;
-			alignButton.height = 40;
+			alignButton.height = 50;
 			alignButton.label.autoSize = true;
 			var fmt:TextFormat = alignButton.label.textField.getTextFormat();
 			fmt.bold = true;
@@ -77,9 +86,9 @@ package ktu.utils.align.capabilities.ui {
 			alignButton.label.textField.defaultTextFormat = fmt;
 			alignButton.label.text = "align";	
 			
-			resetButton = new PushButton(this, 670, 130, "reset", onResetButtonClicked);
+			resetButton = new PushButton(this, 670, 110, "reset", onResetButtonClicked);
 			resetButton.width = 60;
-			resetButton.height = 40;
+			resetButton.height = 50;
 			resetButton.label.autoSize = true;
 			fmt = resetButton.label.textField.getTextFormat();
 			fmt.bold = true;

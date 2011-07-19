@@ -37,7 +37,7 @@ package com.bit101.components
 		public static var BUTTON_FACE:uint = 0xFFFFFF;
 		public static var BUTTON_DOWN:uint = 0xEEEEEE;
 		public static var INPUT_TEXT:uint = 0x333333;
-		public static var LABEL_TEXT:uint = 0x666666;
+		public static var LABEL_TEXT:uint = 0x444444;
 		public static var DROPSHADOW:uint = 0x000000;
 		public static var PANEL:uint = 0xF3F3F3;
 		public static var PROGRESS_BAR:uint = 0xFFFFFF;
