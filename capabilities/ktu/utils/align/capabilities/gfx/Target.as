@@ -76,7 +76,7 @@ package ktu.utils.align.capabilities.gfx {
 			graphics.drawRect( -originX, -originY, w, h);
 			graphics.endFill();
 			
-			var dcolor:Number = ColorUtils.darken(color, .5);
+			var dcolor:Number = ColorUtils.darken(color, .3);
 			// draw drop
 			graphics.beginFill(dcolor);
 			graphics.drawRect( -originX + w - 1, -originY, 1, h);
