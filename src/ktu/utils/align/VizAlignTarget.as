@@ -46,7 +46,7 @@ package ktu.utils.align {
 			_end.x -= _originOffset.x;
 			_end.y -= _originOffset.y;
 		}
-		public function removeOriginOffsetToEnd():void {
+		public function removeOriginOffsetFromEnd():void {
 			_end.x += _originOffset.x;
 			_end.y += _originOffset.y;
 		}
