@@ -52,7 +52,7 @@ package ktu.utils.align.capabilities {
 			//
 			var alignments:Array = [new VizAlignment(AlignMethods.adjacentLeft, arena.targetCoordinateSpaces[2])]
 									//new VizAlignment(AlignMethods.scaleToFit, arena.targetCoordinateSpaces[1]) ];
-			//VizAlign.align (arena.targets, alignments, true, true);
+			VizAlign.align (arena.targets, alignments, true, true);
 			
 		}
 		

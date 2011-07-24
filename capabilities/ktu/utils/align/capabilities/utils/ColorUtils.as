@@ -17,7 +17,7 @@ package ktu.utils.align.capabilities.utils {
             }
             return (getHex(rgb.r, rgb.g, rgb.b));
         }
-		public static function getRGB(color:Number):Object{
+		public static function getRGB(color:Number):Object {
             var r:Number = color >> 16 & 0xFF;
             var g:Number = color >> 8 & 0xFF;
             var b:Number = color & 0xFF;

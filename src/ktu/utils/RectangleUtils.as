@@ -7,7 +7,7 @@ package ktu.utils {
 	public class RectangleUtils {
 		
 		
-		public static function cloneRectangleArray (array:Array /* of Rectangle */):Array/* of Rectangle */ {
+		public static function cloneRectangleArray (array:Array /*Rectangle*/):Array/*Rectangle*/ {
 			var dupeRects:Array = [];
 			for each (var rect:Rectangle in array) {
 				dupeRects.push (rect.clone());
@@ -37,8 +37,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalX (A:Rectangle, B:Rectangle):Number {
-			return check (A.left, B.left) ;
+		public static function sortGlobalX (a:Rectangle, b:Rectangle):Number {
+			return check (a.left, b.left) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the center pixel of each object in relation to the stage.
@@ -46,8 +46,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalCenterX (A:Rectangle, B:Rectangle):Number {
-			return check (A.x + (A.width/2) , B.x + (B.width/2)) ;
+		public static function sortGlobalCenterX (a:Rectangle, b:Rectangle):Number {
+			return check (a.x + (a.width/2) , b.x + (b.width/2)) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the right edge in relation to the stage.
@@ -55,8 +55,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalRight (A:Rectangle, B:Rectangle):Number {
-			return check (A.right, B.right) ;
+		public static function sortGlobalRight (a:Rectangle, b:Rectangle):Number {
+			return check (a.right, b.right) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by their width.
@@ -64,8 +64,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalWidth (A:Rectangle, B:Rectangle):Number {
-			return check (A.width, B.width) ;
+		public static function sortGlobalWidth (a:Rectangle, b:Rectangle):Number {
+			return check (a.width, b.width) ;
 		}
 		/*
 		*
@@ -81,8 +81,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalY (A:Rectangle, B:Rectangle):Number {
-			return check (A.top, B.top) ;
+		public static function sortGlobalY (a:Rectangle, b:Rectangle):Number {
+			return check (a.top, b.top) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the center pixel in relation to the stage.
@@ -90,8 +90,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalCenterY (A:Rectangle, B:Rectangle):Number {
-			return check (A.top + (A.height/2), B.top + (B.height/2)) ;
+		public static function sortGlobalCenterY (a:Rectangle, b:Rectangle):Number {
+			return check (a.top + (a.height/2), b.top + (b.height/2)) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by the bottom edge in relation to the stage.
@@ -99,8 +99,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalBottom (A:Rectangle, B:Rectangle):Number {
-			return check (A.bottom, B.bottom) ;
+		public static function sortGlobalBottom (a:Rectangle, b:Rectangle):Number {
+			return check (a.bottom, b.bottom) ;
 		}
 		/**
 		 * Method to be used with Array.sort() for sorting objects by their height.
@@ -108,8 +108,8 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortGlobalHeight (A:Rectangle, B:Rectangle):Number {
-			return check (A.height , B.height) ;
+		public static function sortGlobalHeight (a:Rectangle, b:Rectangle):Number {
+			return check (a.height , b.height) ;
 		}
 		/*
 		*
@@ -127,9 +127,9 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentLeft ( A:Rectangle, B:Rectangle ) :Number {
-			var i:int = sortGlobalX ( A, B ) ;
-			if ( i == 0 ) i = sortGlobalRight ( A, B ) ;
+		public static function sortAdjacentLeft ( a:Rectangle, b:Rectangle ) :Number {
+			var i:int = sortGlobalX ( a, b ) ;
+			if ( i == 0 ) i = sortGlobalRight ( a, b ) ;
 			return i;
 		}
 		/**
@@ -140,9 +140,9 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentRight (A:Rectangle, B:Rectangle):Number {
-			var i:int = sortGlobalRight ( A, B ) ;
-			if ( i == 0 ) i = sortGlobalX ( A, B ) ;
+		public static function sortAdjacentRight (a:Rectangle, b:Rectangle):Number {
+			var i:int = sortGlobalRight ( a, b ) ;
+			if ( i == 0 ) i = sortGlobalX ( a, b ) ;
 			return i;
 		}
 		/**
@@ -153,9 +153,9 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentTop (A:Rectangle, B:Rectangle):Number {
-			var i:int = sortGlobalY ( A, B ) ;
-			if ( i == 0 ) i = sortGlobalBottom ( A, B ) ;
+		public static function sortAdjacentTop (a:Rectangle, b:Rectangle):Number {
+			var i:int = sortGlobalY ( a, b ) ;
+			if ( i == 0 ) i = sortGlobalBottom ( a, b ) ;
 			return i;
 		}
 		/**
@@ -166,9 +166,9 @@ package ktu.utils {
 		 *
 		 *  Array.sort()
 		 */
-		public static function sortAdjacentBottom (A:Rectangle, B:Rectangle):Number {
-			var i:int = sortGlobalBottom ( A, B ) ;
-			if ( i == 0 ) i = sortGlobalY ( A, B ) ;
+		public static function sortAdjacentBottom (a:Rectangle, b:Rectangle):Number {
+			var i:int = sortGlobalBottom ( a, b ) ;
+			if ( i == 0 ) i = sortGlobalY ( a, b ) ;
 			return i;
 		}
 		/** 

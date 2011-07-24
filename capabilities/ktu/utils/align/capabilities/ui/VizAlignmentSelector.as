@@ -59,12 +59,14 @@ package ktu.utils.align.capabilities.ui {
 			var tcsList:List = new List(panel, tcsLabel.x + 10, tcsLabel.y + tcsLabel.height + 10);
 			tcsList.width = 180;
 			
-			var cancel:PushButton = new PushButton(panel, 10, panel.height - 30 - 10, "cancel");
+			var cancel:PushButton = new PushButton(panel, 0, panel.height - 30 - 10, "cancel");
 			cancel.width = 60;
 			cancel.height = 30;
-			var ok:PushButton = new PushButton(panel, panel.width - 60 - 10, panel.height - 30 - 10, "ok");
+			cancel.x = tcsList.x + tcsList.width - cancel.width;
+			var ok:PushButton = new PushButton(panel, 0, panel.height - 30 - 10, "ok");
 			ok.width = 60;
 			ok.height = 30;
+			ok.x = cancel.x - ok.width - 10;
 			
 			
 			
