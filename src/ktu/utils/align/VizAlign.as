@@ -8,17 +8,20 @@ package ktu.utils.align {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
+	
+	
+	/**
+	 * 
+	 * 
+	 * 	TODO:
+	 *		VizAlignment.align(targets);
+	 * 
+	 * 
+	 * 
+	 */
 	public class VizAlign {
 		
-		
-		
-		static public const TO_TARGETS			:Rectangle	= new Rectangle( -1, -1, -1, -1);// place holder when aligning targets to the bounding area they create
-		
-		static public var pixelHinting			:Boolean 	= true;
-		
-		
-		static private var _stageRef			:Stage;
-		static private const LEFT				:Function 	= AlignMethods.left;		// so that the AlignMethods class is always compiled with VizAlign... yuck
+		//static private const LEFT				:Function 	= AlignMethods.left;		// so that the AlignMethods class is always compiled with VizAlign... yuck
 		/**
 		 * 	TODO:
 		 * 		Make sure TO_TARGETS works
@@ -40,19 +43,17 @@ package ktu.utils.align {
 		 * @param	ignoreOrigin
 		 * @param	stage
 		 */
-		static public function align (targets:Array, vizAlignments:Array/* of VizAlignment */, applyResults:Boolean = false, ignoreOrigin:Boolean = false):Array {
+		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, applyResults:Boolean = false, ignoreOrigin:Boolean = false, pixelHinting:Boolean = false):Array {
 			targets = targets.concat();																				// copy array so we have new one (refactor when doing groups)
 			verifyInput(targets, vizAlignments);																	// verify that all the input is acceptable
 			
-			var vizAlignTargets:Array/* of VizAlignTarget */ = convertToAlignTargets(targets);						// convert all targets to VizAlignTarget
-			var alignedTargetBounds:Array/* of Rectangle */ = getBoundsFromVizAlignTargets(vizAlignTargets);		// get all rectangles to move
+			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToAlignTargets(targets);							// convert all targets to VizAlignTarget
+			var alignedTargetBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);				// get all rectangles to move
 			
 			
 			var length:uint = vizAlignments.length;																	// get lenght of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {																	// for each vizAlignment
-				var alignment:VizAlignment = vizAlignments[i];														// 		store ref to vizAlignment
-				var tcsBounds:Rectangle = getTCSBounds(vizAlignTargets, alignment.tcs);								// 		get the tcs Bounds
-				alignedTargetBounds = alignment.type(tcsBounds, alignedTargetBounds);								// 		align them and get the new Bounds for the targets
+				alignedTargetBounds = vizAlignments[i].align (alignedTargetBounds);
 			}																										// end loop
 			
 			updateEndRectanglesForVizAlignTargets(vizAlignTargets, alignedTargetBounds);							// apply the changes to each VizAlignTarget
@@ -133,13 +134,6 @@ package ktu.utils.align {
 		**************************************************************************************************
 		*/
 		
-		
-		
-		
-		
-		
-		
-		
 		static private function updateEndRectanglesForVizAlignTargets(alignTargets:Array, alignedTargetBounds:Array):void {
 			for (var i:int = 0; i < alignTargets.length; i++) {
 				var target:VizAlignTarget = alignTargets[i];
@@ -182,59 +176,6 @@ package ktu.utils.align {
 				}
 			}
 			return alignTargets;
-		}
-		/*
-		**************************************************************************************************
-		*
-		*  Coordinate Space Functions
-		*
-		* 			getTCSBounds
-		* 			getStageBounds
-		*
-		*
-		**************************************************************************************************
-		*/
-		static private function getTCSBounds(vizAlignTargets:Array, tcs:*):Rectangle {
-			var tcsBounds:Rectangle = new Rectangle();
-			switch (true) {
-				case tcs === TO_TARGETS:
-					tcsBounds = getToTargetsBounds(vizAlignTargets);
-					break;
-				case tcs is Rectangle:
-					tcsBounds = tcs;
-					break;
-				case tcs is Stage:
-					tcsBounds = getStageBounds(tcs);
-					break;
-				case tcs is DisplayObject:
-					tcsBounds = getDisplayObjectBounds(tcs);
-					break;
-				default:
-					return null;
-			}
-			return tcsBounds;
-		}
-		static private function getToTargetsBounds(targets:Array/* of VizAlignTarget */):Rectangle {
-			var tcsBounds:Rectangle = new Rectangle();
-			for (var i:int = 0; i < targets.length; i++) {
-					tcsBounds.union(VizAlignTarget(targets[i]).end);
-				}
-			return tcsBounds;
-		}
-		
-		static private function getDisplayObjectBounds(tcs:DisplayObject):Rectangle {
-			var rect:Rectangle = DisplayObject(tcs).getBounds(tcs);
-			var dx:Point = tcs.localToGlobal(new Point(rect.x, rect.y));
-			rect.x = dx.x;
-			rect.y = dx.y;
-			return rect;
-		}
-		public static function getStageBounds(stage:Stage):Rectangle {
-			if (stage.displayState == StageDisplayState.FULL_SCREEN) {
-				return new Rectangle (0, 0, stage.fullScreenSourceRect.width, stage.fullScreenSourceRect.height);
-			} else {
-				return new Rectangle (0, 0, stage.stageWidth, stage.stageHeight);
-			}
 		}
 		
 		

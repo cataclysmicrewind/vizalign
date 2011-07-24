@@ -4,6 +4,8 @@ package ktu.utils.align {
 	
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
+	import flash.display.StageDisplayState;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
 	/**
@@ -25,6 +27,8 @@ package ktu.utils.align {
 	 * 																																							</listing>
 	 */
 	public class VizAlignment {
+		
+		static public const TO_TARGETS	:Rectangle	= new Rectangle( -1, -1, -1, -1);// place holder when aligning targets to the bounding area they create
 		
 		private var _type	:Function;
 		private var _tcs	:*;
@@ -71,10 +75,71 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @return
 		 */
-		public function align (targets:Array/* of Rectangle */):Array {
-			
-			return []
+		public function align (targetBounds:Array/*Rectangle*/):Array {
+			var tcsBounds:Rectangle = getTCSBounds(targetBounds, tcs);									//	get the tcs Bounds
+			var alignedTargetBounds:Array/*Rectangle*/ = type(tcsBounds, targetBounds);	//	align them and get the new Bounds for the targets
+			return alignedTargetBounds;
 		}
+		
+		
+		
+		/*
+		**************************************************************************************************
+		*
+		*  Coordinate Space Functions
+		*
+		* 			getTCSBounds
+		* 			getStageBounds
+		*
+		*
+		**************************************************************************************************
+		*/
+		static private function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*):Rectangle {
+			var tcsBounds:Rectangle = new Rectangle();
+			switch (true) {
+				case tcs === TO_TARGETS:
+					tcsBounds = getToTargetsBounds(targetBounds);
+					break;
+				case tcs is Rectangle:
+					tcsBounds = tcs;
+					break;
+				case tcs is Stage:
+					tcsBounds = getStageBounds(tcs);
+					break;
+				case tcs is DisplayObject:
+					tcsBounds = getDisplayObjectBounds(tcs);
+					break;
+				default:
+					return null;
+			}
+			return tcsBounds;
+		}
+		static private function getToTargetsBounds(targetBounds:Array/*Rectangle*/):Rectangle {
+			var tcsBounds:Rectangle = new Rectangle();
+			for (var i:int = 0; i < targetBounds.length; i++) {
+					tcsBounds.union(targetBounds[i]);
+				}
+			return tcsBounds;
+		}
+		
+		static private function getDisplayObjectBounds(tcs:DisplayObject):Rectangle {
+			var rect:Rectangle = DisplayObject(tcs).getBounds(tcs);
+			var dx:Point = tcs.localToGlobal(new Point(rect.x, rect.y));
+			rect.x = dx.x;
+			rect.y = dx.y;
+			return rect;
+		}
+		public static function getStageBounds(stage:Stage):Rectangle {
+			if (stage.displayState == StageDisplayState.FULL_SCREEN) {
+				return new Rectangle (0, 0, stage.fullScreenSourceRect.width, stage.fullScreenSourceRect.height);
+			} else {
+				return new Rectangle (0, 0, stage.stageWidth, stage.stageHeight);
+			}
+		}
+		
+		
+		
+		
 		
 		/** @private **/
 		public function toString ():String {
