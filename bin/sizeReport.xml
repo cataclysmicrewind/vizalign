@@ -1,461 +1,214 @@
 <report>
   <scripts>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.external:IExternalDependencyRunner)" mod="1293152844334" size="1055" optimizedsize="386">
-      <def id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <pre id="org.flexunit.runner:IRunner" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyTimeline)" mod="1232368084000" size="9514" optimizedsize="4448">
+      <def id="com.flashdynamix.motion:TweensyTimeline" />
       <pre id="Object" />
-      <dep id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
       <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.filters:DynamicFilter)" mod="1293152844350" size="1243" optimizedsize="560">
-      <def id="org.flexunit.runner.manipulation.filters:DynamicFilter" />
-      <pre id="org.flexunit.runner.manipulation.filters:AbstractFilter" />
-      <dep id="TypeError" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ObjectTween)" mod="1232396566000" size="2172" optimizedsize="994">
+      <def id="com.flashdynamix.motion.plugins:ObjectTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:StatementSequencer)" mod="1293152844318" size="2738" optimizedsize="1452">
-      <def id="org.flexunit.internals.runners.statements:StatementSequencer" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:IFilterable)" mod="1293152844334" size="642" optimizedsize="212">
-      <def id="org.flexunit.runner.manipulation:IFilterable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.manipulation:IFilter" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.async:AsyncHandler)" mod="1293152842694" size="1866" optimizedsize="952">
-      <def id="org.flexunit.async:AsyncHandler" />
-      <pre id="flash.events:EventDispatcher" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.events:AsyncEvent" />
-      <dep id="flash.utils:Timer" />
-      <dep id="flash.events:TimerEvent" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.core:IUID)" mod="1265215569341" size="444" optimizedsize="152">
-      <def id="mx.core:IUID" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.runners.statements:MethodCompleteWithParamsStatement)" mod="1293152842694" size="2761" optimizedsize="1718">
-      <def id="org.flexunit.experimental.runners.statements:MethodCompleteWithParamsStatement" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.experimental.theories.internals:Assignments" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.experimental.theories.internals.error:CouldNotGenerateValueException" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.model:EachTestNotifier)" mod="1293152844287" size="1932" optimizedsize="923">
-      <def id="org.flexunit.internals.runners.model:EachTestNotifier" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:FailOnTimeout)" mod="1293152844318" size="2496" optimizedsize="1489">
-      <def id="org.flexunit.internals.runners.statements:FailOnTimeout" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flash.utils:Timer" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories:ParameterSignature)" mod="1293152842694" size="3197" optimizedsize="1360">
-      <def id="org.flexunit.experimental.theories:ParameterSignature" />
-      <pre id="Object" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="flex.lang.reflect:Constructor" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestSuiteTestListener)" mod="1240181186299" size="2144" optimizedsize="1063">
-      <def id="flexunit.framework:TestSuiteTestListener" />
-      <pre id="flexunit.framework:TestListener" />
-      <pre id="Object" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:TestResult" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="flash.utils:Timer" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="flexunit.framework:TestSuite" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:Fail)" mod="1293152844318" size="859" optimizedsize="368">
-      <def id="org.flexunit.internals.runners.statements:Fail" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories:Theories)" mod="1293152842694" size="3542" optimizedsize="2033">
-      <def id="org.flexunit.experimental.theories:Theories" />
-      <pre id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <pre id="org.flexunit.runners:BlockFlexUnit4ClassRunner" />
-      <dep id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-      <dep id="org.flexunit.internals.dependency:ExternalDependencyResolver" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:AsyncTestHelper)" mod="1240181186159" size="2201" optimizedsize="1148">
-      <def id="flexunit.framework:AsyncTestHelper" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="flexunit.framework:AssertStringFormats" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:Assert" />
-      <dep id="mx.utils:StringUtil" />
-      <dep id="flexunit.framework:TestResult" />
-      <dep id="flash.utils:Timer" />
-      <dep id="flash.events:TimerEvent" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunBefores)" mod="1293152844318" size="1393" optimizedsize="687">
-      <def id="org.flexunit.internals.runners.statements:RunBefores" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:SequencerWithDecoration" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.token:ChildResult)" mod="1293152844396" size="622" optimizedsize="246">
-      <def id="org.flexunit.token:ChildResult" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.utils:ArrayList)" mod="1240181184068" size="1824" optimizedsize="820">
-      <def id="flexunit.utils:ArrayList" />
-      <pre id="flexunit.utils:Collection" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flexunit.utils:CollectionIterator" />
-      <dep id="flexunit.utils:Iterator" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunAftersInline)" mod="1293152844318" size="2102" optimizedsize="1175">
-      <def id="org.flexunit.internals.runners.statements:RunAftersInline" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.internals.runners.statements:RunAfters" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="Error" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:UIDUtil)" mod="1265215574685" size="4134" optimizedsize="2895">
-      <def id="mx.utils:UIDUtil" />
-      <pre id="Object" />
-      <dep id="mx.core:IPropertyChangeNotifier" />
-      <dep id="flash.utils:ByteArray" />
       <dep id="Math" />
-      <dep id="mx.core:IUID" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:ObjectPool)" mod="1232273744000" size="1405" optimizedsize="725">
+      <def id="com.flashdynamix.utils:ObjectPool" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:FontAsset)" mod="1306872041437" size="497" optimizedsize="282">
+      <def id="mx.core:FontAsset" />
+      <pre id="mx.core:IFlexAsset" />
+      <pre id="flash.text:Font" />
+      <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-      <dep id="mx.utils:XMLNotifier" />
-      <dep id="XMLList" />
-      <dep id="mx.core:IUIComponent" />
-      <dep id="Error" />
-      <dep id="Date" />
-      <dep id="AS3" />
-      <dep id="XML" />
-      <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners:InitializationError)" mod="1293152844287" size="888" optimizedsize="367">
-      <def id="org.flexunit.internals.runners:InitializationError" />
-      <pre id="Error" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:SoundTween)" mod="1232241758000" size="2961" optimizedsize="1469">
+      <def id="com.flashdynamix.motion.plugins:SoundTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.utils:ClassNameUtil)" mod="1293152844396" size="971" optimizedsize="426">
-      <def id="org.flexunit.utils:ClassNameUtil" />
-      <pre id="Object" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="AS3" />
-      <dep id="RegExp" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.dependency:IExternalDependencyResolver)" mod="1293152844271" size="1485" optimizedsize="453">
-      <def id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.external:ExternalDependencyToken" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners.model:ParameterizedMethod)" mod="1293156153904" size="2345" optimizedsize="1236">
-      <def id="org.flexunit.runners.model:ParameterizedMethod" />
-      <pre id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
+      <dep id="flash.media:SoundTransform" />
       <dep id="Math" />
-      <dep id="XML" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:MetaDataBuilder)" mod="1293152842725" size="3762" optimizedsize="2256">
-      <def id="org.flexunit.internals.builders:MetaDataBuilder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="TypeError" />
-      <dep id="ReferenceError" />
-      <dep id="ArgumentError" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="org.flexunit.runners.model:IRunnerBuilder" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.metadata:MetaDataArgument)" mod="1293152842678" size="1522" optimizedsize="701">
-      <def id="flex.lang.reflect.metadata:MetaDataArgument" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:DisplayTween)" mod="1232241384000" size="3395" optimizedsize="1838">
+      <def id="com.flashdynamix.motion.plugins:DisplayTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <pre id="Object" />
-      <dep id="ArgumentError" />
       <dep id="AS3" />
-      <dep id="XML" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners:Parameterized)" mod="1293157621938" size="8196" optimizedsize="4786">
-      <def id="org.flexunit.runners:Parameterized" />
-      <pre id="org.flexunit.runners:ParentRunner" />
-      <pre id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <pre id="org.flexunit.runners:BlockFlexUnit4ClassRunner" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="org.flexunit.runners.model:ParameterizedMethod" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.internals.runners:ErrorReportingRunner" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="Error" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Panel)" mod="1302418241000" size="3320" optimizedsize="1655">
+      <def id="com.bit101.components:Panel" />
+      <pre id="com.bit101.components:Component" />
       <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.internals.dependency:ExternalDependencyResolver" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyData" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.events:UnknownError)" mod="1293156153904" size="882" optimizedsize="449">
-      <def id="org.flexunit.events:UnknownError" />
-      <pre id="Error" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="flash.events:ErrorEvent" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.core:IFlexDisplayObject)" mod="1265215570044" size="6226" optimizedsize="1339">
-      <def id="mx.core:IFlexDisplayObject" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="flash.display:IBitmapDrawable" />
-      <pre id="Object" />
-      <dep id="flash.accessibility:AccessibilityProperties" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
       <dep id="flash.display:DisplayObjectContainer" />
       <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:LoaderInfo" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.geom:Point" />
-      <dep id="flash.geom:Transform" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:OrderArgumentPlusInheritanceSorter)" mod="1293152844350" size="1902" optimizedsize="944">
-      <def id="org.flexunit.runner.manipulation:OrderArgumentPlusInheritanceSorter" />
-      <pre id="org.flexunit.runner.manipulation:IFixtureSorter" />
-      <pre id="org.flexunit.runner.manipulation:ISorter" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Style)" mod="1302418241000" size="1734" optimizedsize="1038">
+      <def id="com.bit101.components:Style" />
       <pre id="Object" />
       <dep id="AS3" />
-      <dep id="org.flexunit.runner.manipulation:OrderArgumentSorter" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.manipulation:ISortable" />
-      <dep id="org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestFailure)" mod="1240181186252" size="1378" optimizedsize="590">
-      <def id="flexunit.framework:TestFailure" />
-      <pre id="Object" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:List)" mod="1302418241000" size="7890" optimizedsize="3844">
+      <def id="com.bit101.components:List" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:Event" />
+      <dep id="com.bit101.components:Panel" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="com.bit101.components:VScrollBar" />
       <dep id="AS3" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="Error" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:ListItem" />
+      <dep id="Math" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.model:MultipleFailureException)" mod="1293152844303" size="1088" optimizedsize="421">
-      <def id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:IgnoredBuilder)" mod="1293152842725" size="1096" optimizedsize="547">
-      <def id="org.flexunit.internals.builders:IgnoredBuilder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.internals.builders:IgnoredClassRunner" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.core:IFlexModuleFactory)" mod="1265215569200" size="1411" optimizedsize="437">
-      <def id="mx.core:IFlexModuleFactory" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.sequence:SequenceRunner)" mod="1293152844412" size="3016" optimizedsize="1442">
-      <def id="org.fluint.sequence:SequenceRunner" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyGroup)" mod="1232371238000" size="11101" optimizedsize="5460">
+      <def id="com.flashdynamix.motion:TweensyGroup" />
       <pre id="Object" />
       <dep id="flash.events:Event" />
-      <dep id="org.fluint.sequence:ISequencePend" />
-      <dep id="org.fluint.sequence:ISequenceStep" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="flash.utils:getQualifiedClassName" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.media:SoundChannel" />
       <dep id="AS3" />
-      <dep id="org.fluint.sequence:ISequenceAction" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.geom:ColorTransform" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.builders:MetaDataAnnotationBuilder)" mod="1293152842647" size="1227" optimizedsize="606">
-      <def id="flex.lang.reflect.builders:MetaDataAnnotationBuilder" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:CheckBox)" mod="1302418241000" size="2599" optimizedsize="1421">
+      <def id="com.bit101.components:CheckBox" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:TweensyPluginList)" mod="1232274940000" size="2071" optimizedsize="1152">
+      <def id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion.plugins:DisplayTween" />
+      <dep id="com.flashdynamix.motion.plugins:MovieClipTween" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="com.flashdynamix.motion.plugins:FilterTween" />
+      <dep id="com.flashdynamix.motion.plugins:ObjectTween" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+      <dep id="com.flashdynamix.utils:MultiTypeObjectPool" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="com.flashdynamix.motion.plugins:SoundTween" />
+      <dep id="com.flashdynamix.motion.plugins:ColorTween" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="com.flashdynamix.motion.plugins:MatrixTween" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.geom:ColorTransform" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="flash.display:MovieClip" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:PushButton)" mod="1302418241000" size="3780" optimizedsize="2016">
+      <def id="com.bit101.components:PushButton" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1311598760199" size="826" optimizedsize="441">
+      <def id="ktu.utils:ArrayUtils" />
       <pre id="Object" />
       <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-      <dep id="flex.lang.reflect.utils:MetadataTools" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners.model:IRunnerBuilder)" mod="1293152844365" size="1125" optimizedsize="336">
-      <def id="org.flexunit.runners.model:IRunnerBuilder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.sortingInheritance:ClassInheritanceOrderCache)" mod="1293152844365" size="2117" optimizedsize="1039">
-      <def id="org.flexunit.runner.manipulation.sortingInheritance:ClassInheritanceOrderCache" />
-      <pre id="Object" />
-      <pre id="org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.utils:DescriptionUtil" />
-      <dep id="org.flexunit.runner:IDescription" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache)" mod="1293152844365" size="969" optimizedsize="328">
-      <def id="org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache" />
-      <pre id="Object" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:ListItem)" mod="1302418241000" size="3459" optimizedsize="1791">
+      <def id="com.bit101.components:ListItem" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Label" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:OnlyRecognizedTestClassBuilder)" mod="1293152842725" size="1616" optimizedsize="843">
-      <def id="org.flexunit.internals.builders:OnlyRecognizedTestClassBuilder" />
-      <pre id="org.flexunit.internals.builders:AllDefaultPossibilitiesBuilder" />
-      <dep id="org.flexunit.internals.builders:FlexUnit4Builder" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Slider)" mod="1302418241000" size="5382" optimizedsize="2759">
+      <def id="com.bit101.components:Slider" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
-      <dep id="org.flexunit.internals.builders:FlexUnit4QualifiedBuilder" />
-      <dep id="org.flexunit.runners.model:IRunnerBuilder" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="Math" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect:Method)" mod="1293152842647" size="5222" optimizedsize="2679">
-      <def id="flex.lang.reflect:Method" />
-      <pre id="Object" />
-      <dep id="ArgumentError" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ColorTween)" mod="1232241670000" size="3525" optimizedsize="1952">
+      <def id="com.flashdynamix.motion.plugins:ColorTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.geom:ColorTransform" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:ISorter)" mod="1293152844350" size="791" optimizedsize="268">
-      <def id="org.flexunit.runner.manipulation:ISorter" />
-      <pre id="Object" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MatrixTween)" mod="1232241728000" size="3297" optimizedsize="1734">
+      <def id="com.flashdynamix.motion.plugins:MatrixTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit:AssertionError)" mod="1293152842678" size="565" optimizedsize="212">
-      <def id="org.flexunit:AssertionError" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.fields:FieldMetaDataSorter)" mod="1293152844350" size="1689" optimizedsize="837">
-      <def id="org.flexunit.runner.manipulation.fields:FieldMetaDataSorter" />
-      <pre id="org.flexunit.runner.manipulation.fields:IFieldSorter" />
-      <pre id="Object" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="flex.lang.reflect:Field" />
-    </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\RectangleUtils.as" mod="1310992513223" size="2720" optimizedsize="1266">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\RectangleUtils.as" mod="1311612796134" size="2629" optimizedsize="1266">
       <def id="ktu.utils:RectangleUtils" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.core:IPropertyChangeNotifier)" mod="1265215569904" size="427" optimizedsize="158">
-      <def id="mx.core:IPropertyChangeNotifier" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="mx.core:IUID" />
-      <pre id="Object" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Component_Ronda)" mod="1302418241000" size="813" optimizedsize="244">
+      <def id="com.bit101.components:Component_Ronda" />
+      <pre id="mx.core:FontAsset" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher)" mod="1293152844271" size="1318" optimizedsize="402">
-      <def id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
-      <pre id="Object" />
-      <dep id="org.flexunit.token:AsyncCoreStartupToken" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:VScrollBar)" mod="1302418241000" size="804" optimizedsize="427">
+      <def id="com.bit101.components:VScrollBar" />
+      <pre id="com.bit101.components:ScrollBar" />
       <dep id="AS3" />
-      <dep id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Slider" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:ProtectedMiddleTestCase)" mod="1240181186346" size="823" optimizedsize="310">
-      <def id="flexunit.framework:ProtectedMiddleTestCase" />
-      <pre id="flexunit.framework:Protectable" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MovieClipTween)" mod="1232241384000" size="3530" optimizedsize="1917">
+      <def id="com.flashdynamix.motion.plugins:MovieClipTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
       <pre id="Object" />
-      <dep id="flexunit.framework:TestCase" />
       <dep id="AS3" />
+      <dep id="Math" />
+      <dep id="flash.display:MovieClip" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1310992513229" size="13420" optimizedsize="6460">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311613644565" size="2353" optimizedsize="1321">
+      <def id="ktu.utils.align:VizAlignTarget" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1311612784750" size="12720" optimizedsize="6088">
       <def id="ktu.utils.align:AlignMethods" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -464,1643 +217,192 @@
       <dep id="ktu.utils:ArrayUtils" />
       <dep id="ktu.utils:RectangleUtils" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:Matcher)" mod="1268116530754" size="630" optimizedsize="239">
-      <def id="org.hamcrest:Matcher" />
-      <pre id="org.hamcrest:SelfDescribing" />
-      <pre id="Object" />
-      <dep id="org.hamcrest:Description" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:FlexUnitCore)" mod="1293156153904" size="7234" optimizedsize="4365">
-      <def id="org.flexunit.runner:FlexUnitCore" />
-      <pre id="flash.events:EventDispatcher" />
+    <script name="A:\ktu\VizAlign\src\Main.as" mod="1311609824373" size="4505" optimizedsize="3134">
+      <def id="Main" />
+      <pre id="flash.display:Sprite" />
+      <dep id="ktu.utils.align:VizAlignment" />
+      <dep id="com.bit101.components:CheckBox" />
       <dep id="flash.events:Event" />
-      <dep id="org.flexunit.runners:Parameterized" />
-      <dep id="org.flexunit.runner.notification.async:AsyncListenerWatcher" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <dep id="org.flexunit.runner.notification:RunListener" />
-      <dep id="org.flexunit.runner:Request" />
-      <dep id="flash.display:LoaderInfo" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.token:AsyncCoreStartupToken" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="org.flexunit.runner.notification:IRunListener" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRequest" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="flash.events:IEventDispatcher" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit.experimental.theories:Theories" />
-      <dep id="org.flexunit.runner.notification:IAsyncStartupRunListener" />
-      <dep id="Error" />
-      <dep id="org.fluint.uiImpersonation:VisualTestEnvironmentBuilder" />
-      <dep id="org.flexunit.internals.dependency:ExternalRunnerDependencyWatcher" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner.notification:RunNotifier" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.events:UnknownError" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:IDescribable)" mod="1293152844334" size="566" optimizedsize="186">
-      <def id="org.flexunit.runner:IDescribable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.events:PropertyChangeEvent)" mod="1265215590029" size="1369" optimizedsize="688">
-      <def id="mx.events:PropertyChangeEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="mx.events:PropertyChangeEventKind" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:OrderArgumentSorter)" mod="1293152844350" size="1890" optimizedsize="988">
-      <def id="org.flexunit.runner.manipulation:OrderArgumentSorter" />
-      <pre id="org.flexunit.runner.manipulation:ISorter" />
-      <pre id="Object" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.manipulation:ISortable" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.core:IUIComponent)" mod="1265215569966" size="4555" optimizedsize="1152">
-      <def id="mx.core:IUIComponent" />
-      <pre id="Object" />
-      <pre id="mx.core:IFlexDisplayObject" />
-      <dep id="mx.managers:ISystemManager" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:IFixtureSorter)" mod="1293152844334" size="861" optimizedsize="371">
-      <def id="org.flexunit.runner.manipulation:IFixtureSorter" />
-      <pre id="org.flexunit.runner.manipulation:ISorter" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:IRunListener)" mod="1293152844365" size="1623" optimizedsize="429">
-      <def id="org.flexunit.runner.notification:IRunListener" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-cilistener-4.1.0_RC2-4-4.1.0.16076.swc(org.flexunit.listeners:CIListener)" mod="1293152844584" size="6470" optimizedsize="3596">
-      <def id="org.flexunit.listeners:CIListener" />
-      <pre id="org.flexunit.runner.notification:ITemporalRunListener" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="org.flexunit.runner.notification:IAsyncStartupRunListener" />
-      <dep id="flash.events:Event" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="trace" />
-      <dep id="org.flexunit.runner.notification.async:AsyncListenerWatcher" />
-      <dep id="flash.events:DataEvent" />
-      <dep id="flash.events:IOErrorEvent" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.listeners.closer:ApplicationCloser" />
-      <dep id="flash.events:SecurityErrorEvent" />
-      <dep id="Error" />
-      <dep id="org.flexunit.reporting:FailureFormatter" />
-      <dep id="org.flexunit.listeners.closer:StandAloneFlashPlayerCloser" />
-      <dep id="flash.net:XMLSocket" />
-      <dep id="AS3" />
-      <dep id="flash.utils:Timer" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="org.flexunit.runner:Descriptor" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories.internals:Assignments)" mod="1293152842709" size="4147" optimizedsize="1960">
-      <def id="org.flexunit.experimental.theories.internals:Assignments" />
-      <pre id="Object" />
-      <dep id="org.flexunit.experimental.theories:ParameterSignature" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.experimental.theories.internals.error:CouldNotGenerateValueException" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.experimental.theories.internals:AllMembersSupplier" />
-      <dep id="org.flexunit.experimental.theories:IPotentialAssignment" />
-      <dep id="org.flexunit.experimental.theories:IParameterSupplier" />
-      <dep id="flex.lang.reflect:Constructor" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.namespaces:classInternal)" mod="1293152844271" size="256" optimizedsize="143">
-      <def id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:XMLNotifier)" mod="1265215574872" size="2408" optimizedsize="1329">
-      <def id="mx.utils:XMLNotifier" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="XML" />
-      <dep id="mx.utils:IXMLNotifiable" />
-      <dep id="XMLList" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:Request)" mod="1293152844334" size="3309" optimizedsize="1697">
-      <def id="org.flexunit.runner:Request" />
-      <pre id="org.flexunit.runner:IRequest" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.manipulation.filters:DynamicFilter" />
-      <dep id="org.flexunit.internals.requests:QualifyingRequest" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.runner.manipulation:ISort" />
-      <dep id="trace" />
-      <dep id="org.flexunit.runners:Suite" />
-      <dep id="org.flexunit.internals.requests:ClassRequest" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.internals.builders:AllDefaultPossibilitiesBuilder" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner.manipulation:IFilter" />
-      <dep id="org.flexunit.internals.requests:FilterRequest" />
-      <dep id="org.flexunit.internals.requests:SortingRequest" />
-      <dep id="org.flexunit.runner.manipulation.filters:MethodNameFilter" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners:ParentRunner)" mod="1293156153904" size="8165" optimizedsize="4578">
-      <def id="org.flexunit.runners:ParentRunner" />
-      <pre id="org.flexunit.runner:IRunner" />
-      <pre id="org.flexunit.runner.manipulation:ISortable" />
-      <pre id="Object" />
-      <dep id="org.flexunit.internals.runners.model:EachTestNotifier" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="org.flexunit.internals.runners.statements:RunBeforesClass" />
-      <dep id="org.flexunit.internals.runners:ChildRunnerSequencer" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.runner.manipulation:ISorter" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.manipulation:NoTestsRemainException" />
-      <dep id="org.flexunit.runner.manipulation:OrderArgumentPlusInheritanceSorter" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.internals.runners:ErrorReportingRunner" />
-      <dep id="org.flexunit.internals.runners.statements:RunAftersClass" />
-      <dep id="Error" />
-      <dep id="org.flexunit.internals.runners.statements:StatementSequencer" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="org.flexunit.runner.manipulation:IFilter" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.token:IAsyncTestToken" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.builders:FieldBuilder)" mod="1293152842647" size="1371" optimizedsize="694">
-      <def id="flex.lang.reflect.builders:FieldBuilder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.dependency:ExternalDependencyResolver)" mod="1293156153904" size="4797" optimizedsize="2584">
-      <def id="org.flexunit.internals.dependency:ExternalDependencyResolver" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="flash.events:Event" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="Error" />
-      <dep id="org.flexunit.runner.external:ExternalDependencyToken" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyData" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="org.flexunit.internals.builders:MetaDataBuilder" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyLoader" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.utils:MetadataTools)" mod="1293152842678" size="6372" optimizedsize="3773">
-      <def id="flex.lang.reflect.utils:MetadataTools" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners.model:FrameworkMethod)" mod="1293152844365" size="3705" optimizedsize="1698">
-      <def id="org.flexunit.runners.model:FrameworkMethod" />
-      <pre id="Object" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:FlexUnit4Builder)" mod="1293152842725" size="1039" optimizedsize="456">
-      <def id="org.flexunit.internals.builders:FlexUnit4Builder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runners:BlockFlexUnit4ClassRunner" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.utils:StringUtil)" mod="1265215574904" size="2756" optimizedsize="1459">
-      <def id="mx.utils:StringUtil" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="RegExp" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestListener)" mod="1240181186205" size="1007" optimizedsize="285">
-      <def id="flexunit.framework:TestListener" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestSuite)" mod="1240181186283" size="3716" optimizedsize="1884">
-      <def id="flexunit.framework:TestSuite" />
-      <pre id="flexunit.framework:Test" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:TestCase" />
       <dep id="flash.utils:describeType" />
-      <dep id="flexunit.utils:Collection" />
+      <dep id="ktu.utils.align:AlignMethods" />
+      <dep id="trace" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="ktu.utils.align:VizAlignTarget" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.display:Graphics" />
+      <dep id="flash.text:TextField" />
       <dep id="AS3" />
-      <dep id="flexunit.framework:TestSuiteTestListener" />
-      <dep id="flexunit.framework:TestResult" />
-      <dep id="flexunit.framework:WarningTestCase" />
-      <dep id="flexunit.utils:ArrayList" />
-      <dep id="flexunit.utils:Iterator" />
-      <dep id="Error" />
+      <dep id="com.bit101.components:RadioButton" />
+      <dep id="com.bit101.components:ComboBox" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="XML" />
+      <dep id="ktu.utils.align:VizAlign" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.constants:AnnotationConstants)" mod="1293152842694" size="1254" optimizedsize="675">
-      <def id="org.flexunit.constants:AnnotationConstants" />
-      <pre id="Object" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:FilterTween)" mod="1232241711000" size="2860" optimizedsize="1500">
+      <def id="com.flashdynamix.motion.plugins:FilterTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="flash.filters:BitmapFilter" />
       <dep id="AS3" />
+      <dep id="flash.filters:ColorMatrixFilter" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals:AssumptionViolatedException)" mod="1293152842709" size="1299" optimizedsize="646">
-      <def id="org.flexunit.internals:AssumptionViolatedException" />
-      <pre id="org.hamcrest:SelfDescribing" />
-      <pre id="Error" />
-      <dep id="org.hamcrest:Description" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Label)" mod="1302418241000" size="2224" optimizedsize="1223">
+      <def id="com.bit101.components:Label" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.text:TextFieldAutoSize" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.text:TextFormat" />
       <dep id="AS3" />
-      <dep id="org.hamcrest:Matcher" />
-      <dep id="org.hamcrest:StringDescription" />
+      <dep id="flash.text:TextField" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.uiImpersonation.actionScript:ActionScriptEnvironmentBuilder)" mod="1293152844412" size="1249" optimizedsize="611">
-      <def id="org.fluint.uiImpersonation.actionScript:ActionScriptEnvironmentBuilder" />
-      <pre id="org.fluint.uiImpersonation:IVisualEnvironmentBuilder" />
-      <pre id="Object" />
-      <dep id="org.fluint.uiImpersonation.actionScript:ActionScriptVisualTestEnvironment" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:ComboBox)" mod="1302418241000" size="7923" optimizedsize="3460">
+      <def id="com.bit101.components:ComboBox" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="com.bit101.components:List" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
       <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:Sorter)" mod="1293152844350" size="1019" optimizedsize="456">
-      <def id="org.flexunit.runner.manipulation:Sorter" />
-      <pre id="org.flexunit.runner.manipulation:ISorter" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.manipulation:ISortable" />
-    </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1310992513238" size="2264" optimizedsize="1224">
-      <def id="ktu.utils.align:VizAlignTarget" />
-      <pre id="Object" />
-      <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.display:Stage" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.events:CollectionEvent)" mod="1265215589575" size="1220" optimizedsize="656">
-      <def id="mx.events:CollectionEvent" />
-      <pre id="flash.events:Event" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:Component)" mod="1302418241000" size="3763" optimizedsize="1664">
+      <def id="com.bit101.components:Component" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.display:StageScaleMode" />
+      <dep id="flash.events:Event" />
       <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="Math" />
+      <dep id="com.bit101.components:Component_Ronda" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Stage" />
+      <dep id="flash.display:StageAlign" />
+      <dep id="flash.filters:DropShadowFilter" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.constants:AnnotationArgumentConstants)" mod="1293152842694" size="932" optimizedsize="447">
-      <def id="org.flexunit.constants:AnnotationArgumentConstants" />
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:RadioButton)" mod="1302418241000" size="3488" optimizedsize="1917">
+      <def id="com.bit101.components:RadioButton" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:ScrollBar)" mod="1302418241000" size="8571" optimizedsize="4245">
+      <def id="com.bit101.components:ScrollBar" />
+      <pre id="com.bit101.components:Slider" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.utils:Timer" />
+      <dep id="Math" />
+      <dep id="flash.events:TimerEvent" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Shape" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexAsset)" mod="1306872041187" size="243" optimizedsize="98">
+      <def id="mx.core:IFlexAsset" />
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories.internals:AllMembersSupplier)" mod="1293156153904" size="4747" optimizedsize="2692">
-      <def id="org.flexunit.experimental.theories.internals:AllMembersSupplier" />
-      <pre id="org.flexunit.experimental.theories:IPotentialAssignment" />
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:mx_internal)" mod="1306872039530" size="184" optimizedsize="109">
+      <def id="mx.core:mx_internal" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:Tweensy)" mod="1232275685000" size="3660" optimizedsize="1453">
+      <def id="com.flashdynamix.motion:Tweensy" />
       <pre id="Object" />
-      <pre id="org.flexunit.experimental.theories:IParameterSupplier" />
-      <dep id="TypeError" />
-      <dep id="org.flexunit.experimental.theories:ParameterSignature" />
-      <dep id="org.flexunit.experimental.theories:PotentialAssignment" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
       <dep id="AS3" />
-      <dep id="org.flexunit.experimental.theories.internals.error:CouldNotGenerateValueException" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="org.flexunit.runner.external:IExternalDependencyData" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:assertThat)" mod="1268116530769" size="745" optimizedsize="450">
-      <def id="org.hamcrest:assertThat" />
-      <dep id="ArgumentError" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:Matcher" />
-      <dep id="org.hamcrest:assertThatBoolean" />
-      <dep id="Boolean" />
-      <dep id="org.hamcrest:assertThatMatcher" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.utils:DescriptionUtil)" mod="1293152844396" size="956" optimizedsize="484">
-      <def id="org.flexunit.utils:DescriptionUtil" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:AbstractTween)" mod="1232396421000" size="4836" optimizedsize="2033">
+      <def id="com.flashdynamix.motion.plugins:AbstractTween" />
       <pre id="Object" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
       <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
+      <dep id="Math" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.requests:ClassRequest)" mod="1293152844271" size="962" optimizedsize="467">
-      <def id="org.flexunit.internals.requests:ClassRequest" />
-      <pre id="org.flexunit.runner:Request" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.internals.builders:AllDefaultPossibilitiesBuilder" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories.internals.error:CouldNotGenerateValueException)" mod="1293152842709" size="853" optimizedsize="320">
-      <def id="org.flexunit.experimental.theories.internals.error:CouldNotGenerateValueException" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1310992513253" size="1468" optimizedsize="763">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1311609430085" size="2589" optimizedsize="1469">
       <def id="ktu.utils.align:VizAlignment" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:StageDisplayState" />
       <dep id="flash.display:DisplayObject" />
       <dep id="flash.display:Stage" />
       <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.sequence:ISequenceStep)" mod="1293152844396" size="583" optimizedsize="202">
-      <def id="org.fluint.sequence:ISequenceStep" />
-      <pre id="Object" />
-      <dep id="flash.events:IEventDispatcher" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.uiImpersonation.actionScript:ActionScriptVisualTestEnvironment)" mod="1293152844412" size="1178" optimizedsize="566">
-      <def id="org.fluint.uiImpersonation.actionScript:ActionScriptVisualTestEnvironment" />
-      <pre id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-      <pre id="flash.display:Sprite" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:SelfDescribing)" mod="1268116530754" size="536" optimizedsize="186">
-      <def id="org.hamcrest:SelfDescribing" />
-      <pre id="Object" />
-      <dep id="org.hamcrest:Description" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners:BlockFlexUnit4ClassRunner)" mod="1293152844365" size="8883" optimizedsize="5191">
-      <def id="org.flexunit.runners:BlockFlexUnit4ClassRunner" />
-      <pre id="org.flexunit.runners:ParentRunner" />
-      <pre id="org.flexunit.runner.manipulation:IFilterable" />
-      <dep id="org.flexunit.internals.runners.statements:FailOnTimeout" />
-      <dep id="org.flexunit.internals.runners.model:EachTestNotifier" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runner.manipulation.fields:FieldMetaDataSorter" />
-      <dep id="org.flexunit.runner.manipulation.sortingInheritance:ISortingInheritanceCache" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.runner.manipulation.fields:IFieldSorter" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.rules:IMethodRule" />
-      <dep id="org.flexunit.runner.manipulation:IFixtureSorter" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.flexunit.runner.manipulation.sortingInheritance:ClassInheritanceOrderCache" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="trace" />
-      <dep id="org.flexunit.internals.runners.statements:Fail" />
-      <dep id="Error" />
-      <dep id="org.flexunit.internals.runners.statements:StackAndFrameManagement" />
-      <dep id="org.flexunit.internals.runners.statements:RunAftersInline" />
-      <dep id="org.flexunit.internals.runners.statements:StatementSequencer" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectException" />
-      <dep id="org.flexunit.internals.runners.statements:RunBeforesInline" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="org.flexunit.internals.runners.statements:InvokeMethod" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.rules:IMethodRule)" mod="1293152844318" size="669" optimizedsize="293">
-      <def id="org.flexunit.rules:IMethodRule" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.binding:BindabilityInfo)" mod="1265215594716" size="3422" optimizedsize="2174">
-      <def id="mx.binding:BindabilityInfo" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="XML" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="XMLList" />
-      <dep id="mx.events:PropertyChangeEvent" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-cilistener-4.1.0_RC2-4-4.1.0.16076.swc(org.flexunit.listeners.closer:StandAloneFlashPlayerCloser)" mod="1293152844584" size="861" optimizedsize="327">
-      <def id="org.flexunit.listeners.closer:StandAloneFlashPlayerCloser" />
-      <pre id="org.flexunit.listeners.closer:ApplicationCloser" />
-      <pre id="Object" />
-      <dep id="flash.system:fscommand" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.external:ExternalDependencyToken)" mod="1293152844334" size="1746" optimizedsize="722">
-      <def id="org.flexunit.runner.external:ExternalDependencyToken" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-      <dep id="flex.lang.reflect:Field" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:assertThatMatcher)" mod="1279717560155" size="908" optimizedsize="492">
-      <def id="org.hamcrest:assertThatMatcher" />
-      <dep id="org.hamcrest:Description" />
-      <dep id="String" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:Matcher" />
-      <dep id="org.hamcrest:StringDescription" />
-      <dep id="org.hamcrest:AssertionError" />
-      <dep id="Object" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:ITemporalRunListener)" mod="1293152844365" size="794" optimizedsize="288">
-      <def id="org.flexunit.runner.notification:ITemporalRunListener" />
-      <pre id="org.flexunit.runner.notification:IRunListener" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:IDescription)" mod="1293152844334" size="1747" optimizedsize="438">
-      <def id="org.flexunit.runner:IDescription" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:BaseDescription)" mod="1271333148459" size="3466" optimizedsize="1818">
-      <def id="org.hamcrest:BaseDescription" />
-      <pre id="org.hamcrest:Description" />
-      <pre id="org.hamcrest:SelfDescribing" />
-      <pre id="Object" />
-      <dep id="flash.errors:IllegalOperationError" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:Matcher" />
-      <dep id="XML" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\locale\en_US\automation_agent_rb.swc(mx.core:mx_internal)" mod="1272281784179" size="182" optimizedsize="109">
-      <def id="mx.core:mx_internal" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:AsyncStatementBase)" mod="1293156153904" size="1322" optimizedsize="631">
-      <def id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:WarningTestCase)" mod="1240181186330" size="913" optimizedsize="363">
-      <def id="flexunit.framework:WarningTestCase" />
-      <pre id="flexunit.framework:TestCase" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:ObjectUtil)" mod="1265215574919" size="12537" optimizedsize="8367">
-      <def id="mx.utils:ObjectUtil" />
-      <pre id="Object" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="QName" />
-      <dep id="mx.utils:DescribeTypeCache" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="XMLList" />
-      <dep id="Error" />
-      <dep id="mx.utils:object_proxy" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="mx.utils:ObjectProxy" />
-      <dep id="Date" />
-      <dep id="AS3" />
-      <dep id="flash.xml:XMLNode" />
-      <dep id="XML" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="mx.collections:IList" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.cache:ClassDataCache)" mod="1293152842662" size="916" optimizedsize="413">
-      <def id="flex.lang.reflect.cache:ClassDataCache" />
-      <pre id="Object" />
-      <dep id="flash.utils:describeType" />
-      <dep id="AS3" />
-      <dep id="XML" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.runners.statements:TheoryBlockRunner)" mod="1293152842694" size="2544" optimizedsize="1294">
-      <def id="org.flexunit.experimental.runners.statements:TheoryBlockRunner" />
-      <pre id="org.flexunit.runners:BlockFlexUnit4ClassRunner" />
-      <dep id="org.flexunit.experimental.theories.internals:Assignments" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.experimental.runners.statements:MethodCompleteWithParamsStatement" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryBlockRunnerStatement" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:IAsyncStatement)" mod="1293152844318" size="781" optimizedsize="268">
-      <def id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.fields:IFieldSorter)" mod="1293152844350" size="732" optimizedsize="247">
-      <def id="org.flexunit.runner.manipulation.fields:IFieldSorter" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Field" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.token:AsyncTestToken)" mod="1293152844396" size="1885" optimizedsize="814">
-      <def id="org.flexunit.token:AsyncTestToken" />
-      <pre id="org.flexunit.token:IAsyncTestToken" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunBeforesClass)" mod="1293152844318" size="1449" optimizedsize="717">
-      <def id="org.flexunit.internals.runners.statements:RunBeforesClass" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:RunBefores" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.core:IChildList)" mod="1265215569575" size="1465" optimizedsize="497">
-      <def id="mx.core:IChildList" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.metadata:MetaDataAnnotation)" mod="1293152842678" size="2750" optimizedsize="1262">
-      <def id="flex.lang.reflect.metadata:MetaDataAnnotation" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:MultiTypeObjectPool)" mod="1232273704000" size="1456" optimizedsize="715">
+      <def id="com.flashdynamix.utils:MultiTypeObjectPool" />
       <pre id="Object" />
-      <dep id="ArgumentError" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataArgument" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:SuiteMethodBuilder)" mod="1293152842725" size="1227" optimizedsize="568">
-      <def id="org.flexunit.internals.builders:SuiteMethodBuilder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.internals.runners:SuiteMethod" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:FlexUnit4QualifiedBuilder)" mod="1293152842725" size="1355" optimizedsize="745">
-      <def id="org.flexunit.internals.builders:FlexUnit4QualifiedBuilder" />
-      <pre id="org.flexunit.internals.builders:FlexUnit4Builder" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:AssertionFailedError)" mod="1240181186237" size="753" optimizedsize="268">
-      <def id="flexunit.framework:AssertionFailedError" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-cilistener-4.1.0_RC2-4-4.1.0.16076.swc(org.flexunit.listeners.closer:ApplicationCloser)" mod="1293152844584" size="672" optimizedsize="205">
-      <def id="org.flexunit.listeners.closer:ApplicationCloser" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:Reflective)" mod="1240181186268" size="611" optimizedsize="175">
-      <def id="flexunit.framework:Reflective" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.managers:ISystemManager)" mod="1265215573247" size="3412" optimizedsize="1009">
-      <def id="mx.managers:ISystemManager" />
-      <pre id="mx.core:IFlexModuleFactory" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="mx.core:IChildList" />
-      <pre id="Object" />
-      <dep id="flash.text:TextFormat" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:LoaderInfo" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect:Field)" mod="1293152842647" size="3458" optimizedsize="1908">
-      <def id="flex.lang.reflect:Field" />
-      <pre id="Object" />
-      <dep id="TypeError" />
-      <dep id="ArgumentError" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:IFilter)" mod="1293152844334" size="934" optimizedsize="304">
-      <def id="org.flexunit.runner.manipulation:IFilter" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:StoppedByUserException)" mod="1293152844365" size="618" optimizedsize="241">
-      <def id="org.flexunit.runner.notification:StoppedByUserException" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:Result)" mod="1293152844334" size="2735" optimizedsize="1352">
-      <def id="org.flexunit.runner:Result" />
-      <pre id="org.flexunit.runner.notification:RunListener" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit:Assert" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:Assert" />
-      <dep id="flash.utils:getTimer" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:object_proxy)" mod="1265215575044" size="200" optimizedsize="125">
-      <def id="mx.utils:object_proxy" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners:Suite)" mod="1293157621954" size="3619" optimizedsize="2286">
-      <def id="org.flexunit.runners:Suite" />
-      <pre id="org.flexunit.runners:ParentRunner" />
-      <pre id="org.flexunit.runner.external:IExternalDependencyRunner" />
-      <pre id="org.flexunit.runner.manipulation:IFilterable" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="org.flexunit.runners.model:IRunnerBuilder" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.utils:CollectionIterator)" mod="1240181184037" size="1023" optimizedsize="469">
-      <def id="flexunit.utils:CollectionIterator" />
-      <pre id="flexunit.utils:Iterator" />
-      <pre id="Object" />
-      <dep id="flexunit.utils:Collection" />
-      <dep id="AS3" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.uiImpersonation:IVisualEnvironmentBuilder)" mod="1293152844412" size="754" optimizedsize="251">
-      <def id="org.fluint.uiImpersonation:IVisualEnvironmentBuilder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.runners.statements:TheoryBlockRunnerStatement)" mod="1293152842694" size="2187" optimizedsize="1314">
-      <def id="org.flexunit.experimental.runners.statements:TheoryBlockRunnerStatement" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.experimental.theories.internals:Assignments" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:ExpectException)" mod="1293152844318" size="3028" optimizedsize="1794">
-      <def id="org.flexunit.internals.runners.statements:ExpectException" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit:AssertionError" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestCase)" mod="1240181186377" size="3806" optimizedsize="1830">
-      <def id="flexunit.framework:TestCase" />
-      <pre id="flexunit.framework:Assert" />
-      <pre id="flexunit.framework:Test" />
-      <dep id="flash.utils:describeType" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:TestResult" />
-      <dep id="flexunit.framework:AsyncTestHelper" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.watcher:FrameWatcher)" mod="1293152844318" size="2529" optimizedsize="1255">
-      <def id="org.flexunit.internals.runners.watcher:FrameWatcher" />
-      <pre id="Object" />
-      <dep id="org.fluint.uiImpersonation:VisualTestEnvironmentBuilder" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.utils:getTimer" />
-      <dep id="org.fluint.uiImpersonation:IVisualEnvironmentBuilder" />
-      <dep id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.runners.statements:AssignmentSequencer)" mod="1293152842694" size="3052" optimizedsize="1824">
-      <def id="org.flexunit.experimental.runners.statements:AssignmentSequencer" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryBlockRunner" />
-      <dep id="org.flexunit.internals.runners.model:MultipleFailureException" />
-      <dep id="org.flexunit.experimental.theories.internals:Assignments" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.experimental.theories:IPotentialAssignment" />
-      <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.async:AsyncNativeTestResponder)" mod="1293152842694" size="2149" optimizedsize="893">
-      <def id="org.flexunit.async:AsyncNativeTestResponder" />
-      <pre id="flash.net:Responder" />
-      <pre id="flash.events:IEventDispatcher" />
-      <dep id="org.flexunit.events:AsyncResponseEvent" />
-      <dep id="flash.events:Event" />
-      <dep id="net.digitalprimates.fluint.events:AsyncResponseEvent" />
-      <dep id="flash.events:EventDispatcher" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.requests:QualifyingRequest)" mod="1293152844271" size="1166" optimizedsize="561">
-      <def id="org.flexunit.internals.requests:QualifyingRequest" />
-      <pre id="org.flexunit.runner:Request" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.internals.builders:OnlyRecognizedTestClassBuilder" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.external:IExternalDependencyData)" mod="1293152844334" size="728" optimizedsize="245">
-      <def id="org.flexunit.runner.external:IExternalDependencyData" />
-      <pre id="Object" />
-      <pre id="org.flexunit.runner.external:IExternalDependencyLoader" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:Assert)" mod="1240181186315" size="6769" optimizedsize="3134">
-      <def id="flexunit.framework:Assert" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:AssertStringFormats" />
-      <dep id="mx.utils:ObjectUtil" />
-      <dep id="AS3" />
-      <dep id="mx.utils:StringUtil" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="RegExp" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners:FlexUnit1ClassRunner)" mod="1293156153904" size="7715" optimizedsize="4132">
-      <def id="org.flexunit.internals.runners:FlexUnit1ClassRunner" />
-      <pre id="org.flexunit.runner:IRunner" />
-      <pre id="org.flexunit.runner.manipulation:IFilterable" />
-      <pre id="flexunit.framework:TestListener" />
-      <pre id="Object" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="flexunit.framework:TestResult" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="org.flexunit.runner:IDescribable" />
-      <dep id="flexunit.framework:TestSuite" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="Error" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="flash.utils:Timer" />
-      <dep id="org.flexunit.runner.manipulation:IFilter" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.token:IAsyncTestToken" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:IRequest)" mod="1293152844334" size="904" optimizedsize="283">
-      <def id="org.flexunit.runner:IRequest" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.manipulation:ISort" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner:Request" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners.model:RunnerBuilderBase)" mod="1293152844396" size="2515" optimizedsize="1320">
-      <def id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <pre id="org.flexunit.runners.model:IRunnerBuilder" />
-      <pre id="Object" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner:IRequest" />
-      <dep id="org.flexunit.internals.runners:ErrorReportingRunner" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:IAsyncStartupRunListener)" mod="1293152844365" size="760" optimizedsize="250">
-      <def id="org.flexunit.runner.notification:IAsyncStartupRunListener" />
-      <pre id="org.flexunit.runner.notification:IAsyncRunListener" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:ProtectedFinishTestCase)" mod="1240181186221" size="823" optimizedsize="310">
-      <def id="flexunit.framework:ProtectedFinishTestCase" />
-      <pre id="flexunit.framework:Protectable" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunAfters)" mod="1293152844318" size="1373" optimizedsize="680">
-      <def id="org.flexunit.internals.runners.statements:RunAfters" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:SequencerWithDecoration" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:Description)" mod="1293152844318" size="3025" optimizedsize="1434">
-      <def id="org.flexunit.runner:Description" />
-      <pre id="org.flexunit.runner:IDescription" />
-      <pre id="Object" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="mx.utils:ObjectUtil" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="flex.lang.reflect:Klass" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification.async:AsyncListenerWatcher)" mod="1293152844365" size="4012" optimizedsize="1812">
-      <def id="org.flexunit.runner.notification.async:AsyncListenerWatcher" />
-      <pre id="Object" />
-      <dep id="org.flexunit.token:AsyncCoreStartupToken" />
-      <dep id="flash.events:Event" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.runner.notification:IAsyncCompletionRunListener" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.notification:IAsyncStartupRunListener" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:StackAndFrameManagement)" mod="1293152844318" size="2223" optimizedsize="1171">
-      <def id="org.flexunit.internals.runners.statements:StackAndFrameManagement" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="Object" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="flash.utils:Timer" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="org.flexunit.internals.runners.watcher:FrameWatcher" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners:ErrorReportingRunner)" mod="1293152844287" size="2402" optimizedsize="1235">
-      <def id="org.flexunit.internals.runners:ErrorReportingRunner" />
-      <pre id="org.flexunit.runner:IRunner" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="org.flexunit.internals.runners:InitializationError" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.token:IAsyncTestToken" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:AssertStringFormats)" mod="1240181186190" size="1654" optimizedsize="1020">
-      <def id="flexunit.framework:AssertStringFormats" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:DescribeTypeCacheRecord)" mod="1265215574982" size="1254" optimizedsize="619">
-      <def id="mx.utils:DescribeTypeCacheRecord" />
-      <pre id="flash.utils:Proxy" />
-      <dep id="AS3" />
-      <dep id="mx.utils:DescribeTypeCache" />
-      <dep id="XML" />
-      <dep id="flash.utils:flash_proxy" />
-    </script>
-    <script name="A:\ktu\VizAlign\tests\ktu\utils\align\AllSuite.as" mod="1311111216909" size="469" optimizedsize="211">
-      <def id="ktu.utils.align:AllSuite" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="ktu.utils.align.methods:Left" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.token:AsyncCoreStartupToken)" mod="1293152844396" size="1349" optimizedsize="576">
-      <def id="org.flexunit.token:AsyncCoreStartupToken" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:TestResult)" mod="1240181186159" size="4655" optimizedsize="2381">
-      <def id="flexunit.framework:TestResult" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:ProtectedMiddleTestCase" />
-      <dep id="flexunit.framework:ProtectedFinishTestCase" />
-      <dep id="flexunit.framework:TestFailure" />
-      <dep id="flexunit.framework:Assert" />
-      <dep id="flexunit.framework:ProtectedStartTestCase" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="Error" />
-      <dep id="flexunit.framework:TestListener" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="flexunit.framework:Protectable" />
-      <dep id="flexunit.utils:Collection" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="flexunit.utils:ArrayList" />
-      <dep id="flexunit.utils:Iterator" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.utils:Collection)" mod="1240181184084" size="1414" optimizedsize="375">
-      <def id="flexunit.utils:Collection" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flexunit.utils:Iterator" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.token:IAsyncTestToken)" mod="1293152844396" size="1013" optimizedsize="289">
-      <def id="org.flexunit.token:IAsyncTestToken" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1310992513219" size="885" optimizedsize="444">
-      <def id="ktu.utils:ArrayUtils" />
-      <pre id="Object" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
       <dep id="AS3" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:Failure)" mod="1293152844365" size="1519" optimizedsize="661">
-      <def id="org.flexunit.runner.notification:Failure" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.system:Capabilities" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunBeforesInline)" mod="1293152844318" size="1917" optimizedsize="1015">
-      <def id="org.flexunit.internals.runners.statements:RunBeforesInline" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.internals.runners.statements:RunBefores" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.events:AsyncResponseEvent)" mod="1293152842694" size="1042" optimizedsize="493">
-      <def id="org.flexunit.events:AsyncResponseEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:AssertionError)" mod="1279717560155" size="1279" optimizedsize="554">
-      <def id="org.hamcrest:AssertionError" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:ISortable)" mod="1293152844350" size="629" optimizedsize="206">
-      <def id="org.flexunit.runner.manipulation:ISortable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.manipulation:ISorter" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:IRunner)" mod="1293152844334" size="844" optimizedsize="317">
-      <def id="org.flexunit.runner:IRunner" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:IAsyncTestToken" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.filters:AbstractFilter)" mod="1293152844350" size="1258" optimizedsize="535">
-      <def id="org.flexunit.runner.manipulation.filters:AbstractFilter" />
-      <pre id="org.flexunit.runner.manipulation:IFilter" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner.manipulation:IFilterable" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:ProtectedStartTestCase)" mod="1240181186330" size="815" optimizedsize="307">
-      <def id="flexunit.framework:ProtectedStartTestCase" />
-      <pre id="flexunit.framework:Protectable" />
-      <pre id="Object" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect:Klass)" mod="1293156153888" size="5564" optimizedsize="2913">
-      <def id="flex.lang.reflect:Klass" />
-      <pre id="Object" />
-      <dep id="flex.lang.reflect.builders:FieldBuilder" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="RegExp" />
-      <dep id="XMLList" />
-      <dep id="flex.lang.reflect.builders:MetaDataAnnotationBuilder" />
-      <dep id="Error" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="flex.lang.reflect.cache:ClassDataCache" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="XML" />
-      <dep id="flex.lang.reflect.builders:MethodBuilder" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="flex.lang.reflect:Constructor" />
-      <dep id="flex.lang.reflect.utils:MetadataTools" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners:SuiteMethod)" mod="1293152844287" size="1148" optimizedsize="634">
-      <def id="org.flexunit.internals.runners:SuiteMethod" />
-      <pre id="org.flexunit.internals.runners:FlexUnit1ClassRunner" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flexunit.framework:Test" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.uiImpersonation:IVisualTestEnvironment)" mod="1293152844412" size="2132" optimizedsize="492">
-      <def id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories:PotentialAssignment)" mod="1293152842694" size="1274" optimizedsize="468">
-      <def id="org.flexunit.experimental.theories:PotentialAssignment" />
-      <pre id="org.flexunit.experimental.theories:IPotentialAssignment" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:IAsyncCompletionRunListener)" mod="1293152844365" size="791" optimizedsize="259">
-      <def id="org.flexunit.runner.notification:IAsyncCompletionRunListener" />
-      <pre id="org.flexunit.runner.notification:IAsyncRunListener" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:Protectable)" mod="1240181186361" size="611" optimizedsize="173">
-      <def id="flexunit.framework:Protectable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners:ChildRunnerSequencer)" mod="1293152844287" size="1425" optimizedsize="737">
-      <def id="org.flexunit.internals.runners:ChildRunnerSequencer" />
-      <pre id="org.flexunit.internals.runners.statements:StatementSequencer" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="flash.events:IEventDispatcher" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories.internals:ParameterizedAssertionError)" mod="1293152842709" size="1411" optimizedsize="611">
-      <def id="org.flexunit.experimental.theories.internals:ParameterizedAssertionError" />
-      <pre id="org.flexunit:AssertionError" />
-      <dep id="AS3" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:Description)" mod="1270040746655" size="1100" optimizedsize="347">
-      <def id="org.hamcrest:Description" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:Matcher" />
-      <dep id="org.hamcrest:SelfDescribing" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.requests:FilterRequest)" mod="1293152844271" size="1273" optimizedsize="724">
-      <def id="org.flexunit.internals.requests:FilterRequest" />
-      <pre id="org.flexunit.runner:Request" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner:IRequest" />
-      <dep id="org.flexunit.internals.runners:ErrorReportingRunner" />
-      <dep id="org.flexunit.runner.manipulation:IFilter" />
-      <dep id="Error" />
-      <dep id="org.flexunit.runner.manipulation:NoTestsRemainException" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:SequencerWithDecoration)" mod="1293152844318" size="2059" optimizedsize="1031">
-      <def id="org.flexunit.internals.runners.statements:SequencerWithDecoration" />
-      <pre id="org.flexunit.internals.runners.statements:StatementSequencer" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.internals.runners.statements:InvokeMethod" />
-      <dep id="Error" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:IXMLNotifiable)" mod="1265215574997" size="546" optimizedsize="192">
-      <def id="mx.utils:IXMLNotifiable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:DescribeTypeCache)" mod="1265215574997" size="1740" optimizedsize="942">
-      <def id="mx.utils:DescribeTypeCache" />
-      <pre id="Object" />
-      <dep id="flash.utils:describeType" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="mx.utils:DescribeTypeCacheRecord" />
-      <dep id="AS3" />
-      <dep id="mx.binding:BindabilityInfo" />
-      <dep id="flash.utils:getDefinitionByName" />
-      <dep id="XML" />
-      <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:InvokeMethod)" mod="1293152844318" size="1302" optimizedsize="653">
-      <def id="org.flexunit.internals.runners.statements:InvokeMethod" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit:Assert)" mod="1293152842678" size="3361" optimizedsize="1704">
-      <def id="org.flexunit:Assert" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:RunNotifier)" mod="1293156153904" size="4600" optimizedsize="2452">
-      <def id="org.flexunit.runner.notification:RunNotifier" />
-      <pre id="org.flexunit.runner.notification:IRunNotifier" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:ITemporalRunListener" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit.runner.notification:IRunListener" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="flash.utils:getTimer" />
-      <dep id="org.flexunit.runner:IDescription" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.framework:Test)" mod="1240181186174" size="934" optimizedsize="300">
-      <def id="flexunit.framework:Test" />
-      <pre id="flexunit.framework:Reflective" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flexunit.framework:TestResult" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.sequence:ISequenceAction)" mod="1293152844396" size="590" optimizedsize="201">
-      <def id="org.fluint.sequence:ISequenceAction" />
-      <pre id="org.fluint.sequence:ISequenceStep" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect:Constructor)" mod="1293152842631" size="3935" optimizedsize="1989">
-      <def id="flex.lang.reflect:Constructor" />
-      <pre id="Object" />
-      <dep id="ArgumentError" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="Math" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.async:AsyncLocator)" mod="1293152842694" size="2936" optimizedsize="1371">
-      <def id="org.flexunit.async:AsyncLocator" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="org.flexunit:AssertionError" />
-      <dep id="org.flexunit.internals.runners.statements:IAsyncHandlingStatement" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories:IPotentialAssignment)" mod="1293152842694" size="1051" optimizedsize="282">
-      <def id="org.flexunit.experimental.theories:IPotentialAssignment" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flexunit.utils:Iterator)" mod="1240181184053" size="676" optimizedsize="188">
-      <def id="flexunit.utils:Iterator" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:AllDefaultPossibilitiesBuilder)" mod="1293152842709" size="2670" optimizedsize="1184">
-      <def id="org.flexunit.internals.builders:AllDefaultPossibilitiesBuilder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="org.flexunit.internals.builders:SuiteMethodBuilder" />
-      <dep id="org.flexunit.internals.builders:FlexUnit4Builder" />
-      <dep id="org.flexunit.internals.builders:NullBuilder" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.internals.builders:FlexUnit1Builder" />
-      <dep id="org.flexunit.internals.builders:IgnoredBuilder" />
-      <dep id="org.flexunit.runners.model:IRunnerBuilder" />
-      <dep id="org.flexunit.internals.builders:MetaDataBuilder" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:IAsyncRunListener)" mod="1293152844365" size="529" optimizedsize="185">
-      <def id="org.flexunit.runner.notification:IAsyncRunListener" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="org.flexunit.runner.notification:IRunListener" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.sequence:ISequencePend)" mod="1293152844396" size="1011" optimizedsize="319">
-      <def id="org.fluint.sequence:ISequencePend" />
-      <pre id="org.fluint.sequence:ISequenceStep" />
-      <pre id="Object" />
-      <dep id="org.fluint.sequence:SequenceRunner" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals:flexunit_internal)" mod="1293152844271" size="236" optimizedsize="130">
-      <def id="org.flexunit.internals:flexunit_internal" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:StringDescription)" mod="1268116530769" size="902" optimizedsize="418">
-      <def id="org.hamcrest:StringDescription" />
-      <pre id="org.hamcrest:BaseDescription" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:SelfDescribing" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(net.digitalprimates.fluint.events:AsyncResponseEvent)" mod="1251053200004" size="1145" optimizedsize="484">
-      <def id="net.digitalprimates.fluint.events:AsyncResponseEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:NoTestsRemainException)" mod="1293152844350" size="713" optimizedsize="268">
-      <def id="org.flexunit.runner.manipulation:NoTestsRemainException" />
-      <pre id="Error" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\tests\TestRunner.as" mod="1311109310203" size="751" optimizedsize="480">
-      <def id="TestRunner" />
-      <pre id="flash.display:Sprite" />
-      <dep id="org.flexunit.listeners:CIListener" />
-      <dep id="AS3" />
-      <dep id="ktu.utils.align:AllSuite" />
-      <dep id="org.flexunit.runner:FlexUnitCore" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.external:IExternalDependencyLoader)" mod="1293152844334" size="778" optimizedsize="261">
-      <def id="org.flexunit.runner.external:IExternalDependencyLoader" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.external:ExternalDependencyToken" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1310992513235" size="6399" optimizedsize="3574">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311613513671" size="4338" optimizedsize="2412">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignment" />
       <dep id="ktu.utils.align:VizAlignTarget" />
       <dep id="ArgumentError" />
-      <dep id="ktu.utils.align:AlignMethods" />
       <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:StageDisplayState" />
       <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(flex.lang.reflect.builders:MethodBuilder)" mod="1293152842662" size="2466" optimizedsize="1191">
-      <def id="flex.lang.reflect.builders:MethodBuilder" />
-      <pre id="Object" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect.cache:ClassDataCache" />
-      <dep id="XML" />
-      <dep id="XMLList" />
-      <dep id="flex.lang.reflect.utils:MetadataTools" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\flash-integration.swc(mx.events:PropertyChangeEventKind)" mod="1265215589622" size="670" optimizedsize="332">
-      <def id="mx.events:PropertyChangeEventKind" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation:ISort)" mod="1293152844350" size="414" optimizedsize="118">
-      <def id="org.flexunit.runner.manipulation:ISort" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:IAsyncHandlingStatement)" mod="1293152844318" size="2249" optimizedsize="586">
-      <def id="org.flexunit.internals.runners.statements:IAsyncHandlingStatement" />
-      <pre id="Object" />
-      <dep id="flash.net:Responder" />
-      <dep id="flash.events:Event" />
-      <dep id="org.fluint.sequence:SequenceRunner" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.events:AsyncEvent)" mod="1293152842694" size="779" optimizedsize="343">
-      <def id="org.flexunit.events:AsyncEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.collections:IList)" mod="1265215596372" size="1431" optimizedsize="433">
-      <def id="mx.collections:IList" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="mx.events:CollectionEvent" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.hamcrest:assertThatBoolean)" mod="1268116530769" size="441" optimizedsize="154">
-      <def id="org.hamcrest:assertThatBoolean" />
-      <dep id="String" />
-      <dep id="AS3" />
-      <dep id="Boolean" />
-      <dep id="org.hamcrest:AssertionError" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:NullBuilder)" mod="1293152842725" size="633" optimizedsize="258">
-      <def id="org.flexunit.internals.builders:NullBuilder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.dependency:ExternalRunnerDependencyWatcher)" mod="1293152842725" size="2885" optimizedsize="1281">
-      <def id="org.flexunit.internals.dependency:ExternalRunnerDependencyWatcher" />
-      <pre id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
-      <pre id="Object" />
-      <dep id="org.flexunit.token:AsyncCoreStartupToken" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.internals.dependency:ExternalDependencyResolver" />
-      <dep id="org.flexunit.internals.dependency:IExternalDependencyResolver" />
-    </script>
-    <script name="C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\frameworks\libs\framework.swc(mx.utils:ObjectProxy)" mod="1265215575060" size="5431" optimizedsize="2721">
-      <def id="mx.utils:ObjectProxy" />
-      <pre id="mx.core:IPropertyChangeNotifier" />
-      <pre id="flash.utils:IExternalizable" />
-      <pre id="flash.utils:Proxy" />
-      <dep id="flash.events:Event" />
-      <dep id="QName" />
-      <dep id="flash.utils:IDataOutput" />
-      <dep id="flash.utils:IDataInput" />
-      <dep id="mx.events:PropertyChangeEventKind" />
-      <dep id="mx.utils:object_proxy" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="mx.utils:UIDUtil" />
-      <dep id="flash.events:EventDispatcher" />
-      <dep id="mx.utils:ObjectUtil" />
-      <dep id="AS3" />
-      <dep id="mx.events:PropertyChangeEvent" />
-      <dep id="flash.utils:flash_proxy" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:IgnoredClassRunner)" mod="1293152842725" size="1483" optimizedsize="757">
-      <def id="org.flexunit.internals.builders:IgnoredClassRunner" />
-      <pre id="org.flexunit.runner:IRunner" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner.notification:IRunNotifier" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:Description" />
-      <dep id="org.flexunit.runner.notification:StoppedByUserException" />
-      <dep id="org.flexunit.token:IAsyncTestToken" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner:Descriptor)" mod="1293152844318" size="648" optimizedsize="252">
-      <def id="org.flexunit.runner:Descriptor" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:RunAftersClass)" mod="1293152844318" size="1438" optimizedsize="713">
-      <def id="org.flexunit.internals.runners.statements:RunAftersClass" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:RunAfters" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.runners.statements:TheoryAnchor)" mod="1293152842694" size="3350" optimizedsize="1859">
-      <def id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <dep id="org.flexunit.experimental.theories.internals:Assignments" />
-      <dep id="org.flexunit.internals.namespaces:classInternal" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.experimental.theories.internals:ParameterizedAssertionError" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="Error" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.internals:AssumptionViolatedException" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.experimental.runners.statements:MethodCompleteWithParamsStatement" />
-      <dep id="org.flexunit.experimental.runners.statements:AssignmentSequencer" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runners.model:TestClass)" mod="1293152844396" size="2634" optimizedsize="1293">
-      <def id="org.flexunit.runners.model:TestClass" />
-      <pre id="Object" />
-      <dep id="flex.lang.reflect:Method" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="flex.lang.reflect.metadata:MetaDataAnnotation" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="flex.lang.reflect:Field" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="A:\ktu\VizAlign\tests\ktu\utils\align\methods\Left.as" mod="1311111251486" size="1346" optimizedsize="811">
-      <def id="ktu.utils.align.methods:Left" />
-      <pre id="Object" />
-      <dep id="ktu.utils.align:VizAlignment" />
-      <dep id="ktu.utils.align:VizAlignTarget" />
-      <dep id="ktu.utils.align:AlignMethods" />
-      <dep id="AS3" />
-      <dep id="org.hamcrest:assertThat" />
-      <dep id="ktu.utils.align:VizAlign" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.requests:SortingRequest)" mod="1293152844287" size="1281" optimizedsize="695">
-      <def id="org.flexunit.internals.requests:SortingRequest" />
-      <pre id="org.flexunit.runner:Request" />
-      <dep id="TypeError" />
-      <dep id="org.flexunit.runner.manipulation:Sorter" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IRunner" />
-      <dep id="org.flexunit.runner.manipulation:ISorter" />
-      <dep id="org.flexunit.runner:IRequest" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.manipulation.filters:MethodNameFilter)" mod="1293152844350" size="1535" optimizedsize="819">
-      <def id="org.flexunit.runner.manipulation.filters:MethodNameFilter" />
-      <pre id="org.flexunit.runner.manipulation.filters:AbstractFilter" />
-      <dep id="TypeError" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.experimental.theories:IParameterSupplier)" mod="1293152842694" size="746" optimizedsize="251">
-      <def id="org.flexunit.experimental.theories:IParameterSupplier" />
-      <pre id="Object" />
-      <dep id="org.flexunit.experimental.theories:ParameterSignature" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.reporting:FailureFormatter)" mod="1293152844318" size="1349" optimizedsize="742">
-      <def id="org.flexunit.reporting:FailureFormatter" />
-      <pre id="Object" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="AS3" />
-      <dep id="org.flexunit:AssertionError" />
-      <dep id="flexunit.framework:AssertionFailedError" />
-      <dep id="XML" />
-      <dep id="RegExp" />
-      <dep id="org.hamcrest:AssertionError" />
-      <dep id="Error" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.fluint.uiImpersonation:VisualTestEnvironmentBuilder)" mod="1293152844412" size="1341" optimizedsize="654">
-      <def id="org.fluint.uiImpersonation:VisualTestEnvironmentBuilder" />
-      <pre id="org.fluint.uiImpersonation:IVisualEnvironmentBuilder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="org.fluint.uiImpersonation.actionScript:ActionScriptEnvironmentBuilder" />
-      <dep id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.async:ITestResponder)" mod="1293152842694" size="703" optimizedsize="209">
-      <def id="org.flexunit.async:ITestResponder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.builders:FlexUnit1Builder)" mod="1293152842709" size="1234" optimizedsize="592">
-      <def id="org.flexunit.internals.builders:FlexUnit1Builder" />
-      <pre id="org.flexunit.runners.model:RunnerBuilderBase" />
-      <dep id="flexunit.framework:TestCase" />
-      <dep id="org.flexunit.internals.runners:FlexUnit1ClassRunner" />
-      <dep id="AS3" />
-      <dep id="flex.lang.reflect:Klass" />
-      <dep id="org.flexunit.runner:IRunner" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.internals.runners.statements:ExpectAsync)" mod="1293152844303" size="8351" optimizedsize="4286">
-      <def id="org.flexunit.internals.runners.statements:ExpectAsync" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncStatement" />
-      <pre id="org.flexunit.internals.runners.statements:AsyncStatementBase" />
-      <pre id="org.flexunit.internals.runners.statements:IAsyncHandlingStatement" />
-      <dep id="flash.events:Event" />
-      <dep id="org.flexunit.constants:AnnotationArgumentConstants" />
-      <dep id="org.flexunit.async:AsyncLocator" />
-      <dep id="org.fluint.sequence:SequenceRunner" />
-      <dep id="org.flexunit.internals:flexunit_internal" />
-      <dep id="org.flexunit.token:ChildResult" />
-      <dep id="org.flexunit.runners.model:TestClass" />
-      <dep id="org.flexunit.token:AsyncTestToken" />
-      <dep id="org.flexunit:AssertionError" />
-      <dep id="org.flexunit.runners.model:FrameworkMethod" />
-      <dep id="org.flexunit.events:AsyncEvent" />
-      <dep id="org.flexunit.async:ITestResponder" />
-      <dep id="Error" />
-      <dep id="flash.net:Responder" />
-      <dep id="org.flexunit.events:AsyncResponseEvent" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.utils:ClassNameUtil" />
-      <dep id="org.flexunit.constants:AnnotationConstants" />
-      <dep id="org.flexunit.async:AsyncHandler" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="org.flexunit.async:AsyncNativeTestResponder" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:IRunNotifier)" mod="1293156153904" size="2298" optimizedsize="582">
-      <def id="org.flexunit.runner.notification:IRunNotifier" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="org.flexunit.runner.notification:IRunListener" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
-    </script>
-    <script name="A:\ktu\VizAlign\lib\flexunit-4.1.0_RC2-4-as3_4.1.0.16076.swc(org.flexunit.runner.notification:RunListener)" mod="1293152844365" size="1530" optimizedsize="572">
-      <def id="org.flexunit.runner.notification:RunListener" />
-      <pre id="org.flexunit.runner.notification:IRunListener" />
-      <pre id="Object" />
-      <dep id="org.flexunit.runner:Result" />
-      <dep id="org.flexunit.runner.notification:Failure" />
-      <dep id="AS3" />
-      <dep id="org.flexunit.runner:IDescription" />
     </script>
   </scripts>
   <external-defs>
-    <ext id="flash.utils:ByteArray" />
     <ext id="Math" />
-    <ext id="RegExp" />
-    <ext id="ReferenceError" />
-    <ext id="flash.errors:IllegalOperationError" />
-    <ext id="XMLList" />
+    <ext id="flash.geom:Matrix" />
+    <ext id="flash.display:StageAlign" />
+    <ext id="flash.filters:DropShadowFilter" />
     <ext id="flash.events:Event" />
     <ext id="AS3" />
     <ext id="flash.utils:describeType" />
-    <ext id="flash.utils:IDataOutput" />
-    <ext id="flash.events:IOErrorEvent" />
     <ext id="XML" />
-    <ext id="flash.display:LoaderInfo" />
-    <ext id="flash.events:IEventDispatcher" />
+    <ext id="flash.display:Shape" />
     <ext id="flash.geom:Rectangle" />
-    <ext id="flash.net:Responder" />
-    <ext id="String" />
-    <ext id="flash.system:Capabilities" />
     <ext id="ArgumentError" />
-    <ext id="QName" />
     <ext id="flash.display:StageDisplayState" />
     <ext id="flash.utils:Dictionary" />
-    <ext id="flash.events:ErrorEvent" />
     <ext id="trace" />
-    <ext id="Boolean" />
+    <ext id="flash.filters:ColorMatrixFilter" />
     <ext id="Error" />
-    <ext id="flash.events:EventDispatcher" />
-    <ext id="flash.display:IBitmapDrawable" />
-    <ext id="Date" />
-    <ext id="flash.events:SecurityErrorEvent" />
+    <ext id="flash.media:SoundTransform" />
+    <ext id="flash.geom:ColorTransform" />
+    <ext id="flash.media:SoundChannel" />
+    <ext id="flash.text:TextField" />
     <ext id="flash.display:DisplayObject" />
-    <ext id="flash.events:DataEvent" />
-    <ext id="flash.net:XMLSocket" />
-    <ext id="flash.accessibility:AccessibilityProperties" />
     <ext id="Object" />
-    <ext id="flash.utils:IDataInput" />
+    <ext id="flash.display:MovieClip" />
     <ext id="flash.utils:Timer" />
-    <ext id="flash.utils:flash_proxy" />
     <ext id="flash.display:DisplayObjectContainer" />
+    <ext id="flash.filters:BitmapFilter" />
     <ext id="flash.text:TextFormat" />
-    <ext id="flash.system:fscommand" />
+    <ext id="flash.display:Graphics" />
     <ext id="flash.events:TimerEvent" />
-    <ext id="flash.xml:XMLNode" />
-    <ext id="flash.utils:IExternalizable" />
     <ext id="flash.display:Sprite" />
     <ext id="flash.geom:Point" />
-    <ext id="flash.utils:Proxy" />
-    <ext id="TypeError" />
+    <ext id="flash.events:MouseEvent" />
+    <ext id="flash.text:Font" />
     <ext id="flash.display:Stage" />
-    <ext id="flash.geom:Transform" />
     <ext id="flash.utils:getQualifiedClassName" />
-    <ext id="flash.utils:getDefinitionByName" />
+    <ext id="flash.display:StageScaleMode" />
+    <ext id="flash.text:TextFieldAutoSize" />
     <ext id="flash.utils:getTimer" />
   </external-defs>
 </report>

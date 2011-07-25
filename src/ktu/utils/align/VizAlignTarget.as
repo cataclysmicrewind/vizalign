@@ -1,77 +1,84 @@
+
 package ktu.utils.align {
+	
 	import flash.display.DisplayObject;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	
-	
+
+
 	public class VizAlignTarget {
+
+		protected var _target:DisplayObject;
+		protected var _originOffset:Point;
+		protected var _applyOriginOffset:Boolean = false;
 		
-		private var _target:DisplayObject;
-		private var _originOffset:Point;
-		
-		private var _orig:Rectangle = new Rectangle ( ) ;
-		private var _end:Rectangle = new Rectangle ( ) ;
-		
-		
-		
-		public function get target ( ) :DisplayObject { return _target; }
+		protected var _orig:Rectangle = new Rectangle();
+		protected var _end:Rectangle = new Rectangle();
+
+		public function get target():DisplayObject { return _target; }
 		public function get originOffset():Point { return _originOffset; }
-		public function get orig ( ) :Rectangle { return _orig; }
-		public function get end ( ) :Rectangle { return _end; }
+		public function get applyOriginOffset():Boolean { return _applyOriginOffset; }
+		public function set applyOriginOffset(value:Boolean):void {
+			_applyOriginOffset = value;
+			if (value) {
+				_end.x -= _originOffset.x;
+				_end.y -= _originOffset.y;
+			} else {
+				_end.x += _originOffset.x;
+				_end.y += _originOffset.y;
+			}
+		}
+		public function get orig():Rectangle { return _orig; }
+		public function get end():Rectangle { return _end; }
 		
-		public function VizAlignTarget ( target:DisplayObject) :void {
+		public function VizAlignTarget(target:DisplayObject):void {
 			_target = target;
-			_orig.x 		= _end.x 		= target.x;
-			_orig.y 		= _end.y 		= target.y;
-			_orig.width 	= _end.width 	= target.width;
-			_orig.height 	= _end.height 	= target.height;
+			_orig.x = _end.x = target.x;
+			_orig.y = _end.y = target.y;
+			_orig.width = _end.width = target.width;
+			_orig.height = _end.height = target.height;
 			
 			_originOffset = new Point(target.getBounds(target).x, target.getBounds(target).y);
 		}
 		
-		public function applyOrigBounds ( ) :void {
-			_target.x 		= _orig.x;
-			_target.y 		= _orig.y;
-			_target.width 	= _orig.width;
-			_target.height 	= _orig.height;
+		public function applyOrigBounds():void {
+			_target.x = _orig.x;
+			_target.y = _orig.y;
+			_target.width = _orig.width;
+			_target.height = _orig.height;
 		}
 		
-		public function applyEndBounds ( ) :void {
-			_target.x 		= _end.x;
-			_target.y 		= _end.y;
-			_target.width 	= _end.width;
-			_target.height 	= _end.height;
+		public function applyEndBounds():void {
+			_target.x = _end.x;
+			_target.y = _end.y;
+			_target.width = _end.width;
+			_target.height = _end.height;
 		}
-		public function applyOriginOffestToEnd():void {
-			_end.x -= _originOffset.x;
-			_end.y -= _originOffset.y;
+		
+		public function roundEndValues():void {
+			_end.x = Math.round(_end.x);
+			_end.y = Math.round(_end.y);
+			_end.width = Math.round(_end.width);
+			_end.height = Math.round(_end.height);
 		}
-		public function removeOriginOffsetFromEnd():void {
-			_end.x += _originOffset.x;
-			_end.y += _originOffset.y;
-		}
-		/**
-		 * 
-		 * 
-		 * 
-		 */
-		public function clone ( target:DisplayObject = null ) :VizAlignTarget{
-			var ao:VizAlignTarget = new VizAlignTarget ((target) ? target : _target);
-			ao.orig.x = _orig.x;
-			ao.orig.y = _orig.y;
-			ao.orig.width = _orig.width;
-			ao.orig.height = _orig.height;
+		
+		public function clone(target:DisplayObject = null):VizAlignTarget {
+			var vat:VizAlignTarget = new VizAlignTarget((target) ? target : _target);
+			vat.orig.x = _orig.x;
+			vat.orig.y = _orig.y;
+			vat.orig.width = _orig.width;
+			vat.orig.height = _orig.height;
 			
-			ao.end.x = _end.x;
-			ao.end.y = _end.y;
-			ao.end.width = _end.width;
-			ao.end.height = _end.height;
+			vat.end.x = _end.x;
+			vat.end.y = _end.y;
+			vat.end.width = _end.width;
+			vat.end.height = _end.height;
 			
-			return ao;
+			return vat;
 		}
 		
 		/** @private */
-		public function toString ( ) :String {
+		public function toString():String {
 			var str:String = "";
 			str += "VizAlignTarget:\ttarget:" + _target.name;
 			str += "\t";

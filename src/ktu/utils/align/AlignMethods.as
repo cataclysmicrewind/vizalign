@@ -34,8 +34,7 @@ package ktu.utils.align {
 		*  Align: x  *
 		**************
 		*/
-		public static function left ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function left ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;									// get left edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -45,8 +44,7 @@ package ktu.utils.align {
 			}																						// end loop
 			return targets;																			// return new array
 		}
-		public static function horizontal ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function horizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var mid:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);		// get center x value of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -56,8 +54,7 @@ package ktu.utils.align {
 			}																						// end loop
 			return targets;																			// return array
 		};
-		public static function right ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function right ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsRightEdge:Number = targetCoordinateSpace.right;									// get right edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -73,8 +70,7 @@ package ktu.utils.align {
 		*  Center  *
 		************
 		*/
-		public static function center (targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function center (targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var tcsCenterY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height/ 2);
 			var length:int = targets.length;														// targets length for optimized looping
@@ -93,8 +89,7 @@ package ktu.utils.align {
 		*  Align: y  *
 		**************
 		*/
-		public static function top ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function top ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -104,8 +99,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function vertical ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function vertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var mid:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height / 2);
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -115,8 +109,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function bottom ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function bottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom; 
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -132,8 +125,7 @@ package ktu.utils.align {
 		*  Combo: x,y  *
 		****************
 		*/
-		public static function topLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function topLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -146,8 +138,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function topRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function topRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -160,8 +151,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function bottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function bottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -174,8 +164,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function bottomRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */):Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function bottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -194,8 +183,7 @@ package ktu.utils.align {
 		*  Adjacent: x  *
 		*****************
 		*/
-		public static function adjacentLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -205,8 +193,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentHorizontalLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentHorizontalLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsCenterX:Number = targetCoordinateSpace.left + targetCoordinateSpace.width / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -216,8 +203,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentHorizontalRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentHorizontalRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsCenterX:Number = targetCoordinateSpace.left + targetCoordinateSpace.width / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -227,8 +213,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -244,8 +229,7 @@ package ktu.utils.align {
 		*  Adjacent: y  *
 		*****************
 		*/
-		public static function adjacentTop ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */ ) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -255,8 +239,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentVerticalTop ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentVerticalTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsCenterY:Number = targetCoordinateSpace.top + targetCoordinateSpace.height / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -266,8 +249,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentVerticalBottom ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentVerticalBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsCenterY:Number = targetCoordinateSpace.top + targetCoordinateSpace.height / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -277,8 +259,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentBottom ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -294,8 +275,7 @@ package ktu.utils.align {
 		*  Combo Adjacent: x,y  *
 		*************************
 		*/
-		public static function adjacentTopLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentTopLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -308,8 +288,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentTopRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentTopRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -322,8 +301,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentBottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentBottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -336,8 +314,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function adjacentBottomRight ( targetCoordinateSpace:Rectangle, targets:Array/* of rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function adjacentBottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -356,8 +333,7 @@ package ktu.utils.align {
 		*  Distribute: x  *
 		*******************
 		*/
-		public static function distLeft ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
@@ -373,8 +349,7 @@ package ktu.utils.align {
 			}
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterX ) ;
@@ -390,8 +365,7 @@ package ktu.utils.align {
 			}
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		};
-		public static function distRight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */ ) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalRight ) ;
@@ -413,8 +387,7 @@ package ktu.utils.align {
 		*  Distribute: y  *
 		*******************
 		*/
-		public static function distTop ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
@@ -430,8 +403,7 @@ package ktu.utils.align {
 			}
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distVertical ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterY ) ;
@@ -447,8 +419,7 @@ package ktu.utils.align {
 			}
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distBottom ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function distBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets.sort ( RectangleUtils.sortGlobalBottom ) ;
@@ -470,8 +441,7 @@ package ktu.utils.align {
 		*  Match Sizes  *
 		*****************
 		*/
-		public static function matchWidth ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function matchWidth ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var endW:Number = targetCoordinateSpace.width;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -480,8 +450,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function matchHeight ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function matchHeight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var endH:Number = targetCoordinateSpace.height;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -491,7 +460,6 @@ package ktu.utils.align {
 			return targets;
 		}
 		public static function matchSize ( targetCoordinateSpace:Rectangle, targets:Array ) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
 			var endW:Number = targetCoordinateSpace.width;
 			var endH:Number = targetCoordinateSpace.height;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -502,8 +470,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function scaleToFit ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function scaleToFit ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsWidth:Number = targetCoordinateSpace.width;
 			var tcsHeight:Number = targetCoordinateSpace.height;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;
@@ -525,8 +492,7 @@ package ktu.utils.align {
 			}
 			return targets;
 		}
-		public static function scaleToFill ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function scaleToFill ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var tcsWidth:Number = targetCoordinateSpace.width;
 			var tcsHeight:Number = targetCoordinateSpace.height;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;
@@ -535,7 +501,7 @@ package ktu.utils.align {
 				var item:Rectangle = targets[i];
 				var itemWidth:Number = item.width;
 				var itemHeight:Number = item.height;
-				var itemWHRatio:Number = itemWidth / itemHeight ;
+				var itemWHRatio:Number = itemWidth / itemHeight;
 				var itemHWRatio:Number = itemHeight / itemWidth;
 				if ( itemWHRatio > tcsRatio ) {
 					item.height = tcsHeight;
@@ -556,8 +522,7 @@ package ktu.utils.align {
 		*  Space Evenly  *
 		******************
 		*/
-		public static function spaceVertical ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function spaceVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
@@ -580,8 +545,7 @@ package ktu.utils.align {
 			}
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function spaceHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function spaceHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
@@ -610,8 +574,7 @@ package ktu.utils.align {
 		*  Stack  *
 		***********
 		*/
-		public static function stackVertical ( targetCoordinateSpace:Rectangle, targets:Array /* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);									// clone array so we don't mess with original
+		public static function stackVertical ( targetCoordinateSpace:Rectangle, targets:Array /*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			var above:Array = new Array ( ) ;
@@ -660,8 +623,7 @@ package ktu.utils.align {
 			targets = targets.concat ( below ) ;
 			return ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function stackHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/* of Rectangle */) :Array {
-			targets = RectangleUtils.cloneRectangleArray(targets);								// clone array so we don't mess with original
+		public static function stackHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			var before:Array = new Array ( ) ;													// array to hold objects to the left of the tcs
