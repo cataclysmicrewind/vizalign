@@ -7,195 +7,173 @@ package ktu.utils.align {
 	import flash.display.StageDisplayState;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	
-	
-	
 	/**
 	 * 
 	 * 
 	 * 	TODO:
-	 *		VizAlignment.align(targets);
+	 * 		Method Manifests
+	 * 			How can I make it so I only compile the align functions I use
+	 * 			How can I forcibly include all methods?
+	 * 
+	 * 		Input Validation
+	 * 			Only throw errors for Bad Targets
+	 * 			should I only accept premade VizAlignTargets? does it make a difference?
+	 * 			
+	 * 
+	 * 		VizAlignGroup - figure out whether it should be an array of VizAlignTargets, or just DisplayObject
+	 * 			scaleFromOrigin()
+	 * 				x&y += offsetFromOrigin * scale
+	 * 				w&h += orig w&h * scale
+	 * 			override applyOriginOffset()
+	 * 				x&y += originOffset * scale
+	 * 
+	 * 		VizAlignTarget
+	 * 			scalePadding:Boolean;
+	 * 			padding
+	 * 				(x + padding) * scale	(scalePadding)
+	 * 				x * scale + padding		(!scalePadding)
+	 * 
+	 * 
+	 * 
+	 * 
 	 * 
 	 * 
 	 * 
 	 */
 	public class VizAlign {
-		
-		//static private const LEFT				:Function 	= AlignMethods.left;		// so that the AlignMethods class is always compiled with VizAlign... yuck
 		/**
-		 * 	TODO:
-		 * 		Make sure TO_TARGETS works
-		 * 	  +		build function
-		 * 	  +  	test
-		 * 	  + verifyInput
-		 * 	  + return VizAlignTargets properly
-		 * 	  + think about the right way to get them converted to VizAlignTargets and how
-		 * 		groups
-		 * 			refactor copy of array
-		 * 			implement the logic for getting a groups bounds
-		 * 			implement the logic to adjust the individual rectangles after the group is done
-		 * 		
 		 * 
 		 * 
 		 * @param	targets
 		 * @param	vizAlignments
 		 * @param	applyResults
 		 * @param	ignoreOrigin
-		 * @param	stage
+		 * @param	pixelHinting
+		 * 
+		 * @return
 		 */
-		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, applyResults:Boolean = false, ignoreOrigin:Boolean = false, pixelHinting:Boolean = false):Array {
-			targets = targets.concat();																				// copy array so we have new one (refactor when doing groups)
-			verifyInput(targets, vizAlignments);																	// verify that all the input is acceptable
+		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, ignoreOrigin:Boolean = false, applyResults:Boolean = false, pixelHinting:Boolean = false):Array/*VizAlignTarget*/ {
+			if ( targets.length == 0 || vizAlignments.length == 0)	return [];								// if no targets in array, return nothing. idiot
 			
-			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToAlignTargets(targets);							// convert all targets to VizAlignTarget
-			var alignedTargetBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);				// get all rectangles to move
+			targets = targets.concat();																		// copy array so we have new one (refactor when doing groups)
+			verifyInput(targets, vizAlignments);															// verify that all the input is acceptable
 			
+			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);				// convert all targets to VizAlignTarget
+			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
 			
-			var length:uint = vizAlignments.length;																	// get lenght of vizAlignments for optimized looping
-			for (var i:int = 0; i < length; i++) {																	// for each vizAlignment
-				alignedTargetBounds = vizAlignments[i].align (alignedTargetBounds);
-			}																										// end loop
+			var length:uint = vizAlignments.length;															// get lenght of vizAlignments for optimized looping
+			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
+				targetEndBounds = vizAlignments[i].align (targetEndBounds);									//		have the VizAlignment align the rectnalges
+			}																								// end loop
 			
-			updateEndRectanglesForVizAlignTargets(vizAlignTargets, alignedTargetBounds);							// apply the changes to each VizAlignTarget
-			// apply options
-			if (pixelHinting) roundResults (vizAlignTargets);														// if pixelHinting, round the results
-			if (ignoreOrigin) offsetOrigins(vizAlignTargets);														// if ignoreOrigin, offset the results by their origin
-			if (applyResults) applyEnds(vizAlignTargets);															// if applyResults, tell all VizAlignTarget to go to end
+			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
+			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the results by their origin
+			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
 			
-			return vizAlignTargets;																					// return VizAlignTarget s
+			return vizAlignTargets;																			// return VizAlignTarget s
 		}
 		
 		/**
 		 * 	TODO: account for groups
-		 * 	
+		 * 				technically already fonr as the groups extend VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
-		static public function applyEnds (vizAlignTargets:Array/* of VizAlignTarget */):void {
+		static public function applyEnds (vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for (var i:int = 0; i < vizAlignTargets.length; i++) {
 				VizAlignTarget( vizAlignTargets[i]).applyEndBounds();
 			}
 		}
 		/**
 		 * 	TODO: account for groups
-		 * 	
+		 * 			technically already fonr as the groups extend VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
-		static public function applyOriginals (vizAlignTargets:Array/* of VizAlignTarget */):void {
+		static public function applyOriginals (vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for (var i:int = 0; i < vizAlignTargets.length; i++) {
 				VizAlignTarget( vizAlignTargets[i]).applyOrigBounds();
 			}
 		}
 		/**
 		 * 	TODO: account for groups
-		 * 	
+		 * 			technically already done as the groups extends VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
-		static public function offsetOrigins (vizAlignTargets:Array):void {
+		static public function applyOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for (var i:int = 0; i < vizAlignTargets.length; i++) {
-				VizAlignTarget( vizAlignTargets[i]).applyOriginOffestToEnd();
+				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = true;
 			}
 		}
-		
+		/**
+		 * 	TODO: account for groups
+		 * 			technically already done as the groups extends VizAlignTarget
+		 * 
+		 * @param	vizAlignTargets
+		 */
+		static public function removeOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
+			for (var i:int = 0; i < vizAlignTargets.length; i++) {
+				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = false;
+			}
+		}
 		
 	
 		/**
 		 * 	TODO: account for groups
-		 * 	
+		 * 			that shouldn't be hard with the VizAlignGroup class idea
 		 * 
 		 * @param	alignedTargetBounds
 		 */
-		static public function roundResults(vizAlignTargets:Array):void {
+		static public function roundResults(vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for (var i:int = 0; i < vizAlignTargets.length; i++) {
-				var end:Rectangle = VizAlignTarget(vizAlignTargets[i]).end;
-				end.x = Math.round(end.x);
-				end.y = Math.round(end.y);
-				end.width = Math.round(end.width);
-				end.height = Math.round(end.height);
+				vizAlignTargets[i].roundEndValues();
 			}
 		}
-		
-		
-		
-		
 		
 		/*
 		**************************************************************************************************
 		*
 		*  Utility Methods
 		*
-		* 			convertToVizAlignTargets
-		* 			getBoundsFromVizAlignTargets
-		* 			updateEndRectanglesForVizAlignTargets
-		*
-		*
 		**************************************************************************************************
 		*/
-		
-		static private function updateEndRectanglesForVizAlignTargets(alignTargets:Array, alignedTargetBounds:Array):void {
-			for (var i:int = 0; i < alignTargets.length; i++) {
-				var target:VizAlignTarget = alignTargets[i];
-				var alignedRect:Rectangle = alignedTargetBounds[i];
-				
-				var targetEnd:Rectangle = target.end;
-				targetEnd.x = alignedRect.x;
-				targetEnd.y = alignedRect.y;
-				targetEnd.width = alignedRect.width;
-				targetEnd.height = alignedRect.height;
-			}
-		}
-		
-		
-		static private function getBoundsFromVizAlignTargets(vizAlignTargets:Array):Array {
-			var bounds:Array = [];
-			for (var i:int = 0; i < vizAlignTargets.length; i++) {
-				bounds[i] = vizAlignTargets[i].end;
-			}
+		static private function getBoundsFromVizAlignTargets(vizAlignTargets:Array/*VizAlignTarget*/):Array/*Rectangle*/ {
+			var bounds:Array/*Rectangle*/ = [];
+			for (var i:int = 0; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
 			return bounds;
 		}
-		
-		static private function convertToAlignTargets(targets:Array):Array {
-			var alignTargets:Array = [];
+		static private function convertToVizAlignTargets(targets:Array):Array/*VizAlignTarget*/ {
+			var vizAlignTargets:Array/*VizAlignTarget*/ = [];
 			for (var i:int = 0; i < targets.length; i++) {
 				var item:* = targets[i];
 				switch (true) {
 					case item is Array:
-						alignTargets[i] = convertToAlignTargets(item);
+						vizAlignTargets[i] = convertToVizAlignTargets(item);
 						break;
 					case item is DisplayObject:
-						alignTargets[i] = new VizAlignTarget(item);
+						vizAlignTargets[i] = new VizAlignTarget(item);
 						break;
 					case item is VizAlignTarget:
-						alignTargets[i] = item;
+						vizAlignTargets[i] = item;
 						break;
 					default:												// object passed in was not a DisplayObject
 						VizAlignError.e(VizAlignError.BAD_TARGET);			// shouldn't even happen but still
 						break;
 				}
 			}
-			return alignTargets;
+			return vizAlignTargets;
 		}
-		
-		
 		/*
 		**************************************************************************************************
 		*
 		*  Error Methods
 		*
-		* 			verifyInput() - This method does all of the error checking for each align() call
-		*
-		* 		This method will check to make sure all of your input is acceptable to make the align()
-		* 	function as expected. If you wish to override this, simply comment out the method call to this
-		* 	function inside of the align().
-		*
 		**************************************************************************************************
 		*/
 		/** @private
 		 * 
-		 * 		verifyInput does just that, it verifies that everything you have passed into the align() method is acceptable
-		 * input.
+		 * 		verifies that everything you have passed into the align() method is acceptable input.
 		 * 
 		 * List of thrown errors:
 		 * 		targets.length == 0							VizAlign : Must have at least one target
@@ -206,14 +184,12 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @param	alignmentObjects
 		 */
-		static private function verifyInput(targets:Array, alignmentObjects:Array):void {
-			if ( targets.length == 0 )			VizAlignError.e (VizAlignError.NO_TARGETS);					// if no targets in array, throw error
-			if ( alignmentObjects.length == 0 )	VizAlignError.e (VizAlignError.NO_ALIGNPARAM);				// if not vizAlignemtns in array, throw error
+		static private function verifyInput(targets:Array, alignmentObjects:Array/*VizAlignment*/):void {
 			var allTargets:Array = getAllTargets(targets);													// grab all the targets in a one dimmension array
-			var dupTargets:String = checkDuplicateTargets(allTargets);										// check for duplicate targets
 			var tcsOverlap:String = checkTCSOverlap(allTargets, alignmentObjects);							// check for tcs target overlap
-			if ( dupTargets.length > 0 )		VizAlignError.e (VizAlignError.DUP_TARGETS, dupTargets);	// if dupTargets string has characters, then there is error
 			if ( tcsOverlap.length > 0 )		VizAlignError.e (VizAlignError.TCS_OVERLAP, tcsOverlap);	// if tcsOverlap string has characters, then there is error
+			//var dupTargets:String = checkDuplicateTargets(allTargets);										// check for duplicate targets
+			//if ( dupTargets.length > 0 )		VizAlignError.e (VizAlignError.DUP_TARGETS, dupTargets);	// if dupTargets string has characters, then there is error
 		};
 		/*		error util
 		*
@@ -221,6 +197,31 @@ package ktu.utils.align {
 		*  Error Util Methods  *
 		************************
 		*/
+		/** @private
+		 * 
+		 * 		getAllTargets will grab all of the targets passed in. This will grab targets inside of any and all groups that have
+		 * been made as well.
+		 * @param	targets
+		 * @return
+		 */
+		static private function getAllTargets(targets:Array):Array/* of DisplayObject */ {
+			var returns:Array = new Array ();									// create return array
+			for (var elmnt:String in targets) {									// for every element in targets...
+				var item:* = targets[elmnt];									//		keep reference to current item
+				if (item is Array) {											//		if element is an Array
+					var n:Array = getAllTargets(item);							//			call getAllTargets on that Array
+					returns = returns.concat(n);								//			concat the results from 'group' with this one
+				} else if (item is DisplayObject){								//		else if target is DisplayObject
+					returns.push(item);											//			add target to return Array
+				} else if (item is VizAlignTarget) {							//		else if target is VizAlignTarget
+					returns.push (item.target);									//			add VizAlignTarget.target to return array
+				} else {														//		else
+					var name:String = item.name ? item.name : item.toString();	//			try to get a name for it, if not then use it to string
+					VizAlignError.e (VizAlignError.BAD_TARGET, name);			//			throw error, bad input
+				}																//		end if
+			}																	// end loop
+			return returns;														// return results
+		}
 		/** @private
 		 * 
 		 * 		checkDuplicateTargets checks the targets array to see if any of the targets is duplicated. Having one DisplayObject
@@ -260,52 +261,20 @@ package ktu.utils.align {
 			}																							// end loop
 			return "";																					// return empty if no problems
 		}
-		/** @private
-		 * 
-		 * 		getAllTargets will grab all of the targets passed in. This will grab targets inside of any and all groups that have
-		 * been made as well.
-		 * @param	targets
-		 * @return
-		 */
-		static private function getAllTargets(targets:Array):Array/* of DisplayObject */ {
-			var returns:Array = new Array ();									// create return array
-			for (var elmnt:String in targets) {									// for every element in targets...
-				var item:* = targets[elmnt];									//		keep reference to current item
-				if (item is Array) {											//		if element is an Array
-					var n:Array = getAllTargets(item);							//			call getAllTargets on that Array
-					returns = returns.concat(n);								//			concat the results from 'group' with this one
-				} else if (item is DisplayObject){								//		else if target is DisplayObject
-					returns.push(item);											//			add target to return Array
-				} else if (item is VizAlignTarget) {							//		else if target is VizAlignTarget
-					returns.push (item.target);									//			add VizAlignTarget.target to return array
-				} else {														//		else
-					var name:String = item.name ? item.name : item.toString();	//			try to get a name for it, if not then use it to string
-					VizAlignError.e (VizAlignError.BAD_TARGET, name);			//			throw error, bad input
-				}																//		end if
-			}																	// end loop
-			return returns;														// return results
-		}
 	}
 }
 
 
 /**
- * 
  * 	This class made it more clear as to how the Errors occur in VizAlign
- * 
  */
 class VizAlignError {
 	
-	public static const NO_TARGETS		:String = "VizAlign : Must have at least one target";
-	public static const NO_ALIGNPARAM	:String = "VizAlign : Must have at least one alignment method";
 	public static const DUP_TARGETS		:String = "VizAlign : Cannot have duplicate targets";
 	public static const TCS_OVERLAP		:String = "VizAlign : Targets cannot also be a targetCoordinateSpace";
 	public static const BAD_TARGET		:String = "VizAlign : Target must be a DisplayObject/VizAlignTarget";
 	
 	static public function e (type:String, extraInfo:String = "") :void {
-		var str:String = type
-		str += (extraInfo.length > 0) ? " - " + extraInfo : "";
-		throw new ArgumentError (str);
+		throw new ArgumentError (type + ((extraInfo.length > 0) ? " - " + extraInfo : ""));
 	}
-	
 }

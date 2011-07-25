@@ -10,20 +10,19 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * AlignParam holds the neccessary values for each alignment.																								<br/>
+	 * VizAlignment holds the neccessary values for each alignment.																								<br/>
 	 * 																																							<br/>
-	 * Each alignment needs three (3) things:																													<br/>
-	 * First, the targets you wish to align.																													<br/>
-	 * Second, how you wish to align the targets. 																												<br/>
-	 * Third, what object do you want to align the targets to.																									<br/>
+	 * Each alignment needs two (2) things:																														<br/>
+	 * First, how you wish to align the targets. 																												<br/>
+	 * Second, what object do you want to align the targets to.																									<br/>
 	 * 																																							<br/>
-	 * Given this sentance 'I want to myMovieClip to the left of the stage', myMovieClip represents the targets,
-	 * to the left represents the type, and of the stage represents the targetCoordinateSpace (tcs).															<br/>
+	 * Given this sentance 'I want to myMovieClip to the left of the stage', 'myMovieClip' represents the targets,
+	 * 'to the left' represents the type, and of 'the stage' represents the targetCoordinateSpace (tcs).															<br/>
 	 * 																																							<br/>
 	 * 
 	 * @example 																																				<listing version="3">
-	 * 		var param:AlignParam = new AlignParam(VizAlign.LEFT, stage);
-	 * 		VizAlign.align([mc1, mc2], [param], true, stage);
+	 * 		var param:VizAlignment = new VizAlignment(AlignMethods.left, stage);
+	 * 		VizAlign.align([mc1, mc2], [param], true, true, true);
 	 * 																																							</listing>
 	 */
 	public class VizAlignment {
@@ -75,10 +74,9 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @return
 		 */
-		public function align (targetBounds:Array/*Rectangle*/):Array {
-			var tcsBounds:Rectangle = getTCSBounds(targetBounds, tcs);									//	get the tcs Bounds
-			var alignedTargetBounds:Array/*Rectangle*/ = type(tcsBounds, targetBounds);	//	align them and get the new Bounds for the targets
-			return alignedTargetBounds;
+		public function align (targetBounds:Array/*Rectangle*/):Array/*Rectangle*/ {
+			var tcsBounds:Rectangle = getTCSBounds(targetBounds, tcs);		//	get the tcs Bounds
+			return type(tcsBounds, targetBounds);							//	align them and return the new bounds for the targets
 		}
 		
 		
@@ -87,10 +85,6 @@ package ktu.utils.align {
 		**************************************************************************************************
 		*
 		*  Coordinate Space Functions
-		*
-		* 			getTCSBounds
-		* 			getStageBounds
-		*
 		*
 		**************************************************************************************************
 		*/
