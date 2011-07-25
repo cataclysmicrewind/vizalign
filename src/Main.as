@@ -117,7 +117,7 @@ package  {
 				g.moveTo(0, i * hgap);
 				g.lineTo(w, i * hgap);
 			}
-			VizAlign.align([grid], [new VizAlignment(AlignMethods.center, stage)], true, true);
+			VizAlign.align([grid], [new VizAlignment(AlignMethods.center, stage)], true, true, true);
 			addChild(grid);
 			
 			grid.addEventListener(MouseEvent.MOUSE_DOWN, dragSomething);
@@ -164,8 +164,7 @@ package  {
 			var ignoreOrigin:Boolean = ignoreOrigin_chk.selected;
 			var pixelHinting:Boolean = pixelHinting_chk.selected;
 			
-			VizAlign.pixelHinting = pixelHinting;
-			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], applyResults, ignoreOrigin);
+			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], ignoreOrigin, applyResults, pixelHinting);
 		}
 		
 		private var dragging:Object;

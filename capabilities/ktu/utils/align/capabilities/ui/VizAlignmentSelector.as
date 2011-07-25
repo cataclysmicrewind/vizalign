@@ -4,66 +4,112 @@ package ktu.utils.align.capabilities.ui {
 	import com.bit101.components.Panel;
 	import com.bit101.components.PushButton;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.text.TextFormat;
+	import flash.utils.describeType;
+	import ktu.utils.align.AlignMethods;
 	
 	/**
 	 * ...
 	 * @author Keelan
 	 */
-	public class VizAlignmentSelector extends Sprite{
+	public class VizAlignmentSelector extends Sprite {
+		
+		private var header:Label;
+		
+		private var list:List;
+		private var up:PushButton;
+		private var down:PushButton;
+		private var add:PushButton;
+		private var remove:PushButton;
+		
+		private var panel:Panel;
+		private var methodLabel:Label;
+		private var methodList:List;
+		private var tcsLabel:Label;
+		private var tcsList:List;
+		private var ok:PushButton;
+		private var cancel:PushButton;
 		
 		public function VizAlignmentSelector() {
-			var header:Label = new Label(this, 0, 0);
+			
+			header = new Label(this, 0, 0);
 			var fmt:TextFormat = header.textField.getTextFormat();
 			fmt.bold = true;
 			fmt.size = 18;
 			header.textField.defaultTextFormat = fmt;
 			header.text = "to:";
 			
-			var list:List = new List(this, 10, header.height + 20);
+			list = new List(this, 10, header.height + 20);
 			list.width += 90;
 			
-			var up:PushButton = new PushButton(this, list.x + list.width, list.y, "△", onUpClicked);
+			up = new PushButton(this, list.x + list.width, list.y, "△", onUpClicked);
 			up.width = 20,
 			up.height = 20;
-			var down:PushButton = new PushButton(this, list.x + list.width, list.y + list.height, "▽", onUpClicked);
+			
+			down = new PushButton(this, list.x + list.width, list.y + list.height, "▽", onDownClicked);
 			down.width = 20;
 			down.height = 20;
 			down.y -= down.height;
 			
-			
-			var add:PushButton = new PushButton(this, 10, list.y + list.height, "add", onAddClick);
-			add.width = 40;
-			add.height = 20;
-			
-			var remove:PushButton = new PushButton(this, list.width, list.y + list.height, "remove", onRemoveClick);
+			remove = new PushButton(this, list.width, list.y + list.height, "remove", onRemoveClick);
 			remove.width = 60;
 			remove.height = 20;
 			remove.x = list.width - remove.width;
+			
+			add = new PushButton(this, 10, list.y + list.height, "add", onAddClick);
+			add.width = 40;
+			add.height = 20;
+			
 			
 			
 			
 			// adder pop up
 			
-			var panel:Panel = new Panel(this);
-			//panel.visible = false;
+			panel = new Panel(this);
+			panel.visible = false;
 			panel.setSize(460, 190);
 			panel.x = -125;
 			panel.y = -15;
 			
-			var methodLabel:Label = new Label(panel, 20, 10, "choose method:");
+			methodLabel = new Label(panel, 20, 10, "choose method:");
 			
-			var methodList:List = new List(panel, methodLabel.x + 10, methodLabel.y + methodLabel.height + 10);
+			methodList = new List(panel, methodLabel.x + 10, methodLabel.y + methodLabel.height + 10);
 			methodList.width = 180;
-			var tcsLabel:Label = new Label(panel, methodList.x + methodList.width + 40, 10, "choose tcs:");
-			var tcsList:List = new List(panel, tcsLabel.x + 10, tcsLabel.y + tcsLabel.height + 10);
+			
+			
+			var alignMethodsDescription:XML = describeType(AlignMethods);
+			var ar:Array = [];
+			for (var i:int = 0; i < alignMethodsDescription.method.length(); i++) {
+				ar.push(alignMethodsDescription.method[i].@name);
+			}
+			ar.sort();
+			for each (var method:String in ar) {
+				methodList.addItem(method);
+			}
+			
+			
+			
+			
+			
+			tcsLabel = new Label(panel, methodList.x + methodList.width + 40, 10, "choose tcs:");
+			
+			tcsList = new List(panel, tcsLabel.x + 10, tcsLabel.y + tcsLabel.height + 10);
 			tcsList.width = 180;
 			
-			var cancel:PushButton = new PushButton(panel, 0, panel.height - 30 - 10, "cancel");
+			tcsList.addItem("alignButton");
+			tcsList.addItem("stage");
+			tcsList.addItem("red");
+			tcsList.addItem("green");
+			tcsList.addItem("blue");
+			
+			
+			cancel = new PushButton(panel, 0, panel.height - 30 - 10, "cancel", onCancelClick);
 			cancel.width = 60;
 			cancel.height = 30;
 			cancel.x = tcsList.x + tcsList.width - cancel.width;
-			var ok:PushButton = new PushButton(panel, 0, panel.height - 30 - 10, "ok");
+			
+			ok = new PushButton(panel, 0, panel.height - 30 - 10, "ok", onOkClick);
 			ok.width = 60;
 			ok.height = 30;
 			ok.x = cancel.x - ok.width - 10;
@@ -72,19 +118,62 @@ package ktu.utils.align.capabilities.ui {
 			
 		}
 		
-		private function onUpClicked():void {
-			
+		private function onUpClicked(e:Event):void {
+			//move selected item in list up one
+			if (list.selectedIndex) {
+				var items:Array = list.items;
+				var index:int = list.selectedIndex;
+				var toMove:* = items.splice(index, 1)[0];
+				items.splice(index - 1, 0, toMove);
+				list.items = items;
+			}
+		}
+		
+		private function onDownClicked(e:Event):void {
+			//move selected item in list down one
+			if (list.selectedIndex) {
+				var items:Array = list.items;
+				var index:int = list.selectedIndex;
+				var toMove:* = items.splice(index, 1)[0];
+				items.splice(index - 1, 0, toMove);
+				list.items = items;
+			}
 		}
 		
 		
-		
-		private function onAddClick():void {
-			
+		private function onAddClick(e:Event):void {
+			//show the panel
+			panel.visible = true;
 		}
 		
-		private function onRemoveClick():void {
-			
+		private function onRemoveClick(e:Event):void {
+			// remove the selected item from the list
+			if (list.selectedIndex) {
+				var items:Array = list.items;
+				var index:int = list.selectedIndex;
+				var toMove:* = items.splice(index, 1)[0];
+				//items.splice(index - 1, 0, toMove);
+				list.removeAll();
+				list.items = items;
+			}
 		}
+		
+		private function onCancelClick(e:Event):void {
+			// close the panel, and reset the selections...
+			panel.visible = false;
+		}
+		
+		private function onOkClick(e:Event):void {
+			// add the selected method and tcs to list
+			var selectedMethod:String = methodList.selectedItem as String;
+			var selectedTCS:String = tcsList.selectedItem as String;
+			
+			var newItem:Object = { };
+			newItem.label = selectedMethod + " : " + selectedTCS;
+			list.addItem(newItem);
+			panel.visible = false;
+		}
+		
 	}
 
 }

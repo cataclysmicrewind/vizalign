@@ -7,7 +7,7 @@ package ktu.utils {
 	public class RectangleUtils {
 		
 		
-		public static function cloneRectangleArray (array:Array /*Rectangle*/):Array/*Rectangle*/ {
+		public static function cloneRectangleArray (array:Array/*Rectangle*/):Array/*Rectangle*/ {
 			var dupeRects:Array = [];
 			for each (var rect:Rectangle in array) {
 				dupeRects.push (rect.clone());
