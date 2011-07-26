@@ -249,7 +249,7 @@
       <dep id="AS3" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311702137148" size="3027" optimizedsize="1608">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311711418656" size="2998" optimizedsize="1595">
       <def id="ktu.utils.align:VizAlignTarget" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -397,7 +397,7 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311693619552" size="4298" optimizedsize="2378">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311711312059" size="4297" optimizedsize="2386">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignment" />
