@@ -35,6 +35,8 @@ package ktu.utils.align.capabilities.gfx {
 		
 		private var showOrigin:Boolean = false;
 		
+		public var origPos:Rectangle;
+		
 		
 		public function Target(w:int = 100, h:int = 100) {
 			setSize(w, h);

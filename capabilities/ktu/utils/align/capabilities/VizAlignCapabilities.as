@@ -1,7 +1,10 @@
 package ktu.utils.align.capabilities {
 	
+	import com.flashdynamix.motion.Tweensy;
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.capabilities.gfx.Grid;
 	import ktu.utils.align.capabilities.gfx.Target;
@@ -11,6 +14,7 @@ package ktu.utils.align.capabilities {
 	import ktu.utils.align.capabilities.ui.CapabilitiesControls;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
+	import ktu.utils.align.VizAlignTarget;
 	
 	/**
 	 * 	This class is the Document class for the Capabilities SWF.
@@ -34,10 +38,12 @@ package ktu.utils.align.capabilities {
 	 * @author Keelan
 	 */
 	public class VizAlignCapabilities extends Sprite{
+		private var grid:Grid;
 		
 		public function VizAlignCapabilities() {
 			
 			var arena:VizAlignArena = new VizAlignArena();
+			arena.name = "arena";
 			arena.setSize(750, 500);
 			addChild(arena);
 			
@@ -49,10 +55,14 @@ package ktu.utils.align.capabilities {
 			controlPanel.y = 500;
 			addChild(controlPanel);
 			
-			//
-			var alignments:Array = [new VizAlignment(AlignMethods.adjacentLeft, arena.targetCoordinateSpaces[2])]
-									//new VizAlignment(AlignMethods.scaleToFit, arena.targetCoordinateSpaces[1]) ];
-			VizAlign.align (arena.targets, alignments, true, true);
+			
+			
+			var tcs:Array = arena.targetCoordinateSpaces;
+			tcs.unshift(arena);
+			tcs = tcs.concat(arena.targets);
+			controlPanel.targetCoordinateSpaces = tcs;
+			
+			controlPanel.targets = arena.targets;
 			
 		}
 		
@@ -60,18 +70,20 @@ package ktu.utils.align.capabilities {
 		
 		private function addTCS(arena:VizAlignArena):void{
 			var l:VizAlignLogo = new VizAlignLogo();
+			l.name = "vizalign logo";
 			l.x = 10;
 			l.y = 10;
 			arena.addTCS(l);
 			
 			
-			var g:Grid = new Grid();
-			g.x = 190;
-			g.y = 70;
-			g.setSize(360, 360);
-			g.addInterval(2, 0x999999);
-			g.addInterval(4, 0x666666);
-			arena.addTCS(g);
+			grid = new Grid();
+			grid.name = "grid";
+			grid.x = 190;
+			grid.y = 70;
+			grid.setSize(360, 360);
+			grid.addInterval(2, 0x999999);
+			grid.addInterval(4, 0x666666);
+			arena.addTCS(grid);
 		}
 		
 		private function addTargets(arena:VizAlignArena):void {
@@ -82,6 +94,7 @@ package ktu.utils.align.capabilities {
 			t.setSize(60, 100);
 			t.setOriginOffset(-200, -200);
 			t.setColor(0xCCFF32);
+			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
 			arena.addTarget(t);
 			
 			var t:Target = new Target();
@@ -91,6 +104,7 @@ package ktu.utils.align.capabilities {
 			t.setSize(60, 60);
 			t.setOriginOffset(70, 90);
 			t.setColor(0x009966);
+			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
 			arena.addTarget(t);
 			
 			t = new Target();
@@ -100,6 +114,7 @@ package ktu.utils.align.capabilities {
 			t.setSize(60, 40);
 			t.setOriginOffset(0, 50);
 			t.setColor(0x09AABB);
+			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
 			arena.addTarget(t);
 			
 			t = new Target();
@@ -109,6 +124,7 @@ package ktu.utils.align.capabilities {
 			t.setSize(40, 40);
 			t.setOriginOffset(0, 0);
 			t.setColor(0xB41D00);
+			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
 			arena.addTarget(t);
 			
 			t = new Target();
@@ -118,11 +134,13 @@ package ktu.utils.align.capabilities {
 			t.setSize(20, 40);
 			t.setOriginOffset(20, -20);
 			t.setColor(0x3064FF);
+			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
 			arena.addTarget(t);
 		}
 		
 		private function addTargetInfo(arena:VizAlignArena):void {
 			var targetInfo:TargetInfo = new TargetInfo();
+			targetInfo.name = "target info";
 			targetInfo.x = 580;
 			targetInfo.y = 230;
 			

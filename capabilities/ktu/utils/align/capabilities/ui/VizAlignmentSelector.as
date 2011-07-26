@@ -3,17 +3,31 @@ package ktu.utils.align.capabilities.ui {
 	import com.bit101.components.List;
 	import com.bit101.components.Panel;
 	import com.bit101.components.PushButton;
+	import com.flashdynamix.motion.Tweensy;
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.text.TextFormat;
 	import flash.utils.describeType;
 	import ktu.utils.align.AlignMethods;
+	import ktu.utils.align.VizAlignment;
 	
 	/**
 	 * ...
 	 * @author Keelan
 	 */
 	public class VizAlignmentSelector extends Sprite {
+		
+		private var _targetCoordinateSpaces:Array;
+		
+		public function get targetCoordinateSpaces():Array {
+			return _targetCoordinateSpaces;
+		}
+		public function set targetCoordinateSpaces(value:Array):void {
+			_targetCoordinateSpaces = value;
+			updateTCSList();
+		}
+		
 		
 		private var header:Label;
 		
@@ -67,10 +81,9 @@ package ktu.utils.align.capabilities.ui {
 			// adder pop up
 			
 			panel = new Panel(this);
-			panel.visible = false;
 			panel.setSize(460, 190);
 			panel.x = -125;
-			panel.y = -15;
+			panel.y = panel.height;
 			
 			methodLabel = new Label(panel, 20, 10, "choose method:");
 			
@@ -87,9 +100,6 @@ package ktu.utils.align.capabilities.ui {
 			for each (var method:String in ar) {
 				methodList.addItem(method);
 			}
-			
-			
-			
 			
 			
 			tcsLabel = new Label(panel, methodList.x + methodList.width + 40, 10, "choose tcs:");
@@ -120,47 +130,44 @@ package ktu.utils.align.capabilities.ui {
 		
 		private function onUpClicked(e:Event):void {
 			//move selected item in list up one
-			if (list.selectedIndex) {
+			if (list.selectedItem) {
 				var items:Array = list.items;
 				var index:int = list.selectedIndex;
 				var toMove:* = items.splice(index, 1)[0];
 				items.splice(index - 1, 0, toMove);
 				list.items = items;
+				list.selectedIndex = index - 1;
 			}
 		}
 		
 		private function onDownClicked(e:Event):void {
 			//move selected item in list down one
-			if (list.selectedIndex) {
+			if (list.selectedItem) {
 				var items:Array = list.items;
 				var index:int = list.selectedIndex;
 				var toMove:* = items.splice(index, 1)[0];
-				items.splice(index - 1, 0, toMove);
+				items.splice(index + 1, 0, toMove);
 				list.items = items;
+				list.selectedIndex = index + 1;
 			}
 		}
 		
 		
 		private function onAddClick(e:Event):void {
 			//show the panel
-			panel.visible = true;
+			panelAnimate(true);
 		}
 		
 		private function onRemoveClick(e:Event):void {
 			// remove the selected item from the list
-			if (list.selectedIndex) {
-				var items:Array = list.items;
-				var index:int = list.selectedIndex;
-				var toMove:* = items.splice(index, 1)[0];
-				//items.splice(index - 1, 0, toMove);
-				list.removeAll();
-				list.items = items;
+			if (list.selectedItem) {
+				list.removeItemAt(list.selectedIndex);
 			}
 		}
 		
 		private function onCancelClick(e:Event):void {
 			// close the panel, and reset the selections...
-			panel.visible = false;
+			panelAnimate(false);
 		}
 		
 		private function onOkClick(e:Event):void {
@@ -171,7 +178,51 @@ package ktu.utils.align.capabilities.ui {
 			var newItem:Object = { };
 			newItem.label = selectedMethod + " : " + selectedTCS;
 			list.addItem(newItem);
-			panel.visible = false;
+			panelAnimate(false);
+		}
+		
+		private function updateTCSList():void {
+			tcsList.items = [];
+			tcsList.addItem("stage");
+			for each (var tcs:DisplayObject in _targetCoordinateSpaces) {
+				tcsList.addItem(tcs.name);
+			}
+			
+			// also add any other ones... 
+			// or
+			// have other controls add more
+		}
+		
+		private function panelAnimate(animateIn:Boolean):void {
+			if (animateIn) 
+				Tweensy.to (panel, { y: -15 }, .4 );
+			else
+				Tweensy.to (panel, { y: panel.height }, .4 );
+		}
+		
+		
+		public function get chosenAlignments():Array {
+			// get them all and make VizAlingment into an array
+			var ret:Array = [];
+			var items:Array = list.items;
+			for each (var item:Object in items) {
+				var inst:Array = item.label.split(" : ");
+				var method:Function = AlignMethods[inst[0]];
+				var tcsName:String = inst[1];
+				var tcs:DisplayObject;
+				if (tcsName == "stage") {
+					tcs = stage;
+					break;
+				}
+				for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
+					if (atcs.name == tcsName) {
+						tcs = atcs;
+						break;
+					}
+				}
+				ret.push(new VizAlignment(method, tcs));
+			}
+			return ret;
 		}
 		
 	}
