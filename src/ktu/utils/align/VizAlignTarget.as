@@ -82,7 +82,6 @@ package ktu.utils.align {
 			_target.y = _end.y;
 			_target.width = _end.width;
 			_target.height = _end.height;
-			//_applyOriginOffset = !_applyOriginOffset;
 		}
 		
 		public function roundEndValues():void {

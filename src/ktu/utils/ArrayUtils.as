@@ -33,14 +33,16 @@ package ktu.utils {
 		 * @param	orderedDic
 		 * @return
 		 */
-		public static function reorderArray (array:Array/*Object*/, orderedDic:Dictionary):Array {
+		public static function reorderArray (array:Array/*Object*/, orderedDic:Dictionary):void {
 			var orderedArray:Array = [];
 			for (var i:int = 0; i < array.length; i++) {
 				var item:* = array[i];
 				var index:int = orderedDic[item];
 				orderedArray[index] = item;
 			}
-			return orderedArray;
+			for (i = 0; i < orderedArray.length; i++) {
+				array[i] = orderedArray[i];
+			}
 		}
 		
 	}
