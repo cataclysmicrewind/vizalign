@@ -16,14 +16,13 @@ package ktu.utils.align {
 	 * 			this worked before when the origin was calculated in the align method and not post alignment
 	 * 			checking against the delta of x&y helps, but not always...
 	 * 
+	 * 			Should I include option for ignoring origin on TCS... right now, I always do
+	 * 
+	 * 
 	 * 		Method Manifests
 	 * 			How can I make it so I only compile the align functions I use
 	 * 			How can I forcibly include all methods?
 	 * 
-	 * 		Input Validation
-	 * 			Only throw errors for Bad Targets
-	 * 			should I only accept premade VizAlignTargets? does it make a difference?
-	 * 			
 	 * 
 	 * 		VizAlignGroup - figure out whether it should be an array of VizAlignTargets, or just DisplayObject
 	 * 			scaleFromOrigin()
@@ -31,6 +30,7 @@ package ktu.utils.align {
 	 * 				w&h += orig w&h * scale
 	 * 			override applyOriginOffset()
 	 * 				x&y += originOffset * scale
+	 * 
 	 * 
 	 * 		VizAlignTarget
 	 * 			scalePadding:Boolean;
@@ -62,20 +62,21 @@ package ktu.utils.align {
 		 */
 		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, ignoreOrigin:Boolean = false, applyResults:Boolean = false, pixelHinting:Boolean = false):Array/*VizAlignTarget*/ {
 			if ( targets.length == 0 || vizAlignments.length == 0)	return [];								// if no targets in array, return nothing. idiot
-			
 			targets = targets.concat();																		// copy array so we have new one (refactor when doing groups)
-			verifyInput(targets, vizAlignments);															// verify that all the input is acceptable
 			
 			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);				// convert all targets to VizAlignTarget
 			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
+			trace(targetEndBounds[0]);
 			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
+			trace(targetEndBounds[0]);
 			
 			var length:uint = vizAlignments.length;															// get lenght of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
-				targetEndBounds = vizAlignments[i].align (targetEndBounds);									//		have the VizAlignment align the rectnalges
+				vizAlignments[i].align (targetEndBounds);													//		have the VizAlignment align the rectnalges
 			}																								// end loop
-			
+			trace(targetEndBounds[0]);
 			if (ignoreOrigin) removeOriginOffsets(vizAlignTargets);											// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
+			trace(targetEndBounds[0]);
 			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
 			
@@ -127,7 +128,6 @@ package ktu.utils.align {
 			}
 		}
 		
-	
 		/**
 		 * 	TODO: account for groups
 		 * 			that shouldn't be hard with the VizAlignGroup class idea

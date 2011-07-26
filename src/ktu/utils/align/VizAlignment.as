@@ -74,9 +74,9 @@ package ktu.utils.align {
 		 * @param	targets
 		 * @return
 		 */
-		public function align (targetBounds:Array/*Rectangle*/):Array/*Rectangle*/ {
+		public function align (targetBounds:Array/*Rectangle*/):void {
 			var tcsBounds:Rectangle = getTCSBounds(targetBounds, tcs);		//	get the tcs Bounds
-			return type(tcsBounds, targetBounds);							//	align them and return the new bounds for the targets
+			type(tcsBounds, targetBounds);							//	align them and return the new bounds for the targets
 		}
 		
 		
