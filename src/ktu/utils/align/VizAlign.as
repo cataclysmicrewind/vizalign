@@ -11,6 +11,11 @@ package ktu.utils.align {
 	 * 
 	 * 
 	 * 	TODO:
+	 * 		Origins:
+	 *			Issues is that ignore origins adjusts it on both x&y every time, yet may only want one to change...
+	 * 			this worked before when the origin was calculated in the align method and not post alignment
+	 * 			checking against the delta of x&y helps, but not always...
+	 * 
 	 * 		Method Manifests
 	 * 			How can I make it so I only compile the align functions I use
 	 * 			How can I forcibly include all methods?
@@ -66,8 +71,8 @@ package ktu.utils.align {
 				targetEndBounds = vizAlignments[i].align (targetEndBounds);									//		have the VizAlignment align the rectnalges
 			}																								// end loop
 			
-			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the results by their origin
+			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
 			
 			return vizAlignTargets;																			// return VizAlignTarget s

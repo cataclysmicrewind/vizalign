@@ -14,22 +14,51 @@ package ktu.utils.align {
 		
 		protected var _orig:Rectangle = new Rectangle();
 		protected var _end:Rectangle = new Rectangle();
-
+		
+		
 		public function get target():DisplayObject { return _target; }
 		public function get originOffset():Point { return _originOffset; }
 		public function get applyOriginOffset():Boolean { return _applyOriginOffset; }
 		public function set applyOriginOffset(value:Boolean):void {
 			_applyOriginOffset = value;
+			var s:Point = scale;
+			var d:Point = delta;
 			if (value) {
-				_end.x -= _originOffset.x;
-				_end.y -= _originOffset.y;
+				if (delta.x != 0)
+					_end.x -= _originOffset.x * s.x;
+				if (delta.y != 0)
+					_end.y -= _originOffset.y * s.y;
+				if (delta.x == 0 && delta.y == 0) {
+					_end.x -= _originOffset.x * s.x;
+					_end.y -= _originOffset.y * s.y;
+				}
 			} else {
-				_end.x += _originOffset.x;
-				_end.y += _originOffset.y;
+				if (delta.x != 0)
+					_end.x += _originOffset.x * s.x;
+				if (delta.y != 0)
+					_end.y += _originOffset.y * s.y;
+				if (delta.x == 0 && delta.y == 0) {
+					_end.x += _originOffset.x * s.x;
+					_end.y += _originOffset.y * s.y;
+				}
 			}
 		}
 		public function get orig():Rectangle { return _orig; }
 		public function get end():Rectangle { return _end; }
+		public function get scale():Point {
+			var s:Point = new Point();
+			s.x = _end.width / _orig.width;
+			s.y = _end.height / _orig.height;
+			return s;
+		}
+		public function get delta():Point {
+			var d:Point = new Point();
+			d.x = _end.x - _orig.x;
+			d.y = _end.y - _orig.y;
+			return d;
+		}
+		
+		
 		
 		public function VizAlignTarget(target:DisplayObject):void {
 			_target = target;
