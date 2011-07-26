@@ -1,42 +1,68 @@
 package ktu.utils.align.capabilities.ui {
 	import com.bit101.components.PushButton;
 	import com.bit101.components.Style;
+	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.SpreadMethod;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextFormat;
+	import ktu.utils.align.capabilities.gfx.Target;
+	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignTarget;
+	
 	
 	/**
-	 *
-	 * 	This is the main control panel
-	 *
-	 * 	I will have a preset selector
-	 * 				a target selector
-	 * 				a vizAlingment selector
-	 * 				a options selector
-	 * 				a align button
-	 * 				a reset button
-	 * ...
-	 * @author Keelan
-	 */
-	public class CapabilitiesControls extends Sprite{
+	*
+	* 	This is the main control panel
+	*
+	* 	I will have a preset selector
+	* 				a target selector
+	* 				a vizAlingment selector
+	* 				a options selector
+	* 				a align button
+	* 				a reset button
+	* ...
+	* @author Keelan
+	*/
+	public class CapabilitiesControls extends Sprite {
 		
-		public var targets:Array = [];
-		public var targetCoordinateSpaces:Array = [];
+		private var _targets:Array = [];
 		
-		private var options:VizAlignOptions;
-		private var alignButton:PushButton;
-		private var resetButton:PushButton;
-		private var targetSelector:VizAlignTargetSelector;
+		public function get targets():Array {
+			return _targets;
+		}
+		public function set targets(value:Array):void {
+			_targets = value;
+			targetSelector.targets = value;
+		}
+		private var _targetCoordinateSpaces:Array = [];
+		public function get targetCoordinateSpaces():Array {
+			return _targetCoordinateSpaces;
+		}
+		
+		public function set targetCoordinateSpaces(value:Array):void {
+			_targetCoordinateSpaces = value;
+			alignmentSelector.targetCoordinateSpaces = value;
+		}
+		
 		private var presets:Presets;
 		
-		public function CapabilitiesControls() {
+		private var vrule:Sprite;
+		
+		private var targetSelector:VizAlignTargetSelector;
+		private var alignmentSelector:VizAlignmentSelector;
+		private var options:VizAlignOptions;
+		
+		private var vrule2:Sprite;
+		
+		private var alignButton:PushButton;
+		private var resetButton:PushButton;
+		
+		public function CapabilitiesControls(){
 			drawBorder();
 			
 			Style.embedFonts = false;
-			//Style.fontName = "Consolas"
-			//Style.fontName = "Calibri"
 			Style.fontName = "Corbel"
 			Style.fontSize = 12;
 			
@@ -45,7 +71,7 @@ package ktu.utils.align.capabilities.ui {
 			presets.y = 20;
 			addChild(presets);
 			
-			var vrule:Sprite = new Sprite ();
+			vrule = new Sprite();
 			vrule.graphics.lineStyle(1, 0, 1, true, "none", "none", "none");
 			vrule.graphics.lineTo(0, 180);
 			vrule.x = 180;
@@ -57,10 +83,9 @@ package ktu.utils.align.capabilities.ui {
 			targetSelector.y = 20;
 			addChild(targetSelector);
 			
-			var alignmentSelector:VizAlignmentSelector = new VizAlignmentSelector();
+			alignmentSelector = new VizAlignmentSelector();
 			alignmentSelector.x = 310;
 			alignmentSelector.y = 20;
-			
 			
 			options = new VizAlignOptions();
 			options.x = 550;
@@ -69,7 +94,7 @@ package ktu.utils.align.capabilities.ui {
 			
 			addChild(alignmentSelector);
 			
-			var vrule2:Sprite = new Sprite ();
+			vrule2 = new Sprite();
 			vrule2.graphics.lineStyle(1, 0x000000, 1, true, "none", "none", "none");
 			vrule2.graphics.lineTo(0, 180);
 			vrule2.x = 650;
@@ -84,7 +109,7 @@ package ktu.utils.align.capabilities.ui {
 			fmt.bold = true;
 			fmt.size = 18;
 			alignButton.label.textField.defaultTextFormat = fmt;
-			alignButton.label.text = "align";	
+			alignButton.label.text = "align";
 			
 			resetButton = new PushButton(this, 670, 110, "reset", onResetButtonClicked);
 			resetButton.width = 60;
@@ -102,21 +127,45 @@ package ktu.utils.align.capabilities.ui {
 			var h:int = 200;
 			graphics.clear();
 			graphics.lineStyle(1, 0, 1, true, "none", "none", "none");
-			graphics.moveTo(.5,-.5);
-			graphics.lineTo(w-1, -.5);
-			graphics.lineTo(w-1, h-1);
-			graphics.lineTo(.5, h-1);
+			graphics.moveTo(.5, -.5);
+			graphics.lineTo(w - 1, -.5);
+			graphics.lineTo(w - 1, h - 1);
+			graphics.lineTo(.5, h - 1);
 			graphics.lineTo(.5, -.5);
 		}
 		
-		
-		
 		private function onResetButtonClicked(e:MouseEvent):void {
-			
+			for each (var t:Target in targets) {
+				var prop:Object = { };
+				prop.x = t.origPos.x;
+				prop.y = t.origPos.y;
+				prop.width = t.origPos.width;
+				prop.height = t.origPos.height;
+				var time:Number = (options.animate.selected) ? .6 : 0.001;
+				Tweensy.to(t, prop, time);
+			}
 		}
 		
 		private function onAlignButtonClick(e:MouseEvent):void {
+			var targets:Array = targetSelector.chosenTargets;
+			var vizAlignments:Array = alignmentSelector.chosenAlignments;
+			var ignoreOrigins:Boolean = options.ignoreOrigin.selected;
+			var pixelHinting:Boolean = options.pixelHinting.selected;
+			var applyResults:Boolean = !options.animate.selected;
+			// call VizAlign
+			var results:Array = VizAlign.align (targets, vizAlignments, ignoreOrigins, applyResults, pixelHinting);
+			if (!applyResults) {
+				for each(var t:VizAlignTarget in results) {
+					var prop:Object = { };
+					prop.x = t.end.x;
+					prop.y = t.end.y;
+					prop.width = t.end.width;
+					prop.height = t.end.height;
+					Tweensy.to(t.target, prop, .6);
+				}
+			}
 			
 		}
+		
 	}
 }
