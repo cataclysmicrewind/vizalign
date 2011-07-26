@@ -34,7 +34,7 @@ package ktu.utils.align {
 		*  Align: x  *
 		**************
 		*/
-		public static function left ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function left ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;									// get left edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -42,9 +42,8 @@ package ktu.utils.align {
 				var endX:Number = tcsLeftEdge;														// 		calculate end x value for current item
 				target.x = endX;																	// 		apply math to target
 			}																						// end loop
-			return targets;																			// return new array
 		}
-		public static function horizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function horizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var mid:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);		// get center x value of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -52,9 +51,8 @@ package ktu.utils.align {
 				var endX:Number = mid - (target.width / 2) ;										// 		calculate end x value for current item
 				target.x = endX;																	// 		apply math to target
 			}																						// end loop
-			return targets;																			// return array
 		};
-		public static function right ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function right ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsRightEdge:Number = targetCoordinateSpace.right;									// get right edge of target coordinate space object
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {												// loop through all targets
@@ -62,7 +60,6 @@ package ktu.utils.align {
 				var endX:Number = tcsRightEdge - target.width;										// 		calculate end x value for current item
 				target.x = endX;																	// 		apply math to target
 			}																						// end loop
-			return targets;																			// return array
 		};
 		/*
 		*
@@ -70,7 +67,7 @@ package ktu.utils.align {
 		*  Center  *
 		************
 		*/
-		public static function center (targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function center (targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var tcsCenterY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height/ 2);
 			var length:int = targets.length;														// targets length for optimized looping
@@ -81,7 +78,6 @@ package ktu.utils.align {
 				target.x = endX;																	// 		apply math to target
 				target.y = endY;
 			}																						// end loop
-			return targets;	
 		};
 		/*
 		*
@@ -89,7 +85,7 @@ package ktu.utils.align {
 		*  Align: y  *
 		**************
 		*/
-		public static function top ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function top ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -97,9 +93,8 @@ package ktu.utils.align {
 				var endY:Number = tcsTopEdge;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function vertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function vertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var mid:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height / 2);
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -107,9 +102,8 @@ package ktu.utils.align {
 				var endY:Number = mid - ( item.height / 2 ) ;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function bottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function bottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom; 
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -117,7 +111,6 @@ package ktu.utils.align {
 				var endY:Number = tcsBottomEdge - item.height;
 				item.y = endY;
 			}
-			return targets;
 		}
 		/*
 		*
@@ -125,7 +118,7 @@ package ktu.utils.align {
 		*  Combo: x,y  *
 		****************
 		*/
-		public static function topLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function topLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -136,9 +129,8 @@ package ktu.utils.align {
 				item.x = endX;																		// apply math to target
 				item.y = endY;																		// apply maht to target
 			}
-			return targets;
 		}
-		public static function topRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function topRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -149,9 +141,8 @@ package ktu.utils.align {
 				item.x = endX;																		// apply math to target
 				item.y = endY;																		// apply maht to target
 			}
-			return targets;
 		}
-		public static function bottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function bottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -162,9 +153,8 @@ package ktu.utils.align {
 				item.x = endX;																		// apply math to target
 				item.y = endY;																		// apply maht to target
 			}
-			return targets;
 		}
-		public static function bottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):Array {
+		public static function bottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -175,7 +165,6 @@ package ktu.utils.align {
 				item.x = endX;																		// apply math to target
 				item.y = endY;																		// apply maht to target
 			}
-			return targets;
 		}
 		/*
 		*
@@ -183,7 +172,7 @@ package ktu.utils.align {
 		*  Adjacent: x  *
 		*****************
 		*/
-		public static function adjacentLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -191,9 +180,8 @@ package ktu.utils.align {
 				var endX:Number = tcsLeftEdge - item.width;
 				item.x = endX;
 			}
-			return targets;
 		}
-		public static function adjacentHorizontalLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentHorizontalLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + targetCoordinateSpace.width / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -201,9 +189,8 @@ package ktu.utils.align {
 				var endX:Number = tcsCenterX - item.width;
 				item.x = endX;
 			}
-			return targets;
 		}
-		public static function adjacentHorizontalRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentHorizontalRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + targetCoordinateSpace.width / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -211,9 +198,8 @@ package ktu.utils.align {
 				var endX:Number = tcsCenterX;
 				item.x = endX;
 			}
-			return targets;
 		}
-		public static function adjacentRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -221,7 +207,6 @@ package ktu.utils.align {
 				var endX:Number = tcsRightEdge;
 				item.x = endX;
 			}
-			return targets;
 		}
 		/*
 		*
@@ -229,7 +214,7 @@ package ktu.utils.align {
 		*  Adjacent: y  *
 		*****************
 		*/
-		public static function adjacentTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :Array {
+		public static function adjacentTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -237,9 +222,8 @@ package ktu.utils.align {
 				var endY:Number = tcsTopEdge - item.height;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentVerticalTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentVerticalTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsCenterY:Number = targetCoordinateSpace.top + targetCoordinateSpace.height / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -247,9 +231,8 @@ package ktu.utils.align {
 				var endY:Number = tcsCenterY - item.height;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentVerticalBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentVerticalBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsCenterY:Number = targetCoordinateSpace.top + targetCoordinateSpace.height / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -257,9 +240,8 @@ package ktu.utils.align {
 				var endY:Number = tcsCenterY;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var length:int = targets.length;													// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
@@ -267,7 +249,6 @@ package ktu.utils.align {
 				var endY:Number = tcsBottomEdge;
 				item.y = endY;
 			}
-			return targets;
 		}
 		/*
 		*
@@ -275,7 +256,7 @@ package ktu.utils.align {
 		*  Combo Adjacent: x,y  *
 		*************************
 		*/
-		public static function adjacentTopLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentTopLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -286,9 +267,8 @@ package ktu.utils.align {
 				item.x = endX;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentTopRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentTopRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -299,9 +279,8 @@ package ktu.utils.align {
 				item.x = endX;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentBottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentBottomLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -312,9 +291,8 @@ package ktu.utils.align {
 				item.x = endX;
 				item.y = endY;
 			}
-			return targets;
 		}
-		public static function adjacentBottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function adjacentBottomRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -325,7 +303,6 @@ package ktu.utils.align {
 				item.x = endX;
 				item.y = endY;
 			}
-			return targets;
 		}
 		/*
 		*
@@ -333,7 +310,7 @@ package ktu.utils.align {
 		*  Distribute: x  *
 		*******************
 		*/
-		public static function distLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function distLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
@@ -347,9 +324,9 @@ package ktu.utils.align {
 				var endX:Number = tcsLeftEdge + (spread * i) ;
 				item.x = endX;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function distHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterX ) ;
@@ -363,9 +340,9 @@ package ktu.utils.align {
 				var endX:Number = first - ( item.width / 2 ) + ( spread * i ) ;
 				item.x = endX;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		};
-		public static function distRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :Array {
+		public static function distRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalRight ) ;
@@ -379,7 +356,7 @@ package ktu.utils.align {
 				var endX:Number = first - item.width + ( spread * i ) ;
 				item.x = endX;
 			}
-			return targets;
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		};
 		/*
 		*
@@ -387,7 +364,7 @@ package ktu.utils.align {
 		*  Distribute: y  *
 		*******************
 		*/
-		public static function distTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function distTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
@@ -401,9 +378,9 @@ package ktu.utils.align {
 				var endY:Number = first + ( spread * i ) ;
 				item.y = endY;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function distVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterY ) ;
@@ -417,9 +394,9 @@ package ktu.utils.align {
 				var endY:Number = first - ( item.height / 2 ) + ( spread * i ) ;
 				item.y = endY;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function distBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function distBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets.sort ( RectangleUtils.sortGlobalBottom ) ;
@@ -433,7 +410,7 @@ package ktu.utils.align {
 				var endY:Number = first - item.height + ( spread * i ) ;
 				item.y = endY;
 			}
-			return ArrayUtils.reorderArray(targets,origOrderedDic);
+			ArrayUtils.reorderArray(targets,origOrderedDic);
 		};
 		/*
 		*
@@ -441,25 +418,23 @@ package ktu.utils.align {
 		*  Match Sizes  *
 		*****************
 		*/
-		public static function matchWidth ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function matchWidth ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var endW:Number = targetCoordinateSpace.width;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
 				var item:Rectangle = targets[i];
 				item.width = endW;
 			}
-			return targets;
 		}
-		public static function matchHeight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function matchHeight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var endH:Number = targetCoordinateSpace.height;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) {
 				var item:Rectangle = targets[i];
 				item.height = endH;
 			}
-			return targets;
 		}
-		public static function matchSize ( targetCoordinateSpace:Rectangle, targets:Array ) :Array {
+		public static function matchSize ( targetCoordinateSpace:Rectangle, targets:Array ) :void {
 			var endW:Number = targetCoordinateSpace.width;
 			var endH:Number = targetCoordinateSpace.height;
 			var length:int = targets.length;														// targets length for optimized looping
@@ -468,9 +443,8 @@ package ktu.utils.align {
 				item.width = endW;
 				item.height = endH;
 			}
-			return targets;
 		}
-		public static function scaleToFit ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function scaleToFit ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsWidth:Number = targetCoordinateSpace.width;
 			var tcsHeight:Number = targetCoordinateSpace.height;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;
@@ -490,9 +464,8 @@ package ktu.utils.align {
 					item.height = tcsHeight;
 				}
 			}
-			return targets;
 		}
-		public static function scaleToFill ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function scaleToFill ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var tcsWidth:Number = targetCoordinateSpace.width;
 			var tcsHeight:Number = targetCoordinateSpace.height;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;
@@ -514,7 +487,6 @@ package ktu.utils.align {
 					item.height = tcsHeight;
 				}
 			}
-			return targets;
 		}
 		/*
 		*
@@ -522,7 +494,7 @@ package ktu.utils.align {
 		*  Space Evenly  *
 		******************
 		*/
-		public static function spaceVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function spaceVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
@@ -543,9 +515,9 @@ package ktu.utils.align {
 				bottom += item.height + spread ;
 				item.y = endY;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function spaceHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function spaceHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
@@ -566,7 +538,7 @@ package ktu.utils.align {
 				right += item.width + spread;
 				item.x = endX;
 			}
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
 		/*
 		*
@@ -574,7 +546,7 @@ package ktu.utils.align {
 		*  Stack  *
 		***********
 		*/
-		public static function stackVertical ( targetCoordinateSpace:Rectangle, targets:Array /*Rectangle*/) :Array {
+		public static function stackVertical ( targetCoordinateSpace:Rectangle, targets:Array /*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			var above:Array = new Array ( ) ;
@@ -621,9 +593,9 @@ package ktu.utils.align {
 			above.reverse ( ) ;
 			targets = above;
 			targets = targets.concat ( below ) ;
-			return ArrayUtils.reorderArray(targets, origOrderedDic);
+			ArrayUtils.reorderArray(targets, origOrderedDic);
 		}
-		public static function stackHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :Array {
+		public static function stackHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
 			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
 			
 			var before:Array = new Array ( ) ;													// array to hold objects to the left of the tcs
@@ -673,7 +645,7 @@ package ktu.utils.align {
 			//reset & return
 			targets = before;																	// targets = before array
 			targets = targets.concat ( after ) ;												// targets = before array + after array
-			return ArrayUtils.reorderArray(targets, origOrderedDic);							// return targets!
+			ArrayUtils.reorderArray(targets, origOrderedDic);									// reorder targets
 		}
 	}
 }
