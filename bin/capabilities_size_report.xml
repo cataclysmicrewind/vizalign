@@ -123,13 +123,13 @@
       <dep id="AS3" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1311624165198" size="826" optimizedsize="441">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1311717807365" size="875" optimizedsize="478">
       <def id="ktu.utils:ArrayUtils" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1305029406000" size="8490" optimizedsize="4209">
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1305029406000" size="8503" optimizedsize="4210">
       <def id="com.bit101.components:ScrollBar" />
       <pre id="com.bit101.components:Slider" />
       <pre id="com.bit101.components:Component" />
@@ -241,7 +241,7 @@
       <dep id="Math" />
       <dep id="flash.display:MovieClip" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1311692255819" size="1994" optimizedsize="1303">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1311692255819" size="2000" optimizedsize="1308">
       <def id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
       <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:CheckBox" />
@@ -249,7 +249,7 @@
       <dep id="AS3" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311711418656" size="2998" optimizedsize="1595">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311717566979" size="3003" optimizedsize="1600">
       <def id="ktu.utils.align:VizAlignTarget" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -258,7 +258,7 @@
       <dep id="Math" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1311624182937" size="12721" optimizedsize="6088">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1311717974399" size="12733" optimizedsize="6075">
       <def id="ktu.utils.align:AlignMethods" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -267,7 +267,7 @@
       <dep id="ktu.utils:ArrayUtils" />
       <dep id="ktu.utils:RectangleUtils" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Target.as" mod="1311701843987" size="4181" optimizedsize="2524">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Target.as" mod="1311701843987" size="4182" optimizedsize="2524">
       <def id="ktu.utils.align.capabilities.gfx:Target" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.events:MouseEvent" />
@@ -295,7 +295,7 @@
       <dep id="com.bit101.components:Style" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1311702936697" size="5325" optimizedsize="2987">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1311702936697" size="5331" optimizedsize="2992">
       <def id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align:VizAlignment" />
@@ -317,7 +317,7 @@
       <pre id="flash.display:Bitmap" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\com\bit101\components\List.as" mod="1311683640478" size="7739" optimizedsize="3807">
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\List.as" mod="1311683640478" size="7746" optimizedsize="3812">
       <def id="com.bit101.components:List" />
       <pre id="com.bit101.components:Component" />
       <dep id="flash.events:Event" />
@@ -374,7 +374,7 @@
       <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
       <dep id="com.flashdynamix.motion:TweensyGroup" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1311632029265" size="2563" optimizedsize="1465">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1311718000089" size="2565" optimizedsize="1465">
       <def id="ktu.utils.align:VizAlignment" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -397,14 +397,14 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311711312059" size="4297" optimizedsize="2386">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311719019483" size="2469" optimizedsize="1389">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
-      <dep id="ktu.utils.align:VizAlignment" />
       <dep id="ktu.utils.align:VizAlignTarget" />
-      <dep id="ArgumentError" />
       <dep id="AS3" />
+      <dep id="trace" />
       <dep id="flash.display:DisplayObject" />
+      <dep id="Error" />
     </script>
     <script name="A:\ktu\VizAlign\lib\com\bit101\components\CheckBox.as" mod="1305029406000" size="2567" optimizedsize="1445">
       <def id="com.bit101.components:CheckBox" />
@@ -444,9 +444,9 @@
     <ext id="XML" />
     <ext id="flash.display:Shape" />
     <ext id="flash.geom:Rectangle" />
-    <ext id="ArgumentError" />
     <ext id="flash.display:StageDisplayState" />
     <ext id="flash.utils:Dictionary" />
+    <ext id="trace" />
     <ext id="flash.filters:ColorMatrixFilter" />
     <ext id="Error" />
     <ext id="flash.media:SoundTransform" />
