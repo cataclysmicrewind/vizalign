@@ -106,16 +106,16 @@
       <dep id="com.flashdynamix.motion.plugins:MovieClipTween" />
       <dep id="flash.media:SoundTransform" />
       <dep id="com.flashdynamix.motion.plugins:FilterTween" />
-      <dep id="com.flashdynamix.motion.plugins:ObjectTween" />
       <dep id="com.flashdynamix.motion:TweensyGroup" />
+      <dep id="com.flashdynamix.motion.plugins:ObjectTween" />
       <dep id="com.flashdynamix.utils:MultiTypeObjectPool" />
       <dep id="flash.filters:BitmapFilter" />
       <dep id="com.flashdynamix.motion.plugins:SoundTween" />
       <dep id="com.flashdynamix.motion.plugins:ColorTween" />
       <dep id="AS3" />
       <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="com.flashdynamix.motion.plugins:MatrixTween" />
       <dep id="flash.geom:Matrix" />
+      <dep id="com.flashdynamix.motion.plugins:MatrixTween" />
       <dep id="flash.display:DisplayObject" />
       <dep id="flash.geom:ColorTransform" />
       <dep id="flash.utils:Dictionary" />
@@ -131,7 +131,7 @@
       <dep id="com.bit101.components:Label" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1311598760199" size="826" optimizedsize="441">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\ArrayUtils.as" mod="1311624165198" size="826" optimizedsize="441">
       <def id="ktu.utils:ArrayUtils" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -199,7 +199,7 @@
       <dep id="Math" />
       <dep id="flash.display:MovieClip" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311613644565" size="2353" optimizedsize="1321">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1311711418656" size="2914" optimizedsize="1679">
       <def id="ktu.utils.align:VizAlignTarget" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -208,7 +208,7 @@
       <dep id="Math" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1311612784750" size="12720" optimizedsize="6088">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1311624182937" size="12721" optimizedsize="6088">
       <def id="ktu.utils.align:AlignMethods" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -217,7 +217,7 @@
       <dep id="ktu.utils:ArrayUtils" />
       <dep id="ktu.utils:RectangleUtils" />
     </script>
-    <script name="A:\ktu\VizAlign\src\Main.as" mod="1311609824373" size="4505" optimizedsize="3134">
+    <script name="A:\ktu\VizAlign\src\Main.as" mod="1311609824373" size="4506" optimizedsize="3134">
       <def id="Main" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align:VizAlignment" />
@@ -281,11 +281,11 @@
       <dep id="AS3" />
       <dep id="flash.display:DisplayObjectContainer" />
       <dep id="Math" />
-      <dep id="com.bit101.components:Component_Ronda" />
       <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Component_Ronda" />
       <dep id="flash.display:Stage" />
-      <dep id="flash.display:StageAlign" />
       <dep id="flash.filters:DropShadowFilter" />
+      <dep id="flash.display:StageAlign" />
     </script>
     <script name="A:\ktu\VizAlign\lib\MinimalComps_0_9_9.swc(com.bit101.components:RadioButton)" mod="1302418241000" size="3488" optimizedsize="1917">
       <def id="com.bit101.components:RadioButton" />
@@ -309,8 +309,8 @@
       <dep id="flash.geom:Rectangle" />
       <dep id="flash.utils:Timer" />
       <dep id="Math" />
-      <dep id="flash.events:TimerEvent" />
       <dep id="com.bit101.components:Style" />
+      <dep id="flash.events:TimerEvent" />
       <dep id="flash.display:Shape" />
     </script>
     <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexAsset)" mod="1306872041187" size="243" optimizedsize="98">
@@ -337,7 +337,7 @@
       <dep id="AS3" />
       <dep id="Math" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1311609430085" size="2589" optimizedsize="1469">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1311632029265" size="2553" optimizedsize="1465">
       <def id="ktu.utils.align:VizAlignment" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -355,7 +355,7 @@
       <dep id="AS3" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311613513671" size="4338" optimizedsize="2412">
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1311713620059" size="4317" optimizedsize="2391">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignment" />

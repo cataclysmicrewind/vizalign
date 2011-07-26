@@ -24,22 +24,22 @@ package ktu.utils.align {
 			var s:Point = scale;
 			var d:Point = delta;
 			if (value) {
-				if (delta.x != 0)
-					_end.x -= _originOffset.x * s.x;
-				if (delta.y != 0)
-					_end.y -= _originOffset.y * s.y;
-				if (delta.x == 0 && delta.y == 0) {
-					_end.x -= _originOffset.x * s.x;
-					_end.y -= _originOffset.y * s.y;
+				if (d.x != 0)
+					_end.x += _originOffset.x * s.x;
+				if (d.y != 0)
+					_end.y += _originOffset.y * s.y;
+				if (d.x == 0 && d.y == 0) {
+					_end.x += _originOffset.x * s.x;
+					_end.y += _originOffset.y * s.y;
 				}
 			} else {
-				if (delta.x != 0)
-					_end.x += _originOffset.x * s.x;
-				if (delta.y != 0)
-					_end.y += _originOffset.y * s.y;
-				if (delta.x == 0 && delta.y == 0) {
-					_end.x += _originOffset.x * s.x;
-					_end.y += _originOffset.y * s.y;
+				if (d.x != 0)
+					_end.x -= _originOffset.x * s.x;
+				if (d.y != 0)
+					_end.y -= _originOffset.y * s.y;
+				if (d.x == 0 && d.y == 0) {
+					_end.x -= _originOffset.x * s.x;
+					_end.y -= _originOffset.y * s.y;
 				}
 			}
 		}
@@ -82,6 +82,7 @@ package ktu.utils.align {
 			_target.y = _end.y;
 			_target.width = _end.width;
 			_target.height = _end.height;
+			//_applyOriginOffset = !_applyOriginOffset;
 		}
 		
 		public function roundEndValues():void {
