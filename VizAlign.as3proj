@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\full-release.swf" />
+    <movie path="bin\VizAlign.swf" />
     <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
@@ -37,10 +37,10 @@
     <option useResourceBundleMetadata="True" />
     <option warnings="True" />
     <option verboseStackTraces="False" />
-    <option linkReport="" />
+    <option linkReport="bin/VizAlign_link_report.xml" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="-link-report bin\sizeReport.xml" />
+    <option additional="" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
