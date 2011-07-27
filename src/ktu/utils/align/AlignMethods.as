@@ -620,28 +620,33 @@ package ktu.utils.align {
 			before.sort ( RectangleUtils.sortAdjacentRight ) ;									// sort before array
 			after.sort ( RectangleUtils.sortAdjacentLeft ) ;									// sort after array
 			before.reverse ( ) ;																// reverse the before array so its in the order I need
+			var firstTarget:Rectangle;
 			// place before array
-			var firstTarget:Rectangle = before[0];												// save ref to first target in before array
-			endX = tcsLeftEdge - firstTarget.width;												// first time, endX = the left edge of the tcs - width of first target
-			left = tcsLeftEdge - firstTarget.width;												// first time, left = left edge of first target
-			firstTarget.x = endX;																// move the first target because it requires diff math
-			for ( i = 1; i < before.length; i++ ) {												// loop through all targets in before array
-				item = before[i];																//		save ref to target
-				endX = left - item.width;														//		this says the left - the width of item
-				left -= item.width;																//		save the new left edge value of targets already aligned
-				item.x = endX;																	//		apply the math
-			}																					// end loop
+			if (before.length > 0) {															// if at least one target before...
+				firstTarget = before[0];														// 		save ref to first target in before array
+				endX = tcsLeftEdge - firstTarget.width;											// 		first time, endX = the left edge of the tcs - width of first target
+				left = tcsLeftEdge - firstTarget.width;											// 		first time, left = left edge of first target
+				firstTarget.x = endX;															// 		move the first target because it requires diff math
+				for ( i = 1; i < before.length; i++ ) {											// 		loop through all targets in before array
+					item = before[i];															//			save ref to target
+					endX = left - item.width;													//			this says the left - the width of item
+					left -= item.width;															//			save the new left edge value of targets already aligned
+					item.x = endX;																//			apply the math
+				}																				// 		end loop
+			}																					// end if (before targets);
 			// place after array
-			firstTarget = after[0];																// save re to first target in after array
-			endX = tcsRightEdge ;																// first time, endX = the right edge of tcs
-			right = tcsRightEdge + firstTarget.width;											// first time, right = the right edge of first target after alignment
-			firstTarget.x = endX;																// apply this math
-			for ( i = 1; i < after.length; i++ ) {												// loop through all targets in after array
-				item = after[i];																//		save ref to target
-				endX = right;																	//		endX = right edge of last targed placed
-				right += item.width;															//		update right = right edge of last placed target
-				item.x = endX;																	//		apply the math
-			}																					// end loop
+			if (after.length > 0) {																// if at least on target after...
+				firstTarget = after[0];															// 		save re to first target in after array
+				endX = tcsRightEdge ;															// 		first time, endX = the right edge of tcs
+				right = tcsRightEdge + firstTarget.width;										// 		first time, right = the right edge of first target after alignment
+				firstTarget.x = endX;															// 		apply this math
+				for ( i = 1; i < after.length; i++ ) {											// 		loop through all targets in after array
+					item = after[i];															//			save ref to target
+					endX = right;																//			endX = right edge of last targed placed
+					right += item.width;														//			update right = right edge of last placed target
+					item.x = endX;																//			apply the math
+				}																				// 		end loop
+			}																					// end if (after targets);
 			//reset & return
 			targets = before;																	// targets = before array
 			targets = targets.concat ( after ) ;												// targets = before array + after array

@@ -24,23 +24,23 @@ package ktu.utils.align {
 			var s:Point = scale;
 			var d:Point = delta;
 			if (value) {
-				if (d.x != 0)
+				//if (d.x != 0)
 					_end.x += _originOffset.x * s.x;
-				if (d.y != 0)
+				//if (d.y != 0)
 					_end.y += _originOffset.y * s.y;
-				if (d.x == 0 && d.y == 0) {
-					_end.x += _originOffset.x * s.x;
-					_end.y += _originOffset.y * s.y;
-				}
+				//if (d.x == 0 && d.y == 0) {
+					//_end.x += _originOffset.x * s.x;
+					//_end.y += _originOffset.y * s.y;
+				//}
 			} else {
-				if (d.x != 0)
+				//if (d.x != 0)
 					_end.x -= _originOffset.x * s.x;
-				if (d.y != 0)
+				//if (d.y != 0)
 					_end.y -= _originOffset.y * s.y;
-				if (d.x == 0 && d.y == 0) {
-					_end.x -= _originOffset.x * s.x;
-					_end.y -= _originOffset.y * s.y;
-				}
+				//if (d.x == 0 && d.y == 0) {
+					//_end.x -= _originOffset.x * s.x;
+					//_end.y -= _originOffset.y * s.y;
+				//}
 			}
 		}
 		public function get orig():Rectangle { return _orig; }

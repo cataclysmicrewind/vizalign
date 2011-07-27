@@ -34,8 +34,10 @@ package com.bit101.components
 	{
 		public static var TEXT_BACKGROUND:uint = 0xFFFFFF;
 		public static var BACKGROUND:uint = 0xCCCCCC;
+		static public var BOTTOM:uint = 0xBBBBBB;
 		public static var BUTTON_FACE:uint = 0xFFFFFF;
 		public static var BUTTON_DOWN:uint = 0xEEEEEE;
+		public static var BUTTON_SELECTED:uint = 0xFFFFFF;
 		public static var INPUT_TEXT:uint = 0x333333;
 		public static var LABEL_TEXT:uint = 0x444444;
 		public static var DROPSHADOW:uint = 0x000000;
@@ -52,6 +54,9 @@ package com.bit101.components
 		
 		public static const DARK:String = "dark";
 		public static const LIGHT:String = "light";
+		
+		static public const KTU:String = "ktu";
+		static public const KTU_LIGHTER:String = "ktu_lighter";
 		
 		/**
 		 * Applies a preset style as a list of color values. Should be called before creating any components.
@@ -73,6 +78,45 @@ package com.bit101.components
 					Style.LIST_ALTERNATE = 0x393939;
 					Style.LIST_SELECTED = 0x666666;
 					Style.LIST_ROLLOVER = 0x777777;
+					break;
+				case KTU:
+					BACKGROUND = 0x222222;
+					BUTTON_FACE = 0x333333;
+					BUTTON_DOWN = 0x222222;
+					BUTTON_SELECTED = 0x666666;
+					INPUT_TEXT = 0x999999;
+					LABEL_TEXT = 0xAAAAAA;
+					PANEL = 0x333333;
+					TEXT_BACKGROUND = 0x333333;
+					LIST_DEFAULT = 0x222222;
+					LIST_ALTERNATE = 0x191919;
+					LIST_SELECTED = 0x444444;
+					LIST_ROLLOVER = 0x555555;
+					BOTTOM = 0x111111;
+					
+					embedFonts = false;
+					fontName = "Corbel"
+					fontSize = 12;
+					
+					break;
+				case KTU_LIGHTER:
+					BACKGROUND = 0x333333;
+					BUTTON_FACE = 0x444444;
+					BUTTON_DOWN = 0x333333;
+					INPUT_TEXT = 0xAAAAAA;
+					LABEL_TEXT = 0xBBBBBB;
+					PANEL = 0x444444;
+					TEXT_BACKGROUND = 0x444444;
+					LIST_DEFAULT = 0x333333;
+					LIST_ALTERNATE = 0x292929;
+					LIST_SELECTED = 0x555555;
+					LIST_ROLLOVER = 0x666666;
+					BOTTOM = 0x222222;
+					
+					embedFonts = false;
+					fontName = "Corbel"
+					fontSize = 12;
+					
 					break;
 				case LIGHT:
 				default:
