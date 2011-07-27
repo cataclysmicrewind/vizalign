@@ -223,7 +223,7 @@
       <dep id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
       <dep id="ktu.utils.align:VizAlign" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1311792564998" size="2987" optimizedsize="2045">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1311797187287" size="2996" optimizedsize="2054">
       <def id="ktu.utils.align.capabilities:VizAlignCapabilities" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align.capabilities.gfx:Grid" />
@@ -427,18 +427,17 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\TargetInfo.as" mod="1311791334806" size="3279" optimizedsize="2068">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\TargetInfo.as" mod="1311797100343" size="3002" optimizedsize="1922">
       <def id="ktu.utils.align.capabilities.gfx:TargetInfo" />
       <pre id="flash.display:Sprite" />
+      <dep id="flash.events:Event" />
       <dep id="com.bit101.components:Panel" />
       <dep id="flash.events:MouseEvent" />
       <dep id="flash.text:TextFormat" />
       <dep id="ktu.utils.align.capabilities.gfx:Target" />
       <dep id="AS3" />
-      <dep id="flash.text:TextField" />
       <dep id="com.bit101.components:Style" />
       <dep id="com.bit101.components:Label" />
-      <dep id="flash.display:Shape" />
     </script>
   </scripts>
   <external-defs>
