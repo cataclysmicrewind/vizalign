@@ -6,6 +6,7 @@ package ktu.utils.align.capabilities.gfx {
 	import com.bit101.components.TextArea;
 	import flash.display.Shape;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
@@ -17,8 +18,6 @@ package ktu.utils.align.capabilities.gfx {
 	 * 
 	 * 	Displays Last Selected target information
 	 * 
-	 * 	TODO:
-	 * 		Needs beautification!!!
 	 * 
 	 * ...
 	 * @author Ktu
@@ -30,9 +29,6 @@ package ktu.utils.align.capabilities.gfx {
 		private var panel:Panel;
 		private var header:Label;
 		private var targetDetails:Label;
-		
-		private var output:TextField = new TextField();
-		private var bg:Shape = new Shape();
 		private var targetName:Label;
 		private var targetProps:Label;
 		private var vrule:Sprite;
@@ -42,36 +38,26 @@ package ktu.utils.align.capabilities.gfx {
 		
 		
 		public function TargetInfo() {
-			addChild(bg);
-			addChild(output);
-			//drawBG();
-			//setupTextField ();
 			build();
 		}
 		
-		private function drawBG():void {
-			bg.graphics.lineStyle(1, 0x666666, 1, true, "none", "none", "none");
-			bg.graphics.beginFill(0x66FFFF, .2);
-			bg.graphics.drawRect (0, 0, 150, 200);
-			bg.graphics.endFill();
-		}
-		
-		private function setupTextField():void {
-			output.width = 150;
-			output.height = 200;
-		}
 		
 		public function onTargetSelected (e:MouseEvent = null):void {
+			if (currentTarget) currentTarget.removeEventListener(Event.ENTER_FRAME, update);
+			
 			currentTarget = Target(e.target);
+			currentTarget.addEventListener(Event.ENTER_FRAME, update);
+		}
+		
+		private function update(e:Event):void {
 			rewrite();
-			// setup a timer to have it check again because of double click shit
 		}
 		
 		private function rewrite ():void {
 			
 			var fmt:TextFormat = new TextFormat(null, null, currentTarget.color, true);
 			fmt.align = "center";
-			fmt.size = 16;
+			fmt.size = 18;
 			targetName.textField.defaultTextFormat = fmt;
 			
 			var name:String = currentTarget.name;
@@ -132,7 +118,7 @@ package ktu.utils.align.capabilities.gfx {
 			vrule = new Sprite();
 			vrule.graphics.lineStyle(1, VRULE_COLOR, 1, true, "none", "none", "none");
 			vrule.graphics.lineTo(0, 120);
-			vrule.x = 90;//targetProps.x + targetProps.width + 3;
+			vrule.x = 100;//targetProps.x + targetProps.width + 3;
 			vrule.y = targetProps.y;
 			addChild(vrule);
 			
@@ -170,14 +156,15 @@ package ktu.utils.align.capabilities.gfx {
 			
 			targetProps = new Label(panel, 0, header.y + header.height + 5 + 40);
 			targetProps.textField.multiline = true;
-			targetProps.x = 10;
+			targetProps.x = 20;
 			
-			targetDetails = new Label(panel, 100, header.y + header.height + 5 + 40);
+			targetDetails = new Label(panel, 110, header.y + header.height + 5 + 40);
 			targetDetails.width = panel.width - 110;
 			targetDetails.height = panel.height - targetDetails.y - 5;
 			targetDetails.textField.multiline = true;
 			
 		}
+		
 	}
 
 }

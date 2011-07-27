@@ -27,11 +27,8 @@ package ktu.utils.align.capabilities {
 	 * 
 	 * 	TO DO:
 	 *
-	 * 		Add in a pixel marker, like in the text tests I did...
-	 * 
 	 * 		Add Fullscreen
 	 * 
-	 * 		add presets
 	 * 
 	 * 
 	 * 
@@ -39,14 +36,13 @@ package ktu.utils.align.capabilities {
 	 * ...
 	 * @author Keelan
 	 */
-	//[SWF(backgroundColor="#000000", frameRate="30", width="750", height="700")]
 	public class VizAlignCapabilities extends Sprite {
 		
 		private var grid:Grid;
 		
 		public function VizAlignCapabilities() {
 			
-			
+			Style.setStyle(Style.KTU);
 			
 			var arena:VizAlignArena = new VizAlignArena();
 			arena.name = "arena";
@@ -55,15 +51,7 @@ package ktu.utils.align.capabilities {
 			
 			addTCS(arena);
 			addTargets(arena);
-			
-			Style.embedFonts = false;
-			Style.fontName = "Corbel"
-			Style.fontSize = 12;
-			Style.setStyle(Style.KTU);
-			//Style.setStyle(Style.KTU_LIGHTER);
-			
 			addTargetInfo(arena);
-			
 			
 			
 			var controlPanel:CapabilitiesControls = new CapabilitiesControls();
@@ -71,12 +59,10 @@ package ktu.utils.align.capabilities {
 			addChild(controlPanel);
 			
 			
-			
 			var tcs:Array = arena.targetCoordinateSpaces;
 			tcs.unshift(arena);
 			tcs = tcs.concat(arena.targets);
 			controlPanel.targetCoordinateSpaces = tcs;
-			
 			controlPanel.targets = arena.targets;
 			
 		}
@@ -157,7 +143,7 @@ package ktu.utils.align.capabilities {
 			var targetInfo:TargetInfo = new TargetInfo();
 			targetInfo.name = "target info";
 			targetInfo.x = 580;
-			targetInfo.y = 230;
+			targetInfo.y = 70 + (360 / 2) - 100;;
 			
 			for (var i:int = 0; i < arena.targets.length; i++) {
 				var target:Target = arena.targets[i];
