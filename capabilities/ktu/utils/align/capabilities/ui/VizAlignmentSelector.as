@@ -54,7 +54,7 @@ package ktu.utils.align.capabilities.ui {
 			header.textField.defaultTextFormat = fmt;
 			header.text = "to:";
 			
-			list = new List(this, 10, header.height + 20);
+			list = new List(this, 10, header.height + 30);
 			list.width += 90;
 			
 			up = new PushButton(this, list.x + list.width, list.y, "△", onUpClicked);
@@ -89,6 +89,7 @@ package ktu.utils.align.capabilities.ui {
 			
 			methodList = new List(panel, methodLabel.x + 10, methodLabel.y + methodLabel.height + 10);
 			methodList.width = 180;
+			methodList.height += 40;
 			
 			
 			var alignMethodsDescription:XML = describeType(AlignMethods);
@@ -122,7 +123,7 @@ package ktu.utils.align.capabilities.ui {
 			ok = new PushButton(panel, 0, panel.height - 30 - 10, "ok", onOkClick);
 			ok.width = 60;
 			ok.height = 30;
-			ok.x = cancel.x - ok.width - 10;
+			ok.x = tcsList.x;//cancel.x - ok.width - 10;
 			
 			
 			
@@ -212,12 +213,16 @@ package ktu.utils.align.capabilities.ui {
 				var tcs:DisplayObject;
 				if (tcsName == "stage") {
 					tcs = stage;
-					break;
-				}
-				for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
-					if (atcs.name == tcsName) {
-						tcs = atcs;
-						break;
+				} else {
+					for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
+						if (tcsName == "arena" && atcs.name == "arena") {
+							tcs = atcs["bg"];
+							break;
+						}
+						if (atcs.name == tcsName) {
+							tcs = atcs;
+							break;
+						}
 					}
 				}
 				ret.push(new VizAlignment(method, tcs));
@@ -225,6 +230,14 @@ package ktu.utils.align.capabilities.ui {
 			return ret;
 		}
 		
+		public function setAlignments(alignments:Array):void {
+			list.removeAll();
+			for (var i:int = 0; i < alignments.length; i++) {
+				var item:Object = alignments[i];
+				item.label = item.type + " : " + item.tcs;
+				list.addItem(item);
+			}
+			
+		}
 	}
-
 }

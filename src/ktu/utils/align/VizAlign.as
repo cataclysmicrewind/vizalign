@@ -66,19 +66,21 @@ package ktu.utils.align {
 			
 			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);				// convert all targets to VizAlignTarget
 			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
-			trace(targetEndBounds[0]);
+			trace("init: " + targetEndBounds[0]);
 			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
-			trace(targetEndBounds[0]);
+			trace("ignr: " + targetEndBounds[0]);
 			
 			var length:uint = vizAlignments.length;															// get lenght of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
 				vizAlignments[i].align (targetEndBounds);													//		have the VizAlignment align the rectnalges
 			}																								// end loop
-			trace(targetEndBounds[0]);
+			trace("aftr: " + targetEndBounds[0]);
 			if (ignoreOrigin) removeOriginOffsets(vizAlignTargets);											// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
-			trace(targetEndBounds[0]);
+			trace("comp: " + targetEndBounds[0]);
 			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
+			trace(" end: " + targetEndBounds[0]);
+			trace("\n");
 			
 			return vizAlignTargets;																			// return VizAlignTarget s
 		}

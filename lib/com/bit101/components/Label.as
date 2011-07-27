@@ -106,7 +106,7 @@ package com.bit101.components
 				_tf.autoSize = TextFieldAutoSize.NONE;
 				_tf.width = _width;
 			}
-			_height = _tf.height = 18;
+			_height = _tf.height = _tf.textHeight + 4;
 		}
 		
 		///////////////////////////////////

@@ -31,7 +31,7 @@ package ktu.utils.align.capabilities.gfx {
 		public var originY:int = 0;
 		public var w:int = 100;
 		public var h:int = 100;
-		private var color:uint = 0x333333;
+		public var color:uint = 0x333333;
 		
 		private var showOrigin:Boolean = false;
 		

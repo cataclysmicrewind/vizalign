@@ -110,7 +110,7 @@ package com.bit101.components
 			_back.graphics.endFill();
 			
 			_button.graphics.clear();
-			_button.graphics.beginFill(Style.BUTTON_FACE);
+			_button.graphics.beginFill(Style.BUTTON_SELECTED);
 			_button.graphics.drawRect(2, 2, 6, 6);
 			
 			_label.text = _labelText;

@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'7/26/2011'</value>
+      <value>'7/27/2011'</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
@@ -32,7 +32,7 @@
   <file-specs>
     <path-element>A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as</path-element>
   </file-specs>
-  <default-background-color>#FFFFFF</default-background-color>
+  <default-background-color>#000000</default-background-color>
   <default-frame-rate>30</default-frame-rate>
   <default-size>
     <width>750</width>
