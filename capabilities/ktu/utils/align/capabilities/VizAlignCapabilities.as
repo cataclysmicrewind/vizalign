@@ -1,5 +1,6 @@
 package ktu.utils.align.capabilities {
 	
+	import com.bit101.components.Style;
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
@@ -38,10 +39,14 @@ package ktu.utils.align.capabilities {
 	 * ...
 	 * @author Keelan
 	 */
-	public class VizAlignCapabilities extends Sprite{
+	//[SWF(backgroundColor="#000000", frameRate="30", width="750", height="700")]
+	public class VizAlignCapabilities extends Sprite {
+		
 		private var grid:Grid;
 		
 		public function VizAlignCapabilities() {
+			
+			
 			
 			var arena:VizAlignArena = new VizAlignArena();
 			arena.name = "arena";
@@ -50,7 +55,16 @@ package ktu.utils.align.capabilities {
 			
 			addTCS(arena);
 			addTargets(arena);
+			
+			Style.embedFonts = false;
+			Style.fontName = "Corbel"
+			Style.fontSize = 12;
+			Style.setStyle(Style.KTU);
+			//Style.setStyle(Style.KTU_LIGHTER);
+			
 			addTargetInfo(arena);
+			
+			
 			
 			var controlPanel:CapabilitiesControls = new CapabilitiesControls();
 			controlPanel.y = 500;

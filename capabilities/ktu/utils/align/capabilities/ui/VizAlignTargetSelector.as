@@ -3,6 +3,7 @@ package ktu.utils.align.capabilities.ui {
 	import com.bit101.components.Label;
 	import flash.display.Sprite;
 	import flash.text.TextFormat;
+	import ktu.utils.align.capabilities.gfx.Target;
 	/**
 	 * ...
 	 * @author Keelan
@@ -11,6 +12,7 @@ package ktu.utils.align.capabilities.ui {
 		
 		public var targets:Array;
 		
+		private var tList:Array = [];;
 		private var t1:CheckBox;
 		private var t2:CheckBox;
 		private var t3:CheckBox;
@@ -27,15 +29,16 @@ package ktu.utils.align.capabilities.ui {
 			header.textField.defaultTextFormat = fmt;
 			header.text = "align the:";
 			
-			t1 = new CheckBox(this, 10, header.height + spacer*2, "green");
+			t1 = new CheckBox(this, 10, header.height + 10 + spacer*2, "green");
 			t2 = new CheckBox(this, 10, t1.y + t1.height + spacer, "red");
 			t3 = new CheckBox(this, 10, t2.y + t2.height + spacer, "blue");
 			t4 = new CheckBox(this, 10, t3.y + t3.height + spacer, "cyan");
 			t5 = new CheckBox(this, 10, t4.y + t4.height + spacer, "yellow");
+			tList = [t1, t2, t3, t4, t5];
 		}
 		
 		private function getTargetByName(label:String):* {
-			for each (var target in targets) {
+			for each (var target:Target in targets) {
 				if (target.name == label) return target;
 			}
 		}
@@ -50,6 +53,21 @@ package ktu.utils.align.capabilities.ui {
 			if (t5.selected) t.push (getTargetByName(t5.label));
 			return t;
 		}
+		
+		public function setTargets(targets:Array):void {
+			for each (var c:CheckBox in tList) {
+				c.selected = false;
+			}
+			for (var i:int = 0; i < targets.length; i++) {
+				var tn:String = targets[i];
+				for (var j:int = 0; j < tList.length; j++) {
+					var chk:CheckBox = tList[j];
+					if (chk.label == tn) {
+						chk.selected = true;
+						break;
+					}
+				}
+			}
+		}
 	}
-
 }

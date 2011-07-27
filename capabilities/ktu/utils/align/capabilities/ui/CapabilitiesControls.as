@@ -1,10 +1,12 @@
 package ktu.utils.align.capabilities.ui {
+	import com.bit101.components.List;
 	import com.bit101.components.PushButton;
 	import com.bit101.components.Style;
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.SpreadMethod;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.text.TextFormat;
 	import ktu.utils.align.capabilities.gfx.Target;
@@ -59,20 +61,22 @@ package ktu.utils.align.capabilities.ui {
 		private var alignButton:PushButton;
 		private var resetButton:PushButton;
 		
+		private static const BG_COLOR:uint = Style.BOTTOM;
+		private static const VRULE_COLOR:uint = Style.LIST_ROLLOVER;
+		
 		public function CapabilitiesControls(){
 			drawBorder();
 			
-			Style.embedFonts = false;
-			Style.fontName = "Corbel"
-			Style.fontSize = 12;
+			
 			
 			presets = new Presets();
 			presets.x = 20;
 			presets.y = 20;
 			addChild(presets);
+			presets.addEventListener(Event.SELECT, onPresetSelect);
 			
 			vrule = new Sprite();
-			vrule.graphics.lineStyle(1, 0, 1, true, "none", "none", "none");
+			vrule.graphics.lineStyle(1, VRULE_COLOR, 1, true, "none", "none", "none");
 			vrule.graphics.lineTo(0, 180);
 			vrule.x = 180;
 			vrule.y = 10;
@@ -95,7 +99,7 @@ package ktu.utils.align.capabilities.ui {
 			addChild(alignmentSelector);
 			
 			vrule2 = new Sprite();
-			vrule2.graphics.lineStyle(1, 0x000000, 1, true, "none", "none", "none");
+			vrule2.graphics.lineStyle(1, VRULE_COLOR, 1, true, "none", "none", "none");
 			vrule2.graphics.lineTo(0, 180);
 			vrule2.x = 650;
 			vrule2.y = 10;
@@ -126,12 +130,14 @@ package ktu.utils.align.capabilities.ui {
 			var w:int = 750;
 			var h:int = 200;
 			graphics.clear();
+			graphics.beginFill(BG_COLOR);
 			graphics.lineStyle(1, 0, 1, true, "none", "none", "none");
 			graphics.moveTo(.5, -.5);
 			graphics.lineTo(w - 1, -.5);
 			graphics.lineTo(w - 1, h - 1);
 			graphics.lineTo(.5, h - 1);
 			graphics.lineTo(.5, -.5);
+			graphics.endFill();
 		}
 		
 		private function onResetButtonClicked(e:MouseEvent):void {
@@ -149,7 +155,7 @@ package ktu.utils.align.capabilities.ui {
 		private function onAlignButtonClick(e:MouseEvent):void {
 			var targets:Array = targetSelector.chosenTargets;
 			var vizAlignments:Array = alignmentSelector.chosenAlignments;
-			var ignoreOrigins:Boolean = options.ignoreOrigin.selected;
+			var ignoreOrigins:Boolean = options.ignoreOrigins.selected;
 			var pixelHinting:Boolean = options.pixelHinting.selected;
 			var applyResults:Boolean = !options.animate.selected;
 			// call VizAlign
@@ -165,6 +171,14 @@ package ktu.utils.align.capabilities.ui {
 				}
 			}
 			
+		}
+		
+		private function onPresetSelect(e:Event):void {
+			// spread the info out to the approrpiate controls
+			var item:Object = Presets(e.target).list.selectedItem;
+			targetSelector.setTargets(item.targets);
+			alignmentSelector.setAlignments(item.vizAlignments);
+			options.setOptions(item.options);
 		}
 		
 	}
