@@ -1,4 +1,5 @@
 package ktu.utils.align.capabilities.gfx {
+	import com.bit101.components.Style;
 	import flash.display.DisplayObject;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
@@ -40,6 +41,7 @@ package ktu.utils.align.capabilities.gfx {
 			var g:Graphics = bg.graphics;
 			g.clear();
 			g.lineStyle(1, 0, 1, true, "none", "none", "none");
+			g.beginFill(0xC2FFFC);
 			g.moveTo(.5,.5);
 			g.lineTo(w-1, .5);
 			g.lineTo(w-1, h-1);

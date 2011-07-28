@@ -47,8 +47,9 @@ package ktu.utils.align {
 		public function get end():Rectangle { return _end; }
 		public function get scale():Point {
 			var s:Point = new Point();
-			s.x = _end.width / _orig.width;
-			s.y = _end.height / _orig.height;
+			s.x = _end.width / _orig.width + (_target.scaleX - 1);
+			s.y = _end.height / _orig.height + (_target.scaleY - 1);
+			
 			return s;
 		}
 		public function get delta():Point {

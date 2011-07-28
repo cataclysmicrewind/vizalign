@@ -130,6 +130,7 @@ package ktu.utils.align.capabilities.gfx {
 			panel.width = 150;
 			panel.height = 200;
 			panel.color = Style.BOTTOM;
+			panel.draw();
 			
 			
 			header = new Label(panel, 5, 5, "Target Info:");

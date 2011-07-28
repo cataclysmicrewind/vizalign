@@ -142,8 +142,13 @@ package ktu.utils.align.capabilities {
 		private function addTargetInfo(arena:VizAlignArena):void {
 			var targetInfo:TargetInfo = new TargetInfo();
 			targetInfo.name = "target info";
-			targetInfo.x = 580;
-			targetInfo.y = 70 + (360 / 2) - 100;;
+			
+			var rect:Rectangle = new Rectangle();
+			rect.x = grid.x + grid.width
+			rect.y = grid.y
+			rect.width = stage.stageWidth - rect.x
+			rect.height = grid.height;
+			
 			
 			for (var i:int = 0; i < arena.targets.length; i++) {
 				var target:Target = arena.targets[i];
@@ -152,6 +157,8 @@ package ktu.utils.align.capabilities {
 			}
 			
 			arena.addTCS(targetInfo);
+			
+			VizAlign.align([targetInfo], [new VizAlignment(AlignMethods.center, rect)], false, true, true);
 		}
 	}
 }

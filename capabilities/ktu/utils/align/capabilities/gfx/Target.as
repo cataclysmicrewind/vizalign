@@ -2,6 +2,7 @@
 package ktu.utils.align.capabilities.gfx {
 	
 	import com.flashdynamix.motion.extras.ColorMatrix;
+	import com.flashdynamix.motion.Tweensy;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.ColorTransform;
@@ -68,6 +69,20 @@ package ktu.utils.align.capabilities.gfx {
 			redraw();
 		}
 		
+		public function reset (animate:Boolean):void {
+			var prop:Object = { };
+			prop.x = origPos.x;
+			prop.y = origPos.y;
+			prop.width = origPos.width;
+			prop.height = origPos.height;
+			var time:Number = (animate) ? .6 : 0.001;
+			Tweensy.to(this, prop, time, null, 0, null, redraw);
+			if (showOrigin) onDoubleClick(new MouseEvent("sdf"));
+		}
+		
+		private function onResetComplete():void {
+			
+		}
 		
 		
 		private function redraw():void {
