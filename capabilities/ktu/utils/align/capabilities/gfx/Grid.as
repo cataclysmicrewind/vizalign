@@ -21,10 +21,16 @@ package ktu.utils.align.capabilities.gfx {
 		private var h:int = 100;
 		private var stepW:int = 10;
 		private var stepH:int = 10;
+		public var emphasizeCenterX:Boolean = true;
+		public var emphasizeCenterXColor:uint = 0xFF0000;
+		public var emphasizeCenterY:Boolean = true;
+		public var emphasizeCenterYColor:uint = 0xFF0000;
 		private var intervals:Array = [];
 		
 		private var defaultColor:uint;
 		private var _table:Sprite = new Sprite();
+		
+		
 		
 		public function Grid(defaultColor:uint = 0xCCCCCC){
 			this.defaultColor = defaultColor;
@@ -74,6 +80,17 @@ package ktu.utils.align.capabilities.gfx {
 					g.drawRect(xpos, 0, 1, h);
 					g.endFill();
 				}
+			}
+			
+			if (emphasizeCenterX) {
+				g.beginFill(emphasizeCenterXColor);
+				g.drawRect(w / 2, 0, 1, h);
+				g.endFill();
+			}
+			if (emphasizeCenterY) {
+				g.beginFill(emphasizeCenterYColor);
+				g.drawRect(0, h/2, w, 1);
+				g.endFill();
 			}
 		}
 		

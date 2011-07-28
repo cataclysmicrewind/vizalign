@@ -27,6 +27,8 @@ package ktu.utils.align.capabilities {
 	 * 
 	 * 	TO DO:
 	 *
+	 * 		Get the show origin bullshit into the target info class...
+	 * 
 	 * 		Add Fullscreen
 	 * 
 	 * 
@@ -38,23 +40,34 @@ package ktu.utils.align.capabilities {
 	 */
 	public class VizAlignCapabilities extends Sprite {
 		
+		private var arena:VizAlignArena;
 		private var grid:Grid;
+		
+		private var controlPanel:CapabilitiesControls;
+		
+		private var green:Target;
+		private var red:Target;
+		private var blue:Target;
+		private var cyan:Target;
+		private var yellow:Target;
 		
 		public function VizAlignCapabilities() {
 			
 			Style.setStyle(Style.KTU);
 			
-			var arena:VizAlignArena = new VizAlignArena();
+			arena = new VizAlignArena();
 			arena.name = "arena";
 			arena.setSize(750, 500);
 			addChild(arena);
 			
+			createTargets();
+			
 			addTCS(arena);
-			addTargets(arena);
 			addTargetInfo(arena);
+			addTargets(arena);
 			
 			
-			var controlPanel:CapabilitiesControls = new CapabilitiesControls();
+			controlPanel = new CapabilitiesControls();
 			controlPanel.y = 500;
 			addChild(controlPanel);
 			
@@ -87,56 +100,59 @@ package ktu.utils.align.capabilities {
 			arena.addTCS(grid);
 		}
 		
-		private function addTargets(arena:VizAlignArena):void {
-			t = new Target();
-			t.name = "yellow";
-			t.x = 450 - 200;
-			t.y = 290 - 200;
-			t.setSize(60, 100);
-			t.setOriginOffset(-200, -200);
-			t.setColor(0xCCFF32);
-			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
-			arena.addTarget(t);
+		private function createTargets():void {
+			yellow = new Target();
+			yellow.name = "yellow";
+			yellow.x = 450 - 200;
+			yellow.y = 290 - 200;
+			yellow.setSize(60, 100);
+			yellow.setOriginOffset(-200, -200);
+			yellow.setColor(0xCCFF32);
+			yellow.origPos = new Rectangle(yellow.x, yellow.y, yellow.width, yellow.height);
 			
-			var t:Target = new Target();
-			t.name = "green";
-			t.x = 230 + 70;
-			t.y = 110 + 90;
-			t.setSize(60, 60);
-			t.setOriginOffset(70, 90);
-			t.setColor(0x009966);
-			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
-			arena.addTarget(t);
+			green = new Target();
+			green.name = "green";
+			green.x = 230 + 70;
+			green.y = 110 + 90;
+			green.setSize(60, 60);
+			green.setOriginOffset(70, 90);
+			green.setColor(0x009966);
+			green.origPos = new Rectangle(green.x, green.y, green.width, green.height);
 			
-			t = new Target();
-			t.name = "cyan";
-			t.x = 340;
-			t.y = 250 + 50;
-			t.setSize(60, 40);
-			t.setOriginOffset(0, 50);
-			t.setColor(0x09AABB);
-			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
-			arena.addTarget(t);
+			cyan = new Target();
+			cyan.name = "cyan";
+			cyan.x = 340;
+			cyan.y = 250 + 50;
+			cyan.setSize(60, 40);
+			cyan.setOriginOffset(0, 50);
+			cyan.setColor(0x09AABB);
+			cyan.origPos = new Rectangle(cyan.x, cyan.y, cyan.width, cyan.height);
 			
-			t = new Target();
-			t.name = "red";
-			t.x = 410;
-			t.y = 170;
-			t.setSize(40, 40);
-			t.setOriginOffset(0, 0);
-			t.setColor(0xB41D00);
-			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
-			arena.addTarget(t);
+			red = new Target();
+			red.name = "red";
+			red.x = 410;
+			red.y = 170;
+			red.setSize(40, 40);
+			red.setOriginOffset(0, 0);
+			red.setColor(0xB41D00);
+			red.origPos = new Rectangle(red.x, red.y, red.width, red.height);
 			
-			t = new Target();
-			t.name = "blue";
-			t.x = 300 + 20;
-			t.y = 210 - 20;
-			t.setSize(20, 40);
-			t.setOriginOffset(20, -20);
-			t.setColor(0x3064FF);
-			t.origPos = new Rectangle(t.x, t.y, t.width, t.height);
-			arena.addTarget(t);
+			blue = new Target();
+			blue.name = "blue";
+			blue.x = 300 + 20;
+			blue.y = 210 - 20;
+			blue.setSize(20, 40);
+			blue.setOriginOffset(20, -20);
+			blue.setColor(0x3064FF);
+			blue.origPos = new Rectangle(blue.x, blue.y, blue.width, blue.height);
+			
+		}
+		public function addTargets(arena:VizAlignArena):void {
+			arena.addTarget(yellow);
+			arena.addTarget(green);
+			arena.addTarget(cyan);
+			arena.addTarget(red);
+			arena.addTarget(blue);
 		}
 		
 		private function addTargetInfo(arena:VizAlignArena):void {
@@ -149,9 +165,9 @@ package ktu.utils.align.capabilities {
 			rect.width = stage.stageWidth - rect.x
 			rect.height = grid.height;
 			
-			
-			for (var i:int = 0; i < arena.targets.length; i++) {
-				var target:Target = arena.targets[i];
+			var targets:Array = [ yellow, green, red, blue, cyan];
+			for (var i:int = 0; i < targets.length; i++) {
+				var target:Target = targets[i];
 				target.addEventListener(MouseEvent.CLICK, targetInfo.onTargetSelected);
 				target.addEventListener(MouseEvent.DOUBLE_CLICK, targetInfo.onTargetSelected);
 			}
