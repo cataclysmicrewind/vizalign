@@ -37,6 +37,7 @@ package com.bit101.components
 		protected var _mask:Sprite;
 		protected var _background:Sprite;
 		protected var _color:int = -1;
+		protected var _colorAlpha:Number = 1;
 		protected var _shadow:Boolean = true;
 		protected var _gridSize:int = 10;
 		protected var _showGrid:Boolean = false;
@@ -124,11 +125,11 @@ package com.bit101.components
 			_background.graphics.lineStyle(1, 0, 0.1);
 			if(_color == -1)
 			{
-				_background.graphics.beginFill(Style.PANEL);
+				_background.graphics.beginFill(Style.PANEL, _colorAlpha);
 			}
 			else
 			{
-				_background.graphics.beginFill(_color);
+				_background.graphics.beginFill(_color, _colorAlpha);
 			}
 			_background.graphics.drawRect(0, 0, _width, _height);
 			_background.graphics.endFill();
@@ -199,6 +200,16 @@ package com.bit101.components
 		public function get color():int
 		{
 			return _color;
+		}
+		public function get colorAlpha():Number 
+		{
+			return _colorAlpha;
+		}
+		
+		public function set colorAlpha(value:Number):void 
+		{
+			_colorAlpha = value;
+			invalidate();
 		}
 
 		/**
