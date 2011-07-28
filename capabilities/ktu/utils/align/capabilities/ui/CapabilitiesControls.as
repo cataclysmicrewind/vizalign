@@ -130,7 +130,7 @@ package ktu.utils.align.capabilities.ui {
 			var w:int = 750;
 			var h:int = 200;
 			graphics.clear();
-			graphics.beginFill(BG_COLOR);
+			graphics.beginFill(0, .9);
 			graphics.lineStyle(1, 0, 1, true, "none", "none", "none");
 			graphics.moveTo(.5, -.5);
 			graphics.lineTo(w - 1, -.5);

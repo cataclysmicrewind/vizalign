@@ -3,6 +3,7 @@ package ktu.utils.align.capabilities.gfx {
 	
 	import com.flashdynamix.motion.extras.ColorMatrix;
 	import com.flashdynamix.motion.Tweensy;
+	import flash.display.Graphics;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.ColorTransform;
@@ -35,6 +36,8 @@ package ktu.utils.align.capabilities.gfx {
 		public var color:uint = 0x333333;
 		
 		private var showOrigin:Boolean = false;
+		private var showGhost:Boolean = false;
+		private var originSprite:Sprite = new Sprite();
 		
 		public var origPos:Rectangle;
 		
@@ -77,7 +80,14 @@ package ktu.utils.align.capabilities.gfx {
 			prop.height = origPos.height;
 			var time:Number = (animate) ? .6 : 0.001;
 			Tweensy.to(this, prop, time, null, 0, null, redraw);
-			if (showOrigin) onDoubleClick(new MouseEvent("sdf"));
+			
+			var oProp:Object = { };
+			oProp.x = origPos.x;
+			oProp.y = origPos.y;
+			oProp.scaleX = 1;
+			oProp.scaleY = 1;
+			Tweensy.to(originSprite, oProp, time, null, 0, null);
+			//if (showOrigin) onDoubleClick(new MouseEvent("sdf"));
 		}
 		
 		private function onResetComplete():void {
@@ -119,14 +129,26 @@ package ktu.utils.align.capabilities.gfx {
 			
 			// show origin ?
 			if (showOrigin) {
-				graphics.lineStyle(2, dcolor, 1, true, "none", "none", "none");
-				graphics.moveTo(corner.x, corner.y);
-				graphics.lineTo(0, 0);
 				
-				graphics.moveTo( -5, 0);
-				graphics.lineTo( 5, 0);
-				graphics.moveTo( 0, -5);
-				graphics.lineTo( 0, 5);
+				var g:Graphics = originSprite.graphics;
+				
+				g.clear();
+				g.lineStyle(2, dcolor, 1, true, "none", "none", "none");
+				g.moveTo(corner.x, corner.y);
+				g.lineTo(0, 0);
+				
+				g.moveTo( -5, 0);
+				g.lineTo( 5, 0);
+				g.moveTo( 0, -5);
+				g.lineTo( 0, 5);
+				
+				g.lineStyle();
+				g.beginFill(color, .5);
+				g.drawRect(0, 0, w, h);
+				g.endFill();
+				stage.addChild(originSprite);
+				originSprite.x = x;
+				originSprite.y = y;
 			}
 			
 		}
@@ -197,11 +219,13 @@ package ktu.utils.align.capabilities.gfx {
 		 */
 		private function onMouseDown(e:MouseEvent):void {
 			startDrag();
+			addEventListener(MouseEvent.MOUSE_MOVE, updateOriginSprite);
 			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 		}
 		
 		private function onMouseUp(e:MouseEvent):void {
 			stopDrag();
+			removeEventListener(MouseEvent.MOUSE_MOVE, updateOriginSprite);
 			x = int(x);
 			y = int(y);
 		}
@@ -217,6 +241,11 @@ package ktu.utils.align.capabilities.gfx {
 		private function onDoubleClick(e:MouseEvent):void {
 			showOrigin = !showOrigin;
 			redraw();
+		}
+		
+		private function updateOriginSprite(e:MouseEvent):void {
+			originSprite.x = x;
+			originSprite.y = y;
 		}
 		
 		
