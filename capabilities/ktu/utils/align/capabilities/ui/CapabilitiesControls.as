@@ -142,13 +142,7 @@ package ktu.utils.align.capabilities.ui {
 		
 		private function onResetButtonClicked(e:MouseEvent):void {
 			for each (var t:Target in targets) {
-				var prop:Object = { };
-				prop.x = t.origPos.x;
-				prop.y = t.origPos.y;
-				prop.width = t.origPos.width;
-				prop.height = t.origPos.height;
-				var time:Number = (options.animate.selected) ? .6 : 0.001;
-				Tweensy.to(t, prop, time);
+				t.reset(options.animate.selected);
 			}
 		}
 		
