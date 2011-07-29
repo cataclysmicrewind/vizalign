@@ -1,4 +1,5 @@
 package ktu.utils.align.capabilities.gfx {
+	import com.bit101.components.CheckBox;
 	import com.bit101.components.Label;
 	import com.bit101.components.Panel;
 	import com.bit101.components.Style;
@@ -35,6 +36,7 @@ package ktu.utils.align.capabilities.gfx {
 		
 		private static const VRULE_COLOR:uint = Style.LIST_ROLLOVER
 		
+		private var showOrigin:CheckBox;
 		
 		
 		public function TargetInfo() {
@@ -122,13 +124,17 @@ package ktu.utils.align.capabilities.gfx {
 			vrule.y = targetProps.y;
 			addChild(vrule);
 			
+			if (currentTarget) {
+				showOrigin.visible = true;
+				showOrigin.selected = currentTarget.showOrigin;
+			}
 			
 		}
 		
 		private function build():void {
 			panel = new Panel(this);
 			panel.width = 150;
-			panel.height = 200;
+			panel.height = 220;
 			panel.color = Style.BOTTOM;
 			panel.draw();
 			
@@ -139,7 +145,7 @@ package ktu.utils.align.capabilities.gfx {
 			
 			var infoPanel:Panel = new Panel(panel, 5, header.y + header.height + 10);
 			infoPanel.width = panel.width - 10;
-			infoPanel.height = panel.height - infoPanel.y - 5
+			infoPanel.height = panel.height - infoPanel.y - 5 - 20;
 			
 			
 			
@@ -151,7 +157,7 @@ package ktu.utils.align.capabilities.gfx {
 			header.text = "target info:";
 			
 			
-			targetName = new Label(panel, 5, header.y + header.height + 10);
+			targetName = new Label(panel, 5, header.y + header.height + 15);
 			targetName.autoSize = false;
 			targetName.width = panel.width - 10;
 			
@@ -164,6 +170,15 @@ package ktu.utils.align.capabilities.gfx {
 			targetDetails.height = panel.height - targetDetails.y - 5;
 			targetDetails.textField.multiline = true;
 			
+			showOrigin = new CheckBox(panel, 10, 0, "show origin", onShowOrigin);
+			showOrigin.y = panel.height - showOrigin.height - 10;
+			showOrigin.width = panel.width - 20;
+			showOrigin.visible = false;
+		}
+		
+		private function onShowOrigin(e:Event):void {
+			currentTarget.showOrigin = !currentTarget.showOrigin;
+			currentTarget.redraw();
 		}
 		
 	}

@@ -27,9 +27,17 @@ package ktu.utils.align.capabilities {
 	 * 
 	 * 	TO DO:
 	 *
-	 * 		Get the show origin bullshit into the target info class...
+	 *		Groups, Shapes
 	 * 
-	 * 		Add Fullscreen
+	 * 		Fullscreen
+	 * 
+	 * 		More presets
+	 * 	
+	 * 		Fix Logo
+	 * 
+	 * 		TCS details?
+	 * 
+	 * 		Help
 	 * 
 	 * 
 	 * 
