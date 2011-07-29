@@ -5,6 +5,7 @@ package ktu.utils.align.capabilities.gfx {
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.ColorTransform;
 	import flash.geom.Point;
@@ -35,7 +36,7 @@ package ktu.utils.align.capabilities.gfx {
 		public var h:int = 100;
 		public var color:uint = 0x333333;
 		
-		private var showOrigin:Boolean = false;
+		public var showOrigin:Boolean = false;
 		private var showGhost:Boolean = false;
 		private var originSprite:Sprite = new Sprite();
 		
@@ -46,9 +47,6 @@ package ktu.utils.align.capabilities.gfx {
 			setSize(w, h);
 			// dragability
 			addEventListener (MouseEvent.MOUSE_DOWN, onMouseDown);
-			// double click shows origin with line
-			doubleClickEnabled = true;
-			addEventListener(MouseEvent.DOUBLE_CLICK, onDoubleClick);
 			redraw();
 		}
 		
@@ -87,7 +85,6 @@ package ktu.utils.align.capabilities.gfx {
 			oProp.scaleX = 1;
 			oProp.scaleY = 1;
 			Tweensy.to(originSprite, oProp, time, null, 0, null);
-			//if (showOrigin) onDoubleClick(new MouseEvent("sdf"));
 		}
 		
 		private function onResetComplete():void {
@@ -95,7 +92,7 @@ package ktu.utils.align.capabilities.gfx {
 		}
 		
 		
-		private function redraw():void {
+		public function redraw():void {
 			graphics.clear();
 			
 			// draw box
@@ -128,8 +125,9 @@ package ktu.utils.align.capabilities.gfx {
 			
 			
 			// show origin ?
+			trace("target.redraw");
 			if (showOrigin) {
-				
+				addEventListener(Event.ENTER_FRAME, updateOriginSprite);
 				var g:Graphics = originSprite.graphics;
 				
 				g.clear();
@@ -149,6 +147,9 @@ package ktu.utils.align.capabilities.gfx {
 				stage.addChild(originSprite);
 				originSprite.x = x;
 				originSprite.y = y;
+			} else { 
+				originSprite.graphics.clear();
+				removeEventListener(Event.ENTER_FRAME, updateOriginSprite);
 			}
 			
 		}
@@ -243,7 +244,7 @@ package ktu.utils.align.capabilities.gfx {
 			redraw();
 		}
 		
-		private function updateOriginSprite(e:MouseEvent):void {
+		private function updateOriginSprite(e:Event):void {
 			originSprite.x = x;
 			originSprite.y = y;
 		}
