@@ -13,6 +13,7 @@ package  {
 	import flash.utils.describeType;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
 	/**
@@ -104,7 +105,7 @@ package  {
 			var vgap:int = 10;
 			
 			//draw white bg
-			g.beginFill(0xFFFFFF);
+			//g.beginFill(0xFFFFFF);
 			g.drawRect( -.5, -.5, w, h);
 			
 			// draw grid
@@ -128,12 +129,13 @@ package  {
 			// make a few sprites on the stage
 			sp1 = new Sprite ();
 			sp1.graphics.beginFill(0x395768, .7);
-			sp1.graphics.drawRect(0, 0, 50, 150);
+			sp1.graphics.drawRect(0, 0, 20, 20);
 			addChild(sp1);
 			
 			sp2 = new Sprite ();
 			sp2.graphics.beginFill(0x449766, .7);
-			sp2.graphics.drawRect(-100, 0, 100, 100);
+			//sp2.graphics.drawRect(-100, 0, 100, 50);
+			sp2.graphics.drawRect(0, 0, 30, 50);
 			addChild(sp2);
 			
 			sp3 = new TextField();
@@ -146,7 +148,7 @@ package  {
 		}
 		private function placeTargets():void {
 			sp1.x = sp1.y = 100; sp1.scaleX = sp1.scaleY = 1;
-			sp2.x = sp2.y = 200; sp2.scaleX = sp2.scaleY = 1;
+			sp2.x = sp2.y = 130; sp2.scaleX = sp2.scaleY = 1;
 			sp3.x = sp3.y = 300; sp3.scaleX = sp3.scaleY = 1;
 		}
 		
@@ -164,7 +166,13 @@ package  {
 			var ignoreOrigin:Boolean = ignoreOrigin_chk.selected;
 			var pixelHinting:Boolean = pixelHinting_chk.selected;
 			
-			VizAlign.align ([sp1, sp2, sp3], [new VizAlignment(method, tcs)], ignoreOrigin, applyResults, pixelHinting);
+			var sp1t:VizAlignTarget = new VizAlignTarget(sp1);
+			var sp2t:VizAlignTarget = new VizAlignTarget(sp2);
+			var targets:Array = [new VizAlignGroup([sp1t, sp2t])];
+			
+			drawEnd(targets[0], 0x00ff00);
+			var res:Array/*VizAlignTarget*/ = VizAlign.align (targets, [new VizAlignment(method, tcs)], ignoreOrigin, applyResults, pixelHinting);
+			drawEnd(res[0], 0xff0000);
 		}
 		
 		private var dragging:Object;
@@ -178,6 +186,12 @@ package  {
 		private function dropSomething(e:MouseEvent):void {
 			stage.removeEventListener(MouseEvent.MOUSE_UP, dropSomething);
 			e.target.stopDrag();
+		}
+		
+		private function drawEnd(t:VizAlignTarget, color:uint):void {
+			graphics.beginFill(color, .5);
+			graphics.drawRect(t.end.x, t.end.y, t.end.width, t.end.height);
+			graphics.endFill();
 		}
 		
 		
