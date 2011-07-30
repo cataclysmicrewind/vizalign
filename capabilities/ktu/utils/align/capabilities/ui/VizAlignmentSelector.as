@@ -185,6 +185,7 @@ package ktu.utils.align.capabilities.ui {
 		private function updateTCSList():void {
 			tcsList.items = [];
 			tcsList.addItem("stage");
+			tcsList.addItem("to targets");
 			for each (var tcs:DisplayObject in _targetCoordinateSpaces) {
 				tcsList.addItem(tcs.name);
 			}
@@ -210,9 +211,11 @@ package ktu.utils.align.capabilities.ui {
 				var inst:Array = item.label.split(" : ");
 				var method:Function = AlignMethods[inst[0]];
 				var tcsName:String = inst[1];
-				var tcs:DisplayObject;
+				var tcs:*;
 				if (tcsName == "stage") {
 					tcs = stage;
+				} else if (tcsName == "to targets") {
+					tcs = VizAlignment.TO_TARGETS;
 				} else {
 					for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
 						if (tcsName == "arena" && atcs.name == "arena") {

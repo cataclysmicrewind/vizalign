@@ -9,6 +9,8 @@ package ktu.utils.align {
 	public class VizAlignTarget {
 
 		protected var _target:DisplayObject;
+		
+		
 		protected var _originOffset:Point;
 		protected var _applyOriginOffset:Boolean = false;
 		
@@ -17,38 +19,35 @@ package ktu.utils.align {
 		
 		
 		public function get target():DisplayObject { return _target; }
+		public function set target(value:DisplayObject):void {
+			_target = value;
+			init();
+		}
 		public function get originOffset():Point { return _originOffset; }
 		public function get applyOriginOffset():Boolean { return _applyOriginOffset; }
 		public function set applyOriginOffset(value:Boolean):void {
 			_applyOriginOffset = value;
 			var s:Point = scale;
-			var d:Point = delta;
 			if (value) {
-				//if (d.x != 0)
 					_end.x += _originOffset.x * s.x;
-				//if (d.y != 0)
 					_end.y += _originOffset.y * s.y;
-				//if (d.x == 0 && d.y == 0) {
-					//_end.x += _originOffset.x * s.x;
-					//_end.y += _originOffset.y * s.y;
-				//}
 			} else {
-				//if (d.x != 0)
 					_end.x -= _originOffset.x * s.x;
-				//if (d.y != 0)
 					_end.y -= _originOffset.y * s.y;
-				//if (d.x == 0 && d.y == 0) {
-					//_end.x -= _originOffset.x * s.x;
-					//_end.y -= _originOffset.y * s.y;
-				//}
 			}
 		}
 		public function get orig():Rectangle { return _orig; }
 		public function get end():Rectangle { return _end; }
 		public function get scale():Point {
 			var s:Point = new Point();
-			s.x = _end.width / _orig.width + (_target.scaleX - 1);
-			s.y = _end.height / _orig.height + (_target.scaleY - 1);
+			
+			var endBoundsScale:Number = (_end.width / _orig.width);
+			var targetScale:Number = (_target.scaleX - 1 );
+			s.x = endBoundsScale + targetScale;
+			
+			endBoundsScale = (_end.height / _orig.height)
+			targetScale = (_target.scaleY - 1);
+			s.y = endBoundsScale + targetScale;
 			
 			return s;
 		}
@@ -61,8 +60,12 @@ package ktu.utils.align {
 		
 		
 		
-		public function VizAlignTarget(target:DisplayObject):void {
+		public function VizAlignTarget(target:DisplayObject = null):void {
 			_target = target;
+			init();
+		}
+		
+		protected function init():void {
 			_orig.x = _end.x = target.x;
 			_orig.y = _end.y = target.y;
 			_orig.width = _end.width = target.width;

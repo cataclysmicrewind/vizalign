@@ -47,6 +47,9 @@ package ktu.utils.align.capabilities.gfx {
 			setSize(w, h);
 			// dragability
 			addEventListener (MouseEvent.MOUSE_DOWN, onMouseDown);
+			
+			doubleClickEnabled = true;
+			addEventListener(MouseEvent.DOUBLE_CLICK, onDoubleClick);
 			redraw();
 		}
 		
