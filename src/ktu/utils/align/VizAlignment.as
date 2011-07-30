@@ -32,6 +32,10 @@ package ktu.utils.align {
 		private var _type	:Function;
 		private var _tcs	:*;
 		
+		private var _ignoreTCSOrigin:Boolean = true;
+		
+		
+		
 		/**
 		 * 
 		 * Alignment method type to be used in VizAlign.align()
@@ -46,13 +50,20 @@ package ktu.utils.align {
 		 */
 		public function set tcs (v:*)	:void 	{ _tcs = v;		}
 		public function get tcs ()		:* 		{ return _tcs;  }
+		/**
+		 * 
+		 * 
+		 * 
+		 */
+		public function get ignoreTCSOrigin():Boolean { return _ignoreTCSOrigin; }
+		public function set ignoreTCSOrigin(value:Boolean):void { _ignoreTCSOrigin = value; }
 		
 		/**
 		 *  The constructor needs to have both the type and tcs passed in, this makes sure that no AlignParam objects will be unsuitable for any VizAlign.align() call
 		 * @param	type 	Function	a function from the AlignMethods class
 		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
 		 */
-		public function VizAlignment (type:Function, tcs:*):void {
+		public function VizAlignment (type:Function, tcs:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
 				case tcs is DisplayObject:
 				case tcs is Stage:
@@ -63,6 +74,7 @@ package ktu.utils.align {
 			}
 			_type = type;
 			_tcs = tcs;
+			_ignoreTCSOrigin = ignoreTCSOrigin
 		}
 		
 		/**
@@ -88,7 +100,7 @@ package ktu.utils.align {
 		*
 		**************************************************************************************************
 		*/
-		static private function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*):Rectangle {
+		private function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*):Rectangle {
 			var tcsBounds:Rectangle = new Rectangle();
 			switch (true) {
 				case tcs === TO_TARGETS:
@@ -108,22 +120,26 @@ package ktu.utils.align {
 			}
 			return tcsBounds;
 		}
-		static private function getToTargetsBounds(targetBounds:Array/*Rectangle*/):Rectangle {
-			var tcsBounds:Rectangle = new Rectangle();
-			for (var i:int = 0; i < targetBounds.length; i++) {
+		private function getToTargetsBounds(targetBounds:Array/*Rectangle*/):Rectangle {
+			var tcsBounds:Rectangle = targetBounds[0];
+			for (var i:int = 1; i < targetBounds.length; i++) {
 					tcsBounds.union(targetBounds[i]);
 				}
 			return tcsBounds;
 		}
 		
-		static private function getDisplayObjectBounds(tcs:DisplayObject):Rectangle {
+		private function getDisplayObjectBounds(tcs:DisplayObject):Rectangle {
 			var rect:Rectangle = DisplayObject(tcs).getBounds(tcs);
-			var dx:Point = tcs.localToGlobal(new Point(rect.x, rect.y));
-			rect.x = dx.x;
-			rect.y = dx.y;
+			rect.width = tcs.width;
+			rect.height = tcs.height;
+			if (_ignoreTCSOrigin) {
+				var dx:Point = tcs.localToGlobal(new Point(rect.x, rect.y));
+				rect.x = dx.x;
+				rect.y = dx.y;
+			}
 			return rect;
 		}
-		public static function getStageBounds(stage:Stage):Rectangle {
+		private function getStageBounds(stage:Stage):Rectangle {
 			if (stage.displayState == StageDisplayState.FULL_SCREEN) {
 				return new Rectangle (0, 0, stage.fullScreenSourceRect.width, stage.fullScreenSourceRect.height);
 			} else {

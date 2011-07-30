@@ -14,6 +14,7 @@ package ktu.utils.align.capabilities {
 	import ktu.utils.align.capabilities.gfx.VizAlignLogo;
 	import ktu.utils.align.capabilities.ui.CapabilitiesControls;
 	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
 	
@@ -183,6 +184,16 @@ package ktu.utils.align.capabilities {
 			arena.addTCS(targetInfo);
 			
 			VizAlign.align([targetInfo], [new VizAlignment(AlignMethods.center, rect)], false, true, true);
+		}
+		
+		
+		public function exampleRecursion (targets:Array/*VizAlignTarget*/):void {
+			for each (var vat:VizAlignTarget in targets) {
+				if (vat is VizAlignGroup) 
+					exampleRecursion(VizAlignGroup(vat).targets);
+				else 
+					Tweensy.to (vat.target, vat.end, .5);
+			}
 		}
 	}
 }

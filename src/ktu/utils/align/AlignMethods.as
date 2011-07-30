@@ -7,7 +7,7 @@ package ktu.utils.align {
 	
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
-	import ktu.utils.ArrayUtils;
+	import ktu.utils.align.VizAlign;
 	import ktu.utils.RectangleUtils;
 	
 	/**
@@ -311,7 +311,7 @@ package ktu.utils.align {
 		*******************
 		*/
 		public static function distLeft ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
 			var lastIndex:int = targets.length - 1;
@@ -324,10 +324,10 @@ package ktu.utils.align {
 				var endX:Number = tcsLeftEdge + (spread * i) ;
 				item.x = endX;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		public static function distHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterX ) ;
 			var lastIndex:int = targets.length - 1;
@@ -340,10 +340,10 @@ package ktu.utils.align {
 				var endX:Number = first - ( item.width / 2 ) + ( spread * i ) ;
 				item.x = endX;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		};
 		public static function distRight ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/ ) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalRight ) ;
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
@@ -356,7 +356,7 @@ package ktu.utils.align {
 				var endX:Number = first - item.width + ( spread * i ) ;
 				item.x = endX;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		};
 		/*
 		*
@@ -365,7 +365,7 @@ package ktu.utils.align {
 		*******************
 		*/
 		public static function distTop ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
 			var lastIndex:int = targets.length - 1;
@@ -378,10 +378,10 @@ package ktu.utils.align {
 				var endY:Number = first + ( spread * i ) ;
 				item.y = endY;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		public static function distVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalCenterY ) ;
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
@@ -394,10 +394,10 @@ package ktu.utils.align {
 				var endY:Number = first - ( item.height / 2 ) + ( spread * i ) ;
 				item.y = endY;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		public static function distBottom ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets.sort ( RectangleUtils.sortGlobalBottom ) ;
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
@@ -410,7 +410,7 @@ package ktu.utils.align {
 				var endY:Number = first - item.height + ( spread * i ) ;
 				item.y = endY;
 			}
-			ArrayUtils.reorderArray(targets,origOrderedDic);
+			VizAlign.reorderArray(targets,origOrderedDic);
 		};
 		/*
 		*
@@ -495,7 +495,7 @@ package ktu.utils.align {
 		******************
 		*/
 		public static function spaceVertical ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalY ) ;
 			var objsHeight:Number = 0;
@@ -515,10 +515,10 @@ package ktu.utils.align {
 				bottom += item.height + spread ;
 				item.y = endY;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		public static function spaceHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			targets = targets.sort ( RectangleUtils.sortGlobalX ) ;
 			var objsWidth:Number = 0;
@@ -538,7 +538,7 @@ package ktu.utils.align {
 				right += item.width + spread;
 				item.x = endX;
 			}
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		/*
 		*
@@ -547,7 +547,7 @@ package ktu.utils.align {
 		***********
 		*/
 		public static function stackVertical ( targetCoordinateSpace:Rectangle, targets:Array /*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			var above:Array = new Array ( ) ;
 			var below:Array = new Array ( ) ;
@@ -593,10 +593,10 @@ package ktu.utils.align {
 			above.reverse ( ) ;
 			targets = above;
 			targets = targets.concat ( below ) ;
-			ArrayUtils.reorderArray(targets, origOrderedDic);
+			VizAlign.reorderArray(targets, origOrderedDic);
 		}
 		public static function stackHorizontal ( targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/) :void {
-			var origOrderedDic:Dictionary = ArrayUtils.preserveOrderWithDictionary(targets);
+			var origOrderedDic:Dictionary = VizAlign.preserveOrderWithDictionary(targets);
 			
 			var before:Array = new Array ( ) ;													// array to hold objects to the left of the tcs
 			var after:Array = new Array ( ) ;													// array to hold objects to the right of the tcs
@@ -650,7 +650,7 @@ package ktu.utils.align {
 			//reset & return
 			targets = before;																	// targets = before array
 			targets = targets.concat ( after ) ;												// targets = before array + after array
-			ArrayUtils.reorderArray(targets, origOrderedDic);									// reorder targets
+			VizAlign.reorderArray(targets, origOrderedDic);									// reorder targets
 		}
 	}
 }

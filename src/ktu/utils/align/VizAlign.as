@@ -7,29 +7,16 @@ package ktu.utils.align {
 	import flash.display.StageDisplayState;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.utils.Dictionary;
 	/**
 	 * 
 	 * 
 	 * 	TODO:
-	 * 		Origins:
-	 *			Issues is that ignore origins adjusts it on both x&y every time, yet may only want one to change...
-	 * 			this worked before when the origin was calculated in the align method and not post alignment
-	 * 			checking against the delta of x&y helps, but not always...
-	 * 
-	 * 			Should I include option for ignoring origin on TCS... right now, I always do
 	 * 
 	 * 
 	 * 		Method Manifests
 	 * 			How can I make it so I only compile the align functions I use
 	 * 			How can I forcibly include all methods?
-	 * 
-	 * 
-	 * 		VizAlignGroup - figure out whether it should be an array of VizAlignTargets, or just DisplayObject
-	 * 			scaleFromOrigin()
-	 * 				x&y += offsetFromOrigin * scale
-	 * 				w&h += orig w&h * scale
-	 * 			override applyOriginOffset()
-	 * 				x&y += originOffset * scale
 	 * 
 	 * 
 	 * 		VizAlignTarget
@@ -162,6 +149,43 @@ package ktu.utils.align {
 			var bounds:Array/*Rectangle*/ = [];
 			for (var i:int = 0; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
 			return bounds;
+		}
+		
+		
+		/**
+		 * 
+		 * 	SHOULDN'T WORK WITH PRIMITIVES!
+		 * 
+		 * @param	array
+		 * @return
+		 */
+		public static function preserveOrderWithDictionary(array:Array/*Object*/):Dictionary {
+			var dic:Dictionary = new Dictionary(true);
+			for (var i:int = 0; i < array.length; i++) {
+				dic[array[i]] = i;
+			}
+			return dic;
+		}
+		
+		/**
+		 * 
+		 * 	applys original order to array 
+		 * 	use preserveOrderWithDictionary Dicitonary with this function
+		 * 
+		 * @param	array
+		 * @param	orderedDic
+		 * @return
+		 */
+		public static function reorderArray (array:Array/*Object*/, orderedDic:Dictionary):void {
+			var orderedArray:Array = [];
+			for (var i:int = 0; i < array.length; i++) {
+				var item:* = array[i];
+				var index:int = orderedDic[item];
+				orderedArray[index] = item;
+			}
+			for (i = 0; i < orderedArray.length; i++) {
+				array[i] = orderedArray[i];
+			}
 		}
 	}
 }
