@@ -5,6 +5,7 @@ package ktu.utils.align.capabilities {
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.capabilities.gfx.Grid;

@@ -35,6 +35,7 @@ package com.bit101.components
 	public class TextArea extends Text
 	{
 		protected var _scrollbar:VScrollBar;
+		protected var _autoScroll:Boolean = true;
 		
 		/**
 		 * Constructor
@@ -127,6 +128,10 @@ package com.bit101.components
 		{
 			super.onChange(event);
 			updateScrollbar();
+			if (_autoScroll && _scrollbar) {
+				_scrollbar.value = _scrollbar.minimum;
+				onScrollbarScroll(new Event("sdf"));
+			}
 		}
 		
 		/**
