@@ -59,7 +59,7 @@ package ktu.utils.align {
 			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
 				vizAlignments[i].align (targetEndBounds);													//		have the VizAlignment align the rectnalges
 			}																								// end loop
-			
+			updateGroups(vizAlignTargets);
 			if (ignoreOrigin) removeOriginOffsets(vizAlignTargets);											// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
 			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
@@ -149,6 +149,15 @@ package ktu.utils.align {
 			var bounds:Array/*Rectangle*/ = [];
 			for (var i:int = 0; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
 			return bounds;
+		}
+		
+		
+		static private function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
+			for each (var t:VizAlignTarget in vizAlignTargets) {
+				if (t is VizAlignGroup) {
+					t.updateTargetsEnds();
+				}
+			}
 		}
 		
 		
