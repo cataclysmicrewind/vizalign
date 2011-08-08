@@ -13,6 +13,10 @@ package ktu.utils.align {
 	 * 
 	 * 	TODO:
 	 * 
+	 * 		VizAlignGroup
+	 * 			Fix originOffset bullshit. Right now, even if I say ignore origin offsets, 
+	 * 			it does not produce the correct rectangle
+	 * 
 	 * 
 	 * 		Method Manifests
 	 * 			How can I make it so I only compile the align functions I use
@@ -52,8 +56,8 @@ package ktu.utils.align {
 			targets = targets.concat();																		// copy array so we have new one (refactor when doing groups)
 			
 			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);				// convert all targets to VizAlignTarget
-			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
 			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
+			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
 			
 			var length:uint = vizAlignments.length;															// get length of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
@@ -130,7 +134,7 @@ package ktu.utils.align {
 				var item:* = targets[i];
 				switch (true) {
 					case item is Array:
-						vizAlignTargets[i] = convertToVizAlignTargets(item);
+						vizAlignTargets[i] = new VizAlignGroup(convertToVizAlignTargets(item));
 						break;
 					case item is DisplayObject:
 						vizAlignTargets[i] = new VizAlignTarget(item);
