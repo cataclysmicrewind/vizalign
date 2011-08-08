@@ -16,14 +16,28 @@ package ktu.utils.align {
 		
 		protected var _targets:Array/*VizAlignTarget*/;
 		
+		protected var _appliedOffsetOrig:Rectangle;
+		protected var _appliedOffsetEnd:Rectangle;
+		
 		public function get targets():Array/*VizAlignTarget*/ {
 			return _targets;
 		}
 		
 		override public function set applyOriginOffset(value:Boolean):void {
 			_applyOriginOffset = value;
-			for each (var t:VizAlignTarget in _targets) 
+			_targets[0].applyOriginOffset = value
+			var groupEnd:Rectangle = _targets[0].end.clone();
+			var groupOrig:Rectangle = targets[0].orig.clone();
+			for (var i:int = 1; i < _targets.length; i++) {
+				var t:VizAlignTarget = _targets[i];
 				t.applyOriginOffset = value;
+				groupEnd = groupEnd.union(t.end);
+				groupOrig = groupOrig.union(t.orig);
+			}
+			if (value) {
+				_end = groupEnd;
+				_orig = groupOrig;
+			}
 		}
 		
 		public function VizAlignGroup(targets:Array) {
@@ -32,8 +46,9 @@ package ktu.utils.align {
 		}
 		
 		override protected function init ():void {
-			var groupEnd:Rectangle = new Rectangle();
-			for each (var t:VizAlignTarget in _targets) {
+			var groupEnd:Rectangle = _targets[0].end.clone();
+			for (var i:int = 1; i < _targets.length; i++) {
+				var t:VizAlignTarget = _targets[i];
 				groupEnd = groupEnd.union(t.end);
 			}
 			_orig = groupEnd.clone();
@@ -53,11 +68,6 @@ package ktu.utils.align {
 			var s:Point = scale;
 			for each (var t:VizAlignTarget in _targets) {
 				t.applyEndBounds();
-				//var offset:Point = offsetFromGroupOrigin(t);
-				//t.target.x = _end.x + (offset.x * s.x);
-				//t.target.y = _end.y + (offset.y * s.y);
-				//t.target.scaleX += s.x - 1;
-				//t.target.scaleY += s.y - 1;
 			}
 		}
 		/**
@@ -119,8 +129,9 @@ package ktu.utils.align {
 			var offset:Point = offsetFromGroupOrigin(target);
 			target.end.x = _end.x + (offset.x * s.x);
 			target.end.y = _end.y + (offset.y * s.y);
-			target.end.width = target.target.width * s.x - 1;
-			target.end.height = target.target.height * s.y - 1;
+			// this isn't right....
+			target.end.width = target.target.width * s.x;
+			target.end.height = target.target.height * s.y;
 		}
 		
 		/** @private */
