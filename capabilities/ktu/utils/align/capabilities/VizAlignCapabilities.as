@@ -7,6 +7,8 @@ package ktu.utils.align.capabilities {
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.system.fscommand;
+	import flash.system.System;
 	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.capabilities.gfx.Grid;
 	import ktu.utils.align.capabilities.gfx.Target;
@@ -25,26 +27,26 @@ package ktu.utils.align.capabilities {
 	 * 	This swf is designed to show off what VizAlign can do
 	 *
 	 *
-	 * 
-	 * 
+	 *
+	 *
 	 * 	TO DO:
 	 *
 	 *		Groups, Shapes
-	 * 
+	 *
 	 * 		Fullscreen
-	 * 
+	 *
 	 * 		More presets
-	 * 	
+	 *
 	 * 		Fix Logo
-	 * 
+	 *
 	 * 		TCS details?
-	 * 
+	 *
 	 * 		Help
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
+	 *
+	 *
+	 *
+	 *
+	 *
 	 * ...
 	 * @author Keelan
 	 */
@@ -57,11 +59,13 @@ package ktu.utils.align.capabilities {
 		
 		private var green:Target;
 		private var red:Target;
-		private var blue:Target;
+		private var purple:Target;
 		private var cyan:Target;
 		private var yellow:Target;
 		
 		public function VizAlignCapabilities() {
+			
+			stage.showDefaultContextMenu = false;
 			
 			Style.setStyle(Style.KTU);
 			
@@ -76,29 +80,24 @@ package ktu.utils.align.capabilities {
 			addTargetInfo(arena);
 			addTargets(arena);
 			
-			
 			controlPanel = new CapabilitiesControls();
 			controlPanel.y = 500;
 			addChild(controlPanel);
-			
 			
 			var tcs:Array = arena.targetCoordinateSpaces;
 			tcs.unshift(arena);
 			tcs = tcs.concat(arena.targets);
 			controlPanel.targetCoordinateSpaces = tcs;
 			controlPanel.targets = arena.targets;
-			
+		
 		}
 		
-		
-		
-		private function addTCS(arena:VizAlignArena):void{
+		private function addTCS(arena:VizAlignArena):void {
 			var l:VizAlignLogo = new VizAlignLogo();
 			l.name = "vizalign logo";
 			l.x = 10;
 			l.y = 10;
 			arena.addTCS(l);
-			
 			
 			grid = new Grid();
 			grid.name = "grid";
@@ -118,6 +117,7 @@ package ktu.utils.align.capabilities {
 			yellow.setSize(60, 100);
 			yellow.setOriginOffset(-200, -200);
 			yellow.setColor(0xCCFF32);
+			yellow.numSides = 6;
 			yellow.origPos = new Rectangle(yellow.x, yellow.y, yellow.width, yellow.height);
 			
 			green = new Target();
@@ -127,6 +127,7 @@ package ktu.utils.align.capabilities {
 			green.setSize(60, 60);
 			green.setOriginOffset(70, 90);
 			green.setColor(0x009966);
+			green.numSides = 5;
 			green.origPos = new Rectangle(green.x, green.y, green.width, green.height);
 			
 			cyan = new Target();
@@ -136,6 +137,7 @@ package ktu.utils.align.capabilities {
 			cyan.setSize(60, 40);
 			cyan.setOriginOffset(0, 50);
 			cyan.setColor(0x09AABB);
+			cyan.numSides = 4;
 			cyan.origPos = new Rectangle(cyan.x, cyan.y, cyan.width, cyan.height);
 			
 			red = new Target();
@@ -145,24 +147,27 @@ package ktu.utils.align.capabilities {
 			red.setSize(40, 40);
 			red.setOriginOffset(0, 0);
 			red.setColor(0xB41D00);
+			red.numSides = 3;
 			red.origPos = new Rectangle(red.x, red.y, red.width, red.height);
 			
-			blue = new Target();
-			blue.name = "blue";
-			blue.x = 300 + 20;
-			blue.y = 210 - 20;
-			blue.setSize(20, 40);
-			blue.setOriginOffset(20, -20);
-			blue.setColor(0x3064FF);
-			blue.origPos = new Rectangle(blue.x, blue.y, blue.width, blue.height);
-			
+			purple = new Target();
+			purple.name = "purple";
+			purple.x = 300 + 20;
+			purple.y = 210 - 20;
+			purple.setSize(20, 40);
+			purple.setOriginOffset(20, -20);
+			purple.setColor(0xBE1AD0);
+			purple.numSides = 0;
+			purple.origPos = new Rectangle(purple.x, purple.y, purple.width, purple.height);
+		
 		}
+		
 		public function addTargets(arena:VizAlignArena):void {
 			arena.addTarget(yellow);
 			arena.addTarget(green);
 			arena.addTarget(cyan);
 			arena.addTarget(red);
-			arena.addTarget(blue);
+			arena.addTarget(purple);
 		}
 		
 		private function addTargetInfo(arena:VizAlignArena):void {
@@ -175,8 +180,8 @@ package ktu.utils.align.capabilities {
 			rect.width = stage.stageWidth - rect.x
 			rect.height = grid.height;
 			
-			var targets:Array = [ yellow, green, red, blue, cyan];
-			for (var i:int = 0; i < targets.length; i++) {
+			var targets:Array = [yellow, green, red, purple, cyan];
+			for (var i:int = 0; i < targets.length; i++){
 				var target:Target = targets[i];
 				target.addEventListener(MouseEvent.CLICK, targetInfo.onTargetSelected);
 				target.addEventListener(MouseEvent.DOUBLE_CLICK, targetInfo.onTargetSelected);
@@ -187,13 +192,12 @@ package ktu.utils.align.capabilities {
 			VizAlign.align([targetInfo], [new VizAlignment(AlignMethods.center, rect)], false, true, true);
 		}
 		
-		
-		public function exampleRecursion (targets:Array/*VizAlignTarget*/):void {
-			for each (var vat:VizAlignTarget in targets) {
-				if (vat is VizAlignGroup) 
+		public function exampleRecursion(targets:Array /*VizAlignTarget*/):void {
+			for each (var vat:VizAlignTarget in targets){
+				if (vat is VizAlignGroup)
 					exampleRecursion(VizAlignGroup(vat).targets);
-				else 
-					Tweensy.to (vat.target, vat.end, .5);
+				else
+					Tweensy.to(vat.target, vat.end, .5);
 			}
 		}
 	}

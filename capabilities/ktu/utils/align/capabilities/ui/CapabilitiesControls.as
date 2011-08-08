@@ -8,9 +8,11 @@ package ktu.utils.align.capabilities.ui {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	import ktu.utils.align.capabilities.gfx.Target;
 	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignTarget;
 	
 	
@@ -148,23 +150,61 @@ package ktu.utils.align.capabilities.ui {
 		
 		private function onAlignButtonClick(e:MouseEvent):void {
 			var targets:Array = targetSelector.chosenTargets;
+			var groups:Array = createGroups(targets);
 			var vizAlignments:Array = alignmentSelector.chosenAlignments;
 			var ignoreOrigins:Boolean = options.ignoreOrigins.selected;
 			var pixelHinting:Boolean = options.pixelHinting.selected;
 			var applyResults:Boolean = !options.animate.selected;
 			// call VizAlign
-			var results:Array = VizAlign.align (targets, vizAlignments, ignoreOrigins, applyResults, pixelHinting);
+			var results:Array = VizAlign.align (groups, vizAlignments, ignoreOrigins, applyResults, pixelHinting);
 			if (!applyResults) {
-				for each(var t:VizAlignTarget in results) {
+				animateTargets(results);
+			}
+		}
+		
+		private function animateTargets(array:Array):void {
+			for each (var t:VizAlignTarget in array) {
+				if (t is VizAlignGroup) {
+					var tg:VizAlignGroup = t as VizAlignGroup;
+					animateTargets(tg.targets);
+				} else {
 					var prop:Object = { };
-					prop.x = t.end.x;
-					prop.y = t.end.y;
-					prop.width = t.end.width;
-					prop.height = t.end.height;
+					var e:Rectangle = t.end;
+					prop.x = e.x;
+					prop.y = e.y;
+					prop.width = e.width;
+					prop.height = e.height;
 					Tweensy.to(t.target, prop, .6);
 				}
 			}
-			
+		}
+		
+		private function drawRectangle(rect:Rectangle, color:uint, alpha:Number):void {
+			var sp:Sprite = new Sprite ();
+			sp.graphics.lineStyle(2, color, alpha);
+			sp.graphics.drawRect(rect.x, rect.y, rect.width, rect.height);
+			stage.addChild(sp);
+		}
+		
+		private function createGroups(targets:Array):Array {
+			var groups:Array = [[], [], [], [], []];
+			var nongroups:Array = [];
+			for each (var t:Target in targets) {
+				if (t.group > 0) {
+					groups[t.group].push(t);
+				} else {
+					nongroups.push(t);
+				}
+			}
+			var finalGroups:Array = [];
+			for (var i:int = 0; i < groups.length; i++) {
+				if (groups[i].length > 0) {
+					finalGroups.push(groups[i]);
+				}
+			}
+			finalGroups = finalGroups.concat(nongroups);
+			if (finalGroups.length == 0) return targets;
+			else return finalGroups;
 		}
 		
 		private function onPresetSelect(e:Event):void {
