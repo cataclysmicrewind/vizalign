@@ -38,7 +38,7 @@ package ktu.utils.align.capabilities.ui {
 		private function addPresets():void {
 			var item:Object = { };
 			item.label = "left ";
-			item.targets = ["green", "blue"];
+			item.targets = ["green", "purple"];
 			item.vizAlignments = [ { type:"left", tcs:"grid" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
@@ -59,28 +59,28 @@ package ktu.utils.align.capabilities.ui {
 			
 			item = { };
 			item.label = "adjacentBottomRight";
-			item.targets = ["cyan", "blue"];
+			item.targets = ["cyan", "purple"];
 			item.vizAlignments = [ { type:"adjacentBottomRight", tcs:"vizalign logo" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
 			
 			item = { };
 			item.label = "spaceVertical";
-			item.targets = ["green", "blue", "red", "cyan", "yellow"];
+			item.targets = ["green", "purple", "red", "cyan", "yellow"];
 			item.vizAlignments = [ { type:"spaceVertical", tcs:"arena" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
 			
 			item = { };
 			item.label = "stackHorizontal";
-			item.targets = ["green", "blue", "cyan", "yellow"];
+			item.targets = ["green", "purple", "cyan", "yellow"];
 			item.vizAlignments = [ { type:"stackHorizontal", tcs:"red" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
 			
 			item = { };
 			item.label = "stackHorizontal & vertical";
-			item.targets = ["green", "blue", "cyan", "yellow"];
+			item.targets = ["green", "purple", "cyan", "yellow"];
 			item.vizAlignments = [ { type:"vertical", tcs:"red" }, { type:"stackHorizontal", tcs:"red" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
