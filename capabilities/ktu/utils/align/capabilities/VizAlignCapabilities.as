@@ -35,6 +35,11 @@ package ktu.utils.align.capabilities {
 	 * 	TO DO:
 	 *
 	 * 		put code generator in
+	 * 			how do I display the grouping? it will get kinda long... maybe?
+	 * 			examples:
+	 * 				VizAlign.align ([green, red], [new VizAlignment(AlignMethods.left, stage)], true, true, true);
+	 * 				VizAlign.align ([ [green, red], [yellow, purple, cyan] ], [new VizAlignment(AlignMethods.scaleToFit, stage), new VizAlignment(AlignMethods.center, stage)], true, true, true);
+	 * 				??? VizAlign.align ([ [green, red], [yellow, purple, cyan] ], [{type: AlignMethods.scaleToFit, tcs:stage}, {type:AlignMethods.center, tcs:stage}], true, true, true);
 	 * 
 	 *		++ Groups, Shapes
 	 * 
