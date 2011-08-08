@@ -28,13 +28,17 @@ package ktu.utils.align {
 		public function set applyOriginOffset(value:Boolean):void {
 			_applyOriginOffset = value;
 			var s:Point = scale;
-			if (value) {
-					_end.x += _originOffset.x * s.x;
-					_end.y += _originOffset.y * s.y;
-			} else {
-					_end.x -= _originOffset.x * s.x;
-					_end.y -= _originOffset.y * s.y;
-			}
+			//if (value) {
+				_end.x += _originOffset.x * s.x * (value ? 1 : -1);
+				_end.y += _originOffset.y * s.y * (value ? 1 : -1);
+				_orig.x += _originOffset.x * s.x * (value ? 1 : -1);
+				_orig.y += _originOffset.y * s.y * (value ? 1 : -1);
+			//} else {
+				//_end.x -= _originOffset.x * s.x;
+				//_end.y -= _originOffset.y * s.y;
+				//_orig.x -= _originOffset.x * s.x;
+				//_orig.y -= _originOffset.y * s.y;
+			//}
 		}
 		public function get orig():Rectangle { return _orig; }
 		public function get end():Rectangle { return _end; }
@@ -66,12 +70,12 @@ package ktu.utils.align {
 		}
 		
 		protected function init():void {
-			_orig.x = _end.x = target.x;
-			_orig.y = _end.y = target.y;
-			_orig.width = _end.width = target.width;
-			_orig.height = _end.height = target.height;
+			_orig.x = _end.x = _target.x;
+			_orig.y = _end.y = _target.y;
+			_orig.width = _end.width = _target.width;
+			_orig.height = _end.height = _target.height;
 			
-			_originOffset = new Point(target.getBounds(target).x, target.getBounds(target).y);
+			_originOffset = new Point(_target.getBounds(_target).x, _target.getBounds(_target).y);
 		}
 		
 		public function applyOrigBounds():void {
