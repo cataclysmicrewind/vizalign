@@ -4,6 +4,9 @@ package ktu.utils.align.capabilities {
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
@@ -35,7 +38,7 @@ package ktu.utils.align.capabilities {
 	 * 
 	 *		++ Groups, Shapes
 	 * 
-	 * 		++Remove VizAlignGroup dependancy from VizAlign.... ouch
+	 * 		++ Remove VizAlignGroup dependancy from VizAlign.... ouch
 	 * 			can't be done... because of the convertToVizAlignTargets
 	 *
 	 * 		Fullscreen
@@ -45,6 +48,9 @@ package ktu.utils.align.capabilities {
 	 * 		++ Fix Logo
 	 * 
 	 * 		TCS details? (x, y) (w, h) ?
+	 * 
+	 * 		enable crosshair 
+	 * 			for shit like bottomLeft of Logo... no border around it so hard to tell...
 	 * 
 	 * 		Help - tons of instructions...
 	 * 			Are you good with AS3?
@@ -78,6 +84,7 @@ package ktu.utils.align.capabilities {
 	 * ...
 	 * @author Keelan
 	 */
+	[SWF (width = '750', height = '700')]
 	public class VizAlignCapabilities extends Sprite {
 		
 		private var arena:VizAlignArena;
@@ -92,8 +99,12 @@ package ktu.utils.align.capabilities {
 		private var yellow:Target;
 		
 		public function VizAlignCapabilities() {
-			
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.align = StageAlign.TOP_LEFT;
 			stage.showDefaultContextMenu = false;
+			stage.addEventListener(Event.RESIZE, function (e:Event):void {
+				trace(stage.stageWidth + " : " + stage.stageHeight);
+			});
 			
 			Style.setStyle(Style.KTU);
 			

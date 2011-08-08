@@ -49,7 +49,7 @@
       <dep id="flash.display:DisplayObject" />
       <dep id="Math" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ListItem.as" mod="1305029406000" size="3343" optimizedsize="1773">
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ListItem.as" mod="1305029406000" size="3342" optimizedsize="1773">
       <def id="com.bit101.components:ListItem" />
       <pre id="com.bit101.components:Component" />
       <dep id="flash.events:MouseEvent" />
@@ -103,7 +103,7 @@
       <dep id="com.bit101.components:Label" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1305029406000" size="8503" optimizedsize="4210">
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1305029406000" size="8490" optimizedsize="4209">
       <def id="com.bit101.components:ScrollBar" />
       <pre id="com.bit101.components:Slider" />
       <pre id="com.bit101.components:Component" />
@@ -218,7 +218,7 @@
       <pre id="mx.core:BitmapAsset" />
       <dep id="AS3" />
     </script>
-    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Component.as" mod="1305029406000" size="3500" optimizedsize="1673">
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Component.as" mod="1312813829048" size="3502" optimizedsize="1673">
       <def id="com.bit101.components:Component" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.display:StageScaleMode" />
@@ -333,7 +333,7 @@
       <dep id="flash.utils:Dictionary" />
       <dep id="flash.display:MovieClip" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignOptions.as" mod="1311794439546" size="1655" optimizedsize="1143">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignOptions.as" mod="1311794439546" size="1654" optimizedsize="1143">
       <def id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
       <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:CheckBox" />
@@ -341,7 +341,7 @@
       <dep id="AS3" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\Presets.as" mod="1312809487131" size="2398" optimizedsize="1718">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\Presets.as" mod="1312809487131" size="2397" optimizedsize="1718">
       <def id="ktu.utils.align.capabilities.ui:Presets" />
       <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:List" />
@@ -356,14 +356,17 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1312809546663" size="4089" optimizedsize="2642">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1312826907692" size="4386" optimizedsize="2843">
       <def id="ktu.utils.align.capabilities:VizAlignCapabilities" />
       <pre id="flash.display:Sprite" />
+      <dep id="flash.display:StageScaleMode" />
       <dep id="ktu.utils.align.capabilities.gfx:Grid" />
       <dep id="ktu.utils.align:VizAlignment" />
+      <dep id="flash.events:Event" />
       <dep id="ktu.utils.align:AlignMethods" />
       <dep id="ktu.utils.align.capabilities.gfx:Target" />
       <dep id="ktu.utils.align.capabilities.gfx:TargetInfo" />
+      <dep id="trace" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.align:VizAlignGroup" />
       <dep id="ktu.utils.align:VizAlignTarget" />
@@ -374,9 +377,10 @@
       <dep id="com.bit101.components:Style" />
       <dep id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
       <dep id="ktu.utils.align:VizAlign" />
+      <dep id="flash.display:StageAlign" />
       <dep id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\CapabilitiesControls.as" mod="1312809487127" size="5609" optimizedsize="3265">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\CapabilitiesControls.as" mod="1312809487127" size="5608" optimizedsize="3265">
       <def id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.events:Event" />
@@ -396,7 +400,7 @@
       <dep id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
       <dep id="ktu.utils.align:VizAlign" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1312809487136" size="5176" optimizedsize="3093">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1312809487136" size="5175" optimizedsize="3093">
       <def id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
       <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:CheckBox" />
@@ -454,7 +458,7 @@
       <dep id="Math" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1311997337062" size="5778" optimizedsize="3209">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1311997337062" size="5777" optimizedsize="3209">
       <def id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align:VizAlignment" />
@@ -497,7 +501,7 @@
       <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
       <dep id="com.flashdynamix.motion:TweensyGroup" />
     </script>
-    <script name="com\bit101\components\Component_Ronda.as" mod="1305029406000" size="400" optimizedsize="244">
+    <script name="com\bit101\components\Component_Ronda.as" mod="1244666605429" size="400" optimizedsize="244">
       <def id="com.bit101.components:Component_Ronda" />
       <pre id="mx.core:FontAsset" />
       <dep id="AS3" />
