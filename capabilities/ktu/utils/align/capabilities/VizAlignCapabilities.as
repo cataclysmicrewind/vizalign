@@ -29,6 +29,8 @@ package ktu.utils.align.capabilities {
 	 * 
 	 * 	TO DO:
 	 *
+	 * 		put code generator in
+	 * 
 	 *		Groups, Shapes
 	 * 
 	 * 		Fullscreen
@@ -37,12 +39,35 @@ package ktu.utils.align.capabilities {
 	 * 	
 	 * 		Fix Logo
 	 * 
-	 * 		TCS details?
+	 * 		TCS details? (x, y) (w, h) ?
 	 * 
-	 * 		Help
+	 * 		Help - tons of instructions...
+	 * 			Are you good with AS3?
+	 * 				Yes		No
 	 * 
+	 * 			AS3 Developers start father in the instructions
 	 * 
+	 * 			Non as3 start at beginning...
+	 * 			
 	 * 
+	 * 			Contents:
+	 *				Why I made VizAlign
+	 * 				This SWF
+	 * 				The Problem: 
+	 * 					Coordinate Planes
+	 * 					Origins
+	 * 					Scaling
+	 * 					
+	 * 				The Solution:
+	 *					getBounds(this);
+	 * 					scaling
+	 * 					
+	 * 				Using Capabilities:
+	 * 					Presets
+	 * 					Custom
+	 * 
+	 * 				
+	 * 				
 	 * 
 	 * 
 	 * ...

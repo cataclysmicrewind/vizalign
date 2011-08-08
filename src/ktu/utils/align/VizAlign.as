@@ -155,7 +155,7 @@ package ktu.utils.align {
 		static private function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for each (var t:VizAlignTarget in vizAlignTargets) {
 				if (t is VizAlignGroup) {
-					t.updateTargetsEnds();
+					(t as VizAlignGroup).updateTargetsEnds();
 				}
 			}
 		}
