@@ -34,6 +34,9 @@ package ktu.utils.align.capabilities {
 	 * 		put code generator in
 	 * 
 	 *		++ Groups, Shapes
+	 * 
+	 * 		++Remove VizAlignGroup dependancy from VizAlign.... ouch
+	 * 			can't be done... because of the convertToVizAlignTargets
 	 *
 	 * 		Fullscreen
 	 *
