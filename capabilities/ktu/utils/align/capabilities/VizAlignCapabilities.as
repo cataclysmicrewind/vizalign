@@ -104,8 +104,8 @@ package ktu.utils.align.capabilities {
 		private var yellow:Target;
 		
 		public function VizAlignCapabilities() {
-			stage.scaleMode = StageScaleMode.NO_SCALE;
-			stage.align = StageAlign.TOP_LEFT;
+			//stage.scaleMode = StageScaleMode.NO_SCALE;
+			//stage.align = StageAlign.TOP_LEFT;
 			stage.showDefaultContextMenu = false;
 			stage.addEventListener(Event.RESIZE, function (e:Event):void {
 				trace(stage.stageWidth + " : " + stage.stageHeight);

@@ -100,9 +100,8 @@ package ktu.utils.align {
 		 * @param	vizAlignTargets
 		 */
 		static public function applyOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) {
+			for (var i:int = 0; i < vizAlignTargets.length; i++) 
 				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = true;
-			}
 		}
 		/**
 		 * 	TODO: account for groups
@@ -111,9 +110,8 @@ package ktu.utils.align {
 		 * @param	vizAlignTargets
 		 */
 		static public function removeOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) {
+			for (var i:int = 0; i < vizAlignTargets.length; i++) 
 				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = false;
-			}
 		}
 		
 		/**
@@ -123,9 +121,8 @@ package ktu.utils.align {
 		 * @param	alignedTargetBounds
 		 */
 		static public function roundResults(vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) {
+			for (var i:int = 0; i < vizAlignTargets.length; i++) 
 				vizAlignTargets[i].roundEndValues();
-			}
 		}
 		
 		static public function convertToVizAlignTargets(targets:Array):Array/*VizAlignTarget*/ {
@@ -150,18 +147,14 @@ package ktu.utils.align {
 			return vizAlignTargets;
 		}
 		static private function getBoundsFromVizAlignTargets(vizAlignTargets:Array/*VizAlignTarget*/):Array/*Rectangle*/ {
-			var bounds:Array/*Rectangle*/ = [];
-			for (var i:int = 0; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
+			for (var i:int = 0, bounds:Array/*Rectangle*/ = []; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
 			return bounds;
 		}
 		
 		
 		static private function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for each (var t:VizAlignTarget in vizAlignTargets) {
-				if (t is VizAlignGroup) {
-					(t as VizAlignGroup).updateTargetsEnds();
-				}
-			}
+			for each (var t:VizAlignTarget in vizAlignTargets) 
+				if (t is VizAlignGroup) (t as VizAlignGroup).updateTargetsEnds();
 		}
 		
 		
@@ -174,9 +167,7 @@ package ktu.utils.align {
 		 */
 		public static function preserveOrderWithDictionary(array:Array/*Object*/):Dictionary {
 			var dic:Dictionary = new Dictionary(true);
-			for (var i:int = 0; i < array.length; i++) {
-				dic[array[i]] = i;
-			}
+			for (var i:int = 0; i < array.length; i++)  dic[array[i]] = i;
 			return dic;
 		}
 		
@@ -190,15 +181,21 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public static function reorderArray (array:Array/*Object*/, orderedDic:Dictionary):void {
-			var orderedArray:Array = [];
-			for (var i:int = 0; i < array.length; i++) {
-				var item:* = array[i];
-				var index:int = orderedDic[item];
-				orderedArray[index] = item;
+			var unorderedArray:Array = array.concat();
+			for (var i:int = 0, ln:int = array.length; i < ln; i++) {
+				array[orderedDic[array[i]]] = unorderedArray[i];
 			}
-			for (i = 0; i < orderedArray.length; i++) {
-				array[i] = orderedArray[i];
-			}
+			
+			
+			//var orderedArray:Array = [];
+			//for (var i:int = 0, ln:int = array.length; i < ln; i++) {
+				//var item:* = array[i];
+				//var index:int = orderedDic[item];
+				//orderedArray[index] = item;
+			//}
+			//for (i = 0; i < orderedArray.length; i++) {
+				//array[i] = orderedArray[i];
+			//}
 		}
 	}
 }
