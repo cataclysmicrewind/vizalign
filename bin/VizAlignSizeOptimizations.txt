@@ -1,0 +1,65 @@
+
+VizAlignment
+   2882
+   1950
+ =  932
+
+VizAlignTarget
+   3080
+   2733
+ =  347
+
+VizAlignGroup
+   2782
+   2443
+ =  339
+
+
+SortRectangleUtils
+   ????
+   2225
+ =  
+
+
+VizAlign
+   3156
+   3072
+ =   84
+
+
+AlignMethods
+   12769
+   11358
+ =  1411
+
+
+
+
+
+ 932
+ 347
+ 339
+  84
+1411
+
+uncompressed reduction = 3113
+
+
+
+Optimized Size:
+
+		new	orig
+
+VizAlignment:	1305	1308
+VizAlign:	1671	1714
+VizAlignGroup:	1390	1568
+VizAlignTarget:	1432	1619
+SortRectangle:	1037	1037
+
+	Total:	6835	7246	= 411
+
+
+AlignMethods:	5468	6102	= 634
+
+
+	Sum:   12303   13348	= 1045
