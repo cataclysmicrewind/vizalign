@@ -147,7 +147,6 @@ package ktu.utils.align.capabilities.gfx {
 			
 			
 			// show origin ?
-			trace("target.redraw");
 			if (showOrigin) {
 				addEventListener(Event.ENTER_FRAME, updateOriginSprite);
 				var g:Graphics = originSprite.graphics;

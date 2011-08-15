@@ -111,6 +111,7 @@ package ktu.utils.align.capabilities {
 				trace(stage.stageWidth + " : " + stage.stageHeight);
 			});
 			
+			
 			Style.setStyle(Style.KTU);
 			
 			arena = new VizAlignArena();
