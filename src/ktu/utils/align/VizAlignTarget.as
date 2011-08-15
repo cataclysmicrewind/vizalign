@@ -13,7 +13,7 @@ package ktu.utils.align {
 		protected var _orig:Rectangle = new Rectangle();
 		protected var _end:Rectangle = new Rectangle();
 		
-		protected var _originOffset:Point;
+		protected var _originOffset:Point = new Point();
 		protected var _applyOriginOffset:Boolean = false;
 		
 		
@@ -54,16 +54,13 @@ package ktu.utils.align {
 			_orig.width = _end.width = _target.width;
 			_orig.height = _end.height = _target.height;
 			
-			_originOffset = new Point(_target.getBounds(_target).x, _target.getBounds(_target).y);
+			var bounds:Rectangle = _target.getBounds(_target);
+			_originOffset.x = bounds.x;
+			_originOffset.y = bounds.y;
 		}
 		
-		public function applyOrigBounds():void {
-			setTargetBounds(_orig);
-		}
-		
-		public function applyEndBounds():void {
-			setTargetBounds (_end);
-		}
+		public function applyOrigBounds():void { setTargetBounds(_orig); }
+		public function applyEndBounds():void { setTargetBounds (_end); }
 		
 		public function roundEndValues():void {
 			_end.x = Math.round(_end.x);
@@ -81,12 +78,10 @@ package ktu.utils.align {
 		/** @private */
 		public function toString():String {
 			var str:String = "";
-			str += "VizAlignTarget:\ttarget:" + _target.name;
-			str += "\t";
+			str += "VizAlignTarget:\ttarget:" + _target.name + "\t";
 			str += "orig: " + _orig + " ";
 			str += "end: " + _end + " ";
-			str += "originOffset: " + _originOffset;
-			str += "\n";
+			str += "originOffset: " + _originOffset + "\n";
 			return str;
 		}
 	}

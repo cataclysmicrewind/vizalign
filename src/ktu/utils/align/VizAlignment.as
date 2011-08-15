@@ -42,7 +42,11 @@ package ktu.utils.align {
 		 */
 		public var tcs	:*;
 		/**
+		 * 	Only applies to tcs that are DisplayObject.
 		 * 
+		 * 	Does not apply to TO_TARGETS (if the targets have ignore origin, then it is ignored)
+		 *  Does not apply to Rectangles (they can't have an origin offset)
+		 * 	Does not apply to stage		 (the stage has no origin offset)
 		 * 
 		 * 
 		 */

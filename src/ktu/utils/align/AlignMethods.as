@@ -284,7 +284,7 @@ package ktu.utils.align {
 				targets[i].x = first - targets[i].width + ( spread * i ) ;
 			
 			VizAlign.reorderArray(targets, origOrderedDic);
-		};
+		}
 		/*
 		*
 		*******************
@@ -437,7 +437,7 @@ package ktu.utils.align {
 			var right:Number = targetCoordinateSpace.left + targets[0].width;
 			targets[0].x = targetCoordinateSpace.left;
 			for ( var j:int = 1; j < length; j++ ) {
-				targets[j] = right + spread;
+				targets[j].x = right + spread;
 				right += targets[j].width + spread;
 			}
 			VizAlign.reorderArray(targets, origOrderedDic);

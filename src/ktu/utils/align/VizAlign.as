@@ -13,9 +13,9 @@ package ktu.utils.align {
 	 * 
 	 * 	TODO:
 	 * 
-	 * 		VizAlignGroup
-	 * 			Fix originOffset bullshit. Right now, even if I say ignore origin offsets, 
-	 * 			it does not produce the correct rectangle
+	 * 		++VizAlignGroup
+	 * 		++	Fix originOffset bullshit. Right now, even if I say ignore origin offsets, 
+	 * 		++	it does not produce the correct rectangle
 	 * 
 	 * 
 	 * 		Method Manifests
@@ -24,8 +24,8 @@ package ktu.utils.align {
 	 * 
 	 * 
 	 * 		VizAlignTarget
-	 * 			scalePadding:Boolean;
-	 * 			padding
+	 * 			--scalePadding:Boolean;
+	 * 			--padding
 	 * 				(x + padding) * scale	(scalePadding)
 	 * 				x * scale + padding		(!scalePadding)
 	 * 
@@ -52,19 +52,20 @@ package ktu.utils.align {
 		 * @return
 		 */
 		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, ignoreOrigin:Boolean = false, applyResults:Boolean = false, pixelHinting:Boolean = false):Array/*VizAlignTarget*/ {
-			if ( targets.length == 0 || vizAlignments.length == 0)	return [];								// if no targets in array, return nothing. idiot
+			if ( !targets.length || !vizAlignments.length )	return [];										// if no targets or vizAlignments, return nothing. idiot
 			targets = targets.concat();																		// copy array so we have new one (refactor when doing groups)
 			
 			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);				// convert all targets to VizAlignTarget
-			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets);											// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
+			if (ignoreOrigin) setOriginOffsets(vizAlignTargets, true);											// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
 			var targetEndBounds:Array/*Rectangle*/ = getBoundsFromVizAlignTargets(vizAlignTargets);			// get all rectangles to move
 			
 			var length:uint = vizAlignments.length;															// get length of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {															// for each vizAlignment
 				vizAlignments[i].align (targetEndBounds);													//		have the VizAlignment align the rectnalges
 			}																								// end loop
+			
 			updateGroups(vizAlignTargets);
-			if (ignoreOrigin) removeOriginOffsets(vizAlignTargets);											// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
+			if (ignoreOrigin) setOriginOffsets(vizAlignTargets, false);											// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
 			if (pixelHinting) roundResults (vizAlignTargets);												// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);													// if applyResults, tell all VizAlignTarget to go to end
 			
@@ -72,8 +73,6 @@ package ktu.utils.align {
 		}
 		
 		/**
-		 * 	TODO: account for groups
-		 * 				technically already fonr as the groups extend VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
@@ -83,8 +82,6 @@ package ktu.utils.align {
 			}
 		}
 		/**
-		 * 	TODO: account for groups
-		 * 			technically already fonr as the groups extend VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
@@ -94,35 +91,20 @@ package ktu.utils.align {
 			}
 		}
 		/**
-		 * 	TODO: account for groups
-		 * 			technically already done as the groups extends VizAlignTarget
 		 * 
 		 * @param	vizAlignTargets
 		 */
-		static public function applyOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) 
-				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = true;
+		static public function setOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/, ignoreOrigins:Boolean = true ):void {
+			for each (var t:VizAlignTarget in vizAlignTargets) 
+				t.applyOriginOffset = ignoreOrigins;
 		}
 		/**
-		 * 	TODO: account for groups
-		 * 			technically already done as the groups extends VizAlignTarget
-		 * 
-		 * @param	vizAlignTargets
-		 */
-		static public function removeOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) 
-				VizAlignTarget(vizAlignTargets[i]).applyOriginOffset = false;
-		}
-		
-		/**
-		 * 	TODO: account for groups
-		 * 			that shouldn't be hard with the VizAlignGroup class idea
 		 * 
 		 * @param	alignedTargetBounds
 		 */
 		static public function roundResults(vizAlignTargets:Array/*VizAlignTarget*/):void {
-			for (var i:int = 0; i < vizAlignTargets.length; i++) 
-				vizAlignTargets[i].roundEndValues();
+			for each (var t:VizAlignTarget in vizAlignTargets) 
+				t.roundEndValues();
 		}
 		
 		static public function convertToVizAlignTargets(targets:Array):Array/*VizAlignTarget*/ {
@@ -146,13 +128,14 @@ package ktu.utils.align {
 			}
 			return vizAlignTargets;
 		}
-		static private function getBoundsFromVizAlignTargets(vizAlignTargets:Array/*VizAlignTarget*/):Array/*Rectangle*/ {
+		
+		static public function getBoundsFromVizAlignTargets(vizAlignTargets:Array/*VizAlignTarget*/):Array/*Rectangle*/ {
 			for (var i:int = 0, bounds:Array/*Rectangle*/ = []; i < vizAlignTargets.length; i++) bounds[i] = vizAlignTargets[i].end;
 			return bounds;
 		}
 		
 		
-		static private function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
+		static public function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for each (var t:VizAlignTarget in vizAlignTargets) 
 				if (t is VizAlignGroup) (t as VizAlignGroup).updateTargetsEnds();
 		}
@@ -185,17 +168,6 @@ package ktu.utils.align {
 			for (var i:int = 0, ln:int = array.length; i < ln; i++) {
 				array[orderedDic[array[i]]] = unorderedArray[i];
 			}
-			
-			
-			//var orderedArray:Array = [];
-			//for (var i:int = 0, ln:int = array.length; i < ln; i++) {
-				//var item:* = array[i];
-				//var index:int = orderedDic[item];
-				//orderedArray[index] = item;
-			//}
-			//for (i = 0; i < orderedArray.length; i++) {
-				//array[i] = orderedArray[i];
-			//}
 		}
 	}
 }
