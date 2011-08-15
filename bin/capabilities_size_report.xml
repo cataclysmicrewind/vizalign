@@ -1,6 +1,285 @@
 <report>
   <scripts>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1312951519365" size="3078" optimizedsize="1676">
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ObjectTween)" mod="1232396566000" size="2172" optimizedsize="994">
+      <def id="com.flashdynamix.motion.plugins:ObjectTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="Math" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\RadioButton.as" mod="1305029406000" size="3381" optimizedsize="1896">
+      <def id="com.bit101.components:RadioButton" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Label.as" mod="1311783818262" size="2150" optimizedsize="1227">
+      <def id="com.bit101.components:Label" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.text:TextFieldAutoSize" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.text:TextFormat" />
+      <dep id="AS3" />
+      <dep id="flash.text:TextField" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:FontAsset)" mod="1306872041437" size="497" optimizedsize="282">
+      <def id="mx.core:FontAsset" />
+      <pre id="mx.core:IFlexAsset" />
+      <pre id="flash.text:Font" />
+      <dep id="AS3" />
+      <dep id="mx.core:mx_internal" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:SoundTween)" mod="1232241758000" size="2961" optimizedsize="1469">
+      <def id="com.flashdynamix.motion.plugins:SoundTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="Math" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:DisplayTween)" mod="1232241384000" size="3395" optimizedsize="1838">
+      <def id="com.flashdynamix.motion.plugins:DisplayTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ListItem.as" mod="1305029406000" size="3343" optimizedsize="1773">
+      <def id="com.bit101.components:ListItem" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Label" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyGroup)" mod="1232371238000" size="11101" optimizedsize="5460">
+      <def id="com.flashdynamix.motion:TweensyGroup" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="flash.utils:getQualifiedClassName" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.media:SoundChannel" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.geom:ColorTransform" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\VScrollBar.as" mod="1305029406000" size="699" optimizedsize="427">
+      <def id="com.bit101.components:VScrollBar" />
+      <pre id="com.bit101.components:ScrollBar" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Slider" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:ILayoutDirectionElement)" mod="1306872039718" size="719" optimizedsize="239">
+      <def id="mx.core:ILayoutDirectionElement" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="ktu\utils\align\capabilities\gfx\Chain_Broken.as" mod="1312809487102" size="511" optimizedsize="344">
+      <def id="ktu.utils.align.capabilities.gfx:Chain_Broken" />
+      <pre id="mx.core:BitmapAsset" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\PushButton.as" mod="1310998889969" size="3807" optimizedsize="2013">
+      <def id="com.bit101.components:PushButton" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1305029406000" size="8503" optimizedsize="4210">
+      <def id="com.bit101.components:ScrollBar" />
+      <pre id="com.bit101.components:Slider" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.utils:Timer" />
+      <dep id="Math" />
+      <dep id="flash.events:TimerEvent" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Shape" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Grid.as" mod="1311885885673" size="2541" optimizedsize="1511">
+      <def id="ktu.utils.align.capabilities.gfx:Grid" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.display:Graphics" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Slider.as" mod="1305029406000" size="5347" optimizedsize="2694">
+      <def id="com.bit101.components:Slider" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="Math" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ColorTween)" mod="1232241670000" size="3525" optimizedsize="1952">
+      <def id="com.flashdynamix.motion.plugins:ColorTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.geom:ColorTransform" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MatrixTween)" mod="1232241728000" size="3297" optimizedsize="1734">
+      <def id="com.flashdynamix.motion.plugins:MatrixTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignGroup.as" mod="1313337227158" size="2113" optimizedsize="1216">
+      <def id="ktu.utils.align:VizAlignGroup" />
+      <pre id="ktu.utils.align:VizAlignTarget" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MovieClipTween)" mod="1232241384000" size="3530" optimizedsize="1917">
+      <def id="com.flashdynamix.motion.plugins:MovieClipTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="Math" />
+      <dep id="flash.display:MovieClip" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1313336921748" size="2791" optimizedsize="1386">
+      <def id="ktu.utils.align:VizAlignTarget" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Panel.as" mod="1311870629624" size="3462" optimizedsize="1720">
+      <def id="com.bit101.components:Panel" />
+      <pre id="com.bit101.components:Component" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IRepeaterClient)" mod="1306872039140" size="1116" optimizedsize="321">
+      <def id="mx.core:IRepeaterClient" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\SortRectangleUtils.as" mod="1313275198378" size="2221" optimizedsize="1037">
+      <def id="ktu.utils:SortRectangleUtils" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\VizAlignLogo.as" mod="1310992513266" size="533" optimizedsize="292">
+      <def id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
+      <pre id="flash.display:Bitmap" />
+      <dep id="AS3" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexDisplayObject)" mod="1306872041312" size="5953" optimizedsize="1339">
+      <def id="mx.core:IFlexDisplayObject" />
+      <pre id="flash.events:IEventDispatcher" />
+      <pre id="flash.display:IBitmapDrawable" />
+      <pre id="Object" />
+      <dep id="flash.accessibility:AccessibilityProperties" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.display:LoaderInfo" />
+      <dep id="flash.display:Stage" />
+      <dep id="flash.geom:Point" />
+      <dep id="flash.geom:Transform" />
+    </script>
+    <script name="ktu\utils\align\capabilities\gfx\Chain_Link.as" mod="1312809487104" size="503" optimizedsize="340">
+      <def id="ktu.utils.align.capabilities.gfx:Chain_Link" />
+      <pre id="mx.core:BitmapAsset" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Component.as" mod="1312813829048" size="3502" optimizedsize="1673">
+      <def id="com.bit101.components:Component" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.display:StageScaleMode" />
+      <dep id="flash.events:Event" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="Math" />
+      <dep id="com.bit101.components:Style" />
+      <dep id="com.bit101.components:Component_Ronda" />
+      <dep id="flash.display:Stage" />
+      <dep id="flash.filters:DropShadowFilter" />
+      <dep id="flash.display:StageAlign" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IAssetLayoutFeatures)" mod="1306872039546" size="4452" optimizedsize="867">
+      <def id="mx.core:IAssetLayoutFeatures" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Matrix" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexAsset)" mod="1306872041187" size="243" optimizedsize="98">
+      <def id="mx.core:IFlexAsset" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1313073794981" size="1945" optimizedsize="1303">
+      <def id="ktu.utils.align:VizAlignment" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:StageDisplayState" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.display:Stage" />
+      <dep id="Error" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\utils\ColorUtils.as" mod="1311598760183" size="1158" optimizedsize="602">
+      <def id="ktu.utils.align.capabilities.utils:ColorUtils" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:MultiTypeObjectPool)" mod="1232273704000" size="1456" optimizedsize="715">
+      <def id="com.flashdynamix.utils:MultiTypeObjectPool" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
+      <dep id="AS3" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:FlexBitmap)" mod="1306872040499" size="864" optimizedsize="537">
+      <def id="mx.core:FlexBitmap" />
+      <pre id="flash.display:Bitmap" />
+      <dep id="flash.display:BitmapData" />
+      <dep id="AS3" />
+      <dep id="mx.core:mx_internal" />
+      <dep id="Error" />
+      <dep id="mx.utils:NameUtil" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1313335916856" size="2917" optimizedsize="1626">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignTarget" />
@@ -10,61 +289,33 @@
       <dep id="flash.utils:Dictionary" />
       <dep id="Error" />
     </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:mx_internal)" mod="1306872039530" size="184" optimizedsize="109">
-      <def id="mx.core:mx_internal" />
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\Style.as" mod="1311860592141" size="2118" optimizedsize="1411">
+      <def id="com.bit101.components:Style" />
+      <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\VizAlignArena.as" mod="1311897880414" size="1555" optimizedsize="854">
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyTimeline)" mod="1232368084000" size="9514" optimizedsize="4448">
+      <def id="com.flashdynamix.motion:TweensyTimeline" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:ObjectPool)" mod="1232273744000" size="1405" optimizedsize="725">
+      <def id="com.flashdynamix.utils:ObjectPool" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\VizAlignArena.as" mod="1311868495427" size="1546" optimizedsize="849">
       <def id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.display:Graphics" />
       <dep id="AS3" />
       <dep id="flash.display:DisplayObject" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1313031874364" size="2789" optimizedsize="1384">
-      <def id="ktu.utils.align:VizAlignTarget" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\ui\Presets.as" mod="1312649589792" size="2402" optimizedsize="1718">
-      <def id="ktu.utils.align.capabilities.ui:Presets" />
-      <pre id="flash.display:Sprite" />
-      <dep id="com.bit101.components:List" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.text:TextFormat" />
-      <dep id="AS3" />
-      <dep id="com.bit101.components:Label" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MovieClipTween)" mod="1232241384000" size="3530" optimizedsize="1917">
-      <def id="com.flashdynamix.motion.plugins:MovieClipTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="Math" />
-      <dep id="flash.display:MovieClip" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\Style.as" mod="1311897870961" size="2122" optimizedsize="1411">
-      <def id="com.bit101.components:Style" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="ktu\utils\align\capabilities\gfx\Chain_Broken.as" mod="1312653826897" size="511" optimizedsize="344">
-      <def id="ktu.utils.align.capabilities.gfx:Chain_Broken" />
-      <pre id="mx.core:BitmapAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:AbstractTween)" mod="1232396421000" size="4836" optimizedsize="2033">
-      <def id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <pre id="Object" />
-      <dep id="com.flashdynamix.motion:TweensyTimeline" />
-      <dep id="AS3" />
-      <dep id="Math" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:TweensyPluginList)" mod="1232274940000" size="2071" optimizedsize="1152">
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:TweensyPluginList)" mod="1232274940000" size="2071" optimizedsize="1152">
       <def id="com.flashdynamix.motion.plugins:TweensyPluginList" />
       <pre id="Object" />
       <dep id="com.flashdynamix.motion.plugins:DisplayTween" />
@@ -86,366 +337,24 @@
       <dep id="flash.utils:Dictionary" />
       <dep id="flash.display:MovieClip" />
     </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\Slider.as" mod="1311039955665" size="5351" optimizedsize="2694">
-      <def id="com.bit101.components:Slider" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="Math" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignGroup.as" mod="1313031673615" size="2451" optimizedsize="1365">
-      <def id="ktu.utils.align:VizAlignGroup" />
-      <pre id="ktu.utils.align:VizAlignTarget" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.geom:Point" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ObjectTween)" mod="1232396566000" size="2172" optimizedsize="994">
-      <def id="com.flashdynamix.motion.plugins:ObjectTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="AS3" />
-      <dep id="Math" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexDisplayObject)" mod="1306872041312" size="5953" optimizedsize="1339">
-      <def id="mx.core:IFlexDisplayObject" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="flash.display:IBitmapDrawable" />
-      <pre id="Object" />
-      <dep id="flash.accessibility:AccessibilityProperties" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:LoaderInfo" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.geom:Point" />
-      <dep id="flash.geom:Transform" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\CheckBox.as" mod="1311808566919" size="2575" optimizedsize="1449">
-      <def id="com.bit101.components:CheckBox" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="com.bit101.components:Label" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\VizAlignLogo.as" mod="1311039955405" size="542" optimizedsize="297">
-      <def id="ktu.utils.align.capabilities.gfx:VizAlignLogo" />
-      <pre id="flash.display:Bitmap" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\VScrollBar.as" mod="1311039955725" size="703" optimizedsize="427">
-      <def id="com.bit101.components:VScrollBar" />
-      <pre id="com.bit101.components:ScrollBar" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="com.bit101.components:Slider" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1312953835545" size="11365" optimizedsize="5473">
-      <def id="ktu.utils.align:AlignMethods" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="ktu.utils:SortRectangleUtils" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="ktu.utils.align:VizAlign" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1312644149653" size="5782" optimizedsize="3209">
-      <def id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignOptions.as" mod="1311794439546" size="1650" optimizedsize="1138">
+      <def id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
       <pre id="flash.display:Sprite" />
-      <dep id="ktu.utils.align:VizAlignment" />
+      <dep id="com.bit101.components:CheckBox" />
+      <dep id="flash.text:TextFormat" />
+      <dep id="AS3" />
+      <dep id="com.bit101.components:Label" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\Presets.as" mod="1312809487131" size="2393" optimizedsize="1713">
+      <def id="ktu.utils.align.capabilities.ui:Presets" />
+      <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:List" />
       <dep id="flash.events:Event" />
-      <dep id="flash.utils:describeType" />
-      <dep id="ktu.utils.align:AlignMethods" />
-      <dep id="com.bit101.components:PushButton" />
-      <dep id="com.bit101.components:Panel" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
       <dep id="flash.text:TextFormat" />
       <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="com.bit101.components:Label" />
-      <dep id="XML" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\TargetInfo.as" mod="1311898592946" size="3394" optimizedsize="2142">
-      <def id="ktu.utils.align.capabilities.gfx:TargetInfo" />
-      <pre id="flash.display:Sprite" />
-      <dep id="com.bit101.components:CheckBox" />
-      <dep id="flash.events:Event" />
-      <dep id="com.bit101.components:Panel" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="flash.text:TextFormat" />
-      <dep id="ktu.utils.align.capabilities.gfx:Target" />
-      <dep id="AS3" />
-      <dep id="com.bit101.components:Style" />
       <dep id="com.bit101.components:Label" />
     </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Target.as" mod="1312649783913" size="7278" optimizedsize="4236">
-      <def id="ktu.utils.align.capabilities.gfx:Target" />
-      <pre id="flash.display:Sprite" />
-      <dep id="flash.events:Event" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="flash.display:Graphics" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="ktu.utils.align.capabilities.utils:ColorUtils" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="ktu\utils\align\capabilities\gfx\Chain_Link.as" mod="1312666295678" size="503" optimizedsize="340">
-      <def id="ktu.utils.align.capabilities.gfx:Chain_Link" />
-      <pre id="mx.core:BitmapAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IAssetLayoutFeatures)" mod="1306872039546" size="4452" optimizedsize="867">
-      <def id="mx.core:IAssetLayoutFeatures" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Matrix" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IRepeaterClient)" mod="1306872039140" size="1116" optimizedsize="321">
-      <def id="mx.core:IRepeaterClient" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\utils\ColorUtils.as" mod="1311477604276" size="1162" optimizedsize="602">
-      <def id="ktu.utils.align.capabilities.utils:ColorUtils" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyTimeline)" mod="1232368084000" size="9514" optimizedsize="4448">
-      <def id="com.flashdynamix.motion:TweensyTimeline" />
-      <pre id="Object" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
-      <dep id="AS3" />
-      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
-      <dep id="com.flashdynamix.motion:TweensyGroup" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:IFlexAsset)" mod="1306872041187" size="243" optimizedsize="98">
-      <def id="mx.core:IFlexAsset" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\Component.as" mod="1312931694429" size="3506" optimizedsize="1673">
-      <def id="com.bit101.components:Component" />
-      <pre id="flash.display:Sprite" />
-      <dep id="flash.display:StageScaleMode" />
-      <dep id="flash.events:Event" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="Math" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="com.bit101.components:Component_Ronda" />
-      <dep id="flash.display:Stage" />
-      <dep id="flash.filters:DropShadowFilter" />
-      <dep id="flash.display:StageAlign" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:FlexBitmap)" mod="1306872040499" size="864" optimizedsize="537">
-      <def id="mx.core:FlexBitmap" />
-      <pre id="flash.display:Bitmap" />
-      <dep id="flash.display:BitmapData" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="Error" />
-      <dep id="mx.utils:NameUtil" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:ObjectPool)" mod="1232273744000" size="1405" optimizedsize="725">
-      <def id="com.flashdynamix.utils:ObjectPool" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\ScrollBar.as" mod="1311039955657" size="8507" optimizedsize="4210">
-      <def id="com.bit101.components:ScrollBar" />
-      <pre id="com.bit101.components:Slider" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="com.bit101.components:PushButton" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Timer" />
-      <dep id="Math" />
-      <dep id="flash.events:TimerEvent" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="flash.display:Shape" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:SoundTween)" mod="1232241758000" size="2961" optimizedsize="1469">
-      <def id="com.flashdynamix.motion.plugins:SoundTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="AS3" />
-      <dep id="flash.media:SoundTransform" />
-      <dep id="Math" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.utils:MultiTypeObjectPool)" mod="1232273704000" size="1456" optimizedsize="715">
-      <def id="com.flashdynamix.utils:MultiTypeObjectPool" />
-      <pre id="Object" />
-      <dep id="com.flashdynamix.utils:ObjectPool" />
-      <dep id="AS3" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:FontAsset)" mod="1306872041437" size="497" optimizedsize="282">
-      <def id="mx.core:FontAsset" />
-      <pre id="mx.core:IFlexAsset" />
-      <pre id="flash.text:Font" />
-      <dep id="AS3" />
-      <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:BitmapAsset)" mod="1306872039468" size="6922" optimizedsize="3795">
-      <def id="mx.core:BitmapAsset" />
-      <pre id="mx.core:IFlexAsset" />
-      <pre id="mx.core:FlexBitmap" />
-      <pre id="mx.core:ILayoutDirectionElement" />
-      <pre id="mx.core:IFlexDisplayObject" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.display:BitmapData" />
-      <dep id="mx.core:IAssetLayoutFeatures" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="Math" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="flash.system:ApplicationDomain" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:Tweensy)" mod="1232275685000" size="3660" optimizedsize="1453">
-      <def id="com.flashdynamix.motion:Tweensy" />
-      <pre id="Object" />
-      <dep id="com.flashdynamix.motion:TweensyTimeline" />
-      <dep id="AS3" />
-      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
-      <dep id="com.flashdynamix.motion:TweensyGroup" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\SortRectangleUtils.as" mod="1312949144889" size="2225" optimizedsize="1037">
-      <def id="ktu.utils:SortRectangleUtils" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:FilterTween)" mod="1232241711000" size="2860" optimizedsize="1500">
-      <def id="com.flashdynamix.motion.plugins:FilterTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="flash.filters:BitmapFilter" />
-      <dep id="AS3" />
-      <dep id="flash.filters:ColorMatrixFilter" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\RadioButton.as" mod="1311039955640" size="3385" optimizedsize="1896">
-      <def id="com.bit101.components:RadioButton" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="com.bit101.components:Label" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1312954009682" size="1954" optimizedsize="1308">
-      <def id="ktu.utils.align:VizAlignment" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:StageDisplayState" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:Stage" />
-      <dep id="Error" />
-      <dep id="flash.geom:Point" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\ui\CapabilitiesControls.as" mod="1312777617649" size="5613" optimizedsize="3265">
-      <def id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
-      <pre id="flash.display:Sprite" />
-      <dep id="flash.events:Event" />
-      <dep id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
-      <dep id="ktu.utils.align.capabilities.gfx:Target" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
-      <dep id="ktu.utils.align:VizAlignGroup" />
-      <dep id="ktu.utils.align.capabilities.ui:Presets" />
-      <dep id="com.bit101.components:PushButton" />
-      <dep id="ktu.utils.align:VizAlignTarget" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
-      <dep id="flash.text:TextFormat" />
-      <dep id="AS3" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
-      <dep id="ktu.utils.align:VizAlign" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1312779308086" size="5180" optimizedsize="3093">
-      <def id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
-      <pre id="flash.display:Sprite" />
-      <dep id="com.bit101.components:CheckBox" />
-      <dep id="com.bit101.components:PushButton" />
-      <dep id="flash.events:Event" />
-      <dep id="com.bit101.components:Panel" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="flash.text:TextFormat" />
-      <dep id="ktu.utils.align.capabilities.gfx:Target" />
-      <dep id="AS3" />
-      <dep id="ktu.utils.align.capabilities.gfx:Chain" />
-      <dep id="com.bit101.components:RadioButton" />
-      <dep id="com.bit101.components:Label" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ColorTween)" mod="1232241670000" size="3525" optimizedsize="1952">
-      <def id="com.flashdynamix.motion.plugins:ColorTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-      <dep id="flash.geom:ColorTransform" />
-    </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.utils:NameUtil)" mod="1306872046765" size="1668" optimizedsize="1094">
-      <def id="mx.utils:NameUtil" />
-      <pre id="Object" />
-      <dep id="mx.core:IRepeaterClient" />
-      <dep id="SecurityError" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\Panel.as" mod="1311897880430" size="3466" optimizedsize="1720">
-      <def id="com.bit101.components:Panel" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="com.bit101.components:Style" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyGroup)" mod="1232371238000" size="11101" optimizedsize="5460">
-      <def id="com.flashdynamix.motion:TweensyGroup" />
-      <pre id="Object" />
-      <dep id="flash.events:Event" />
-      <dep id="com.flashdynamix.utils:ObjectPool" />
-      <dep id="flash.media:SoundTransform" />
-      <dep id="flash.utils:getTimer" />
-      <dep id="flash.filters:BitmapFilter" />
-      <dep id="com.flashdynamix.motion:TweensyTimeline" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="com.flashdynamix.motion:Tweensy" />
-      <dep id="flash.media:SoundChannel" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Matrix" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.geom:ColorTransform" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="flash.display:Sprite" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1313032199895" size="4299" optimizedsize="2762">
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\VizAlignCapabilities.as" mod="1313069963237" size="4296" optimizedsize="2762">
       <def id="ktu.utils.align.capabilities:VizAlignCapabilities" />
       <pre id="flash.display:Sprite" />
       <dep id="ktu.utils.align.capabilities.gfx:Grid" />
@@ -467,49 +376,101 @@
       <dep id="ktu.utils.align:VizAlign" />
       <dep id="ktu.utils.align.capabilities.gfx:VizAlignArena" />
     </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:DisplayTween)" mod="1232241384000" size="3395" optimizedsize="1838">
-      <def id="com.flashdynamix.motion.plugins:DisplayTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="Math" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\ListItem.as" mod="1311039955590" size="3347" optimizedsize="1773">
-      <def id="com.bit101.components:ListItem" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="flash.events:MouseEvent" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObjectContainer" />
-      <dep id="com.bit101.components:Label" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Chain.as" mod="1312778892102" size="1446" optimizedsize="921">
-      <def id="ktu.utils.align.capabilities.gfx:Chain" />
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\CapabilitiesControls.as" mod="1312809487127" size="5608" optimizedsize="3265">
+      <def id="ktu.utils.align.capabilities.ui:CapabilitiesControls" />
       <pre id="flash.display:Sprite" />
-      <dep id="ktu.utils.align.capabilities.gfx:Chain_Broken" />
-      <dep id="AS3" />
-      <dep id="flash.display:Bitmap" />
-      <dep id="com.bit101.components:Label" />
-      <dep id="ktu.utils.align.capabilities.gfx:Chain_Link" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\Label.as" mod="1311808566924" size="2154" optimizedsize="1227">
-      <def id="com.bit101.components:Label" />
-      <pre id="com.bit101.components:Component" />
-      <dep id="flash.text:TextFieldAutoSize" />
       <dep id="flash.events:Event" />
+      <dep id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
+      <dep id="ktu.utils.align.capabilities.gfx:Target" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
+      <dep id="ktu.utils.align:VizAlignGroup" />
+      <dep id="ktu.utils.align.capabilities.ui:Presets" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="ktu.utils.align:VizAlignTarget" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
       <dep id="flash.text:TextFormat" />
       <dep id="AS3" />
-      <dep id="flash.text:TextField" />
-      <dep id="flash.display:DisplayObjectContainer" />
       <dep id="com.bit101.components:Style" />
+      <dep id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
+      <dep id="ktu.utils.align:VizAlign" />
     </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Grid.as" mod="1311897880414" size="2550" optimizedsize="1516">
-      <def id="ktu.utils.align.capabilities.gfx:Grid" />
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignTargetSelector.as" mod="1312809487136" size="5170" optimizedsize="3088">
+      <def id="ktu.utils.align.capabilities.ui:VizAlignTargetSelector" />
       <pre id="flash.display:Sprite" />
+      <dep id="com.bit101.components:CheckBox" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="flash.events:Event" />
+      <dep id="com.bit101.components:Panel" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.events:MouseEvent" />
+      <dep id="flash.text:TextFormat" />
+      <dep id="ktu.utils.align.capabilities.gfx:Target" />
+      <dep id="AS3" />
+      <dep id="ktu.utils.align.capabilities.gfx:Chain" />
+      <dep id="com.bit101.components:RadioButton" />
+      <dep id="com.bit101.components:Label" />
+    </script>
+    <script name="A:\ktu\VizAlign\src\ktu\utils\align\AlignMethods.as" mod="1313295318093" size="11362" optimizedsize="5475">
+      <def id="ktu.utils.align:AlignMethods" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils:SortRectangleUtils" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="ktu.utils.align:VizAlign" />
+    </script>
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.utils:NameUtil)" mod="1306872046765" size="1668" optimizedsize="1094">
+      <def id="mx.utils:NameUtil" />
+      <pre id="Object" />
+      <dep id="mx.core:IRepeaterClient" />
+      <dep id="SecurityError" />
+      <dep id="flash.utils:getQualifiedClassName" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="mx.core:mx_internal" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Target.as" mod="1313069738388" size="7237" optimizedsize="4206">
+      <def id="ktu.utils.align.capabilities.gfx:Target" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.events:Event" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="flash.display:Graphics" />
       <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.align.capabilities.utils:ColorUtils" />
+      <dep id="flash.geom:Point" />
     </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\List.as" mod="1311724681521" size="7753" optimizedsize="3812">
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:FilterTween)" mod="1232241711000" size="2860" optimizedsize="1500">
+      <def id="com.flashdynamix.motion.plugins:FilterTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="AS3" />
+      <dep id="flash.filters:ColorMatrixFilter" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignmentSelector.as" mod="1311997337062" size="5777" optimizedsize="3209">
+      <def id="ktu.utils.align.capabilities.ui:VizAlignmentSelector" />
+      <pre id="flash.display:Sprite" />
+      <dep id="ktu.utils.align:VizAlignment" />
+      <dep id="com.bit101.components:List" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.utils:describeType" />
+      <dep id="ktu.utils.align:AlignMethods" />
+      <dep id="com.bit101.components:PushButton" />
+      <dep id="com.bit101.components:Panel" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.text:TextFormat" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="XML" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\List.as" mod="1311683640478" size="7746" optimizedsize="3812">
       <def id="com.bit101.components:List" />
       <pre id="com.bit101.components:Component" />
       <dep id="flash.events:Event" />
@@ -523,27 +484,59 @@
       <dep id="com.bit101.components:Style" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="C:\Program Files\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:ILayoutDirectionElement)" mod="1306872039718" size="719" optimizedsize="239">
-      <def id="mx.core:ILayoutDirectionElement" />
-      <pre id="Object" />
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:mx_internal)" mod="1306872039530" size="184" optimizedsize="109">
+      <def id="mx.core:mx_internal" />
       <dep id="AS3" />
     </script>
-    <script name="com\bit101\components\Component_Ronda.as" mod="1312931694368" size="400" optimizedsize="244">
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion:Tweensy)" mod="1232275685000" size="3660" optimizedsize="1453">
+      <def id="com.flashdynamix.motion:Tweensy" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+    </script>
+    <script name="com\bit101\components\Component_Ronda.as" mod="1244666605429" size="400" optimizedsize="244">
       <def id="com.bit101.components:Component_Ronda" />
       <pre id="mx.core:FontAsset" />
       <dep id="AS3" />
     </script>
-    <script name="D:\ktu\git\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MatrixTween)" mod="1232241728000" size="3297" optimizedsize="1734">
-      <def id="com.flashdynamix.motion.plugins:MatrixTween" />
-      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+    <script name="A:\ktu\VizAlign\lib\TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:AbstractTween)" mod="1232396421000" size="4836" optimizedsize="2033">
+      <def id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
       <dep id="AS3" />
-      <dep id="flash.geom:Matrix" />
-      <dep id="flash.display:DisplayObject" />
       <dep id="Math" />
     </script>
-    <script name="D:\ktu\git\VizAlign\lib\com\bit101\components\PushButton.as" mod="1311039955636" size="3811" optimizedsize="2013">
-      <def id="com.bit101.components:PushButton" />
+    <script name="C:\Program Files (x86)\FlashDevelop4\Tools\flexsdk\frameworks\libs\core.swc(mx.core:BitmapAsset)" mod="1306872039468" size="6922" optimizedsize="3795">
+      <def id="mx.core:BitmapAsset" />
+      <pre id="mx.core:IFlexAsset" />
+      <pre id="mx.core:FlexBitmap" />
+      <pre id="mx.core:ILayoutDirectionElement" />
+      <pre id="mx.core:IFlexDisplayObject" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.display:BitmapData" />
+      <dep id="mx.core:IAssetLayoutFeatures" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="Math" />
+      <dep id="mx.core:mx_internal" />
+      <dep id="flash.system:ApplicationDomain" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\Chain.as" mod="1312809487113" size="1442" optimizedsize="921">
+      <def id="ktu.utils.align.capabilities.gfx:Chain" />
+      <pre id="flash.display:Sprite" />
+      <dep id="ktu.utils.align.capabilities.gfx:Chain_Broken" />
+      <dep id="AS3" />
+      <dep id="flash.display:Bitmap" />
+      <dep id="com.bit101.components:Label" />
+      <dep id="ktu.utils.align.capabilities.gfx:Chain_Link" />
+    </script>
+    <script name="A:\ktu\VizAlign\lib\com\bit101\components\CheckBox.as" mod="1311793784935" size="2571" optimizedsize="1449">
+      <def id="com.bit101.components:CheckBox" />
       <pre id="com.bit101.components:Component" />
+      <dep id="flash.events:Event" />
       <dep id="flash.events:MouseEvent" />
       <dep id="AS3" />
       <dep id="flash.display:DisplayObjectContainer" />
@@ -551,12 +544,17 @@
       <dep id="com.bit101.components:Label" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="D:\ktu\git\VizAlign\capabilities\ktu\utils\align\capabilities\ui\VizAlignOptions.as" mod="1311808566902" size="1659" optimizedsize="1143">
-      <def id="ktu.utils.align.capabilities.ui:VizAlignOptions" />
+    <script name="A:\ktu\VizAlign\capabilities\ktu\utils\align\capabilities\gfx\TargetInfo.as" mod="1311946673003" size="3385" optimizedsize="2137">
+      <def id="ktu.utils.align.capabilities.gfx:TargetInfo" />
       <pre id="flash.display:Sprite" />
       <dep id="com.bit101.components:CheckBox" />
+      <dep id="flash.events:Event" />
+      <dep id="com.bit101.components:Panel" />
+      <dep id="flash.events:MouseEvent" />
       <dep id="flash.text:TextFormat" />
+      <dep id="ktu.utils.align.capabilities.gfx:Target" />
       <dep id="AS3" />
+      <dep id="com.bit101.components:Style" />
       <dep id="com.bit101.components:Label" />
     </script>
   </scripts>

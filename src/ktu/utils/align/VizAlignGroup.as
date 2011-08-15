@@ -1,8 +1,6 @@
 
 package ktu.utils.align {
 	
-	import flash.display.DisplayObject;
-	import flash.display.Sprite;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import ktu.utils.align.VizAlignTarget;
@@ -35,7 +33,7 @@ package ktu.utils.align {
 		
 		public function VizAlignGroup(targets:Array) {
 			_targets = targets;
-			super(new Sprite());
+			super();
 		}
 		
 		override protected function init ():void {
@@ -44,15 +42,10 @@ package ktu.utils.align {
 				groupEnd = groupEnd.union((_targets[i] as VizAlignTarget).orig);
 			_orig = groupEnd.clone();
 			_end = groupEnd;
-			
-			// TODO: consider the original offset of the top left object?
-			_originOffset = new Point();
 		}
-		
 		override public function applyOrigBounds():void {
 			for each (var t:VizAlignTarget in _targets) t.applyOrigBounds();
 		}
-		
 		override public function applyEndBounds():void {
 			for each (var t:VizAlignTarget in _targets) t.applyEndBounds();
 		}
@@ -61,38 +54,14 @@ package ktu.utils.align {
 		 * 
 		 */
 		public function updateTargetsEnds ():void {
-			for each (var t:VizAlignTarget in _targets) {
-				figureTargetEnd(t);
-			}
-		}
-		
-		/**
-		 * 	update a target to have the appropriate end rectangle
-		 * 
-		 * @param	t
-		 * @return
-		 */
-		private function figureTargetEnd (target:VizAlignTarget):void {
 			var s:Point = scale;
-			var offset:Point = offsetFromGroupOrigin(target);
-			target.end.x = _end.x + (offset.x * s.x);
-			target.end.y = _end.y + (offset.y * s.y);
-			// end.scaleX *= s.x;
-			
-			target.end.width = target.orig.width * s.x;
-			target.end.height = target.orig.height * s.y;
-		}
-		/**
-		 * figures the offset that the target has from the origin of the group
-		 * 
-		 * @param	t
-		 * @return
-		 */
-		private function offsetFromGroupOrigin(t:VizAlignTarget):Point {
-			var p:Point = new Point();
-			p.x = t.orig.x - _orig.x;
-			p.y = t.orig.y - _orig.y;
-			return p;
+			var offset:Point;
+			for each (var t:VizAlignTarget in _targets)
+				offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
+				t.end.x = _end.x + (offset.x * s.x);
+				t.end.y = _end.y + (offset.y * s.y);
+				t.end.width = t.orig.width * s.x;
+				t.end.height = t.orig.height * s.y;
 		}
 		
 		/** @private */

@@ -48,18 +48,18 @@ uncompressed reduction = 3113
 
 Optimized Size:
 
-		new	orig
+				new		orig
 
 VizAlignment:	1305	1308
-VizAlign:	1671	1714
+VizAlign:		1671	1714
 VizAlignGroup:	1390	1568
 VizAlignTarget:	1432	1619
 SortRectangle:	1037	1037
 
-	Total:	6835	7246	= 411
+	Total:		6835	7246	= 411
 
 
 AlignMethods:	5468	6102	= 634
 
 
-	Sum:   12303   13348	= 1045
+	Sum:   	   12303   13348	= 1045
