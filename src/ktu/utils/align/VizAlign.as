@@ -13,23 +13,10 @@ package ktu.utils.align {
 	 * 
 	 * 	TODO:
 	 * 
-	 * 		++VizAlignGroup
-	 * 		++	Fix originOffset bullshit. Right now, even if I say ignore origin offsets, 
-	 * 		++	it does not produce the correct rectangle
-	 * 
 	 * 
 	 * 		Method Manifests
 	 * 			How can I make it so I only compile the align functions I use
 	 * 			How can I forcibly include all methods?
-	 * 
-	 * 
-	 * 		VizAlignTarget
-	 * 			--scalePadding:Boolean;
-	 * 			--padding
-	 * 				(x + padding) * scale	(scalePadding)
-	 * 				x * scale + padding		(!scalePadding)
-	 * 
-	 * 
 	 * 
 	 * 
 	 * 
