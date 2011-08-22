@@ -37,10 +37,7 @@ package ktu.utils.align {
 			_orig.x += dx; _orig.y += dy;
 		}
 		public function get scale():Point {
-			var s:Point = new Point();
-			s.x = (_end.width / _orig.width) * _target.scaleX;
-			s.y = (_end.height / _orig.height) * _target.scaleY;
-			return s;
+			return new Point ((_end.width / _orig.width) * _target.scaleX, (_end.height / _orig.height) * _target.scaleY);
 		}
 		
 		public function VizAlignTarget(target:DisplayObject = null):void {
