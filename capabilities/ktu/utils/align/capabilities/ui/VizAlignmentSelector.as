@@ -84,6 +84,7 @@ package ktu.utils.align.capabilities.ui {
 			panel.setSize(460, 190);
 			panel.x = -125;
 			panel.y = panel.height;
+			panel.alpha = 0;
 			
 			methodLabel = new Label(panel, 20, 10, "choose method:");
 			
@@ -197,9 +198,9 @@ package ktu.utils.align.capabilities.ui {
 		
 		private function panelAnimate(animateIn:Boolean):void {
 			if (animateIn) 
-				Tweensy.to (panel, { y: -15 }, .4 );
+				Tweensy.to (panel, { y: -15, alpha:1 }, .4 );
 			else
-				Tweensy.to (panel, { y: panel.height }, .4 );
+				Tweensy.to (panel, { y: panel.height, alpha:0 }, .4 );
 		}
 		
 		
