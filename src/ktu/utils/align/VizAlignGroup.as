@@ -1,6 +1,7 @@
 
 package ktu.utils.align {
 	
+	import flash.display.Sprite;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import ktu.utils.align.VizAlignTarget;
@@ -33,7 +34,7 @@ package ktu.utils.align {
 		
 		public function VizAlignGroup(targets:Array) {
 			_targets = targets;
-			super();
+			super(new Sprite());
 		}
 		
 		override protected function init ():void {
@@ -56,13 +57,17 @@ package ktu.utils.align {
 		public function updateTargetsEnds ():void {
 			var s:Point = scale;
 			var offset:Point;
-			for each (var t:VizAlignTarget in _targets)
+			for each (var t:VizAlignTarget in _targets) {
 				offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
 				t.end.x = _end.x + (offset.x * s.x);
 				t.end.y = _end.y + (offset.y * s.y);
 				t.end.width = t.orig.width * s.x;
 				t.end.height = t.orig.height * s.y;
+			}
 		}
+		
+		
+		
 		
 		/** @private */
 		override public function toString ():String {

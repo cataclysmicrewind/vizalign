@@ -27,7 +27,7 @@ package ktu.utils.align {
 	 */
 	public class VizAlignment {
 		
-		static public const TO_TARGETS	:Rectangle	= new Rectangle( -1, -1, -1, -1);// place holder when aligning targets to the bounding area they create
+		static public const TO_TARGETS	:Object	= { };// place holder when aligning targets to the bounding area they create
 		
 		/**
 		 * 

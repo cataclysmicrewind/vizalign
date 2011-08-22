@@ -107,6 +107,7 @@ package ktu.utils.align.capabilities.ui {
 			settingsClose.width = settingsPanel.width - 10;
 			
 			settingsPanel.y = settingsPanel.height + 50;
+			settingsPanel.alpha = 0;
 		}
 		
 		
@@ -145,12 +146,12 @@ package ktu.utils.align.capabilities.ui {
 		
 		private function onSettingsClick(e:Event):void {
 			// show a panel with some settings...
-			Tweensy.to (settingsPanel, { y:0 } );
+			Tweensy.to (settingsPanel, { y:0, alpha:1 } );
 		}
 		
 		private function onSettingsCloseClick(e:Event):void {
 			// close the panel
-			Tweensy.to (settingsPanel, { y:settingsPanel.height + 50 } );
+			Tweensy.to (settingsPanel, { y:settingsPanel.height + 50, alpha:0 } );
 		}
 		
 		

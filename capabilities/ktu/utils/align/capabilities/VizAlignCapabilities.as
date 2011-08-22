@@ -13,6 +13,7 @@ package ktu.utils.align.capabilities {
 	import flash.system.fscommand;
 	import flash.system.System;
 	import ktu.utils.align.AlignMethods;
+	import ktu.utils.align.capabilities.gfx.Fullscreen;
 	import ktu.utils.align.capabilities.gfx.Grid;
 	import ktu.utils.align.capabilities.gfx.Target;
 	import ktu.utils.align.capabilities.gfx.TargetInfo;
@@ -34,27 +35,21 @@ package ktu.utils.align.capabilities {
 	 *
 	 * 	TO DO:
 	 *
-	 * 		put code generator in
-	 * 			how do I display the grouping? it will get kinda long... maybe?
-	 * 			examples:
-	 * 				VizAlign.align ([green, red], [new VizAlignment(AlignMethods.left, stage)], true, true, true);
-	 * 				VizAlign.align ([ [green, red], [yellow, purple, cyan] ], [new VizAlignment(AlignMethods.scaleToFit, stage), new VizAlignment(AlignMethods.center, stage)], true, true, true);
-	 * 				??? VizAlign.align ([ [green, red], [yellow, purple, cyan] ], [{type: AlignMethods.scaleToFit, tcs:stage}, {type:AlignMethods.center, tcs:stage}], true, true, true);
-	 * 
-	 *		++ Groups, Shapes
-	 * 
-	 * 		++ Remove VizAlignGroup dependancy from VizAlign.... ouch
-	 * 			can't be done... because of the convertToVizAlignTargets
-	 *
 	 * 		Fullscreen
-	 *
+	 *			put in the animation (so its out of the way)
+	 * 			put in more text to say what it's doing
+	 * 			disclaimer for making the fullscreen smaller than this
+	 * 
 	 * 		More presets
+	 * 			with groups
+	 * 			with most common tasks
+	 * 
+	 * 		Target Info
+	 * 			fix the showOrigin button to reflect any change... right now the double lcikc does not trigger it
 	 *
-	 * 		++ Fix Logo
+	 * 		? TCS details? (x, y) (w, h)
 	 * 
-	 * 		TCS details? (x, y) (w, h) ?
-	 * 
-	 * 		enable crosshair 
+	 * 		? enable crosshair 
 	 * 			for shit like bottomLeft of Logo... no border around it so hard to tell...
 	 * 
 	 * 		Help - tons of instructions...
@@ -89,7 +84,7 @@ package ktu.utils.align.capabilities {
 	 * ...
 	 * @author Keelan
 	 */
-	[SWF (width = '750', height = '700')]
+	//[SWF (width = '750', height = '700')]
 	public class VizAlignCapabilities extends Sprite {
 		
 		private var arena:VizAlignArena;
@@ -134,7 +129,15 @@ package ktu.utils.align.capabilities {
 			tcs = tcs.concat(arena.targets);
 			controlPanel.targetCoordinateSpaces = tcs;
 			controlPanel.targets = arena.targets;
+			
+			
+			createFullscreen();
+		}
 		
+		private function createFullscreen():void {
+			var _fullscreen:Fullscreen = new Fullscreen();
+			addChild(_fullscreen);
+			VizAlign.align([_fullscreen], [new VizAlignment(AlignMethods.topRight, stage)], false, true, true);
 		}
 		
 		private function addTCS(arena:VizAlignArena):void {
