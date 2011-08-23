@@ -1,5 +1,6 @@
 ﻿
 
+
 package ktu.utils.align {
 
 	import flash.display.DisplayObject;
@@ -125,36 +126,6 @@ package ktu.utils.align {
 		static public function updateGroups(vizAlignTargets:Array/*VizAlignTarget*/):void {
 			for each (var t:VizAlignTarget in vizAlignTargets) 
 				if (t is VizAlignGroup) (t as VizAlignGroup).updateTargetsEnds();
-		}
-		
-		
-		/**
-		 * 
-		 * 	SHOULDN'T WORK WITH PRIMITIVES!
-		 * 
-		 * @param	array
-		 * @return
-		 */
-		public static function preserveOrderWithDictionary(array:Array/*Object*/):Dictionary {
-			var dic:Dictionary = new Dictionary(true);
-			for (var i:int = 0; i < array.length; i++)  dic[array[i]] = i;
-			return dic;
-		}
-		
-		/**
-		 * 
-		 * 	applys original order to array 
-		 * 	use preserveOrderWithDictionary Dicitonary with this function
-		 * 
-		 * @param	array
-		 * @param	orderedDic
-		 * @return
-		 */
-		public static function reorderArray (array:Array/*Object*/, orderedDic:Dictionary):void {
-			var unorderedArray:Array = array.concat();
-			for (var i:int = 0, ln:int = array.length; i < ln; i++) {
-				array[orderedDic[array[i]]] = unorderedArray[i];
-			}
 		}
 	}
 }
