@@ -7,6 +7,7 @@ package ktu.utils.align {
 	import flash.display.StageDisplayState;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import ktu.utils.align.methods.AlignMethod;
 
 	/**
 	 * 
@@ -34,7 +35,7 @@ package ktu.utils.align {
 		 * Alignment method type to be used in VizAlign.align()
 		 * This value should be a const from VizAlign class.
 		 */
-		public var type	:Function;
+		public var method	:AlignMethod;
 		/**
 		 * 
 		 * Target Coordinate Space for the type in the align() call
@@ -57,7 +58,7 @@ package ktu.utils.align {
 		 * @param	type 	Function	a function from the AlignMethods class
 		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
 		 */
-		public function VizAlignment (type:Function, tcs:*, ignoreTCSOrigin:Boolean = true):void {
+		public function VizAlignment (method:AlignMethod, tcs:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
 				case tcs is DisplayObject:
 				case tcs is Stage:
@@ -66,7 +67,7 @@ package ktu.utils.align {
 				default:
 					throw new Error ("VizAlignment tcs must be a DisplayObject, Stage, or Rectangle");
 			}
-			this.type = type;
+			this.method = method;
 			this.tcs = tcs;
 			this.ignoreTCSOrigin = ignoreTCSOrigin
 		}
@@ -81,7 +82,7 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
-			type(getTCSBounds(targetBounds, tcs), targetBounds);				//	align them and return the new bounds for the targets
+			method.align(getTCSBounds(targetBounds, tcs), targetBounds);				//	align them and return the new bounds for the targets
 		}
 		
 		public function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*):Rectangle {
@@ -121,7 +122,7 @@ package ktu.utils.align {
 		
 		/** @private **/
 		public function toString ():String {
-			var str:String = "{type: " + type;
+			var str:String = "{type: " + method;
 			str += ", tcs:" + tcs.name + "}";
 			return str;
 		}
