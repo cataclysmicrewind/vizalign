@@ -7,65 +7,65 @@ package ktu.utils.align.methods {
 		
 		
 		
-		static public function get left ():Left { return new Left(); }
-		static public function get horizontal ():Horizontal { return new Horizontal(); }
-		static public function get right ():Right { return new Right(); }
+		static public function get left ():LeftAlignMethod { return new LeftAlignMethod(); }
+		static public function get horizontal ():HorizontalAlignMethod { return new HorizontalAlignMethod(); }
+		static public function get right ():RightAlignMethod { return new RightAlignMethod(); }
 		
-		static public function get top ():Top { return new Top(); }
-		static public function get vertical ():Vertical { return new Vertical(); }
-		static public function get bottom ():Bottom { return new Bottom(); }
+		static public function get top ():TopAlignMethod { return new TopAlignMethod(); }
+		static public function get vertical ():VerticalAlignMethod { return new VerticalAlignMethod(); }
+		static public function get bottom ():BottomAlignMethod { return new BottomAlignMethod(); }
 		
-		static public function get center ():Center { return new Center (); }
+		static public function get center ():CenterAlignMethod { return new CenterAlignMethod (); }
 		
-		static public function get topLeft ():TopLeft { return new TopLeft(); }
-		static public function get topRight ():TopRight { return new TopRight(); }
-		static public function get bottomLeft ():BottomLeft { return new BottomLeft(); }
-		static public function get bottomRight ():BottomRight { return new BottomRight(); }
-		
-		
-		
-		static public function get adjacentLeft ():AdjacentLeft { return new AdjacentLeft(); }
-		static public function get adjacentHorizontalLeft ():AdjacentHorizontalLeft { return new AdjacentHorizontalLeft(); }
-		static public function get adjacentHorizontalRight ():AdjacentHorizontalRight { return new AdjacentHorizontalRight(); }
-		static public function get adjacentRight ():AdjacentRight { return new AdjacentRight(); }
-		
-		static public function get adjacentTop ():AdjacentTop { return new AdjacentTop(); }
-		static public function get adjacentVerticalTop ():AdjacentVerticalTop { return new AdjacentVerticalTop(); }
-		static public function get adjacentVerticalBottom ():AdjacentVerticalBottom { return new AdjacentVerticalBottom(); }
-		static public function get adjacentBottom ():AdjacentBottom { return new AdjacentBottom(); }
-		
-		static public function get adjacentTopLeft ():AdjacentTopLeft { return new AdjacentTopLeft(); }
-		static public function get adjacentTopRight ():AdjacentTopRight { return new AdjacentTopRight(); }
-		static public function get adjacentBottomLeft ():AdjacentBottomLeft { return new AdjacentBottomLeft(); }
-		static public function get adjacentBottomRight ():AdjacentBottomRight { return new AdjacentBottomRight(); }
+		static public function get topLeft ():TopLeftAlignMethod { return new TopLeftAlignMethod(); }
+		static public function get topRight ():TopRightAlignMethod { return new TopRightAlignMethod(); }
+		static public function get bottomLeft ():BottomLeftAlignMethod { return new BottomLeftAlignMethod(); }
+		static public function get bottomRight ():BottomRightAlignMethod { return new BottomRightAlignMethod(); }
 		
 		
 		
-		static public function get distributeLeft ():DistributeLeft { return new DistributeLeft(); }
-		static public function get distributeHorizontal ():DistributeHorizontal { return new DistributeHorizontal(); }
-		static public function get distributeRight ():DistributeRight { return new DistributeRight(); }
+		static public function get adjacentLeft ():AdjacentLeftAlignMethod { return new AdjacentLeftAlignMethod(); }
+		static public function get adjacentHorizontalLeft ():AdjacentHorizontalLeftAlignMethod { return new AdjacentHorizontalLeftAlignMethod(); }
+		static public function get adjacentHorizontalRight ():AdjacentHorizontalRightAlignMethod { return new AdjacentHorizontalRightAlignMethod(); }
+		static public function get adjacentRight ():AdjacentRightAlignMethod { return new AdjacentRightAlignMethod(); }
 		
-		static public function get distributeTop ():DistributeTop { return new DistributeTop(); }
-		static public function get distributeVertical ():DistributeVertical { return new DistributeVertical(); }
-		static public function get distributeBottom ():DistributeBottom { return new DistributeBottom(); }
+		static public function get adjacentTop ():AdjacentTopAlignMethod { return new AdjacentTopAlignMethod(); }
+		static public function get adjacentVerticalTop ():AdjacentVerticalTopAlignMethod { return new AdjacentVerticalTopAlignMethod(); }
+		static public function get adjacentVerticalBottom ():AdjacentVerticalBottomAlignMethod { return new AdjacentVerticalBottomAlignMethod(); }
+		static public function get adjacentBottom ():AdjacentBottomAlignMethod { return new AdjacentBottomAlignMethod(); }
 		
-		
-		
-		static public function get matchWidth ():MatchWidth { return new MatchWidth(); }
-		static public function get matchHeight ():MatchHeight { return new MatchHeight(); }
-		static public function get matchSize ():MatchSize { return new MatchSize(); }
-		
-		static public function get scaleToFit ():ScaleToFit { return new ScaleToFit(); }
-		static public function get scaleToFill ():ScaleToFill { return new ScaleToFill(); }
+		static public function get adjacentTopLeft ():AdjacentTopLeftAlignMethod { return new AdjacentTopLeftAlignMethod(); }
+		static public function get adjacentTopRight ():AdjacentTopRightAlignMethod { return new AdjacentTopRightAlignMethod(); }
+		static public function get adjacentBottomLeft ():AdjacentBottomLeftAlignMethod { return new AdjacentBottomLeftAlignMethod(); }
+		static public function get adjacentBottomRight ():AdjacentBottomRightAlignMethod { return new AdjacentBottomRightAlignMethod(); }
 		
 		
 		
-		static public function get spaceHorizontal ():SpaceHorizontal { return new SpaceHorizontal(); }
-		static public function get spaceVertical ():SpaceVertical { return new SpaceVertical(); }
+		static public function get distributeLeft ():DistributeLeftAlignMethod { return new DistributeLeftAlignMethod(); }
+		static public function get distributeHorizontal ():DistributeHorizontalAlignMethod { return new DistributeHorizontalAlignMethod(); }
+		static public function get distributeRight ():DistributeRightAlignMethod { return new DistributeRightAlignMethod(); }
+		
+		static public function get distributeTop ():DistributeTopAlignMethod { return new DistributeTopAlignMethod(); }
+		static public function get distributeVertical ():DistributeVerticalAlignMethod { return new DistributeVerticalAlignMethod(); }
+		static public function get distributeBottom ():DistributeBottomAlignMethod { return new DistributeBottomAlignMethod(); }
 		
 		
 		
-		static public function get stackHorizontal ():StackHorizontal { return new StackHorizontal(); }
-		static public function get stackVertical ():StackVertical { return new StackVertical(); }
+		static public function get matchWidth ():MatchWidthAlignMethod { return new MatchWidthAlignMethod(); }
+		static public function get matchHeight ():MatchHeightAlignMethod { return new MatchHeightAlignMethod(); }
+		static public function get matchSize ():MatchSizeAlignMethod { return new MatchSizeAlignMethod(); }
+		
+		static public function get scaleToFit ():ScaleToFitAlignMethod { return new ScaleToFitAlignMethod(); }
+		static public function get scaleToFill ():ScaleToFillAlignMethod { return new ScaleToFillAlignMethod(); }
+		
+		
+		
+		static public function get spaceHorizontal ():SpaceHorizontalAlignMethod { return new SpaceHorizontalAlignMethod(); }
+		static public function get spaceVertical ():SpaceVerticalAlignMethod { return new SpaceVerticalAlignMethod(); }
+		
+		
+		
+		static public function get stackHorizontal ():StackHorizontalAlignMethod { return new StackHorizontalAlignMethod(); }
+		static public function get stackVertical ():StackVerticalAlignMethod { return new StackVerticalAlignMethod(); }
 	}
 }
