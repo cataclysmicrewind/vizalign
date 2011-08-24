@@ -12,7 +12,6 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
-	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
 	/**

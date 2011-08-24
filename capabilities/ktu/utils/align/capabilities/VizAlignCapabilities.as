@@ -12,7 +12,6 @@ package ktu.utils.align.capabilities {
 	import flash.geom.Rectangle;
 	import flash.system.fscommand;
 	import flash.system.System;
-	import ktu.utils.align.AlignMethods;
 	import ktu.utils.align.capabilities.gfx.Fullscreen;
 	import ktu.utils.align.capabilities.gfx.Grid;
 	import ktu.utils.align.capabilities.gfx.Target;
@@ -20,6 +19,8 @@ package ktu.utils.align.capabilities {
 	import ktu.utils.align.capabilities.gfx.VizAlignArena;
 	import ktu.utils.align.capabilities.gfx.VizAlignLogo;
 	import ktu.utils.align.capabilities.ui.CapabilitiesControls;
+	import ktu.utils.align.methods.Center;
+	import ktu.utils.align.methods.TopRight;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignment;
@@ -137,7 +138,7 @@ package ktu.utils.align.capabilities {
 		private function createFullscreen():void {
 			var _fullscreen:Fullscreen = new Fullscreen();
 			addChild(_fullscreen);
-			VizAlign.align([_fullscreen], [new VizAlignment(AlignMethods.topRight, stage)], false, true, true);
+			VizAlign.align([_fullscreen], [new VizAlignment(new TopRight(), stage)], false, true, true);
 		}
 		
 		private function addTCS(arena:VizAlignArena):void {
@@ -237,7 +238,7 @@ package ktu.utils.align.capabilities {
 			
 			arena.addTCS(targetInfo);
 			
-			VizAlign.align([targetInfo], [new VizAlignment(AlignMethods.center, rect)], false, true, true);
+			VizAlign.align([targetInfo], [new VizAlignment(new Center(), rect)], false, true, true);
 		}
 		
 		public function exampleRecursion(targets:Array /*VizAlignTarget*/):void {

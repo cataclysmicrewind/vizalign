@@ -9,7 +9,8 @@ package ktu.utils.align.capabilities.ui {
 	import flash.events.Event;
 	import flash.text.TextFormat;
 	import flash.utils.describeType;
-	import ktu.utils.align.AlignMethods;
+	import ktu.utils.align.methods.AlignMethod;
+	import ktu.utils.align.methods.MethodManifest;
 	import ktu.utils.align.VizAlignment;
 	
 	/**
@@ -93,7 +94,7 @@ package ktu.utils.align.capabilities.ui {
 			methodList.height += 40;
 			
 			
-			var alignMethodsDescription:XML = describeType(AlignMethods);
+			var alignMethodsDescription:XML = describeType(MethodManifest);
 			var ar:Array = [];
 			for (var i:int = 0; i < alignMethodsDescription.method.length(); i++) {
 				ar.push(alignMethodsDescription.method[i].@name);
@@ -210,7 +211,7 @@ package ktu.utils.align.capabilities.ui {
 			var items:Array = list.items;
 			for each (var item:Object in items) {
 				var inst:Array = item.label.split(" : ");
-				var method:Function = AlignMethods[inst[0]];
+				var method:AlignMethod = MethodManifest[inst[0]];
 				var tcsName:String = inst[1];
 				var tcs:*;
 				if (tcsName == "stage") {
