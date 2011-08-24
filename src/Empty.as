@@ -1,11 +1,10 @@
 package  {
 	import flash.display.Sprite;
-	import ktu.utils.align.AlignMethods;
+	import ktu.utils.align.methods.MethodManifest;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
-	import ktu.utils.SortRectangleUtils;
 	
 	
 	/**
@@ -18,8 +17,8 @@ package  {
 		VizAlignTarget;
 		VizAlignGroup;
 		VizAlignment;
-		AlignMethods;
-		SortRectangleUtils;
+		
+		MethodManifest;
 		
 		public function Empty(){
 		
