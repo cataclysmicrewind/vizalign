@@ -4,9 +4,9 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class MatchHeightAlignMethod implements IAlignMethod {
+	public class MatchHeightAlignMethod extends AlignMethod {
 		
-		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var endH:Number = targetCoordinateSpace.height;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ )
