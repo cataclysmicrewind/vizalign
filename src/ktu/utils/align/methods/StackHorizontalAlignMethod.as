@@ -7,11 +7,11 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class StackHorizontalAlignMethod extends SortedAlignMethod {
+	public class StackHorizontalAlignMethod implements IAlignMethod {
 		
-		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
-			var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
-			
+		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+			//var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
+			targets = targets.concat();
 			var before:Array = new Array ( ) ;													// array to hold objects to the left of the tcs
 			var after:Array = new Array ( ) ;													// array to hold objects to the right of the tcs
 			var left:Number = 0;																// holds where I placed the previous target for before array
@@ -62,7 +62,7 @@ package ktu.utils.align.methods {
 				}																				// 		end loop
 			}																					// end if (after targets);
 			//reset & return
-			reorderArray(targets, origOrderedDic);												// reorder targets
+			//reorderArray(targets, origOrderedDic);												// reorder targets
 		}
 		
 	}
