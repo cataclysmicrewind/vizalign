@@ -7,7 +7,7 @@ package ktu.utils.align {
 	import flash.display.StageDisplayState;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import ktu.utils.align.methods.IAlignMethod;
+	import ktu.utils.align.methods.AlignMethod;
 
 	/**
 	 * 
@@ -22,7 +22,7 @@ package ktu.utils.align {
 	 * 																																							<br/>
 	 * 
 	 * @example 																																				<listing version="3">
-	 * 		var param:VizAlignment = new VizAlignment(new LeftAlignMethod(), stage);
+	 * 		var param:VizAlignment = new VizAlignment(AlignMethods.left, stage);
 	 * 		VizAlign.align([mc1, mc2], [param], true, true, true);
 	 * 																																							</listing>
 	 */
@@ -35,20 +35,21 @@ package ktu.utils.align {
 		 * Alignment method type to be used in VizAlign.align()
 		 * This value should be a const from VizAlign class.
 		 */
-		public var method	:IAlignMethod;
+		public var method	:AlignMethod;
 		/**
 		 * 
 		 * Target Coordinate Space for the type in the align() call
 		 * This is any DisplayObject. In Flash IDE terminoligy it is the same as saying align to the left of the [stage]. The tcs is [].
 		 */
-		public var tcs		:*;
+		public var tcs	:*;
 		/**
-		 * 
 		 * 	Only applies to tcs that are DisplayObject.
 		 * 
 		 * 	Does not apply to TO_TARGETS (if the targets have ignore origin, then it is ignored)
 		 *  Does not apply to Rectangles (they can't have an origin offset)
 		 * 	Does not apply to stage		 (the stage has no origin offset)
+		 * 
+		 * 
 		 */
 		public var ignoreTCSOrigin:Boolean = true;
 		
@@ -57,7 +58,7 @@ package ktu.utils.align {
 		 * @param	type 	Function	a function from the AlignMethods class
 		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
 		 */
-		public function VizAlignment (method:IAlignMethod, tcs:*, ignoreTCSOrigin:Boolean = true):void {
+		public function VizAlignment (method:AlignMethod, tcs:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
 				case tcs is DisplayObject:
 				case tcs is Stage:
@@ -74,13 +75,17 @@ package ktu.utils.align {
 		/**
 		 * 	This function will align the targets based of the specifications of this VizAlignment
 		 *  
-		 * @param	rectangles Array of Rectangles
+		 * 	Give it some rectanges, and it will spit them back aligned... awesome idea.
+		 * 
+		 * 
+		 * @param	targets
+		 * @return
 		 */
-		public function align (rectangles:Array/*Rectangle*/):void {
-			method.alignTargetsToTCS(getTCSBounds(rectangles, tcs), rectangles);				//	align them and return the new bounds for the targets
+		public function align (targetBounds:Array/*Rectangle*/):void {
+			method.align(getTCSBounds(targetBounds, tcs), targetBounds);				//	align them and return the new bounds for the targets
 		}
 		
-		static public function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*, ignoreTCSOrigin:Boolean = true):Rectangle {
+		public function getTCSBounds(targetBounds:Array/*Rectangle*/, tcs:*):Rectangle {
 			var tcsBounds:Rectangle = new Rectangle();
 			switch (true) {
 				case tcs is Stage:
