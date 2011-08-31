@@ -4,9 +4,9 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class LeftAlignMethod implements IAlignMethod {
+	public class LeftAlignMethod extends AlignMethod {
 		
-		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;				// get left edge of target coordinate space object
 			var length:int = targets.length;									// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ ) 								// loop through all targets

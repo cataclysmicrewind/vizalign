@@ -58,15 +58,11 @@ package ktu.utils.align {
 			var s:Point = scale;
 			var offset:Point;
 			for each (var t:VizAlignTarget in _targets) {
-				if (t is VizAlignGroup) 
-					VizAlignGroup(t).updateTargetsEnds();
-				else {
-					offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
-					t.end.x = _end.x + (offset.x * s.x);
-					t.end.y = _end.y + (offset.y * s.y);
-					t.end.width = t.orig.width * s.x;
-					t.end.height = t.orig.height * s.y;
-				}
+				offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
+				t.end.x = _end.x + (offset.x * s.x);
+				t.end.y = _end.y + (offset.y * s.y);
+				t.end.width = t.orig.width * s.x;
+				t.end.height = t.orig.height * s.y;
 			}
 		}
 		
