@@ -4,9 +4,9 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class CenterAlignMethod implements IAlignMethod {
+	public class CenterAlignMethod extends AlignMethod {
 		
-		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var tcsCenterY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height/ 2);
 			var length:int = targets.length;														// targets length for optimized looping

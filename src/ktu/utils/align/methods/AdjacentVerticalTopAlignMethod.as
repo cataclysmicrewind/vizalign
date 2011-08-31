@@ -4,9 +4,9 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class AdjacentVerticalTopAlignMethod implements IAlignMethod {
+	public class AdjacentVerticalTopAlignMethod extends AlignMethod {
 		
-		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsCenterY:Number = targetCoordinateSpace.top + targetCoordinateSpace.height / 2;
 			var length:int = targets.length;														// targets length for optimized looping
 			for ( var i:int = 0; i < length; i++ )

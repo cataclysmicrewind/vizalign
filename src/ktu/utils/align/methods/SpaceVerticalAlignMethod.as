@@ -6,11 +6,10 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class SpaceVerticalAlignMethod implements IAlignMethod {
+	public class SpaceVerticalAlignMethod extends SortedAlignMethod {
 		
-		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
-			//var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
-			targets = targets.concat();
+		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+			var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
 			targets = targets.sort ( sort_rectangle_top ) ;
 			
 			var objsHeight:Number = 0;
@@ -26,7 +25,7 @@ package ktu.utils.align.methods {
 				targets[j].y = bottom + spread ;
 				bottom += targets[j].height + spread ;
 			}
-			//reorderArray(targets, origOrderedDic);
+			reorderArray(targets, origOrderedDic);
 		}
 		
 	}
