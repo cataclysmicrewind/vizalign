@@ -4,9 +4,9 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class ScaleToFitAlignMethod extends AlignMethod {
+	public class ScaleToFitAlignMethod implements IAlignMethod {
 		
-		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsWidth:Number = targetCoordinateSpace.width;
 			var tcsHeight:Number = targetCoordinateSpace.height;
 			var tcsRatio:Number = tcsWidth / tcsHeight ;

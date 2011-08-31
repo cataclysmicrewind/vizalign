@@ -6,10 +6,11 @@ package ktu.utils.align.methods {
 	 * ...
 	 * @author ...
 	 */
-	public class DistributeVerticalAlignMethod extends SortedAlignMethod {
+	public class DistributeVerticalAlignMethod implements IAlignMethod {
 		
-		override public function align(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
-			var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
+		public function alignTargetsToTCS(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
+			//var origOrderedDic:Dictionary = preserveOrderWithDictionary(targets);
+			targets = targets.concat();
 			targets = targets.sort ( sort_rectangle_centerY ) ;
 			
 			var length:int = targets.length;														// targets length for optimized looping
@@ -18,7 +19,7 @@ package ktu.utils.align.methods {
 			for ( var i:int = 0; i < length; i++ ) 
 				targets[i].y = first - ( targets[i].height / 2 ) + ( spread * i ) ;
 			
-			reorderArray(targets, origOrderedDic);
+			//reorderArray(targets, origOrderedDic);
 		}
 		
 	}
