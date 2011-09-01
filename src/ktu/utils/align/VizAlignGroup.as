@@ -58,11 +58,15 @@ package ktu.utils.align {
 			var s:Point = scale;
 			var offset:Point;
 			for each (var t:VizAlignTarget in _targets) {
-				offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
-				t.end.x = _end.x + (offset.x * s.x);
-				t.end.y = _end.y + (offset.y * s.y);
-				t.end.width = t.orig.width * s.x;
-				t.end.height = t.orig.height * s.y;
+				if (t is VizAlignGroup) 
+					(t as VizAlignGroup).updateTargetsEnds();
+				else {
+					offset = new Point(t.orig.x - _orig.x, t.orig.y - _orig.y);	// offset from group Origin
+					t.end.x = _end.x + (offset.x * s.x);
+					t.end.y = _end.y + (offset.y * s.y);
+					t.end.width = t.orig.width * s.x;
+					t.end.height = t.orig.height * s.y;
+				}
 			}
 		}
 		
@@ -72,9 +76,8 @@ package ktu.utils.align {
 		/** @private */
 		override public function toString ():String {
 			var str:String = "VizAlignGroup:: "
-			for (var i:int = 0; i < _targets.length; i++) {
+			for (var i:int = 0; i < _targets.length; i++) 
 				str += _target.toString() + "\n";
-			}
 			return str;
 		}
 	}
