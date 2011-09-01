@@ -1,6 +1,6 @@
 package  {
 	import flash.display.Sprite;
-	import ktu.utils.align.aligners.MethodManifest;
+	import ktu.utils.align.aligners.AlignerManifest;
 	import ktu.utils.align.RectangleAlignment;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
@@ -18,7 +18,7 @@ package  {
 		VizAlignGroup;
 		RectangleAlignment;
 		
-		MethodManifest;
+		AlignerManifest;
 		
 		public function Empty(){
 		
