@@ -9,8 +9,9 @@ package ktu.utils.align.capabilities.ui {
 	import flash.events.Event;
 	import flash.text.TextFormat;
 	import flash.utils.describeType;
-	import ktu.utils.align.AlignMethods;
-	import ktu.utils.align.VizAlignment;
+	import ktu.utils.align.aligners.AlignerManifest;
+	import ktu.utils.align.IRectangleAligner;
+	import ktu.utils.align.RectangleAlignment;
 	
 	/**
 	 * ...
@@ -93,10 +94,11 @@ package ktu.utils.align.capabilities.ui {
 			methodList.height += 40;
 			
 			
-			var alignMethodsDescription:XML = describeType(AlignMethods);
+			var alignMethodsDescription:XML = describeType(AlignerManifest);
 			var ar:Array = [];
-			for (var i:int = 0; i < alignMethodsDescription.method.length(); i++) {
-				ar.push(alignMethodsDescription.method[i].@name);
+			for (var i:int = 0; i < alignMethodsDescription.accessor.length(); i++) {
+				if (alignMethodsDescription.accessor[i].@name == "prototype") continue;
+				ar.push(alignMethodsDescription.accessor[i].@name);
 			}
 			ar.sort();
 			for each (var method:String in ar) {
@@ -210,13 +212,13 @@ package ktu.utils.align.capabilities.ui {
 			var items:Array = list.items;
 			for each (var item:Object in items) {
 				var inst:Array = item.label.split(" : ");
-				var method:Function = AlignMethods[inst[0]];
+				var method:IRectangleAligner = AlignerManifest[inst[0]];
 				var tcsName:String = inst[1];
 				var tcs:*;
 				if (tcsName == "stage") {
 					tcs = stage;
 				} else if (tcsName == "to targets") {
-					tcs = VizAlignment.TO_TARGETS;
+					tcs = RectangleAlignment.TO_TARGETS;
 				} else {
 					for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
 						if (tcsName == "arena" && atcs.name == "arena") {
@@ -229,7 +231,7 @@ package ktu.utils.align.capabilities.ui {
 						}
 					}
 				}
-				ret.push(new VizAlignment(method, tcs));
+				ret.push(new RectangleAlignment(method, tcs));
 			}
 			return ret;
 		}

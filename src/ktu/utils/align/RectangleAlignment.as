@@ -67,9 +67,9 @@ package ktu.utils.align {
 		 */
 		public function RectangleAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
-				case tcs is DisplayObject:
-				case tcs is Stage:
-				case tcs is Rectangle:
+				case targetCoordinateSpace is DisplayObject:
+				case targetCoordinateSpace is Stage:
+				case targetCoordinateSpace is Rectangle:
 					break;
 				default:
 					throw new Error (BAD_TCS);
@@ -104,7 +104,7 @@ package ktu.utils.align {
 		
 		
 		/** @private */
-		static private const BAD_TCS	:String = "VizAlignment tcs must be a DisplayObject, Stage, or Rectangle";
+		static private const BAD_TCS	:String = "RectangleAlignment tcs must be a DisplayObject, Stage, or Rectangle";
 		/** @private */
 		static private const NO_TARGETS	:String = "RectangleAlignment : attempting to get TO_TARGETS bounds but did not receive any targetBounds";
 		/**

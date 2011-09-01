@@ -3,18 +3,10 @@ package ktu.utils.align.capabilities.gfx {
 	import com.bit101.components.Label;
 	import com.bit101.components.Panel;
 	import com.bit101.components.Style;
-	import com.bit101.components.Text;
-	import com.bit101.components.TextArea;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
-	import flash.text.TextField;
 	import flash.text.TextFormat;
-	import ktu.utils.align.AlignMethods;
-	import ktu.utils.align.VizAlign;
-	import ktu.utils.align.VizAlignment;
 	/**
 	 * 
 	 * 	Displays Last Selected target information
