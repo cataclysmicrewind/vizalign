@@ -1,6 +1,6 @@
 <report>
   <scripts>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeBottomAligner.as" mod="1314836242523" size="626" optimizedsize="582">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeBottomAligner.as" mod="1314836242523" size="625" optimizedsize="582">
       <def id="ktu.utils.align.methods:DistributeBottomAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -8,11 +8,12 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1314838615979" size="1488" optimizedsize="1422">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1314838800681" size="1527" optimizedsize="1460">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignTarget" />
       <dep id="AS3" />
+      <dep id="ktu.utils.align:RectangleAlignment" />
       <dep id="flash.display:DisplayObject" />
       <dep id="ktu.utils.align:VizAlignGroup" />
       <dep id="Error" />
@@ -40,7 +41,7 @@
       <dep id="Math" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceHorizontalAligner.as" mod="1314836242587" size="678" optimizedsize="631">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceHorizontalAligner.as" mod="1314836242587" size="677" optimizedsize="631">
       <def id="ktu.utils.align.methods:SpaceHorizontalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -62,7 +63,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceVerticalAligner.as" mod="1314836960859" size="671" optimizedsize="626">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceVerticalAligner.as" mod="1314836960859" size="670" optimizedsize="626">
       <def id="ktu.utils.align.methods:SpaceVerticalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -77,19 +78,21 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_top.as" mod="1314834044357" size="160" optimizedsize="160">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_top.as" mod="1314839496948" size="167" optimizedsize="167">
       <def id="ktu.utils.sorting:sort_rectangle_top" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_right.as" mod="1314833287527" size="164" optimizedsize="164">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_right.as" mod="1314839499642" size="171" optimizedsize="171">
       <def id="ktu.utils.sorting:sort_rectangle_right" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeTopAligner.as" mod="1314836242541" size="610" optimizedsize="568">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeTopAligner.as" mod="1314836242541" size="609" optimizedsize="568">
       <def id="ktu.utils.align.methods:DistributeTopAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -118,7 +121,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackVerticalAligner.as" mod="1314836242602" size="929" optimizedsize="872">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackVerticalAligner.as" mod="1314836242602" size="928" optimizedsize="872">
       <def id="ktu.utils.align.methods:StackVerticalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -141,7 +144,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentTop.as" mod="1314833287512" size="204" optimizedsize="203">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentTop.as" mod="1314839510951" size="213" optimizedsize="213">
       <def id="ktu.utils.sorting:sort_rectangle_adjacentTop" />
       <dep id="ktu.utils.sorting:sort_rectangle_bottom" />
       <dep id="int" />
@@ -170,8 +173,9 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_left.as" mod="1314834044353" size="162" optimizedsize="162">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_left.as" mod="1314839503406" size="169" optimizedsize="169">
       <def id="ktu.utils.sorting:sort_rectangle_left" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
@@ -190,7 +194,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeHorizontalAligner.as" mod="1314836242528" size="666" optimizedsize="614">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeHorizontalAligner.as" mod="1314836242528" size="664" optimizedsize="614">
       <def id="ktu.utils.align.methods:DistributeHorizontalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -226,7 +230,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentRight.as" mod="1314834044344" size="206" optimizedsize="205">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentRight.as" mod="1314839517883" size="215" optimizedsize="215">
       <def id="ktu.utils.sorting:sort_rectangle_adjacentRight" />
       <dep id="ktu.utils.sorting:sort_rectangle_right" />
       <dep id="int" />
@@ -244,7 +248,7 @@
       <dep id="ktu.utils.align:VizAlign" />
       <dep id="ktu.utils.align.methods:MethodManifest" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentBottom.as" mod="1314833287503" size="207" optimizedsize="206">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentBottom.as" mod="1314839521893" size="216" optimizedsize="216">
       <def id="ktu.utils.sorting:sort_rectangle_adjacentBottom" />
       <dep id="ktu.utils.sorting:sort_rectangle_bottom" />
       <dep id="int" />
@@ -252,8 +256,9 @@
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:sort_rectangle_top" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_bottom.as" mod="1314833287516" size="166" optimizedsize="166">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_bottom.as" mod="1314839509049" size="173" optimizedsize="173">
       <def id="ktu.utils.sorting:sort_rectangle_bottom" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
@@ -293,13 +298,14 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerX.as" mod="1314833287519" size="185" optimizedsize="185">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerX.as" mod="1314839507328" size="192" optimizedsize="192">
       <def id="ktu.utils.sorting:sort_rectangle_centerX" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeLeftAligner.as" mod="1314836242532" size="609" optimizedsize="565">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeLeftAligner.as" mod="1314836242532" size="608" optimizedsize="565">
       <def id="ktu.utils.align.methods:DistributeLeftAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -396,7 +402,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeRightAligner.as" mod="1314836242537" size="628" optimizedsize="585">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeRightAligner.as" mod="1314836242537" size="627" optimizedsize="585">
       <def id="ktu.utils.align.methods:DistributeRightAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -404,7 +410,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentLeft.as" mod="1314834044340" size="205" optimizedsize="204">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentLeft.as" mod="1314839520263" size="214" optimizedsize="214">
       <def id="ktu.utils.sorting:sort_rectangle_adjacentLeft" />
       <dep id="ktu.utils.sorting:sort_rectangle_right" />
       <dep id="int" />
@@ -419,7 +425,7 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeVerticalAligner.as" mod="1314836242545" size="655" optimizedsize="607">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeVerticalAligner.as" mod="1314836242545" size="654" optimizedsize="607">
       <def id="ktu.utils.align.methods:DistributeVerticalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
@@ -434,13 +440,14 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerY.as" mod="1314834044349" size="188" optimizedsize="188">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerY.as" mod="1314839505549" size="195" optimizedsize="195">
       <def id="ktu.utils.sorting:sort_rectangle_centerY" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="ktu.utils.sorting:compareNumber" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackHorizontalAligner.as" mod="1314836242597" size="974" optimizedsize="914">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackHorizontalAligner.as" mod="1314836242597" size="972" optimizedsize="914">
       <def id="ktu.utils.align.methods:StackHorizontalAligner" />
       <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
