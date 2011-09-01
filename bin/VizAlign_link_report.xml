@@ -1,12 +1,14 @@
 <report>
   <scripts>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentVerticalTop.as" mod="1314142279500" size="515" optimizedsize="478">
-      <def id="ktu.utils.align.methods:AdjacentVerticalTop" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeBottomAligner.as" mod="1314836242523" size="626" optimizedsize="582">
+      <def id="ktu.utils.align.methods:DistributeBottomAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="ktu.utils.sorting:sort_rectangle_bottom" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1314141799841" size="1488" optimizedsize="1426">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlign.as" mod="1314838615979" size="1488" optimizedsize="1422">
       <def id="ktu.utils.align:VizAlign" />
       <pre id="Object" />
       <dep id="ktu.utils.align:VizAlignTarget" />
@@ -15,44 +17,21 @@
       <dep id="ktu.utils.align:VizAlignGroup" />
       <dep id="Error" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AlignMethod.as" mod="1314143077605" size="1404" optimizedsize="1371">
-      <def id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\HorizontalAligner.as" mod="1314836242549" size="504" optimizedsize="471">
+      <def id="ktu.utils.align.methods:HorizontalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\BottomLeft.as" mod="1314139636942" size="509" optimizedsize="481">
-      <def id="ktu.utils.align.methods:BottomLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentRightAligner.as" mod="1314836242473" size="484" optimizedsize="448">
+      <def id="ktu.utils.align.methods:AdjacentRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchHeight.as" mod="1314143451807" size="464" optimizedsize="435">
-      <def id="ktu.utils.align.methods:MatchHeight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchSize.as" mod="1314143470071" size="486" optimizedsize="458">
-      <def id="ktu.utils.align.methods:MatchSize" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentRight.as" mod="1314142153708" size="471" optimizedsize="440">
-      <def id="ktu.utils.align.methods:AdjacentRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchWidth.as" mod="1314143345629" size="460" optimizedsize="432">
-      <def id="ktu.utils.align.methods:MatchWidth" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1313815195415" size="1443" optimizedsize="1422">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignTarget.as" mod="1314245527925" size="1443" optimizedsize="1422">
       <def id="ktu.utils.align:VizAlignTarget" />
       <pre id="Object" />
       <dep id="AS3" />
@@ -61,146 +40,70 @@
       <dep id="Math" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\TopRight.as" mod="1314139558252" size="500" optimizedsize="474">
-      <def id="ktu.utils.align.methods:TopRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTopLeft.as" mod="1314142780293" size="541" optimizedsize="506">
-      <def id="ktu.utils.align.methods:AdjacentTopLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceVertical.as" mod="1314143621582" size="711" optimizedsize="669">
-      <def id="ktu.utils.align.methods:SpaceVertical" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottom.as" mod="1314142322760" size="475" optimizedsize="443">
-      <def id="ktu.utils.align.methods:AdjacentBottom" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\TopLeft.as" mod="1314139497084" size="479" optimizedsize="454">
-      <def id="ktu.utils.align.methods:TopLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Right.as" mod="1314139086856" size="464" optimizedsize="441">
-      <def id="ktu.utils.align.methods:Right" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentVerticalBottom.as" mod="1314142300642" size="513" optimizedsize="473">
-      <def id="ktu.utils.align.methods:AdjacentVerticalBottom" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\Empty.as" mod="1314144016673" size="275" optimizedsize="259">
-      <def id="Empty" />
-      <pre id="flash.display:Sprite" />
-      <dep id="ktu.utils.align:VizAlignment" />
-      <dep id="ktu.utils.align:VizAlignTarget" />
-      <dep id="AS3" />
-      <dep id="ktu.utils.align:VizAlignGroup" />
-      <dep id="ktu.utils.align:VizAlign" />
-      <dep id="ktu.utils.align.methods:MethodManifest" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottomLeft.as" mod="1314142819368" size="537" optimizedsize="500">
-      <def id="ktu.utils.align.methods:AdjacentBottomLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentLeft.as" mod="1314140781047" size="484" optimizedsize="454">
-      <def id="ktu.utils.align.methods:AdjacentLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Vertical.as" mod="1314139376680" size="485" optimizedsize="459">
-      <def id="ktu.utils.align.methods:Vertical" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\ScaleToFit.as" mod="1314143489501" size="581" optimizedsize="551">
-      <def id="ktu.utils.align.methods:ScaleToFit" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentHorizontalLeft.as" mod="1314142105288" size="524" optimizedsize="484">
-      <def id="ktu.utils.align.methods:AdjacentHorizontalLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Left.as" mod="1314139082711" size="443" optimizedsize="421">
-      <def id="ktu.utils.align.methods:Left" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackHorizontal.as" mod="1314143770213" size="1025" optimizedsize="970">
-      <def id="ktu.utils.align.methods:StackHorizontal" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignment.as" mod="1314142058415" size="1386" optimizedsize="1332">
-      <def id="ktu.utils.align:VizAlignment" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceHorizontalAligner.as" mod="1314836242587" size="678" optimizedsize="631">
+      <def id="ktu.utils.align.methods:SpaceHorizontalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
       <pre id="Object" />
       <dep id="AS3" />
-      <dep id="ktu.utils.align.methods:AlignMethod" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.display:StageDisplayState" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="flash.display:Stage" />
-      <dep id="Error" />
-      <dep id="flash.geom:Point" />
+      <dep id="ktu.utils.sorting:sort_rectangle_left" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeHorizontal.as" mod="1314143158934" size="708" optimizedsize="661">
-      <def id="ktu.utils.align.methods:DistributeHorizontal" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Bottom.as" mod="1314139401460" size="469" optimizedsize="445">
-      <def id="ktu.utils.align.methods:Bottom" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchSizeAligner.as" mod="1314836242561" size="498" optimizedsize="466">
+      <def id="ktu.utils.align.methods:MatchSizeAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTopRight.as" mod="1314142798573" size="530" optimizedsize="495">
-      <def id="ktu.utils.align.methods:AdjacentTopRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentVerticalBottomAligner.as" mod="1314836242490" size="527" optimizedsize="481">
+      <def id="ktu.utils.align.methods:AdjacentVerticalBottomAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentHorizontalRight.as" mod="1314142129233" size="516" optimizedsize="475">
-      <def id="ktu.utils.align.methods:AdjacentHorizontalRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceVerticalAligner.as" mod="1314836960859" size="671" optimizedsize="626">
+      <def id="ktu.utils.align.methods:SpaceVerticalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_top" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentLeftAligner.as" mod="1314836242469" size="497" optimizedsize="462">
+      <def id="ktu.utils.align.methods:AdjacentLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\ScaleToFill.as" mod="1314143510664" size="596" optimizedsize="565">
-      <def id="ktu.utils.align.methods:ScaleToFill" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_top.as" mod="1314834044357" size="160" optimizedsize="160">
+      <def id="ktu.utils.sorting:sort_rectangle_top" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_right.as" mod="1314833287527" size="164" optimizedsize="164">
+      <def id="ktu.utils.sorting:sort_rectangle_right" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeTopAligner.as" mod="1314836242541" size="610" optimizedsize="568">
+      <def id="ktu.utils.align.methods:DistributeTopAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_top" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\IRectangleAligner.as" mod="1314835839832" size="224" optimizedsize="224">
+      <def id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignGroup.as" mod="1313961080771" size="1315" optimizedsize="1259">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\VizAlignGroup.as" mod="1314834697063" size="1339" optimizedsize="1278">
       <def id="ktu.utils.align:VizAlignGroup" />
       <pre id="ktu.utils.align:VizAlignTarget" />
       <dep id="AS3" />
@@ -208,124 +111,341 @@
       <dep id="flash.geom:Point" />
       <dep id="flash.display:Sprite" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MethodManifest.as" mod="1314143970697" size="2342" optimizedsize="2336">
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\ScaleToFitAligner.as" mod="1314836242583" size="594" optimizedsize="559">
+      <def id="ktu.utils.align.methods:ScaleToFitAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackVerticalAligner.as" mod="1314836242602" size="929" optimizedsize="872">
+      <def id="ktu.utils.align.methods:StackVerticalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="ktu.utils.sorting:sort_rectangle_adjacentTop" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_adjacentBottom" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\TopRightAligner.as" mod="1314836242616" size="513" optimizedsize="482">
+      <def id="ktu.utils.align.methods:TopRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\ScaleToFillAligner.as" mod="1314836242579" size="608" optimizedsize="573">
+      <def id="ktu.utils.align.methods:ScaleToFillAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentTop.as" mod="1314833287512" size="204" optimizedsize="203">
+      <def id="ktu.utils.sorting:sort_rectangle_adjacentTop" />
+      <dep id="ktu.utils.sorting:sort_rectangle_bottom" />
+      <dep id="int" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_top" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\TopLeftAligner.as" mod="1314836242611" size="493" optimizedsize="462">
+      <def id="ktu.utils.align.methods:TopLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\BottomLeftAligner.as" mod="1314836242507" size="522" optimizedsize="489">
+      <def id="ktu.utils.align.methods:BottomLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchWidthAligner.as" mod="1314836242565" size="473" optimizedsize="440">
+      <def id="ktu.utils.align.methods:MatchWidthAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_left.as" mod="1314834044353" size="162" optimizedsize="162">
+      <def id="ktu.utils.sorting:sort_rectangle_left" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentVerticalTopAligner.as" mod="1314836242496" size="528" optimizedsize="486">
+      <def id="ktu.utils.align.methods:AdjacentVerticalTopAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MatchHeightAligner.as" mod="1314836242556" size="477" optimizedsize="443">
+      <def id="ktu.utils.align.methods:MatchHeightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeHorizontalAligner.as" mod="1314836242528" size="666" optimizedsize="614">
+      <def id="ktu.utils.align.methods:DistributeHorizontalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="ktu.utils.sorting:sort_rectangle_centerX" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentHorizontalLeftAligner.as" mod="1314836242462" size="537" optimizedsize="492">
+      <def id="ktu.utils.align.methods:AdjacentHorizontalLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTopRightAligner.as" mod="1314836242486" size="544" optimizedsize="503">
+      <def id="ktu.utils.align.methods:AdjacentTopRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottomLeftAligner.as" mod="1314836242454" size="551" optimizedsize="508">
+      <def id="ktu.utils.align.methods:AdjacentBottomLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\RightAligner.as" mod="1314836242573" size="477" optimizedsize="449">
+      <def id="ktu.utils.align.methods:RightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentRight.as" mod="1314834044344" size="206" optimizedsize="205">
+      <def id="ktu.utils.sorting:sort_rectangle_adjacentRight" />
+      <dep id="ktu.utils.sorting:sort_rectangle_right" />
+      <dep id="int" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_left" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\Empty.as" mod="1314838664538" size="275" optimizedsize="259">
+      <def id="Empty" />
+      <pre id="flash.display:Sprite" />
+      <dep id="ktu.utils.align:VizAlignTarget" />
+      <dep id="AS3" />
+      <dep id="ktu.utils.align:RectangleAlignment" />
+      <dep id="ktu.utils.align:VizAlignGroup" />
+      <dep id="ktu.utils.align:VizAlign" />
+      <dep id="ktu.utils.align.methods:MethodManifest" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentBottom.as" mod="1314833287503" size="207" optimizedsize="206">
+      <def id="ktu.utils.sorting:sort_rectangle_adjacentBottom" />
+      <dep id="ktu.utils.sorting:sort_rectangle_bottom" />
+      <dep id="int" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_top" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_bottom.as" mod="1314833287516" size="166" optimizedsize="166">
+      <def id="ktu.utils.sorting:sort_rectangle_bottom" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\TopAligner.as" mod="1314836242606" size="452" optimizedsize="426">
+      <def id="ktu.utils.align.methods:TopAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottomAligner.as" mod="1314836242449" size="488" optimizedsize="451">
+      <def id="ktu.utils.align.methods:AdjacentBottomAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\BottomAligner.as" mod="1314836242501" size="482" optimizedsize="453">
+      <def id="ktu.utils.align.methods:BottomAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTopLeftAligner.as" mod="1314836242481" size="553" optimizedsize="514">
+      <def id="ktu.utils.align.methods:AdjacentTopLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottomRightAligner.as" mod="1314836242458" size="541" optimizedsize="497">
+      <def id="ktu.utils.align.methods:AdjacentBottomRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerX.as" mod="1314833287519" size="185" optimizedsize="185">
+      <def id="ktu.utils.sorting:sort_rectangle_centerX" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeLeftAligner.as" mod="1314836242532" size="609" optimizedsize="565">
+      <def id="ktu.utils.align.methods:DistributeLeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_left" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\RectangleAlignment.as" mod="1314838607510" size="1649" optimizedsize="1583">
+      <def id="ktu.utils.align:RectangleAlignment" />
+      <pre id="Object" />
+      <dep id="ktu.utils.align:IRectangleAligner" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:StageDisplayState" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.display:Stage" />
+      <dep id="Error" />
+      <dep id="flash.geom:Point" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\LeftAligner.as" mod="1314836242552" size="456" optimizedsize="429">
+      <def id="ktu.utils.align.methods:LeftAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\BottomRightAligner.as" mod="1314836242513" size="535" optimizedsize="500">
+      <def id="ktu.utils.align.methods:BottomRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\MethodManifest.as" mod="1314836242570" size="2652" optimizedsize="2646">
       <def id="ktu.utils.align.methods:MethodManifest" />
       <pre id="Object" />
-      <dep id="ktu.utils.align.methods:DistributeLeft" />
-      <dep id="ktu.utils.align.methods:TopRight" />
-      <dep id="ktu.utils.align.methods:AdjacentBottomLeft" />
-      <dep id="ktu.utils.align.methods:BottomRight" />
-      <dep id="ktu.utils.align.methods:StackHorizontal" />
-      <dep id="ktu.utils.align.methods:DistributeVertical" />
-      <dep id="ktu.utils.align.methods:AdjacentHorizontalRight" />
-      <dep id="ktu.utils.align.methods:AdjacentTop" />
-      <dep id="ktu.utils.align.methods:AdjacentHorizontalLeft" />
-      <dep id="ktu.utils.align.methods:DistributeTop" />
-      <dep id="ktu.utils.align.methods:AdjacentBottom" />
-      <dep id="ktu.utils.align.methods:AdjacentTopLeft" />
-      <dep id="ktu.utils.align.methods:AdjacentLeft" />
+      <dep id="ktu.utils.align.methods:CenterAligner" />
+      <dep id="ktu.utils.align.methods:LeftAligner" />
+      <dep id="ktu.utils.align.methods:RightAligner" />
+      <dep id="ktu.utils.align.methods:MatchSizeAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentTopLeftAligner" />
+      <dep id="ktu.utils.align.methods:ScaleToFillAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentHorizontalRightAligner" />
+      <dep id="ktu.utils.align.methods:DistributeBottomAligner" />
+      <dep id="ktu.utils.align.methods:BottomRightAligner" />
+      <dep id="ktu.utils.align.methods:VerticalAligner" />
+      <dep id="ktu.utils.align.methods:SpaceVerticalAligner" />
       <dep id="AS3" />
-      <dep id="ktu.utils.align.methods:AdjacentVerticalTop" />
-      <dep id="ktu.utils.align.methods:DistributeRight" />
-      <dep id="ktu.utils.align.methods:DistributeBottom" />
-      <dep id="ktu.utils.align.methods:SpaceVertical" />
-      <dep id="ktu.utils.align.methods:Right" />
-      <dep id="ktu.utils.align.methods:TopLeft" />
-      <dep id="ktu.utils.align.methods:AdjacentVerticalBottom" />
-      <dep id="ktu.utils.align.methods:MatchSize" />
-      <dep id="ktu.utils.align.methods:Horizontal" />
-      <dep id="ktu.utils.align.methods:MatchWidth" />
-      <dep id="ktu.utils.align.methods:MatchHeight" />
-      <dep id="ktu.utils.align.methods:StackVertical" />
-      <dep id="ktu.utils.align.methods:SpaceHorizontal" />
-      <dep id="ktu.utils.align.methods:Top" />
-      <dep id="ktu.utils.align.methods:Vertical" />
-      <dep id="ktu.utils.align.methods:AdjacentTopRight" />
-      <dep id="ktu.utils.align.methods:AdjacentBottomRight" />
-      <dep id="ktu.utils.align.methods:ScaleToFit" />
-      <dep id="ktu.utils.align.methods:BottomLeft" />
-      <dep id="ktu.utils.align.methods:Bottom" />
-      <dep id="ktu.utils.align.methods:Left" />
-      <dep id="ktu.utils.align.methods:DistributeHorizontal" />
-      <dep id="ktu.utils.align.methods:ScaleToFill" />
-      <dep id="ktu.utils.align.methods:AdjacentRight" />
+      <dep id="ktu.utils.align.methods:AdjacentTopAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentVerticalTopAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentTopRightAligner" />
+      <dep id="ktu.utils.align.methods:DistributeRightAligner" />
+      <dep id="ktu.utils.align.methods:DistributeVerticalAligner" />
+      <dep id="ktu.utils.align.methods:SpaceHorizontalAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentVerticalBottomAligner" />
+      <dep id="ktu.utils.align.methods:ScaleToFitAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentBottomAligner" />
+      <dep id="ktu.utils.align.methods:DistributeTopAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentBottomLeftAligner" />
+      <dep id="ktu.utils.align.methods:DistributeHorizontalAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentBottomRightAligner" />
+      <dep id="ktu.utils.align.methods:BottomLeftAligner" />
+      <dep id="ktu.utils.align.methods:TopLeftAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentLeftAligner" />
+      <dep id="ktu.utils.align.methods:HorizontalAligner" />
+      <dep id="ktu.utils.align.methods:MatchHeightAligner" />
+      <dep id="ktu.utils.align.methods:TopRightAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentRightAligner" />
+      <dep id="ktu.utils.align.methods:AdjacentHorizontalLeftAligner" />
+      <dep id="ktu.utils.align.methods:StackHorizontalAligner" />
+      <dep id="ktu.utils.align.methods:TopAligner" />
+      <dep id="ktu.utils.align.methods:MatchWidthAligner" />
+      <dep id="ktu.utils.align.methods:StackVerticalAligner" />
+      <dep id="ktu.utils.align.methods:BottomAligner" />
+      <dep id="ktu.utils.align.methods:DistributeLeftAligner" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTop.as" mod="1314142259623" size="481" optimizedsize="452">
-      <def id="ktu.utils.align.methods:AdjacentTop" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\compareNumber.as" mod="1314833287498" size="140" optimizedsize="137">
+      <def id="ktu.utils.sorting:compareNumber" />
+      <dep id="Number" />
+      <dep id="int" />
       <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Horizontal.as" mod="1314139073089" size="492" optimizedsize="463">
-      <def id="ktu.utils.align.methods:Horizontal" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackVertical.as" mod="1314143695325" size="985" optimizedsize="931">
-      <def id="ktu.utils.align.methods:StackVertical" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeVertical.as" mod="1314143265194" size="696" optimizedsize="652">
-      <def id="ktu.utils.align.methods:DistributeVertical" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeLeft.as" mod="1314143098278" size="644" optimizedsize="605">
-      <def id="ktu.utils.align.methods:DistributeLeft" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\BottomRight.as" mod="1314139662728" size="523" optimizedsize="492">
-      <def id="ktu.utils.align.methods:BottomRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentTopAligner.as" mod="1314836242477" size="495" optimizedsize="460">
+      <def id="ktu.utils.align.methods:AdjacentTopAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeBottom.as" mod="1314143302352" size="667" optimizedsize="626">
-      <def id="ktu.utils.align.methods:DistributeBottom" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeTop.as" mod="1314143235344" size="650" optimizedsize="611">
-      <def id="ktu.utils.align.methods:DistributeTop" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
-      <dep id="AS3" />
-      <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\Top.as" mod="1314139344779" size="439" optimizedsize="418">
-      <def id="ktu.utils.align.methods:Top" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\CenterAligner.as" mod="1314836242518" size="546" optimizedsize="516">
+      <def id="ktu.utils.align.methods:CenterAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\SpaceHorizontal.as" mod="1314143649334" size="717" optimizedsize="673">
-      <def id="ktu.utils.align.methods:SpaceHorizontal" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeRightAligner.as" mod="1314836242537" size="628" optimizedsize="585">
+      <def id="ktu.utils.align.methods:DistributeRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="ktu.utils.sorting:sort_rectangle_right" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeRight.as" mod="1314143197928" size="670" optimizedsize="630">
-      <def id="ktu.utils.align.methods:DistributeRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_adjacentLeft.as" mod="1314834044340" size="205" optimizedsize="204">
+      <def id="ktu.utils.sorting:sort_rectangle_adjacentLeft" />
+      <dep id="ktu.utils.sorting:sort_rectangle_right" />
+      <dep id="int" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
-      <dep id="flash.utils:Dictionary" />
+      <dep id="ktu.utils.sorting:sort_rectangle_left" />
     </script>
-    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentBottomRight.as" mod="1314142843166" size="527" optimizedsize="489">
-      <def id="ktu.utils.align.methods:AdjacentBottomRight" />
-      <pre id="ktu.utils.align.methods:AlignMethod" />
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\VerticalAligner.as" mod="1314836242619" size="498" optimizedsize="467">
+      <def id="ktu.utils.align.methods:VerticalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\DistributeVerticalAligner.as" mod="1314836242545" size="655" optimizedsize="607">
+      <def id="ktu.utils.align.methods:DistributeVerticalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:sort_rectangle_centerY" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\AdjacentHorizontalRightAligner.as" mod="1314836242465" size="529" optimizedsize="483">
+      <def id="ktu.utils.align.methods:AdjacentHorizontalRightAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\sorting\sort_rectangle_centerY.as" mod="1314834044349" size="188" optimizedsize="188">
+      <def id="ktu.utils.sorting:sort_rectangle_centerY" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="ktu.utils.sorting:compareNumber" />
+    </script>
+    <script name="D:\ktu\git\VizAlign\src\ktu\utils\align\methods\StackHorizontalAligner.as" mod="1314836242597" size="974" optimizedsize="914">
+      <def id="ktu.utils.align.methods:StackHorizontalAligner" />
+      <pre id="ktu.utils.align:IRectangleAligner" />
+      <pre id="Object" />
+      <dep id="ktu.utils.sorting:sort_rectangle_adjacentRight" />
+      <dep id="ktu.utils.sorting:sort_rectangle_adjacentLeft" />
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
     </script>
@@ -335,11 +455,12 @@
     <ext id="AS3" />
     <ext id="flash.geom:Rectangle" />
     <ext id="flash.display:StageDisplayState" />
-    <ext id="flash.utils:Dictionary" />
     <ext id="Error" />
     <ext id="flash.display:DisplayObject" />
     <ext id="Object" />
     <ext id="flash.display:Sprite" />
+    <ext id="int" />
+    <ext id="Number" />
     <ext id="flash.geom:Point" />
     <ext id="flash.display:Stage" />
   </external-defs>
