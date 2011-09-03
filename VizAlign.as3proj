@@ -40,7 +40,7 @@
     <option linkReport="bin/VizAlign_link_report.xml" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional="-keep-as3-metadata true" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
@@ -71,7 +71,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\Empty.as" />
+    <compile path="src\AlignManifest.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
