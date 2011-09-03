@@ -42,7 +42,7 @@
     <option linkReport="bin/capabilities_size_report.xml" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional="-keep-as3-metadata true" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
