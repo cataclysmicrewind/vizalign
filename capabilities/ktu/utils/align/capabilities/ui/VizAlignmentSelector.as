@@ -11,7 +11,7 @@ package ktu.utils.align.capabilities.ui {
 	import flash.utils.describeType;
 	import ktu.utils.align.aligners.AlignerManifest;
 	import ktu.utils.align.IRectangleAligner;
-	import ktu.utils.align.RectangleAlignment;
+	import ktu.utils.align.VizAlignment;
 	
 	/**
 	 * ...
@@ -193,13 +193,13 @@ package ktu.utils.align.capabilities.ui {
 				tcsList.addItem(tcs.name);
 			}
 			
-			// also add any other ones... 
+			// also add any other ones...
 			// or
 			// have other controls add more
 		}
 		
 		private function panelAnimate(animateIn:Boolean):void {
-			if (animateIn) 
+			if (animateIn)
 				Tweensy.to (panel, { y: -15, alpha:1 }, .4 );
 			else
 				Tweensy.to (panel, { y: panel.height, alpha:0 }, .4 );
@@ -218,7 +218,7 @@ package ktu.utils.align.capabilities.ui {
 				if (tcsName == "stage") {
 					tcs = stage;
 				} else if (tcsName == "to targets") {
-					tcs = RectangleAlignment.TO_TARGETS;
+					tcs = VizAlignment.TO_TARGETS;
 				} else {
 					for each (var atcs:DisplayObject in _targetCoordinateSpaces) {
 						if (tcsName == "arena" && atcs.name == "arena") {
@@ -231,7 +231,7 @@ package ktu.utils.align.capabilities.ui {
 						}
 					}
 				}
-				ret.push(new RectangleAlignment(method, tcs));
+				ret.push(new VizAlignment(method, tcs));
 			}
 			return ret;
 		}

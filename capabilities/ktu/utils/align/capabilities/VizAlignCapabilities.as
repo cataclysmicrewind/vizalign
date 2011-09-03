@@ -21,9 +21,9 @@ package ktu.utils.align.capabilities {
 	import ktu.utils.align.capabilities.gfx.VizAlignArena;
 	import ktu.utils.align.capabilities.gfx.VizAlignLogo;
 	import ktu.utils.align.capabilities.ui.CapabilitiesControls;
-	import ktu.utils.align.RectangleAlignment;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
+	import ktu.utils.align.VizAlignment;
 	import ktu.utils.align.VizAlignTarget;
 	
 	/**
@@ -40,48 +40,48 @@ package ktu.utils.align.capabilities {
 	 *			put in the animation (so its out of the way)
 	 * 			put in more text to say what it's doing
 	 * 			disclaimer for making the fullscreen smaller than this
-	 * 
+	 *
 	 * 		More presets
 	 * 			with groups
 	 * 			with most common tasks
-	 * 
+	 *
 	 * 		Target Info
 	 * 			fix the showOrigin button to reflect any change... right now the double lcikc does not trigger it
 	 *
 	 * 		? TCS details? (x, y) (w, h)
-	 * 
-	 * 		? enable crosshair 
+	 *
+	 * 		? enable crosshair
 	 * 			for shit like bottomLeft of Logo... no border around it so hard to tell...
-	 * 
+	 *
 	 * 		Help - tons of instructions...
 	 * 			Are you good with AS3?
 	 * 				Yes		No
-	 * 
+	 *
 	 * 			AS3 Developers start father in the instructions
-	 * 
+	 *
 	 * 			Non as3 start at beginning...
-	 * 			
-	 * 
+	 *
+	 *
 	 * 			Contents:
 	 *				Why I made VizAlign
 	 * 				This SWF
-	 * 				The Problem: 
+	 * 				The Problem:
 	 * 					Coordinate Planes
 	 * 					Origins
 	 * 					Scaling
-	 * 					
+	 *
 	 * 				The Solution:
 	 *					getBounds(this);
 	 * 					scaling
-	 * 					
+	 *
 	 * 				Using Capabilities:
 	 * 					Presets
 	 * 					Custom
-	 * 
-	 * 				
-	 * 				
-	 * 
-	 * 
+	 *
+	 *
+	 *
+	 *
+	 *
 	 * ...
 	 * @author Keelan
 	 */
@@ -134,23 +134,12 @@ package ktu.utils.align.capabilities {
 			
 			createFullscreen();
 			
-			var t:Rectangle = new Rectangle(100, 200, 200, 350);
-			var sp:Sprite = new Sprite ();
-			sp.graphics.lineStyle(1);
-			sp.graphics.curveTo(t.width, 0, t.width, t.height / 2);
-			sp.graphics.curveTo(t.width, t.height, t.width / 2, t.height);
-			sp.graphics.curveTo(0, t.height, 0, t.height / 2);
-			sp.graphics.curveTo(0, t.height/4, t.width / 2, t.height / 4);
-			
-			addChild(sp);
-			
-			
 		}
 		
 		private function createFullscreen():void {
 			var _fullscreen:Fullscreen = new Fullscreen();
 			addChild(_fullscreen);
-			VizAlign.align([_fullscreen], [new RectangleAlignment(new TopRightAligner(), stage)], false, true, true);
+			VizAlign.align([_fullscreen], [new VizAlignment(new TopRightAligner(), stage)], false, true, true);
 		}
 		
 		private function addTCS(arena:VizAlignArena):void {
@@ -250,7 +239,7 @@ package ktu.utils.align.capabilities {
 			
 			arena.addTCS(targetInfo);
 			
-			VizAlign.align([targetInfo], [new RectangleAlignment(new CenterAligner(), rect)], false, true, true);
+			VizAlign.align([targetInfo], [new VizAlignment(new CenterAligner(), rect)], false, true, true);
 		}
 		
 		public function exampleRecursion(targets:Array /*VizAlignTarget*/):void {
