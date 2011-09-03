@@ -32,7 +32,7 @@ package ktu.utils.align {
 	 * 		VizAlign.align([mc1, mc2], [param], true, true, true);
 	 * 																																							</listing>
 	 */
-	public class RectangleAlignment {
+	public class VizAlignment {
 		
 		static public const TO_TARGETS	:Object	= { };// place holder when aligning targets to the bounding area they create
 		/**
