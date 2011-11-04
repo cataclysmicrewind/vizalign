@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * MatchSizeAligner makes all targets have the same width and height as the target coordinate space
+	 * @author ktu
 	 */
 	public class MatchSizeAligner implements IRectangleAligner {
 		
@@ -16,7 +20,5 @@ package ktu.utils.align.aligners {
 				targets[i].height = endH;
 			}
 		}
-		
 	}
-
 }

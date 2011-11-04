@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * BottomRightAligner aligns each target so the bottom and right edges match the bottom and right edges of the target coordinate space
+	 * @author ktu
 	 */
 	public class BottomRightAligner implements IRectangleAligner {
 		
@@ -17,7 +21,5 @@ package ktu.utils.align.aligners {
 				target.y = tcsBottomEdge - target.width;
 			}
 		}
-		
 	}
-
 }

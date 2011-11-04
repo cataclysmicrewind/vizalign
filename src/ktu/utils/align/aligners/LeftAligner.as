@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+	
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * LeftAligner aligns each target so the left edge matches the left edge of the target coordinate space
+	 * @author ktu
 	 */
 	public class LeftAligner implements IRectangleAligner {
 		
@@ -13,7 +17,5 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ ) 								// loop through all targets
 				targets[i].x = tcsLeftEdge;										// 		grab current target and set its x value
 		}
-		
 	}
-
 }

@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+	
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * VerticalAligner aligns the y center of each target to match the y center of the target coordinate space
+	 * @author ktu
 	 */
 	public class VerticalAligner implements IRectangleAligner {
 		
@@ -13,7 +17,5 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ )
 				targets[i].y = mid - ( targets[i].height / 2 );
 		}
-		
 	}
-
 }
