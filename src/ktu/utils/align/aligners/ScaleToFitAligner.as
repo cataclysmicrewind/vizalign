@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * ScaleToFitAligner makes all the targets match the size of the target coordinate space object while maintaining the original width/height ratio.
+	 * @author ktu
 	 */
 	public class ScaleToFitAligner implements IRectangleAligner {
 		
@@ -28,7 +32,5 @@ package ktu.utils.align.aligners {
 				}
 			}
 		}
-		
 	}
-
 }

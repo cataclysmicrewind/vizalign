@@ -1,16 +1,20 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
 	import ktu.utils.align.IRectangleAligner;
 	import ktu.utils.sorting.sort_rectangle_left;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * SpaceHorizontalAligner evenly spaces the targets along the x axis inside of the target coordinate space
+	 * @author ktu
 	 */
 	public class SpaceHorizontalAligner implements IRectangleAligner {
 		
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
-			targets = targets.concat();
+			targets = targets.concat();																// make new array becuase I am going to screw with the ordering
 			targets = targets.sort ( sort_rectangle_left ) ;
 			
 			var objsWidth:Number = 0;

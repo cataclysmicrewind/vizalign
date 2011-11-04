@@ -2,7 +2,9 @@ package ktu.utils.align {
 	import flash.geom.Rectangle;
 	
 	/**
-	 * ...
+	 * 	this interface specifies a function that is used to align rectangles.
+	 * 	
+	 * 
 	 * @author ktu
 	 */
 	public interface IRectangleAligner {
