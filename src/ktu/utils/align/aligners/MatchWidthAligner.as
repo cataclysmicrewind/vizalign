@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * MatchWidthAligner makes all targets have the same width as the target coordinate space
+	 * @author ktu
 	 */
 	public class MatchWidthAligner implements IRectangleAligner {
 		
@@ -13,7 +17,5 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ ) 
 				targets[i].width = endW;
 		}
-		
 	}
-
 }
