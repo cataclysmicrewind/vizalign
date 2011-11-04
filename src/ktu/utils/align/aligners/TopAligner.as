@@ -1,9 +1,13 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * TopAligner aligns each target so the top edge matches the top edge of the target coordinate space
+	 * @author ktu
 	 */
 	public class TopAligner implements IRectangleAligner {
 		
@@ -13,7 +17,5 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ )
 				targets[i].y = tcsTopEdge;
 		}
-		
 	}
-
 }

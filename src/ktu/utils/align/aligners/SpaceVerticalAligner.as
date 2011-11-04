@@ -1,11 +1,15 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
 	import ktu.utils.align.IRectangleAligner;
 	import ktu.utils.sorting.sort_rectangle_top;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * ESpaceVerticalAligner evenly spaces the targets along the y axis inside of the target coordinate space
+	 * @author ktu
 	 */
 	public class SpaceVerticalAligner implements IRectangleAligner {
 		
