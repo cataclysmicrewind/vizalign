@@ -8,11 +8,11 @@ package ktu.utils.align {
 
 
 	/**
-	* 	The VizAlignGroup class represents a group of VizAlignTarget for alignment
+	* 	The VizAlignGroup class represents a group of VizAlignTarget for alignment.
 	* 
 	* 	using a group allows you to preserve relative positioning for multiple targets
 	* when doing alignment. this class acts much like its base but has one key difference, the 
-	* updateGroupEnds(). this function is required so as to inform the targets of this group of the new alignment
+	* updateGroupEnds(). this function is required so as to inform the targets of this group of the new alignment.
 	* 
 	* 	this is the same functionality as using ctrl+g in the flash ide and doing alignment on the group
 	* 	
@@ -82,7 +82,7 @@ package ktu.utils.align {
 			for each (var t:VizAlignTarget in _targets) t.applyEndBounds();
 		}
 		/**
-		 * 	update all of the target end rectangles to account for the end rectangle of the group
+		 * 	update all of the target end rectangles to account for the end rectangle of the group.
 		 * 
 		 * this is important, because as you change the end rectangle of the group, you must somehow
 		 * at some point, update the end values of each target in this group

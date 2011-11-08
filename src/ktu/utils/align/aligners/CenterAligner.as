@@ -11,6 +11,12 @@ package ktu.utils.align.aligners {
 	 */
 	public class CenterAligner implements IRectangleAligner {
 		
+		/**
+		 * aligns each target so the visual x center and y center match the visual x and y center of the target coordinate space
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var tcsCenterY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height/ 2);	// get center y value of target coordinate space object
