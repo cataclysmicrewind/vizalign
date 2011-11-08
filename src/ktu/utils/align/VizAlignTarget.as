@@ -24,7 +24,7 @@ package ktu.utils.align {
 		 */
 		protected var _orig:Rectangle = new Rectangle();
 		/**
-		 * position after alignement
+		 * position after alignment
 		 */
 		protected var _end:Rectangle = new Rectangle();
 		

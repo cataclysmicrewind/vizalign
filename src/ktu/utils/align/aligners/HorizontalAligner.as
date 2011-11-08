@@ -11,6 +11,12 @@ package ktu.utils.align.aligners {
 	 */
 	public class HorizontalAligner implements IRectangleAligner {
 		
+		/**
+		 * aligns each target so the visual x center of each target matches the visual x center of the target coordinate space
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var mid:Number = targetCoordinateSpace.left + (targetCoordinateSpace.width / 2);	// get center x value of target coordinate space object
 			var length:int = targets.length;													// targets length for optimized looping
