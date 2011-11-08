@@ -11,6 +11,12 @@ package ktu.utils.align.aligners {
 	 */
 	public class BottomRightAligner implements IRectangleAligner {
 		
+		/**
+		 * aligns each target so the bottom and right edges match the bottom and right edges of the target coordinate space
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsBottomEdge:Number = targetCoordinateSpace.bottom;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;

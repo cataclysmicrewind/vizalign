@@ -11,14 +11,20 @@ package ktu.utils.align.aligners {
 	 */
 	public class TopRightAligner implements IRectangleAligner {
 		
+		/**
+		 * aligns each target so the top and right edges match the top and right edges of the target coordinate space
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
-			var tcsTopEdge:Number = targetCoordinateSpace.top;
-			var tcsRightEdge:Number = targetCoordinateSpace.right;
-			var length:int = targets.length;														// targets length for optimized looping
-			for ( var i:int = 0; i < length; i++ ) {
-				targets[i].x = tcsRightEdge - targets[i].width;
-				targets[i].y = tcsTopEdge;
-			}
+			var tcsTopEdge:Number = targetCoordinateSpace.top;										//	grab top of tcs
+			var tcsRightEdge:Number = targetCoordinateSpace.right;									//	grab right of tcs
+			var length:int = targets.length;														// 	targets length for optimized looping
+			for ( var i:int = 0; i < length; i++ ) {												//	loop (each target)
+				targets[i].x = tcsRightEdge - targets[i].width;										//		place x at right
+				targets[i].y = tcsTopEdge;															// 		place y at top
+			}																						// end loop
 		}
 	}
 }

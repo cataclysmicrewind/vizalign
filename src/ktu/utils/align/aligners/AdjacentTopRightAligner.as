@@ -1,12 +1,22 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import ktu.utils.align.IRectangleAligner;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * AdjacentTopRightAligner aligns the targets bottom and left edge againts the top and right edge of the target coordinate space object.
+	 * @author ktu
 	 */
 	public class AdjacentTopRightAligner implements IRectangleAligner {
 		
+		/**
+		 * aligns the targets bottom and left edge againts the top and right edge of the target coordinate space object.
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;
 			var tcsRightEdge:Number = targetCoordinateSpace.right;
@@ -17,7 +27,5 @@ package ktu.utils.align.aligners {
 				target.y = tcsTopEdge - target.height;
 			}
 		}
-		
 	}
-
 }
