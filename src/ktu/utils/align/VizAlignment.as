@@ -40,13 +40,13 @@ package ktu.utils.align {
 		
 		
 		/**
-		 * Alignment method type to be used in VizAlign.align()
-		 * This value should be a const from VizAlign class.
+		 * the object that will perform that actual alignment. this object conforms to the IRectangleAlinger interface which specifies
+		 * the alignRectangles function. 
 		 */
 		public var rectangleAligner	:IRectangleAligner;
 		/**
-		 * the object that defines a rectangle for the targets to align to
-		 * This is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
+		 * the object that defines a rectangle for the targets to align to,
+		 * this is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
 		 * align to the left of the [stage]. The tcs is [].
 		 */
 		public var tcs	:*;
@@ -67,7 +67,7 @@ package ktu.utils.align {
 		 * @param	type 	IRectangleAligner	any object that inmplements that interface (an object that can align rectangles) 
 		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
 		 */
-		public function RectangleAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
+		public function VizAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
 				case tcs is DisplayObject:
 				case tcs is Stage:
@@ -106,14 +106,14 @@ package ktu.utils.align {
 		static private const NO_TARGETS	:String = "VizAlignment : attempting to get TO_TARGETS bounds but did not receive any targetBounds";
 		/**
 		 * 
-		 * 	returns a rectangle consisting of the boundaries of the targetCoordinateSpace
+		 * 	returns a rectangle consisting of the boundaries of the targetCoordinateSpace.
 		 * 
 		 * This accepts a Stage, DisplayObject, TO_TARGETS, or Rectangle object. 
 		 * Only these objects produce a rectangular boundary.
 		 * 
-		 * @param	targetCoordinateSpace	*	the object to extract the bounds from
-		 * @param	ignoreTCSOrigin			Boolean	can only ignore the origin on a DisplayObject
-		 * @param	targetBounds			Array	array of Rectangle for when using the TO_TARGETS
+		 * @param	targetCoordinateSpace	the object to extract the bounds from
+		 * @param	ignoreTCSOrigin			can only ignore the origin on a DisplayObject
+		 * @param	targetBounds			array of Rectangle for when using the TO_TARGETS
 		 * @return
 		 */
 		static public function getTCSBounds(targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true, targetBounds:Array/*Rectangle*/= null):Rectangle {
@@ -128,8 +128,6 @@ package ktu.utils.align {
 					break;																										//			break
 				case targetCoordinateSpace is DisplayObject:																	//		case DisplayObject
 					tcsBounds = (targetCoordinateSpace as DisplayObject).getBounds(targetCoordinateSpace);						//			tcsBounds = DisplayObject.getBounds itself
-					//tcsBounds.width = targetCoordinateSpace.width;															//			set width ?
-					//tcsBounds.height = targetCoordinateSpace.height;															//			set height ?
 					if (ignoreTCSOrigin) {																						//			if (ignore tcs origin)
 						var dx:Point = targetCoordinateSpace.localToGlobal(new Point(tcsBounds.x, tcsBounds.y));				//				convert tcs x and y to global 
 						tcsBounds.x = dx.x;																						//				set the x
