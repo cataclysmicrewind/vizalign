@@ -1,14 +1,24 @@
+
+
 package ktu.utils.align.aligners {
+
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
 	import ktu.utils.align.IRectangleAligner;
 	import ktu.utils.sorting.sort_rectangle_centerX;
+	
 	/**
-	 * ...
-	 * @author ...
+	 * DistributeHorizontalAligner places an even space between the x center of the targets inside the target coordinate space object.
+	 * @author ktu
 	 */
 	public class DistributeHorizontalAligner implements IRectangleAligner {
 		
+		/**
+		 * places an even space between the x center of the targets inside the target coordinate space object.
+		 * 
+		 * @param	targetCoordinateSpace
+		 * @param	targets
+		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();
 			targets.sort ( sort_rectangle_centerX ) ;
