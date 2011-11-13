@@ -11,7 +11,7 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * The VizAlignment class represents how you would like to align some targets																				<br/>
+	 * The VizAlignment class represents how you would like to align targets.																					<br/>
 	 * 																																							<br/>
 	 * Each alignment needs two (2) things:																														<br/>
 	 *  how you wish to align the targets. 																														<br/>
