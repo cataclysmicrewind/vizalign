@@ -16,21 +16,34 @@ package ktu.utils.align {
 	 * the targets to can be a Stage, DisplayObject, Rectangle, or the targets themselves. 
 	 * 
 	 * 
+	 *  NOTE: almost all the methods other than align() are utilities that the align() uses. they are made public in case you want to utilize their
+	 * functionality. more often than not you will not need to touch any of those methods.
+	 * 
+	 * 
+	 * TODO: add more explanation to what this does and how it is used.
+	 * TODO: add in nuances and things to pay attention to when aligning
+	 * TODO: add examples
 	 * 
 	 * 
 	 */
 	public class VizAlign {
 		
+		/** @private */
 		static private const BAD_TARGET		:String = "VizAlign : Target must be a DisplayObject/VizAlignTarget";
 		
 		/**
+		 *  aligns the specified targets how the vizAlignments specify.
 		 * 
+		 * this function is the main point of entry when using VizAlign. this is the function that will do all the work for you. 
 		 * 
-		 * @param	targets
-		 * @param	vizAlignments
-		 * @param	applyResults
-		 * @param	ignoreOrigin
-		 * @param	pixelHinting
+		 * TODO: add example
+		 * 
+		 * @param	targets			an array of DisplayObject/VizAlignTarget/VizAlignGroup/Array that indicates the targets to be aligned. no matter the state
+		 * 							that they are sent in, they will all be converted to VizAlignTarget/VizAlignGroup accordingly. 
+		 * @param	vizAlignments	an array of VizAlignment that specify how you want the targets to be aligned. 
+		 * @param	applyResults	whether you want VizAlign to actually move the targets or just calculate the end position
+		 * @param	ignoreOrigin	whether you want VizAlign to ignore the origin offset.
+		 * @param	pixelHinting	whether VizAlign should round the end result before finishing.
 		 * 
 		 * @return
 		 */
@@ -39,8 +52,8 @@ package ktu.utils.align {
 			targets = targets.concat();																	// copy array so we have new one (same objects, but different array object)
 			
 			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);			// convert all targets to VizAlignTarget
-			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets, true);									// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
-			var targetEndBounds:Array/*Rectangle*/ = getEndBoundsFromVizAlignTargets(vizAlignTargets);		// get all rectangles to move (the core of VizAlign is based solely on Rectangle
+			if (ignoreOrigin) ignoreOriginOffsets(vizAlignTargets, true);								// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
+			var targetEndBounds:Array/*Rectangle*/ = getEndBoundsFromVizAlignTargets(vizAlignTargets);	// get all rectangles to move (the core of VizAlign is based solely on Rectangle
 			
 			var length:uint = vizAlignments.length;														// get length of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {														// for each vizAlignment
@@ -50,7 +63,7 @@ package ktu.utils.align {
 			}																							// end loop
 			
 			updateGroups(vizAlignTargets);																// update groups if we have them
-			if (ignoreOrigin) applyOriginOffsets(vizAlignTargets, false);									// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
+			if (ignoreOrigin) ignoreOriginOffsets(vizAlignTargets, false);								// if ignoreOrigin, remove the offset, so the actual target ends up in the right place
 			if (pixelHinting) roundResults (vizAlignTargets);											// if pixelHinting, round the results
 			if (applyResults) applyEnds(vizAlignTargets);												// if applyResults, tell all VizAlignTarget to go to end
 			
@@ -79,7 +92,7 @@ package ktu.utils.align {
 		 *  set the .applyOriginOffset property of the VizAlignTarget sent in.
 		 * @param	vizAlignTargets
 		 */
-		static public function applyOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/, ignoreOrigins:Boolean = true ):void {
+		static public function ignoreOriginOffsets (vizAlignTargets:Array/*VizAlignTarget*/, ignoreOrigins:Boolean = true ):void {
 			for each (var t:VizAlignTarget in vizAlignTargets) 
 				t.ignoreOriginOffset = ignoreOrigins;
 		}
