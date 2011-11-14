@@ -54,6 +54,8 @@ package ktu.utils.align.capabilities.gfx {
 			addEventListener (MouseEvent.MOUSE_DOWN, onMouseDown);
 			
 			doubleClickEnabled = true;
+			mouseEnabled = true;
+			useHandCursor = true;
 			addEventListener(MouseEvent.DOUBLE_CLICK, onDoubleClick);
 			redraw();
 		}

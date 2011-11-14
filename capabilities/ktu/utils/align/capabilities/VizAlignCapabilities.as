@@ -139,7 +139,7 @@ package ktu.utils.align.capabilities {
 		private function createFullscreen():void {
 			var _fullscreen:Fullscreen = new Fullscreen();
 			addChild(_fullscreen);
-			VizAlign.align([_fullscreen], [new VizAlignment(new TopRightAligner(), stage)], false, true, true);
+			VizAlign.align([_fullscreen], [new VizAlignment(new TopRightAligner(), arena)], false, true, true);
 		}
 		
 		private function addTCS(arena:VizAlignArena):void {

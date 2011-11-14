@@ -105,6 +105,10 @@ package ktu.utils.align.capabilities.gfx {
 			
 			
 			
+			if (currentTarget) {
+				showOrigin.visible = true;
+				showOrigin.selected = currentTarget.showOrigin;
+			}
 			
 			
 			if (vrule && vrule.parent) return; 
@@ -115,11 +119,6 @@ package ktu.utils.align.capabilities.gfx {
 			vrule.x = 100;//targetProps.x + targetProps.width + 3;
 			vrule.y = targetProps.y;
 			addChild(vrule);
-			
-			if (currentTarget) {
-				showOrigin.visible = true;
-				showOrigin.selected = currentTarget.showOrigin;
-			}
 			
 		}
 		
