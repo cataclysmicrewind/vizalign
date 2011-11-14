@@ -36,7 +36,7 @@ package ktu.utils.align {
 		/**
 		 *  place holder when aligning targets to the bounding area they create
 		 */
-		static public const TO_TARGETS	:Object	= { };
+		static public const TO_TARGETS	:Rectangle	= new Rectangle(-1, -1, -1, -1);
 		
 		
 		/**
