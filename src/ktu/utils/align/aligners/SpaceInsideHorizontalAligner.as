@@ -29,8 +29,8 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ )	 												//	loop (each target)
 				objsWidth += targets[i].width ;														//		add width of target to total targets width
 			
-			var spread:Number = ( totalWidth - objsWidth ) / ( length - 1 ) ;						//	the gap between each target
-			var right:Number = 0//targetCoordinateSpace.left + targets[0].width;						//	current right edge of the last placed target
+			var spread:Number = ( totalWidth - objsWidth ) / ( length + 1 ) ;						//	the gap between each target
+			var right:Number = targetCoordinateSpace.left// + targets[0].width;						//	current right edge of the last placed target
 			//targets[0].x = targetCoordinateSpace.left;												//	place first target
 			for ( var j:int = 0; j < length; j++ ) {												//	loop (each target - first)
 				var item:Rectangle = targets[j];													//		grab current item
