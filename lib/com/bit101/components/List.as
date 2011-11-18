@@ -292,7 +292,7 @@ package com.bit101.components {
 				tip.defaultColor = _defaultColor;
 				tip.selectedColor = _selectedColor;
 				tip.rolloverColor = _rolloverColor;
-				tip.setSize(item.label.textField.textWidth + item.label.textField.x+10, item.height);
+				tip.setSize(item.label.textField.textWidth + item.label.textField.x+15, item.height);
 				tip.data = item.data;
 			}
 		}
