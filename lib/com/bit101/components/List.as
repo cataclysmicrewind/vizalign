@@ -31,6 +31,7 @@ package com.bit101.components {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	
 	[Event(name="select",type="flash.events.Event")]
 	
@@ -115,8 +116,11 @@ package com.bit101.components {
 				item.selectedColor = _selectedColor;
 				item.rolloverColor = _rolloverColor;
 				item.addEventListener(MouseEvent.CLICK, onSelect);
+				item.addEventListener(MouseEvent.ROLL_OVER, onListItemRollOver);
+				item.addEventListener(MouseEvent.ROLL_OUT, onListItemRollOut);
 			}
 		}
+		
 		
 		protected function fillItems():void {
 			var offset:int = _scrollbar.value;
@@ -270,7 +274,37 @@ package com.bit101.components {
 			ListItem(event.target).selected = true;
 			dispatchEvent(new Event(Event.SELECT));
 		}
+		/**
+		 * Called when a user rolls over an item in the list.
+		 */
+		private function onListItemRollOver(event:MouseEvent):void {
+			//show copy on top if text is not visible
+			if (!(event.target is ListItem))
+				return;
+				
+			var item:ListItem = event.target as ListItem;
+			if (item.label.textField.width > _panel.width - _scrollbar.width - 1) {
+				var pos:Point = item.localToGlobal(new Point(0, 0));
+				var tip:ListItem = new _listItemClass(stage, pos.x, pos.y);
+				tip.name = item.name + "_tip";
+				tip.mouseEnabled = false;
+				tip.defaultColor = _defaultColor;
+				tip.selectedColor = _selectedColor;
+				tip.rolloverColor = _rolloverColor;
+				tip.setSize(item.label.textField.textWidth + item.label.textField.x+10, item.height);
+				tip.data = item.data;
+			}
+		}
 		
+		private function onListItemRollOut(event:MouseEvent):void {
+			if (!(event.target is ListItem))
+				return;
+			var item:ListItem = event.target as ListItem;
+			var tip:ListItem = stage.getChildByName(item.name + "_tip") as ListItem;
+			if (tip) {
+				stage.removeChild(tip);
+			}
+		}
 		/**
 		* Called when the user scrolls the scroll bar.
 		*/
