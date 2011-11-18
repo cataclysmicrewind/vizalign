@@ -8,7 +8,7 @@ package  {
 	
 	
 	/**
-	* ...
+	* 	compiling this class will show you how large VizAlign and all the aligners are
 	* @author ...
 	*/
 	public class VizAlignManifest extends Sprite {
@@ -17,6 +17,8 @@ package  {
 		VizAlignTarget;
 		VizAlignGroup;
 		VizAlignment;
+		
+		AlignerManifest;
 		
 	}
 }
