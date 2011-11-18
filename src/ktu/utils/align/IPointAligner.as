@@ -1,5 +1,5 @@
 package ktu.utils.align {
-	import flash.geom.Rectangle;
+	import flash.geom.Point;
 	
 	/**
 	 * 	this interface specifies a function that is used to align point.
@@ -27,7 +27,7 @@ package ktu.utils.align {
 		 * @param	targetCoordinateSpace
 		 * @param	targets
 		 */
-		function alignPoints(targetCoordinateSpace:Rectangle, targets:Array/*Point*/):void;
+		function alignPoints(targetCoordinateSpace:Point, targets:Array/*Point*/):void;
 		
 	}
 	
