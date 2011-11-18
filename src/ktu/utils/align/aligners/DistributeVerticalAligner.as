@@ -25,7 +25,8 @@ package ktu.utils.align.aligners {
 			
 			var length:int = targets.length;														// targets length for optimized looping
 			var first:Number = targetCoordinateSpace.top + ( targets[0].height / 2 ) ;
-			var spread:Number = ( (  targetCoordinateSpace.bottom - ( targets[length - 1].height / 2 ) - first ) / ( length - 1 ) ) ;
+			var last:Number = targetCoordinateSpace.bottom - ( targets[length - 1].height / 2);
+			var spread:Number = ( last - first ) / ( length - 1 ) ;
 			for ( var i:int = 0; i < length; i++ ) 
 				targets[i].y = first - ( targets[i].height / 2 ) + ( spread * i ) ;
 			
