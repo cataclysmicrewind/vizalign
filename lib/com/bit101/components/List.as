@@ -288,6 +288,7 @@ package com.bit101.components {
 				var tip:ListItem = new _listItemClass(stage, pos.x, pos.y);
 				tip.name = item.name + "_tip";
 				tip.mouseEnabled = false;
+				tip.selected = true;
 				tip.defaultColor = _defaultColor;
 				tip.selectedColor = _selectedColor;
 				tip.rolloverColor = _rolloverColor;
