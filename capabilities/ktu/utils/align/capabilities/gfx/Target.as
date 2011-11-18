@@ -53,9 +53,9 @@ package ktu.utils.align.capabilities.gfx {
 			
 			addEventListener (MouseEvent.MOUSE_DOWN, onMouseDown);
 			
-			doubleClickEnabled = true;
-			mouseEnabled = true;
+			buttonMode = true;
 			useHandCursor = true;
+			doubleClickEnabled = true;
 			addEventListener(MouseEvent.DOUBLE_CLICK, onDoubleClick);
 			redraw();
 		}
@@ -141,11 +141,6 @@ package ktu.utils.align.capabilities.gfx {
 				graphics.drawRect(corner.x + huskOffset.x, corner.y + huskOffset.y, sizeOffset.x, sizeOffset.y);
 				graphics.endFill();
 			}
-			
-			
-			
-			
-			
 			
 			
 			// show origin ?

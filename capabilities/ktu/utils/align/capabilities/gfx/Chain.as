@@ -5,8 +5,11 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.events.MouseEvent;
 	
 	/**
-	 * ...
-	 * @author ...
+	 * Visual representation of which group a target has been assigned to.
+	 * 
+	 * clicking on it will cycle between unlinked and 1-5
+	 * 
+	 * @author ktu
 	 */
 	
 	public class Chain extends Sprite {

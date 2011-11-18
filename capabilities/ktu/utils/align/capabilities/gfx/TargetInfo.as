@@ -11,6 +11,7 @@ package ktu.utils.align.capabilities.gfx {
 	 * 
 	 * 	Displays Last Selected target information
 	 * 
+	 * 	simply, it is told which target to track, and onEnterFrame, it updates the values it cares about
 	 * 
 	 * ...
 	 * @author Ktu

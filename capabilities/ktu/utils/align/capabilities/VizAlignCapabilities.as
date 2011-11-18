@@ -36,23 +36,6 @@ package ktu.utils.align.capabilities {
 	 *
 	 * 	TO DO:
 	 *
-	 * 		Fullscreen
-	 *			put in the animation (so its out of the way)
-	 * 			put in more text to say what it's doing
-	 * 			disclaimer for making the fullscreen smaller than this
-	 *
-	 * 		More presets
-	 * 			with groups
-	 * 			with most common tasks
-	 *
-	 * 		Target Info
-	 * 			fix the showOrigin button to reflect any change... right now the double lcikc does not trigger it
-	 *
-	 * 		? TCS details? (x, y) (w, h)
-	 *
-	 * 		? enable crosshair
-	 * 			for shit like bottomLeft of Logo... no border around it so hard to tell...
-	 *
 	 * 		Help - tons of instructions...
 	 * 			Are you good with AS3?
 	 * 				Yes		No
@@ -83,9 +66,8 @@ package ktu.utils.align.capabilities {
 	 *
 	 *
 	 * ...
-	 * @author Keelan
+	 * @author ktu
 	 */
-	//[SWF (width = '750', height = '700')]
 	public class VizAlignCapabilities extends Sprite {
 		
 		private var arena:VizAlignArena;
@@ -246,8 +228,14 @@ package ktu.utils.align.capabilities {
 			for each (var vat:VizAlignTarget in targets){
 				if (vat is VizAlignGroup)
 					exampleRecursion(VizAlignGroup(vat).targets);
-				else
-					Tweensy.to(vat.target, vat.end, .5);
+				else {
+					var params:Object = { };
+					params.x = vat.end.x;
+					params.y = vat.end.y;
+					params.width = vat.end.width;
+					params.height = vat.end.height;
+					Tweensy.to(vat.target, params, .5);
+				}
 			}
 		}
 	}

@@ -3,9 +3,15 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.display.DisplayObject;
 	import flash.display.Graphics;
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
+	import ktu.utils.align.VizAlignment;
 	
 	/**
-	 * ...
+	 * VizAlignArena is merely an object that represents an area which will have tcs and targets to play with
+	 * 
+	 * this is the display list in which the tcs and targets live.
+	 * 
 	 * @author Keelan
 	 */
 	public class VizAlignArena extends Sprite{
@@ -35,6 +41,34 @@ package ktu.utils.align.capabilities.gfx {
 		public function addTCS(tcs:DisplayObject):void {
 			targetCoordinateSpaces.push(tcs);
 			addChild(tcs);
+			//tcs.addEventListener(MouseEvent.ROLL_OVER, onTCSMouseOver);
+		}
+		
+		private function onTCSMouseOver(e:MouseEvent):void {
+			// show highlight
+			var tcsBounds:Rectangle = VizAlignment.getTCSBounds(e.target, true);
+			var highlight:Sprite = new Sprite();
+			highlight.name = e.target.name + "_highlight";
+			highlight.mouseEnabled = false;
+			highlight.graphics.beginFill(0xCA0000, .4);
+			highlight.graphics.drawRect(0, 0, tcsBounds.width, tcsBounds.height);
+			highlight.graphics.endFill();
+			highlight.graphics.beginFill(0xCA0000);
+			highlight.graphics.drawRect(1, 1, tcsBounds.width - 2, tcsBounds.height - 2);
+			highlight.graphics.drawRect(0, 0, tcsBounds.width, tcsBounds.height);
+			e.target.addChild(highlight);
+			e.target.removeEventListener(MouseEvent.ROLL_OVER, onTCSMouseOver);
+			e.target.addEventListener(MouseEvent.ROLL_OUT, onTCSMouseOut);
+		}
+		
+		private function onTCSMouseOut(e:MouseEvent):void {
+			// remove old highlight
+			var highlight:Sprite = e.target.getChildByName(e.target.name + "_highlight") as Sprite;
+			e.target.removeChild(highlight);
+			highlight = null;
+			
+			e.target.removeEventListener(MouseEvent.ROLL_OUT, onTCSMouseOut);
+			e.target.addEventListener (MouseEvent.ROLL_OVER, onTCSMouseOver);
 		}
 		
 		public function redraw( ):void {

@@ -216,5 +216,15 @@ package com.bit101.components
 			return _rolloverColor;
 		}
 		
+		public function get mouseOver():Boolean 
+		{
+			return _mouseOver;
+		}
+		
+		public function get label():Label 
+		{
+			return _label;
+		}
+		
 	}
 }
