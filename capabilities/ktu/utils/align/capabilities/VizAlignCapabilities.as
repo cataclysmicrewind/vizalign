@@ -8,6 +8,7 @@ package ktu.utils.align.capabilities {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.StatusEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.system.fscommand;
@@ -23,6 +24,7 @@ package ktu.utils.align.capabilities {
 	import ktu.utils.align.capabilities.gfx.VizAlignArena;
 	import ktu.utils.align.capabilities.gfx.VizAlignLogo;
 	import ktu.utils.align.capabilities.ui.CapabilitiesControls;
+	import ktu.utils.align.capabilities.utils.ScreenRuler;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignment;
@@ -84,14 +86,12 @@ package ktu.utils.align.capabilities {
 		private var yellow:Target;
 		private var targetInfo:TargetInfo;
 		private var options:Options;
+		private var screenRuler:ScreenRuler = new ScreenRuler();
 		
 		public function VizAlignCapabilities(){
-			//stage.scaleMode = StageScaleMode.NO_SCALE;
-			//stage.align = StageAlign.TOP_LEFT;
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.align = StageAlign.TOP_LEFT;
 			stage.showDefaultContextMenu = false;
-			stage.addEventListener(Event.RESIZE, function(e:Event):void {
-					trace(stage.stageWidth + " : " + stage.stageHeight);
-				});
 			
 			
 			Style.setStyle(Style.KTU);
@@ -226,11 +226,33 @@ package ktu.utils.align.capabilities {
 			options = new Options();
 			options.name = "options";
 			options.addEventListener("open", onOptionsOpen);
+			options.addEventListener("highlightTCS", onHighLightTCS);
+			options.addEventListener("screenRuler", onScreenRuler);
 			addChild(options);
 			
 			VizAlign.align([options], [new VizAlignment(new VerticalAligner(), arena)], true, true, true);
 			options.x = -options.width;
 			options.open = false;
+		}
+		
+		private function onScreenRuler(e:StatusEvent):void {
+			if (e.code == "true") {
+				// display and activate
+				addChild(screenRuler);
+				screenRuler.activated = true;
+			} else {
+				// hide and deactivate
+				screenRuler.activated = false;
+				removeChild(screenRuler);
+			}
+		}
+		
+		private function onHighLightTCS(e:StatusEvent):void {
+			if (e.code == "true") {
+				arena.highlightTCS = true;
+			} else {
+				arena.highlightTCS = false;
+			}
 		}
 		
 		private function onOptionsOpen(e:Event):void {

@@ -31,6 +31,8 @@ package ktu.utils.align.capabilities.gfx {
 		public var tab:Panel;
 		private var _open:Boolean = false;
 		private var tabLabel:Label;
+		private var screenRuler:CheckBox;
+		private var highlightTCS:CheckBox;
 		
 		public function get open():Boolean {
 			return _open;
@@ -104,10 +106,10 @@ package ktu.utils.align.capabilities.gfx {
 			
 			
 			// screen ruler
-			var screenRuler:CheckBox = new CheckBox(infoPanel, 10, 20, "show screen ruler", onScreenRuler);
+			screenRuler = new CheckBox(infoPanel, 10, 20, "show screen ruler", onScreenRuler);
 			
 			// highlight tcs
-			var highlightTCS:CheckBox = new CheckBox(infoPanel, 10, screenRuler.y + screenRuler.height + 20, "highlight tcs", onHightlightTCS);
+			highlightTCS = new CheckBox(infoPanel, 10, screenRuler.y + screenRuler.height + 20, "highlight tcs", onHightlightTCS);
 			
 			// fullscreen
 			var fullscreen:Fullscreen = new Fullscreen();
@@ -119,11 +121,11 @@ package ktu.utils.align.capabilities.gfx {
 		}
 		
 		private function onHightlightTCS(e:Event):void {
-		
+			dispatchEvent(new StatusEvent("highlightTCS", false, false, highlightTCS.selected.toString()));
 		}
 		
 		private function onScreenRuler(e:Event):void {
-		
+			dispatchEvent(new StatusEvent("screenRuler", false, false, screenRuler.selected.toString()));
 		}
 	
 	}
