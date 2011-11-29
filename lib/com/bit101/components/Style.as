@@ -29,6 +29,7 @@
  
 package com.bit101.components
 {
+	import ktu.utils.align.capabilities.gfx.Fonts;
 
 	public class Style
 	{
@@ -94,8 +95,8 @@ package com.bit101.components
 					LIST_ROLLOVER = 0x555555;
 					BOTTOM = 0x111111;
 					
-					embedFonts = false;
-					fontName = "Corbel"
+					embedFonts = true;
+					fontName = new Fonts.CORBEL().fontName;
 					fontSize = 12;
 					
 					break;
