@@ -33,29 +33,24 @@ package ktu.utils.align.capabilities.gfx {
 	 */
 	public class Fullscreen extends Sprite {
 		
-		private var _panel:Panel;
 		private var _w:Text;
 		private var _h:Text;
 		private var _go:PushButton;
-		private var _lable:Label;
 		
 		private var surpressed:Boolean = false;
 		
 		public function Fullscreen(){
 			
-			_panel = new Panel(this, 0, 0);
-			_panel.width = 130;
-			_panel.height = 75;
 			
-			_w = new Text(_panel, 10, 10, String(Capabilities.screenResolutionX));
+			_w = new Text(this, 10, 10, String(Capabilities.screenResolutionX));
 			_w.width = 50;
 			_w.height = 25;
 			
-			_h = new Text(_panel, 70, 10, String(Capabilities.screenResolutionY));
+			_h = new Text(this, 70, 10, String(Capabilities.screenResolutionY));
 			_h.width = 50;
 			_h.height = 25;
 			
-			_go = new PushButton(_panel, 30, 45, "fullscreen", onGoClick);
+			_go = new PushButton(this, 30, 45, "fullscreen", onGoClick);
 			_go.width = 70;
 		}
 		

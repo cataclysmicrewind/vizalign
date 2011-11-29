@@ -14,8 +14,10 @@ package ktu.utils.align.capabilities {
 	import flash.system.System;
 	import ktu.utils.align.aligners.CenterAligner;
 	import ktu.utils.align.aligners.TopRightAligner;
+	import ktu.utils.align.aligners.VerticalAligner;
 	import ktu.utils.align.capabilities.gfx.Fullscreen;
 	import ktu.utils.align.capabilities.gfx.Grid;
+	import ktu.utils.align.capabilities.gfx.Options;
 	import ktu.utils.align.capabilities.gfx.Target;
 	import ktu.utils.align.capabilities.gfx.TargetInfo;
 	import ktu.utils.align.capabilities.gfx.VizAlignArena;
@@ -80,14 +82,16 @@ package ktu.utils.align.capabilities {
 		private var purple:Target;
 		private var cyan:Target;
 		private var yellow:Target;
+		private var targetInfo:TargetInfo;
+		private var options:Options;
 		
-		public function VizAlignCapabilities() {
+		public function VizAlignCapabilities(){
 			//stage.scaleMode = StageScaleMode.NO_SCALE;
 			//stage.align = StageAlign.TOP_LEFT;
 			stage.showDefaultContextMenu = false;
-			stage.addEventListener(Event.RESIZE, function (e:Event):void {
-				trace(stage.stageWidth + " : " + stage.stageHeight);
-			});
+			stage.addEventListener(Event.RESIZE, function(e:Event):void {
+					trace(stage.stageWidth + " : " + stage.stageHeight);
+				});
 			
 			
 			Style.setStyle(Style.KTU);
@@ -101,6 +105,7 @@ package ktu.utils.align.capabilities {
 			
 			addTCS(arena);
 			addTargetInfo(arena);
+			addOptions();
 			addTargets(arena);
 			
 			controlPanel = new CapabilitiesControls();
@@ -114,15 +119,8 @@ package ktu.utils.align.capabilities {
 			controlPanel.targets = arena.targets;
 			
 			
-			createFullscreen();
-			
 		}
 		
-		private function createFullscreen():void {
-			var _fullscreen:Fullscreen = new Fullscreen();
-			addChild(_fullscreen);
-			VizAlign.align([_fullscreen], [new VizAlignment(new TopRightAligner(), arena)], false, true, true);
-		}
 		
 		private function addTCS(arena:VizAlignArena):void {
 			var l:VizAlignLogo = new VizAlignLogo();
@@ -203,14 +201,10 @@ package ktu.utils.align.capabilities {
 		}
 		
 		private function addTargetInfo(arena:VizAlignArena):void {
-			var targetInfo:TargetInfo = new TargetInfo();
-			targetInfo.name = "target info";
-			
-			var rect:Rectangle = new Rectangle();
-			rect.x = grid.x + grid.width
-			rect.y = grid.y
-			rect.width = stage.stageWidth - rect.x
-			rect.height = grid.height;
+			targetInfo = new TargetInfo();
+			targetInfo.name = "target info"; 
+			targetInfo.addEventListener("open", onTargetInfoClosed);
+			addChild(targetInfo);
 			
 			var targets:Array = [yellow, green, red, purple, cyan];
 			for (var i:int = 0; i < targets.length; i++){
@@ -219,9 +213,40 @@ package ktu.utils.align.capabilities {
 				target.addEventListener(MouseEvent.DOUBLE_CLICK, targetInfo.onTargetSelected);
 			}
 			
-			arena.addTCS(targetInfo);
-			
+			var rect:Rectangle = new Rectangle();
+			rect.x = grid.x + grid.width
+			rect.y = grid.y
+			rect.width = stage.stageWidth - rect.x
+			rect.height = grid.height;
 			VizAlign.align([targetInfo], [new VizAlignment(new CenterAligner(), rect)], false, true, true);
+			
+			targetInfo.x = arena.width;
+		}
+		private function addOptions ():void {
+			options = new Options();
+			options.name = "options";
+			options.addEventListener("open", onOptionsOpen);
+			addChild(options);
+			
+			VizAlign.align([options], [new VizAlignment(new VerticalAligner(), arena)], true, true, true);
+			options.x = -options.width;
+			options.open = false;
+		}
+		
+		private function onOptionsOpen(e:Event):void {
+			if (options.open) {
+				Tweensy.to(options, {x: 0});
+			} else {
+				Tweensy.to(options, {x: -150});
+			}
+		}
+		
+		private function onTargetInfoClosed(e:Event):void {
+			if (targetInfo.open) {
+				Tweensy.to(targetInfo, {x: arena.width - 150});
+			} else {
+				Tweensy.to(targetInfo, {x: arena.width});
+			}
 		}
 		
 		public function exampleRecursion(targets:Array /*VizAlignTarget*/):void {
@@ -229,7 +254,7 @@ package ktu.utils.align.capabilities {
 				if (vat is VizAlignGroup)
 					exampleRecursion(VizAlignGroup(vat).targets);
 				else {
-					var params:Object = { };
+					var params:Object = {};
 					params.x = vat.end.x;
 					params.y = vat.end.y;
 					params.width = vat.end.width;

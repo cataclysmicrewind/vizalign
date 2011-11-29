@@ -11,6 +11,7 @@ package ktu.utils.align.capabilities.ui {
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	import ktu.utils.align.capabilities.gfx.Target;
+	import ktu.utils.align.capabilities.gfx.TargetInfo;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignGroup;
 	import ktu.utils.align.VizAlignTarget;
@@ -63,20 +64,21 @@ package ktu.utils.align.capabilities.ui {
 		private var alignButton:PushButton;
 		private var resetButton:PushButton;
 		
+		
 		private static const BG_COLOR:uint = Style.BOTTOM;
 		private static const VRULE_COLOR:uint = Style.LIST_ROLLOVER;
 		
 		public function CapabilitiesControls(){
 			drawBorder();
 			
-			
-			
+			// presets
 			presets = new Presets();
 			presets.x = 20;
 			presets.y = 20;
 			addChild(presets);
 			presets.addEventListener(Event.SELECT, onPresetSelect);
 			
+			// vrule
 			vrule = new Sprite();
 			vrule.graphics.lineStyle(1, VRULE_COLOR, 1, true, "none", "none", "none");
 			vrule.graphics.lineTo(0, 180);
@@ -84,22 +86,25 @@ package ktu.utils.align.capabilities.ui {
 			vrule.y = 10;
 			addChild(vrule);
 			
+			// target selection
 			targetSelector = new VizAlignTargetSelector();
 			targetSelector.x = 200;
 			targetSelector.y = 20;
 			addChild(targetSelector);
 			
+			// vizalignment selection
 			alignmentSelector = new VizAlignmentSelector();
 			alignmentSelector.x = 310;
 			alignmentSelector.y = 20;
+			addChild(alignmentSelector);
 			
+			// options
 			options = new VizAlignOptions();
 			options.x = 550;
 			options.y = 20;
 			addChild(options);
 			
-			addChild(alignmentSelector);
-			
+			// vrule
 			vrule2 = new Sprite();
 			vrule2.graphics.lineStyle(1, VRULE_COLOR, 1, true, "none", "none", "none");
 			vrule2.graphics.lineTo(0, 180);
@@ -107,6 +112,7 @@ package ktu.utils.align.capabilities.ui {
 			vrule2.y = 10;
 			addChild(vrule2);
 			
+			// align button
 			alignButton = new PushButton(this, 670, 40, "align", onAlignButtonClick);
 			alignButton.width = 60;
 			alignButton.height = 50;
@@ -117,6 +123,7 @@ package ktu.utils.align.capabilities.ui {
 			alignButton.label.textField.defaultTextFormat = fmt;
 			alignButton.label.text = "align";
 			
+			// reset button
 			resetButton = new PushButton(this, 670, 110, "reset", onResetButtonClicked);
 			resetButton.width = 60;
 			resetButton.height = 50;

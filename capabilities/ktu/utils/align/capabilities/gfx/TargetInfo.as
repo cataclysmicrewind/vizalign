@@ -6,7 +6,9 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.StatusEvent;
 	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 	/**
 	 * 
 	 * 	Displays Last Selected target information
@@ -30,10 +32,14 @@ package ktu.utils.align.capabilities.gfx {
 		private static const VRULE_COLOR:uint = Style.LIST_ROLLOVER
 		
 		private var showOrigin:CheckBox;
+		private var tab:Panel;
+		private var _open:Boolean = false;
+		private var tabLabel:Label;
 		
 		
 		public function TargetInfo() {
 			build();
+			open = false;
 		}
 		
 		
@@ -124,6 +130,22 @@ package ktu.utils.align.capabilities.gfx {
 		}
 		
 		private function build():void {
+			
+			// tab
+			tab = new Panel(this, 0, 0);
+			tabLabel = new Label(this, 0, 0, "target info");
+			tabLabel.textField.selectable = true;
+			tab.height = tabLabel.height
+			tabLabel.width = tabLabel.textField.textWidth + 4
+			tabLabel.x = 150/2 - tabLabel.width / 2 - 25;
+			tab.addChild(tabLabel);
+			tab.addEventListener(MouseEvent.CLICK, function (e:MouseEvent):void {
+				open = !open;
+			});
+			
+			
+			
+			// main panel
 			panel = new Panel(this);
 			panel.width = 150;
 			panel.height = 220;
@@ -171,6 +193,26 @@ package ktu.utils.align.capabilities.gfx {
 		private function onShowOrigin(e:Event):void {
 			currentTarget.showOrigin = !currentTarget.showOrigin;
 			currentTarget.redraw();
+		}
+		
+		public function get open():Boolean {
+			return _open;
+		}
+		
+		public function set open(value:Boolean):void {
+			_open = value;
+			if (_open) {
+				// open position
+				tab.rotation = 0;
+				tab.x = 150 / 2 - tab.width / 2;
+				tab.y = 0 - tab.height;
+			} else {
+				// closed position
+				tab.rotation = -90;
+				tab.x = -tab.height
+				tab.y = panel.height / 2 + tab.width / 2;
+			}
+			dispatchEvent(new StatusEvent("open"));
 		}
 		
 	}
