@@ -174,6 +174,7 @@ package ktu.utils.align.capabilities.gfx {
 			targetName = new Label(panel, 5, header.y + header.height + 15);
 			targetName.autoSize = false;
 			targetName.width = panel.width - 10;
+			targetName.text = "click a target for more info"
 			
 			targetProps = new Label(panel, 0, header.y + header.height + 5 + 40);
 			targetProps.textField.multiline = true;
@@ -183,6 +184,7 @@ package ktu.utils.align.capabilities.gfx {
 			targetDetails.width = panel.width - 110;
 			targetDetails.height = panel.height - targetDetails.y - 5;
 			targetDetails.textField.multiline = true;
+			
 			
 			showOrigin = new CheckBox(panel, 10, 0, "show origin", onShowOrigin);
 			showOrigin.y = panel.height - showOrigin.height - 10;

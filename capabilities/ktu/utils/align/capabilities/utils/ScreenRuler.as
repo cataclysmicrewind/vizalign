@@ -1,4 +1,5 @@
 package ktu.utils.align.capabilities.utils {
+	import flash.display.Graphics;
 	import flash.display.Sprite;
 	import flash.display.StageDisplayState;
 	import flash.events.Event;
@@ -17,16 +18,24 @@ package ktu.utils.align.capabilities.utils {
 		
 		private var _activated:Boolean = false;
 		private var _delay:int = 10;
-		public var strokeColor:uint = 0xFF0000;
-		public var fillColor:uint = 0xFF0000;
+		public var strokeColor:uint = 0x073F3F;
+		public var fillColor:uint = 0x073F3F;
 		public var fillAlpha:Number = .4;
-		
+		private var distanceX:int = 15;
+		private var distanceY:int = 15;
+		private var paddingX:int = 15;
+		private var paddingY:int = 15;
+		private var anchor:Point;
 		
 		private var txt:TextField = new TextField();
+		private var copy:Sprite = new Sprite();
+		private var selection:Sprite = new Sprite();
 		
 		private var intervalID:uint;
+		private var dragIntervalID:uint;
+		private var copytxt:TextField;
 		
-		public function ScreenRuler() {
+		public function ScreenRuler(){
 			txt.autoSize = "left";
 			txt.border = true
 			txt.background = true;
@@ -71,15 +80,36 @@ package ktu.utils.align.capabilities.utils {
 			activated = true;
 		}
 		
-		private var distanceX:int = 10;
-		private var distanceY:int = 10;
-		private var paddingX:int = 10;
-		private var paddingY:int = 10;
 		
 		private function update():void {
 			
 			// info
 			var mousePos:Point = new Point(stage.mouseX, stage.mouseY);
+			var rect:Rectangle = drawCross(graphics, mousePos);
+			
+			// position text
+			txt.text = mousePos.x + " : " + mousePos.y;
+			var inside:Rectangle = rect.clone();
+			inside.inflate(-txt.width + paddingX - distanceX, -txt.height - paddingY - distanceY);
+			inside.offset(0, -txt.height + paddingY);
+			
+			if (mousePos.x > inside.width){
+				// place on left side of shit
+				txt.x = mousePos.x - distanceX - txt.width;
+			} else {
+				// place on right side of shit
+				txt.x = mousePos.x + distanceX;
+			}
+			if (mousePos.y < inside.y){
+				// place below shit
+				txt.y = mousePos.y + distanceY;
+			} else {
+				// place above shit
+				txt.y = mousePos.y - distanceX - txt.height;
+			}
+			setChildIndex(txt, numChildren-1);
+		}
+		private function drawCross(g:Graphics, mousePos:Point):Rectangle {
 			var rect:Rectangle = new Rectangle();
 			if (stage.displayState == StageDisplayState.NORMAL){
 				rect.width = stage.stageWidth;
@@ -90,39 +120,56 @@ package ktu.utils.align.capabilities.utils {
 			}
 			
 			// lines
-			graphics.clear();
-			graphics.beginFill(strokeColor);
-			graphics.drawRect(0, mousePos.y, rect.width, 1);
-			graphics.drawRect(mousePos.x, 0, 1, rect.height);
-			graphics.endFill();
-			
-			// position text
-			txt.text = mousePos.x + " : " + mousePos.y;
-			var inside:Rectangle = rect.clone();
-			inside.inflate( -txt.width + paddingX - distanceX, -txt.height - paddingY - distanceY);
-			inside.offset(0, -txt.height + paddingY);
-			
-			if (mousePos.x > inside.width) {
-				// place on left side of shit
-				txt.x = mousePos.x - distanceX - txt.width;
-			} else {
-				// place on right side of shit
-				txt.x = mousePos.x + distanceX;
-			}
-			if (mousePos.y < inside.y) {
-				// place below shit
-				txt.y = mousePos.y + distanceY;
-			} else {
-				// place above shit
-				txt.y = mousePos.y - distanceX - txt.height;
-			}
+			g.clear();
+			g.beginFill(strokeColor);
+			g.drawRect(0, mousePos.y, rect.width, 1);
+			g.drawRect(mousePos.x, 0, 1, rect.height);
+			g.endFill();
+			return rect;
+		}
+		private function onMouseDown(e:MouseEvent):void {
+			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp)
+			// get position and store anchor
+			var mousePos:Point = new Point(stage.mouseX, stage.mouseY);
+			anchor = mousePos.clone();
+			// add interval for drawing rect
+			dragIntervalID = setInterval(dragUpdate, _delay);
+			// make copy of current position and leave there
+			drawCross(copy.graphics, mousePos);
+			addChild(copy);
+			addChild(selection);
+			// place copy of position text
+			copytxt = new TextField();
+			copytxt.autoSize = "left";
+			copytxt.border = true
+			copytxt.background = true;
+			addChild(copytxt);
+			copytxt.text = txt.text;
+			copytxt.x = txt.x;
+			copytxt.y = txt.y;
 		}
 		
-		private function onMouseDown(e:MouseEvent):void {
-			// make copy of current position and leave there
-			// make box from planted position to current position
-			// show and move width height box
+		private function onMouseUp(e:MouseEvent):void {
+			stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			removeChild(copy);
+			removeChild(selection);
+			removeChild(copytxt);
+			clearInterval(dragIntervalID);
+		}
 		
+		private function dragUpdate():void {
+			// draw box from current pos to anchor
+			
+			var g:Graphics = selection.graphics;
+			g.clear();
+			g.beginFill(fillColor, fillAlpha);
+			g.drawRect(anchor.x, anchor.y, mouseX - anchor.x, mouseY - anchor.y);
+			g.endFill();
+			
+			
+			
+			
+			txt.appendText("\n" + selection.width + " : " + selection.height);
 		}
 	}
 }
