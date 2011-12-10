@@ -8,6 +8,7 @@ package ktu.utils.align.capabilities.ui {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.NetStatusEvent;
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	import ktu.utils.align.capabilities.gfx.Target;
@@ -167,6 +168,14 @@ package ktu.utils.align.capabilities.ui {
 			if (!applyResults) {
 				animateTargets(results);
 			}
+			// send to syntax visualizer
+			var obj:Object = { };
+			obj.targets = targets;
+			obj.alignments = vizAlignments;
+			obj.ignoreOrigins = ignoreOrigins;
+			obj.pixelHinting = pixelHinting;
+			obj.applyResults = applyResults;
+			dispatchEvent(new NetStatusEvent("vizalign", false, false, obj));
 		}
 		
 		private function animateTargets(array:Array):void {

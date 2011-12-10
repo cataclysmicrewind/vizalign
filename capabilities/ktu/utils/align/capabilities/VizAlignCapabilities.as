@@ -1,5 +1,7 @@
 package ktu.utils.align.capabilities {
 	
+	import com.bit101.components.HSlider;
+	import com.bit101.components.Slider;
 	import com.bit101.components.Style;
 	import com.flashdynamix.motion.Tweensy;
 	import flash.display.DisplayObject;
@@ -8,11 +10,14 @@ package ktu.utils.align.capabilities {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.NetStatusEvent;
 	import flash.events.StatusEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.system.fscommand;
 	import flash.system.System;
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 	import ktu.utils.align.aligners.CenterAligner;
 	import ktu.utils.align.aligners.TopRightAligner;
 	import ktu.utils.align.aligners.VerticalAligner;
@@ -87,37 +92,49 @@ package ktu.utils.align.capabilities {
 		private var targetInfo:TargetInfo;
 		private var options:Options;
 		private var screenRuler:ScreenRuler = new ScreenRuler();
+		private var syntax:SyntaxVisualizer;
 		
-		public function VizAlignCapabilities(){
+		public function VizAlignCapabilities() {
+			// set stage
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
 			stage.showDefaultContextMenu = false;
-			
-			
+			// set style
 			Style.setStyle(Style.KTU);
-			
+			// create arena
 			arena = new VizAlignArena();
 			arena.name = "arena";
 			arena.setSize(750, 500);
 			addChild(arena);
-			
+			// create targets
 			createTargets();
-			
+			// add logo and grid
 			addTCS(arena);
+			// create target info
 			addTargetInfo(arena);
+			// create options
 			addOptions();
+			// add targets to arena
 			addTargets(arena);
-			
+			// create controls
 			controlPanel = new CapabilitiesControls();
 			controlPanel.y = 500;
 			addChild(controlPanel);
-			
+			// send possible tcs to controls
 			var tcs:Array = arena.targetCoordinateSpaces;
 			tcs.unshift(arena);
 			tcs = tcs.concat(arena.targets);
 			controlPanel.targetCoordinateSpaces = tcs;
 			controlPanel.targets = arena.targets;
-			
+			// create syntax visualizer
+			syntax = new SyntaxVisualizer();
+			syntax.y = 475 - 4;
+			syntax.setSize(750, 25);
+			syntax.defaultTextFormat = new TextFormat("_typewriter", 12, 0xAEC8C8, false, null, null, null, null, TextFormatAlign.CENTER);
+			controlPanel.addEventListener("vizalign", function (e:NetStatusEvent):void {
+				syntax.visualize(e.info);
+			});
+			addChild(syntax);
 			
 		}
 		
