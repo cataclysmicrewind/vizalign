@@ -5,6 +5,9 @@ package ktu.utils.sorting {
 	
 	/**
 	 * sort method for Rectangle by the middle point on the y axis
+	 * 
+	 * this is a method to be used in Array.sort(). it expects Rectangle to be in the array.
+	 * it sorts them based on the middle point on the y axis. (calculated as rect.top + rect.height/2)
 	 * @param	a
 	 * @param	b
 	 * @return

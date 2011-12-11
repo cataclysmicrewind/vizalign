@@ -5,6 +5,10 @@ package ktu.utils.sorting {
 	
 	/**
 	 * sort method for Rectangle by the .right property, then by the .left property if they are equal
+	 * 
+	 * this is a method to be used in Array.sort(). it expects Rectangle to be in the array.
+	 * it sorts them based on the .right property first. if two objects share that value, it then sorts them by the
+	 * .left property which is essentially saying that who ever is smaller in width goes first, but starting from the right.
 	 * @param	a
 	 * @param	b
 	 * @return
