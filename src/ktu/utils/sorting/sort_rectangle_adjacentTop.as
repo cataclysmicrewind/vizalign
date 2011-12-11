@@ -5,6 +5,10 @@ package ktu.utils.sorting {
 	
 	/**
 	 * sort method for Rectangle by the .top property, then by .bottom property if equal
+	 * 
+	 * this is a method to be used in Array.sort(). it expects Rectangle to be in the array.
+	 * it sorts them based on the .top property first. if two objects share that value, it then sorts them by the
+	 * .bottom property which is essentially saying that who ever is smaller in height goes first, but starting from the top.
 	 * @param	a
 	 * @param	b
 	 * @return
