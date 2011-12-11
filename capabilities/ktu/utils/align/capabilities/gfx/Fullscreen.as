@@ -11,6 +11,7 @@ package ktu.utils.align.capabilities.gfx {
 	import flash.display.Sprite;
 	import flash.display.StageDisplayState;
 	import flash.events.Event;
+	import flash.events.FullScreenEvent;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	import flash.system.Capabilities;
@@ -56,7 +57,7 @@ package ktu.utils.align.capabilities.gfx {
 		
 		private function onGoClick(e:Event = null):void {
 			// toggle fullscreen
-			
+			stage.addEventListener(FullScreenEvent.FULL_SCREEN, onStageFullScreen);
 			
 			stage.fullScreenSourceRect = new Rectangle(0, 0, int(_w.text), int(_h.text));
 			
@@ -67,15 +68,21 @@ package ktu.utils.align.capabilities.gfx {
 						return;
 					}
 				}
+				stage.displayState = StageDisplayState.FULL_SCREEN
+			} else {
+				stage.displayState = StageDisplayState.NORMAL
+			}
+		}
+		
+		private function onStageFullScreen(e:FullScreenEvent):void {
+			if (e.fullScreen) {
 				_go.labelText = "exit fullscreen";
 				_go.width = 80;
 				_go.x = 25;
-				stage.displayState = StageDisplayState.FULL_SCREEN
 			} else {
 				_go.labelText = "fullscreen";
 				_go.width = 70;
 				_go.x = 30;
-				stage.displayState = StageDisplayState.NORMAL
 			}
 		}
 		
