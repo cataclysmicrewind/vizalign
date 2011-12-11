@@ -24,7 +24,7 @@ package ktu.utils.align.aligners {
 			for ( var i:int = 0; i < length; i++ ) {
 				var target:Rectangle = targets[i];
 				target.x = tcsRightEdge - target.width;
-				target.y = tcsBottomEdge - target.width;
+				target.y = tcsBottomEdge - target.height;
 			}
 		}
 	}
