@@ -19,11 +19,11 @@ package ktu.utils.align {
 	 * 																																							<br/>
 	 * Given this sentance 'I want to align myMovieClip to the left of the stage':
 	 * 	- 'myMovieClip' represents the targets,
-	 * 	- 'to the left' represents the type, and 
-	 *  - 'of the stage' represents the targetCoordinateSpace (tcs).															<br/>
+	 * 	- 'to the left' represents the type,
+	 *  - 'of the stage' represents the targetCoordinateSpace (tcs).																							<br/>
 	 * 																																							<br/>
 	 * I use the term targetCoordinateSpace because of the doucmentation relating to DisplayObject.getBounds(). 
-	 * This particualr method describes its argument as a 'targetCoordinateSpace' and I have determined that
+	 * This particular method describes its argument as a 'targetCoordinateSpace' and I have determined that
 	 * the same concept applies to alignment. The only major difference being that VizAlignments really only
 	 * use a portion of a targetCoordinateSpace. 
 	 * 
@@ -35,6 +35,8 @@ package ktu.utils.align {
 	public class VizAlignment {
 		/**
 		 *  place holder when aligning targets to the bounding area they create
+		 * 
+		 *  using this as your tcs is akin to using the align panel in the flash ide without selecting the 'to stage' button
 		 */
 		static public const TO_TARGETS	:Rectangle	= new Rectangle(-1, -1, -1, -1);
 		
@@ -48,6 +50,9 @@ package ktu.utils.align {
 		 * the object that defines a rectangle for the targets to align to,
 		 * this is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
 		 * align to the left of the [stage]. The tcs is [].
+		 * 
+		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
+		 * 		DisplayObject, Stage, Rectangle
 		 */
 		public var tcs	:*;
 		/**
@@ -64,8 +69,8 @@ package ktu.utils.align {
 		/**
 		 *  The constructor needs to have both the rectangleAligner and targetCoordinateSpace passed in,
 		 *  this makes sure that no VizAlignment objects will be unsuitable for any VizAlign.align() call
-		 * @param	type 	IRectangleAligner	any object that inmplements that interface (an object that can align rectangles) 
-		 * @param	tcs		* 	must be a DisplayObject, Stage, or Rectangle. 
+		 * @param	type 	any object that inmplements that interface (an object that can align rectangles) 
+		 * @param	tcs		must be a DisplayObject, Stage, or Rectangle. 
 		 */
 		public function VizAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {

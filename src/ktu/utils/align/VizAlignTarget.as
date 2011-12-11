@@ -12,6 +12,12 @@ package ktu.utils.align {
 	 * of the target before alignment, the resulting position after alignment, and is capable of compensating
 	 * for any wacky origins (or rotation point) of the given DisplayObject.
 	 * 
+	 * the target must be a DisplayObject (that's the point of VizAlign!). 
+	 * 
+	 * in normal routine, you will not need to change any flags in this object. most will be taken care of in the VizAlign.align parameters.
+	 * your biggest concern is if you wish to animate. to animate, the applyResults flag on VizAlign.align must be false. You then
+	 * take the .end property of each target for the animation code. really simple.
+	 * 
 	 */
 	public class VizAlignTarget {
 		
@@ -88,7 +94,7 @@ package ktu.utils.align {
 		 * constructor
 		 * @param	target
 		 */
-		public function VizAlignTarget(target:DisplayObject = null):void {
+		public function VizAlignTarget(target:DisplayObject):void {
 			_target = target;
 			init();
 		}
