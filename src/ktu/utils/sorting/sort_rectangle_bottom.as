@@ -5,6 +5,9 @@ package ktu.utils.sorting {
 	
 	/**
 	 * sort method for Rectangle by the .bottom property
+	 * 
+	 * this is a method to be used in Array.sort(). it expects Rectangle to be in the array.
+	 * it sorts them based on the .bottom property. 
 	 * @param	a
 	 * @param	b
 	 * @return

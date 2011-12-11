@@ -107,9 +107,9 @@ package ktu.utils.align {
 		
 		/** @private */
 		override public function toString ():String {
-			var str:String = "VizAlignGroup:: "
+			var str:String = "VizAlignGroup::" + _target.name + "\n";
 			for (var i:int = 0; i < _targets.length; i++) 
-				str += _target.toString() + "\n";
+				str += "\t" + _target.toString() + ((i == _targets.length-1) ? "" : "\n");
 			return str;
 		}
 	}
