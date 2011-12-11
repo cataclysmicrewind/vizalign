@@ -102,12 +102,11 @@ package com.bit101.components
 		protected function drawFace():void
 		{
 			_face.graphics.clear();
-			if(_down)
-			{
+			if(_down){
 				_face.graphics.beginFill(Style.BUTTON_DOWN);
-			}
-			else
-			{
+			} else if (_over) {
+				_face.graphics.beginFill(Style.LIST_ROLLOVER);
+			} else {
 				_face.graphics.beginFill(Style.BUTTON_FACE);
 			}
 			_face.graphics.drawRect(0, 0, _width - 2, _height - 2);
@@ -163,6 +162,7 @@ package com.bit101.components
 		protected function onMouseOver(event:MouseEvent):void
 		{
 			_over = true;
+			drawFace();
 			addEventListener(MouseEvent.ROLL_OUT, onMouseOut);
 		}
 		
@@ -175,6 +175,7 @@ package com.bit101.components
 			_over = false;
 			if(!_down)
 			{
+				drawFace();
 				_face.filters = [getShadow(1)];
 			}
 			removeEventListener(MouseEvent.ROLL_OUT, onMouseOut);
