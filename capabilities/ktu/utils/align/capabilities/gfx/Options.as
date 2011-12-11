@@ -2,6 +2,7 @@ package ktu.utils.align.capabilities.gfx {
 	import com.bit101.components.CheckBox;
 	import com.bit101.components.Label;
 	import com.bit101.components.Panel;
+	import com.bit101.components.PushButton;
 	import com.bit101.components.Style;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -18,6 +19,8 @@ package ktu.utils.align.capabilities.gfx {
 		
 		public var currentTarget:Target;
 		
+		private var btnTab:PushButton;
+		
 		private var panel:Panel;
 		private var header:Label;
 		private var targetDetails:Label;
@@ -28,9 +31,7 @@ package ktu.utils.align.capabilities.gfx {
 		private static const VRULE_COLOR:uint = Style.LIST_ROLLOVER
 		
 		private var showOrigin:CheckBox;
-		public var tab:Panel;
 		private var _open:Boolean = false;
-		private var tabLabel:Label;
 		private var screenRuler:CheckBox;
 		private var highlightTCS:CheckBox;
 		
@@ -42,14 +43,14 @@ package ktu.utils.align.capabilities.gfx {
 			_open = value;
 			if (_open){
 				// open position
-				tab.rotation = 0;
-				tab.x = 150 / 2 - tab.width / 2;
-				tab.y = 0 - tab.height;
+				btnTab.rotation = 0;
+				btnTab.x = 150 / 2 - btnTab.width / 2;
+				btnTab.y = 0 - btnTab.height;
 			} else {
 				// closed position
-				tab.rotation = 90;
-				tab.x = panel.width + tab.height;
-				tab.y = panel.height / 2 - tab.width / 2;
+				btnTab.rotation = 90;
+				btnTab.x = panel.width + btnTab.height;
+				btnTab.y = panel.height / 2 - btnTab.width / 2;
 			}
 			dispatchEvent(new StatusEvent("open"));
 		}
@@ -65,19 +66,9 @@ package ktu.utils.align.capabilities.gfx {
 		private function build():void {
 			
 			// tab
-			tab = new Panel(this, 0, 0);
-			
-			tabLabel = new Label(this, 0, 0, "options");
-			tabLabel.textField.selectable = true;
-			
-			tab.height = tabLabel.height
-			tabLabel.width = tabLabel.textField.textWidth + 4
-			tabLabel.x = 150 / 2 - tabLabel.width / 2 - 25;
-			tab.addChild(tabLabel);
-			tab.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void {
-					open = !open;
-				});
-			
+			btnTab = new PushButton(this, 0, 0, "options", function (e:MouseEvent):void {
+				open = !open;
+			});
 			
 			
 			// main panel

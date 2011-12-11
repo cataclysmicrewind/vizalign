@@ -97,13 +97,15 @@ package ktu.utils.align.capabilities.ui {
 			alignmentSelector = new VizAlignmentSelector();
 			alignmentSelector.x = 310;
 			alignmentSelector.y = 20;
-			addChild(alignmentSelector);
+			
 			
 			// options
 			options = new VizAlignOptions();
 			options.x = 550;
 			options.y = 20;
 			addChild(options);
+			
+			addChild(alignmentSelector);
 			
 			// vrule
 			vrule2 = new Sprite();

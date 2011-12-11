@@ -124,6 +124,13 @@ package ktu.utils.align.capabilities.ui {
 			item.vizAlignments = [ { type:"distributeTop", tcs:"grid" }, { type:"left", tcs:"grid" } ];
 			item.options = ["ignoreOrigins", "animate"];
 			list.addItem(item);
+			
+			item = { };
+			item.label = "distributeVertical & right";
+			item.targets = ["cyan", "red", "green"];
+			item.vizAlignments = [ { type:"distributeVertical", tcs:"yellow" }, { type:"right", tcs:"yellow" } ];
+			item.options = ["ignoreOrigins", "animate"];
+			list.addItem(item);
 		}
 		
 		/**

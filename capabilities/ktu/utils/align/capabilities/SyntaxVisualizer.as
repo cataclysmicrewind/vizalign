@@ -46,10 +46,10 @@ package ktu.utils.align.capabilities {
 		public function visualize(obj:Object):String {
 			txt.background = true;
 			txt.backgroundColor = 0x000C0F
+			
 			var str:String = generateString(obj);
 			
 			txt.htmlText = str;
-			trace(txt.htmlText);
 			scrollBar.setSliderParams(0, txt.maxScrollH, 0); 
 			scrollBar.setThumbPercent(txt.width / txt.textWidth);
 			scrollBar.pageSize = 1;

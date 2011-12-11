@@ -58,11 +58,11 @@ package ktu.utils.align.capabilities.ui {
 			list = new List(this, 10, header.height + 30);
 			list.width += 90;
 			
-			up = new PushButton(this, list.x + list.width, list.y, "△", onUpClicked);
+			up = new PushButton(this, list.x + list.width, list.y, "^", onUpClicked);
 			up.width = 20,
 			up.height = 20;
 			
-			down = new PushButton(this, list.x + list.width, list.y + list.height, "▽", onDownClicked);
+			down = new PushButton(this, list.x + list.width, list.y + list.height, "v", onDownClicked);
 			down.width = 20;
 			down.height = 20;
 			down.y -= down.height;

@@ -128,7 +128,7 @@ package ktu.utils.align.capabilities {
 			controlPanel.targets = arena.targets;
 			// create syntax visualizer
 			syntax = new SyntaxVisualizer();
-			syntax.y = 475 - 4;
+			syntax.y = 475 - 4 - 6;
 			syntax.setSize(750, 25);
 			syntax.defaultTextFormat = new TextFormat("_typewriter", 12, 0xAEC8C8, false, null, null, null, null, TextFormatAlign.CENTER);
 			controlPanel.addEventListener("vizalign", function (e:NetStatusEvent):void {
