@@ -7,6 +7,8 @@ package ktu.utils.align {
 	import flash.display.StageDisplayState;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.utils.describeType;
+	import flash.utils.getQualifiedClassName;
 	import ktu.utils.align.IRectangleAligner;
 
 	/**
@@ -54,7 +56,7 @@ package ktu.utils.align {
 		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
 		 * 		DisplayObject, Stage, Rectangle
 		 */
-		public var tcs	:*;
+		public var targetCoordinateSpace:*;
 		/**
 		 *  ignores the origin of the tcs (if any)	
 		 *  
@@ -69,20 +71,21 @@ package ktu.utils.align {
 		/**
 		 *  The constructor needs to have both the rectangleAligner and targetCoordinateSpace passed in,
 		 *  this makes sure that no VizAlignment objects will be unsuitable for any VizAlign.align() call
-		 * @param	type 	any object that inmplements that interface (an object that can align rectangles) 
-		 * @param	tcs		must be a DisplayObject, Stage, or Rectangle. 
+		 * @param	rectangleAligner 	any object that inmplements that interface (an object that can align rectangles) 
+		 * @param	targetCoordinateSpace		must be a DisplayObject, Stage, or Rectangle. 
+		 * @param	ignoreTCSOrigin		ignore the origin of the targetCoordinateSpace
 		 */
 		public function VizAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
-				case tcs is DisplayObject:
-				case tcs is Stage:
-				case tcs is Rectangle:
+				case targetCoordinateSpace is Stage:
+				case targetCoordinateSpace is DisplayObject:
+				case targetCoordinateSpace is Rectangle:
 					break;
 				default:
 					throw new Error (BAD_TCS);
 			}
 			this.rectangleAligner = rectangleAligner;
-			this.tcs = targetCoordinateSpace;
+			this.targetCoordinateSpace = targetCoordinateSpace;
 			this.ignoreTCSOrigin = ignoreTCSOrigin
 		}
 		
@@ -97,7 +100,7 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
-			rectangleAligner.alignRectangles(getTCSBounds(tcs, ignoreTCSOrigin, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
+			rectangleAligner.alignRectangles(getTCSBounds(targetCoordinateSpace, ignoreTCSOrigin, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
 		}
 		
 		
@@ -159,7 +162,7 @@ package ktu.utils.align {
 		/** @private **/
 		public function toString ():String {
 			var str:String = "{type: " + rectangleAligner;
-			str += ", tcs:" + tcs.name + "}";
+			str += ", tcs:" + targetCoordinateSpace.name + "}";
 			return str;
 		}
 	}
