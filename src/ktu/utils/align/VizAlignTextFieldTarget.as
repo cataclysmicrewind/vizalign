@@ -36,6 +36,8 @@ package ktu.utils.align {
 	 */
 	public class VizAlignTextFieldTarget extends VizAlignTarget {
 		
+		static private const MUST_TEXTFIELD:String = "VizAlignTextFieldTarget : target must be of type TextField";
+		
 		
 		//	instead of using the bounds of the textfield, we use textWidth, textHeight
 		public var useTextBounds:Boolean = false;
@@ -50,6 +52,7 @@ package ktu.utils.align {
 		override public function set target(value:DisplayObject):void {
 			if (value is TextField)
 				super.target = value;
+			else throw new Error(MUST_TEXTFIELD);
 		}
 		
 		public function VizAlignTextFieldTarget(target:TextField){
