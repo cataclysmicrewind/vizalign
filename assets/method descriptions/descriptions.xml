@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<method type="LEFT" inPanel="true">
+		Align each target so the left edge matches the left edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="HORIZONTAL" inPanel="true">
+		Align each target so the visual x center of matches the visual x center of the target coordinate space object.
+		<target x="40"  y="10"  w="20"  h="30" />
+		<target x="100" y="80"  w="40"  h="50" />
+		<target x="120" y="30"  w="30"  h="30" />
+	</method>
+	<method type="RIGHT" inPanel="true">
+		Align each target so the right edge matches the right edge of the target coordinate space object.
+		<target x="20"  y="10"  w="60"  h="10" />
+		<target x="70"  y="90"  w="10"  h="40" />
+	</method>
+	<method type="CENTER" inPanel="false">
+		Align each target so the visual x center and y center match the visual x and y center of the target coordinate space object.
+		<target x="50"  y="60"  w="50"  h="50" />
+		<target x="20"  y="10"  w="10"  h="30" />
+		<target x="100" y="40"  w="20"  h="20" />
+	</method>
+	<method type="TOP" inPanel="true">
+		Align each target so the top edge matches the top edge of the target coordinate space object.
+		<target x="40"  y="30"  w="30"  h="20" />
+		<target x="70"  y="90"  w="50"  h="40" />
+	</method>
+	<method type="VERTICAL" inPanel="true">
+		Align the y center of each target to match the x center of the target coordinate space object.
+		<target x="30"  y="30"  w="30"  h="50" />
+		<target x="110"  y="50"  w="50"  h="30" />
+	</method>
+	<method type="BOTTOM" inPanel="true">
+		Align the targets bottom edge to macth the bottom edge of the target coordinate space object.
+		<target x="20"  y="10"  w="60"  h="10" />
+		<target x="70"  y="90"  w="10"  h="40" />
+	</method>
+	<method type="TOP_LEFT" inPanel="false">
+		Align the targets top and left edge to match the top and left edge of the target coordinate space object.
+		<target x="40"  y="30"  w="30"  h="20" />
+		<target x="70"  y="90"  w="50"  h="40" />
+	</method>
+	<method type="TOP_RIGHT" inPanel="false">
+		Align the targets top and right edge to match the top and right edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="BOTTOM_LEFT" inPanel="false">
+		Align the targets bottom and left edge to macth the bottom and left edge of the target coordinate space object.
+		<target x="20"  y="10"  w="60"  h="10" />
+		<target x="70"  y="90"  w="10"  h="40" />
+	</method>
+	<method type="BOTTOM_RIGHT" inPanel="false">
+		Align the targets bottom and right edge to macth the bottom and right edge of the target coordinate space object.
+		<target x="20"  y="10"  w="60"  h="10" />
+		<target x="70"  y="90"  w="10"  h="40" />
+	</method>
+	<method type="blank" inPanel="false">
+		
+	</method>
+	<method type="MATCH_WIDTH" inPanel="true">
+		Make all targets have the same width as the target coordinate space object.
+		<target x="10"  y="10"  w="60"  h="30" />
+	</method>
+	<method type="MATCH_HEIGHT" inPanel="true">
+		Make all targets have the same height as the target coordinate space object.
+		<target x="10"  y="10"  w="60"  h="30" />
+	</method>
+	<method type="MATCH_SIZE" inPanel="true">
+		Make all targets have the same width and height as the target coordinate space object.
+		<target x="10"  y="10"  w="60"  h="30" />
+	</method>
+	<method type="SCALE_TO_FIT" inPanel="false">
+		Make all the targets match the size of the target coordinate space object while maintaining the original width/height ratio.
+		<target x="50"  y="0"  w="30"  h="40" />
+		<target x="0"  y="40"  w="60"  h="20" />
+	</method>
+	<method type="blank" inPanel="false">
+		
+	</method>
+	<method type="SPACE_HORIZONTAL" inPanel="true">
+		Evenly space the targets along the y axis inside of the target coordinate space object.
+		<target x="20"  y="70"  w="30"  h="10" />
+		<target x="80"  y="70"  w="20"  h="10" />
+		<target x="40"  y="70"  w="20"  h="10" />
+		<target x="70"  y="70"  w="10"  h="10" />
+		<target x="160" y="70"  w="30"  h="10" />
+		<target x="120" y="70"  w="20"  h="10" />
+		<target x="130" y="70"  w="10"  h="10" />
+	</method>
+	<method type="SPACE_VERTICAL" inPanel="true">
+		Evenly space the targets along the y axis inside of the target coordinate space object.
+		<target x="100" y="10"  w="10"  h="30" />
+		<target x="100" y="30"  w="10"  h="20" />
+		<target x="100" y="50"  w="10"  h="30" />
+		<target x="100" y="100" w="10"  h="20" />
+		<target x="100" y="130" w="10"  h="10" />
+	</method>
+	<method type="blank" inPanel="false">
+		
+	</method>
+	<method type="DIST_LEFT" inPanel="true">
+		Distribute the left edge of the targets evenly inside the target coordinate space object. **Notice the distance between each left edge is equivalent.
+		<target x="20"  y="50"  w="50"  h="20" />
+		<target x="70"  y="50"  w="40"  h="20" />
+		<target x="110" y="50"  w="30"  h="20" />
+		<target x="150" y="50"  w="50"  h="20" />
+	</method>
+	<method type="DIST_HORIZONTAL" inPanel="true">
+		Distribute the x center of the targets evenly inside the target coordinate space object. **Notice the distance between the x center of each target is equivalent.
+		<target x="20"  y="50"  w="60"  h="20" />
+		<target x="70"  y="60"  w="40"  h="20" />
+		<target x="110" y="50"  w="20"  h="20" />
+		<target x="150" y="60"  w="40"  h="20" />
+	</method>
+	<method type="DIST_RIGHT" inPanel="true">
+		Distribute the right edge of the targets evenly inside the target coordinate space object. **Notice the distance between each right edge is equivalent.
+		<target x="20"  y="50"  w="60"  h="20" />
+		<target x="70"  y="60"  w="40"  h="20" />
+		<target x="110" y="50"  w="20"  h="20" />
+		<target x="150" y="60"  w="40"  h="20" />
+	</method>
+	<method type="DIST_TOP" inPanel="true">
+		Distribute the top edge of the targets evenly inside the target coordinate space object.
+		<target x="90"  y="20"  w="60"  h="20" />
+		<target x="70"  y="60"  w="40"  h="30" />
+		<target x="100" y="50"  w="20"  h="20" />
+		<target x="100" y="100" w="40"  h="20" />
+	</method>
+	<method type="DIST_VERTICAL" inPanel="true">
+		Distribute the y center of the targets evenly inside the target coordinate space object.
+		<target x="90"  y="20"  w="60"  h="20" />
+		<target x="70"  y="60"  w="40"  h="30" />
+		<target x="100" y="50"  w="20"  h="20" />
+		<target x="100" y="100" w="40"  h="20" />
+	</method>
+	<method type="DIST_BOTTOM" inPanel="true">
+		Distribute the bottom edge of the targets evenly inside the target coordinate space object.
+		<target x="90"  y="20"  w="60"  h="20" />
+		<target x="70"  y="60"  w="40"  h="30" />
+		<target x="100" y="50"  w="20"  h="20" />
+		<target x="100" y="100" w="40"  h="20" />
+	</method>
+	<method type="blank" inPanel="false">
+		
+	</method>
+	<method type="ADJACENT_LEFT" inPanel="false">
+		Align the targets right edge against the left edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_RIGHT" inPanel="false">
+		Align the targets left edge against the right edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_TOP" inPanel="false">
+		Align the targets bottom edge against the top edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_BOTTOM" inPanel="false">
+		Align the targets top edge againts the bottom edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_TL" inPanel="false">
+		Align the targets bottom and right edge against the top and left edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_TR" inPanel="false">
+		Align the targets bottom and left edge against the top and right edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_BL" inPanel="false">
+		Align the targets top and right edge againts the bottom and left edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_BR" inPanel="false">
+		Align the targets top and left edge againts the bottom and right edge of the target coordinate space object.
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="110" y="80"  w="10"  h="30" />
+	</method>
+	<method type="ADJACENT_HORIZONTAL" inPanel="false">
+		Stack the targets side by side around the target coordinate space object. **Which side the target ends up on is determined mostly by using the center
+		<target x="30"  y="40"  w="20"  h="20" />
+		<target x="70"  y="60"  w="10"  h="30" />
+		<target x="90"  y="50"  w="10"  h="10" />
+		<target x="110" y="70"  w="20"  h="50" />
+	</method>
+	<method type="ADJACENT_VERTICAL" inPanel="false">
+		Stack the targets on top of each other around the target coordinate space object. **Which side the target ends up on is determined mostly by using the center
+		<target x="80"  y="40"  w="20"  h="20" />
+		<target x="80"  y="120" w="30"  h="10" />
+		<target x="90"  y="90"  w="10"  h="10" />
+		<target x="80"  y="10"  w="20"  h="50" />
+	</method>
+</data>
