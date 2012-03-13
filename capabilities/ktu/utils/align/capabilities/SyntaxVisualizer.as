@@ -101,7 +101,7 @@ package ktu.utils.align.capabilities {
 			for (var i:int = 0; i < alignments.length; i++) {
 				var a:VizAlignment = alignments[i];
 				var type:XML = describeType(a.rectangleAligner);
-				ret += color("new", "4E94E0") + " " + color("VizAlignment", "23AFA5") + "(" + color("new", "4E94E0") + " " + color(type.@name.split("::")[1], "23AFA5") + "(), " + a.tcs.name + ")";
+				ret += color("new", "4E94E0") + " " + color("VizAlignment", "23AFA5") + "(" + color("new", "4E94E0") + " " + color(type.@name.split("::")[1], "23AFA5") + "(), " + a.targetCoordinateSpace.name + ")";
 				ret += (i == alignments.length - 1) ? "" : ", ";
 			}
 			ret += ")";
