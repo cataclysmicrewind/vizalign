@@ -33,7 +33,6 @@ package ktu.utils.align {
 		 * position after alignment
 		 */
 		protected var _end:Rectangle = new Rectangle();
-		
 		/**
 		 * the origin location in relation to the top left pixel of the target
 		 */
@@ -90,6 +89,8 @@ package ktu.utils.align {
 		public function get scale():Point {
 			return new Point ((_end.width / _orig.width) * _target.scaleX, (_end.height / _orig.height) * _target.scaleY);
 		}
+		
+		
 		/**
 		 * constructor
 		 * @param	target
