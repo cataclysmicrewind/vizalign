@@ -34,7 +34,9 @@ package ktu.utils.align {
 		/**
 		 *  aligns the specified targets how the vizAlignments specify.
 		 * 
-		 * this function is the main point of entry when using VizAlign. this is the function that will do all the work for you. 
+		 * this function is the main point of entry when using VizAlign. this is the function that will do _all_ the work for you. 
+		 * this is the only function in this library that will handle origins/rotation points completely for you. all you must do is specify the flag ignoreOrigin.
+		 * 
 		 * 
 		 * TODO: add example
 		 * 
@@ -49,17 +51,16 @@ package ktu.utils.align {
 		 */
 		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, ignoreOrigin:Boolean = false, applyResults:Boolean = false, pixelHinting:Boolean = false):Array/*VizAlignTarget*/ {
 			if ( !targets.length || !vizAlignments.length )	return [];									// if no targets or vizAlignments, return nothing. idiot
-			targets = targets.concat();																	// copy array so we have new one (same objects, but different array object)
+			targets = targets.concat();																	// copy array so we have new one (same elements, but different array reference)
 			
-			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);			// convert all targets to VizAlignTarget
+			var vizAlignTargets:Array/*VizAlignTarget*/ = convertToVizAlignTargets(targets);			// convert all targets to VizAlignTarget (@see for which object types are acceptable)
 			if (ignoreOrigin) ignoreOriginOffsets(vizAlignTargets, true);								// if ignoreOrigin, offset the end bounds so we are actually aligning the visual rectangle of the target
-			var targetEndBounds:Array/*Rectangle*/ = getEndBoundsFromVizAlignTargets(vizAlignTargets);	// get all rectangles to move (the core of VizAlign is based solely on Rectangle
+			var targetEndBounds:Array/*Rectangle*/ = getEndBoundsFromVizAlignTargets(vizAlignTargets);	// get all rectangles to move (the core of VizAlign is based solely on Rectangle)
 			
 			var length:uint = vizAlignments.length;														// get length of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {														// for each vizAlignment
 				var vizAlignment:VizAlignment = vizAlignments[i];										//		get reference to RectangleAlignment
-				if (!vizAlignment) continue;															// 		not a RectangleAlignment...
-				else vizAlignment.align (targetEndBounds);												//		have the VizAlignment align the rectnalges
+				if (vizAlignment) vizAlignment.align (targetEndBounds);									//		if (have alignment) align the rectanlges
 			}																							// end loop
 			
 			updateGroups(vizAlignTargets);																// update groups if we have them
