@@ -1,6 +1,6 @@
 !http://cataclysmicrewind.com/vizalign/examples/logo.png!=
 
-h1. VizAlign: calm your ocd
+h1. bq calm your ocd
 
 h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
 
