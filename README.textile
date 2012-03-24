@@ -1,10 +1,10 @@
-!http://cataclysmicrewind.com/vizalign/examples/logo.png!=
+!http://cataclysmicrewind.com/vizalign/examples/logo.png!(VizAlign Logo)
 
-h1. bq calm your ocd
+h1. calm your ocd
 
 h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
 
-VizAlign is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
+*VizAlign* is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
 
 h3. super simple api:  
 	
@@ -15,16 +15,15 @@ h3. features:
 	
 * *natural api*: i want to align these [targets] to the [left of the stage].
 * *40* alignments (and more coming!)
-* *extend* able framework 
+* *extend* - able framework 
 * returns results for *animation* or storage
-* *group* ing!
+* *group* - ing!
 
 
 h3. why:
 
-I made this library because of designers. My experience is that they are not even aware of the origin point of a Library asset (or DisplayObject), thus creating tons of hassle for everyone.
-
-This library can ignore whatever nasty origin locations your designer throws at you.
+i made this library because of designers. my experience is that they are not aware of the origin point of a library asset (or DisplayObject), thus creating tons of hassle for everyone. it was also my first project when as3 came out. i have certainly learned a lot from this project. so i started.
+i wanted a tool that would make alignment simple, something that just worked, something that would ignore what flash thinks, and puts my graphics exactly where i expect them to go. this, is VizAlign.
 
 
 h3. links:
