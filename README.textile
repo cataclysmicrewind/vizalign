@@ -1,6 +1,4 @@
-!http://cataclysmicrewind.com/vizalign/examples/logo.png(VizAlign Logo)!
-
-h1. calm your ocd
+!http://cataclysmicrewind.com/vizalign/examples/VizAlign-Logo-calm-your-ocd.png(VizAlign Logo)!
 
 h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
 
