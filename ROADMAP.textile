@@ -15,8 +15,8 @@ h2. - pre launch -
 
 h2. - launch v 0.9 -
 
-* write blog post about it
-* spruce up website
+* -write blog post about it-
+* -spruce up website NOT DONE-
 * verify all links
 * make repo public
 
