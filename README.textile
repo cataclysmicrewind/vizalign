@@ -1,8 +1,9 @@
+!http://cataclysmicrewind.com/vizalign/examples/logo.png!
 h1. VizAlign: calm your ocd
 
 h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
 
-VizAlign is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool. if you want to get a sense of what VizAlign can do go "here":http://vimeo.com/~~~~~~~~~~ .
+VizAlign is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
 
 h3. super simple api:  
 	
@@ -11,11 +12,11 @@ h3. super simple api:
 
 h3. features:
 	
-* natural api: i want to align these [targets] to the [left of the stage].
-* 40 alignments (and more coming!)
-* extendable framework 
-* returns results for animation or storage
-* grouping!
+* *natural api*: i want to align these [targets] to the [left of the stage].
+* *40* alignments (and more coming!)
+* *extend*able framework 
+* returns results for *animation* or storage
+* *group*ing!
 
 
 h3. why:
@@ -28,5 +29,5 @@ This library can ignore whatever nasty origin locations your designer throws at 
 h3. links:
 	
 * explaination videos: "short":http://www.vimeo.com/ | "long":http://www.vimeo.com
-* method descriptions:"http://www.cataclysmicrewind.com/vizalign/examples/methodDescriptions.html
+* "method descriptions":http://www.cataclysmicrewind.com/vizalign/examples/methodDescriptions.html
 * "ktu's blog":http://blog.cataclysmicrewind.com
