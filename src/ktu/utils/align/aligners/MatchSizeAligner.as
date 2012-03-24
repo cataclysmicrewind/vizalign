@@ -36,8 +36,8 @@ package ktu.utils.align.aligners {
 		/**
 		 * makes all targets have the same width and height as the target coordinate space
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var endW:Number = targetCoordinateSpace.width;											

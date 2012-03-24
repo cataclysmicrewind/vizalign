@@ -32,13 +32,13 @@ package ktu.utils.align.aligners {
 	 * @author ktu
 	 */
 	public class VerticalAligner implements IRectangleAligner {
+		
 		/**
 		 * aligns the y center of each target to match the y center of the target coordinate space
 		 * 
 		 * 
-		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var centerY:Number = targetCoordinateSpace.top + (targetCoordinateSpace.height / 2);	// 	grab the y center of the tcs

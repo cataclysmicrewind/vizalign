@@ -32,15 +32,15 @@ package ktu.utils.align.aligners {
 	
 	/**
 	 *  StackHorizontalAligner places all the targets flush against each other around the target coordinate space on the x axis
-	 * @author ...
+	 * @author ktu
 	 */
 	public class StackHorizontalAligner implements IRectangleAligner {
 		
 		/**
 		 * places all the targets flush against each other around the target coordinate space on the x axis
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();																//	copy targets into new array so i do not ruin ordering

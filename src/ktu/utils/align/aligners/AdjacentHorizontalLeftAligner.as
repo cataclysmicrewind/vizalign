@@ -36,8 +36,8 @@ package ktu.utils.align.aligners {
 		/**
 		 * aligns the targets right edge against the x center of the target coordinate space object.
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsCenterX:Number = targetCoordinateSpace.left + targetCoordinateSpace.width / 2;

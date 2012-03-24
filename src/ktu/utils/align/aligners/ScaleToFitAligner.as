@@ -36,8 +36,8 @@ package ktu.utils.align.aligners {
 		/**
 		 * makes all the targets match the size of the target coordinate space object while maintaining the original width/height ratio.
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsWidth:Number = targetCoordinateSpace.width;										//	grab width of tcs
