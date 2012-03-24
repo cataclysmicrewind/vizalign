@@ -1,37 +1,45 @@
 h1. ::: ROADMAP :::
 
-- pre launch -
-
-scan for obvious problems
-verify license (LICENSE.TXT)
-finish readme - rodamp - wiki home
+this is the place to find out what i am working on, and what is coming up.
 
 
+h2. - pre launch -
 
-- launch v 0.9 -
+* scan for obvious problems
+* verify license (LICENSE.TXT)
+* finish readme - rodamp - wiki home
 
 
 
-- post launch -
+h2. - launch v 0.9 -
 
-now:
-	long video
-	explain common issues (wiki)
+just do it!
 
-soon:
-	get swc compiled
-	re-do method descriptions
-	write tests (tiers 1-x)
-	evaluate aligner architecture
-	more aligners (% aligners, pattern [grid, spiral], combo)
+
+h2. - post launch -
+
+h3. now:
 	
-later:
-	complete asDocs
-	more examples
-	add sort on off for aligners...? ouch, rough but neccesary for some... shit
-	capabilities changes (usability shit)
+* long video
+* explain common issues (wiki)
+
+h3. soon:
 	
-much later:
-	make layout framework utilizing this
+* get swc compiled
+* re-do method descriptions
+* write tests (tiers 1-x)
+* evaluate aligner architecture
+* more aligners (% aligners, pattern [grid, spiral], combo)
+	
+h3. later:
+	
+* complete asDocs
+* more examples
+* add sort on off for aligners...? ouch, rough but neccesary for some... shit
+* capabilities changes (usability shit)
+	
+h3. much later:
+	
+* make layout framework utilizing this
 	
 	
