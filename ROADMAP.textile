@@ -1,0 +1,37 @@
+h1. ::: ROADMAP :::
+
+- pre launch -
+
+scan for obvious problems
+verify license (LICENSE.TXT)
+finish readme - rodamp - wiki home
+
+
+
+- launch v 0.9 -
+
+
+
+- post launch -
+
+now:
+	long video
+	explain common issues (wiki)
+
+soon:
+	get swc compiled
+	re-do method descriptions
+	write tests (tiers 1-x)
+	evaluate aligner architecture
+	more aligners (% aligners, pattern [grid, spiral], combo)
+	
+later:
+	complete asDocs
+	more examples
+	add sort on off for aligners...? ouch, rough but neccesary for some... shit
+	capabilities changes (usability shit)
+	
+much later:
+	make layout framework utilizing this
+	
+	
