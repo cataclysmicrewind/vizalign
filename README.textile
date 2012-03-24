@@ -4,7 +4,7 @@ h1. calm your ocd
 
 h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
 
-*VizAlign* is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
+@VizAlign@ is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
 
 h3. super simple api:  
 	
@@ -23,11 +23,12 @@ h3. features:
 h3. why:
 
 i made this library because of designers. my experience is that they are not aware of the origin point of a library asset (or DisplayObject), thus creating tons of hassle for everyone. it was also my first project when as3 came out. i have certainly learned a lot from this project. so i started.
-i wanted a tool that would make alignment simple, something that just worked, something that would ignore what flash thinks, and puts my graphics exactly where i expect them to go. this, is VizAlign.
+i wanted a tool that would make alignment simple, something that just worked, something that would ignore what flash thinks, and puts my graphics exactly where i expect them to go. this, is @VizAlign@.
 
 
 h3. links:
 	
 * explaination videos: "short":http://www.vimeo.com/ | "long":http://www.vimeo.com
+* "capabilities swf":http://www.cataclysmicrewind.com/vizalign/examples/capabilities.html (the one in the videos ^ )
 * "method descriptions":http://www.cataclysmicrewind.com/vizalign/examples/methodDescriptions.html 
 * "ktu's blog":http://blog.cataclysmicrewind.com
