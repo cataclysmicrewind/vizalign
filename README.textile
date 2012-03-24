@@ -1,4 +1,4 @@
-!http://cataclysmicrewind.com/vizalign/examples/logo.png!(VizAlign Logo)
+!http://cataclysmicrewind.com/vizalign/examples/logo.png(VizAlign Logo)!
 
 h1. calm your ocd
 
