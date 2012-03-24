@@ -38,8 +38,8 @@ package ktu.utils.align.aligners {
 		/**
 		 * evenly spaces the targets along the y axis inside of the target coordinate space
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();																//	copy targets into new array so i do not ruin ordering
