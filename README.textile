@@ -1,25 +1,25 @@
-#VizAlign
-"aligning your shit cause you hate the IDE"
-***
+h1. VizAlign
+h3. "aligning your shit cause you hate the IDE"
+<hrule>
 Seriously, VizAlign is a simple library that allows you to vizually align ``DisplayObject``. A simple straightforward API with flexibility boasting 40 alignment methods makes VizAlign an amazing tool.
 
-#####super simple api:  
-``VizAlign.align ([targets], [alignments], ignoreOrigins, applyResults, pixelHinting);``
+h3. super simple api:  
+<code>VizAlign.align ([targets], [alignments], ignoreOrigins, applyResults, pixelHinting);</code>
 
 
-##features:
-* simple api
-* 40 alignments
-* extendable framework
-* returns results for animation or storage
-* grouping!
+h3. features:
+ * simple api
+ * 40 alignments
+ * extendable framework
+ * returns results for animation or storage
+ * grouping!
 
 
-##why
+h3. why
 
 I made this library because of designers. My experience is that they are not even aware of the origin point of a Library asset (or DisplayObject), thus creating tons of hassle for everyone.
 
 This library can ignore whatever nasty origin locations your designer throws at you.
 
 
-###It's the Flash IDE align panel, but in code during runtime!, and way better ;)
+h3. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
