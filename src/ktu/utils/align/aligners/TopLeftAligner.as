@@ -36,8 +36,8 @@ package ktu.utils.align.aligners {
 		/**
 		 * aligns each target so the top and left edges match the top and left edges of the target coordinate space
 		 * 
-		 * @param	targetCoordinateSpace
-		 * @param	targets
+		 * @param	targetCoordinateSpace 	the rectangle that will not change
+		 * @param	targets					the rectangles you want to align
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			var tcsTopEdge:Number = targetCoordinateSpace.top;										// 	grab the top of the tcs

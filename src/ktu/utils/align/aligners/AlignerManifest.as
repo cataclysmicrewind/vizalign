@@ -98,6 +98,7 @@ package ktu.utils.align.aligners {
 		static public function get spaceHorizontal ():IRectangleAligner { return new SpaceHorizontalAligner(); }
 		static public function get spaceInsideHorizontal ():IRectangleAligner { return new SpaceInsideHorizontalAligner(); }
 		static public function get spaceVertical ():IRectangleAligner { return new SpaceVerticalAligner(); }
+		static public function get spaceInsideVertical ():IRectangleAligner { return new SpaceInsideVerticalAligner(); }
 		
 		
 		

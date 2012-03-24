@@ -6,18 +6,19 @@ this is the place to find out what i am working on, and what is coming up.
 
 h2. - pre launch -
 
-* scan for obvious problems
-* verify license (LICENSE.TXT)
-* finish readme - rodamp - wiki home
-* verify fp9 capable
+* -scan for obvious problems-
+* -verify license (LICENSE.TXT)-
+* -finish readme - rodamp - wiki home-
+* -verify fp9 capable-
 
 <br>
 
 h2. - launch v 0.9 -
 
-* make repo public
 * write blog post about it
+* spruce up website
 * verify all links
+* make repo public
 
 <br>
 
@@ -42,6 +43,7 @@ h3. later:
 * more examples
 * add sort on off for aligners...? ouch, rough but neccesary for some... shit
 * capabilities changes (usability shit)
+* make acceptable objects be determined at runtime (for targets)
 	
 h3. much later:
 	
