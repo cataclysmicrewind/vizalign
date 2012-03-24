@@ -1,9 +1,7 @@
-h1. VizAlign
+h1. VizAlign: h3. calm your ocd
 
-h3. "aligning your shit cause you hate the IDE"
 
-<hrule>
-Seriously, VizAlign is a simple library that allows you to vizually align ``DisplayObject``. A simple straightforward API with flexibility boasting 40 alignment methods makes VizAlign an amazing tool.
+VizAlign is a simple library that allows you to *vizually align* <code>DisplayObject</code>. A simple straightforward API with flexibility, boasting 40 alignment methods, grouping, and  makes VizAlign an amazing tool.
 
 h3. super simple api:  
 	
