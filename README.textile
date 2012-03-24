@@ -1,13 +1,17 @@
 h1. VizAlign
+
 h3. "aligning your shit cause you hate the IDE"
+
 <hrule>
 Seriously, VizAlign is a simple library that allows you to vizually align ``DisplayObject``. A simple straightforward API with flexibility boasting 40 alignment methods makes VizAlign an amazing tool.
 
 h3. super simple api:  
+	
 <code>VizAlign.align ([targets], [alignments], ignoreOrigins, applyResults, pixelHinting);</code>
 
 
 h3. features:
+	
  * simple api
  * 40 alignments
  * extendable framework
