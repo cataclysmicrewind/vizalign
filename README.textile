@@ -1,8 +1,8 @@
 !http://cataclysmicrewind.com/vizalign/examples/VizAlign-Logo-calm-your-ocd.png(VizAlign Logo)!
 
-h4. It's the Flash IDE align panel, but in code during runtime!, and way better ;)
+h4. like the Flash IDE align panel, but in code during runtime!
 
-@VizAlign@ is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a simple straightforward API with flexibility, boasting 40 alignment methods, and grouping makes VizAlign an amazing tool.
+@VizAlign@ is a simple library that allows you to *vizually align* <code>DisplayObject</code>. a natural straightforward API boasting flexibility, 40 alignment methods, and grouping makes VizAlign an amazing tool.
 
 h3. super simple api:  
 	
