@@ -33,9 +33,9 @@ h3. features:
 
 h2. powerful api:  
 	
-	@Aligners:@ are objects that can align Rectangle. they need a targetCoordinateSpace (the thing that doesn't move) and the targets (the things that do move).
-	@VizAlignment:@ are objects that specify a single alignment. each alignment needs two things: the targetCoordinateSpace and the aligner.
-	@VizAlign:@ is like the butler to the alignments. you give him the targets and the alignments you have created, and he will make sure they happen.
+	@Aligners:@ objects that align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
+	@VizAlignment:@ each alignment needs two things: a targetCoordinateSpace and an aligner.
+	@VizAlign:@ the butler to the alignments. give him the targets and the alignments you have created, he will make sure they happen.
 	
 <pre><code>var aligner:IRectangleAligner = new CenterAligner();
 var targetCoordinateSpace:* = stage;
@@ -45,7 +45,6 @@ var results:Array = VizAlign.align ([targets], [alignment], ignoreOrigins, apply
 	@ignoreOrigins:@ if true, VizAlign will treat each target as if 0,0 for it is at the top left of the graphics.
 	@applyResults:@ if true, VizAlign will move the target to the calculated alignment
 	@pixelHinting:@ if true, VizAlign will round all of the calculations by Math.round();
-	
 	@return:@ array of VizAlignTarget in the same order you sent your targets in as.
 
 <br/>
