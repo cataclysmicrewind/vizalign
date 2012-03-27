@@ -64,9 +64,8 @@ h2. change the way you think about alignment:
 		
 	the way you think about the alignments, the words you use to describe them are exactly how VizAlign functions.
 
-<br/>
 
-h4. you want: 
+h3. you want: 
 	
 	to align the two rectangles to scale to fit inside the stage, then center them to the stage. <br> oh, and ignore their origins, move the targets for me and make sure they get put on whole values.
 
@@ -75,33 +74,33 @@ h4. example:
 h6. NOTE: i use a ficticous `RectangleSprite` to remove boilerplate code from the example. <br>
     function RectangleSprite (parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint);
 
-	<pre><code>
-	var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
-	var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
-	var targets:Array = [redRect, blueRect];
+<pre><code>
+var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
+var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
+var targets:Array = [redRect, blueRect];
 
-	var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
-	var center    :VizAlignment = new VizAlignment (new CenterAligner()    , stage);
-	var alignments:Array = [scaleToFit, center];
+var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
+var center    :VizAlignment = new VizAlignment (new CenterAligner()    , stage);
+var alignments:Array = [scaleToFit, center];
 
-	var ignoreOrigins:Boolean = true;  // do not include the origin point of the DisplayObject when calculating
-	var applyResults :Boolean = true;  // have VizAlign move the objecst to the end result
-	var pixelHinting :Boolean = true;  // round the results to the nearest whole value
+var ignoreOrigins:Boolean = true;  // do not include the origin point of the DisplayObject when calculating
+var applyResults :Boolean = true;  // have VizAlign move the objecst to the end result
+var pixelHinting :Boolean = true;  // round the results to the nearest whole value
 
-	VizAlign.align (targets, alignments, ignoreOrigins, applyResults, pixelHinting);
+VizAlign.align (targets, alignments, ignoreOrigins, applyResults, pixelHinting);
 
-	/*
-	 * below is a shorthand way of doing this
-	 *
-	*/
-	var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
-	var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
+/*
+ * below is a shorthand way of doing this
+ *
+*/
+var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
+var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
 
-	var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
-	var center    :VizAlignment = new VizAlignment (new CenterAligner()    , stage);
+var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
+var center    :VizAlignment = new VizAlignment (new CenterAligner()    , stage);
 
-	VizAlign.align ([redRect, blueRect], [scaleToFit, center], true, true, true);
-	</code></pre>
+VizAlign.align ([redRect, blueRect], [scaleToFit, center], true, true, true);
+</code></pre>
 	
 <br>
 
@@ -115,30 +114,30 @@ h4. example of it becoming a problem:
 	
 h6. this will look really wrong! for more information view the wiki page on this problem (coming)
 	
-	<pre><code>
-	package {
-		public class Main {
-			public function Main():void {
-				var tcs:RectangleSprite = new RectangleSprite(stage, 0, 0, 300, 300, 0xAACCFF);
-				VizAlign.align([tcs], [new VizAlignment (new CenterAligner(), stage)], true, true, true);
-				
-				var greenGuy:RectangleSprite = new RectangleSprite(stage   ,  10,  10, 100, 100, 0x00FF00);
-				var brownGuy:RectangleSprite = new RectangleSprite(greenGuy, 110, 110,  10,  50, 0x623131);
-				
-				VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
-			}
+<pre><code>
+package {
+	public class Main {
+		public function Main():void {
+			var tcs:RectangleSprite = new RectangleSprite(stage, 0, 0, 300, 300, 0xAACCFF);
+			VizAlign.align([tcs], [new VizAlignment (new CenterAligner(), stage)], true, true, true);
+			
+			var greenGuy:RectangleSprite = new RectangleSprite(stage   ,  10,  10, 100, 100, 0x00FF00);
+			var brownGuy:RectangleSprite = new RectangleSprite(greenGuy, 110, 110,  10,  50, 0x623131);
+			
+			VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
 		}
 	}
-	// simple class to remove boilerplate from main function.
-	class RectangleSprite extends Sprite {
-		public function RectangleSprite(parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint) {
-			graphics.beginFill(color);
-			graphics.drawRect(0, 0, w, h);
-			this.x = x; this.y = y;
-			parent.addChild(this);
-		}
+}
+// simple class to remove boilerplate from main function.
+class RectangleSprite extends Sprite {
+	public function RectangleSprite(parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint) {
+		graphics.beginFill(color);
+		graphics.drawRect(0, 0, w, h);
+		this.x = x; this.y = y;
+		parent.addChild(this);
 	}
-	</code></pre>
+}
+</code></pre>
 
 <br>
 
