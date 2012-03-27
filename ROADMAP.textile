@@ -43,8 +43,8 @@ h3. later:
 	
 * complete asDocs
 * more examples
-* add sort on off for aligners...? ouch, rough but neccesary for some... shit
-* capabilities changes (usability shit)
+* add sort on off for aligners...? ouch, rough but neccesary for some...
+* capabilities changes (usability)?
 * make acceptable objects be determined at runtime (for targets)
 	
 h3. much later:
