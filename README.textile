@@ -35,11 +35,11 @@ h2. powerful api:
 
 h3. features:
 		
-	* *natural api*: i want to align these [targets] to the [left of the stage].
-	* *40* alignments (and more coming!)
-	* *extend* - able framework 
-	* returns results for *animation* or storage
-	* *group* - ing!
+* *natural api*: i want to align these [targets] to the [left of the stage].
+* *40* alignments (and more coming!)
+* *extend* - able framework 
+* returns results for *animation* or storage
+* *group* - ing!
 
 
 h3. show me:
@@ -152,7 +152,7 @@ h2. contribute
 
 h2. license
 
-	licensed under "WTFPL":http://sam.zoy.org/wtfpl/ for your approval
+h4. "WTFPL":http://sam.zoy.org/wtfpl/
 
 <br> 
 	
