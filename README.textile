@@ -54,7 +54,7 @@ h2. change the way you think about alignment:
 	
 	alignment of objects is always a pain, in almost all environments i have worked in the learning curve is frustrating. why? because positioning is never natural. VizAlign hopes to solve this problem. tell me, how often has this come up in your life:
 		
-	 _i wish i could make this always stay centered on that_
+bq. _i wish i could make this always stay centered on that_
 	 _i want this to fill this area but maintain its aspect ratio_
 	 _i want these graphics to be spaced evenly inside this area_
 	 _i want these two objects, treated as one, to move next to this other object_
@@ -116,11 +116,15 @@ h2. gotcha!
 	
 h4. example of it becoming a problem:
 	
-h6. this will look really wrong! copy this code and compile it to see for yourself. (don't forget the src & imports!)
+h6. this will look really wrong! copy this code and compile it to see for yourself. (don't forget the src!)
 	
 <pre><code>
 package {
-    public class Main {
+	import flash.display.Sprite;
+	import ktu.utils.align.aligners.CenterAligner;
+	import ktu.utils.align.VizAlign;
+	import ktu.utils.align.VizAlignment;
+    public class Main extends Sprite {
         public function Main():void {
             var tcs:RectangleSprite = new RectangleSprite(0, 0, 300, 300, 0xAACCFF);
             addChild(tcs);
@@ -136,6 +140,7 @@ package {
     }
 }
 // simple class to remove boilerplate from main function.
+import flash.display.Sprite;
 class RectangleSprite extends Sprite {
     public function RectangleSprite(x:int, y:int, w:int, h:int, color:uint) {
         graphics.beginFill(color);
