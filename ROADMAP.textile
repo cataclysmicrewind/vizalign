@@ -6,21 +6,21 @@ this is the place to find out what i am working on, and what is coming up.
 
 h2. - pre launch -
 
+* -refactor the whole thing-
 * -scan for obvious problems-
 * -verify license (LICENSE.TXT)-
 * -finish readme - rodamp - wiki home-
-* -verify fp9 capable-
 
 <br>
 
-h2. - launch v 0.9 -
+h2. - launch v 0.6 -
 
-* write blog post about it
-* verify all links
-* make repo public
 * consider new repo
 * tweak readme
-* 
+* get capabilities page pretty and logging
+* verify all links
+* write blog post about it
+* make repo public
 
 <br>
 

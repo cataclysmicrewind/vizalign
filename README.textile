@@ -116,7 +116,7 @@ h2. gotcha!
 	
 h4. example of it becoming a problem:
 	
-h6. this will look really wrong! copy this code and compile it to see for yourself. more information about this problem in the wiki (soon)
+h6. this will look really wrong! copy this code and compile it to see for yourself. (don't forget the src & imports!)
 	
 <pre><code>
 package {
