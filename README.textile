@@ -27,7 +27,7 @@ h2. powerful api:
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
 	@VizAlignment:@ each alignment needs two things: an aligner and a targetCoordinateSpace.
-	@var alignment:VizAlignment = new VizAlignment(new CenterAligner(), stage);
+	@var alignment:VizAlignment = new VizAlignment(new CenterAligner(), stage);@
 
 	@VizAlign:@ the butler to the alignments. give him the targets and the alignments you have created, he will make sure they happen.
 	@var results:Array = VizAlign.align ([logo], [alignment], ignoreOrigins, applyResults, pixelHinting);@
