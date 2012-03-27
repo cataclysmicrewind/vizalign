@@ -33,7 +33,7 @@ h3. features:
 
 h2. powerful api:  
 	
-	@Aligners:@ objects that align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
+	@Aligners:@ align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
 	@VizAlignment:@ each alignment needs two things: a targetCoordinateSpace and an aligner.
 	@VizAlign:@ the butler to the alignments. give him the targets and the alignments you have created, he will make sure they happen.
 	
