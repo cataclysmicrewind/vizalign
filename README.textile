@@ -106,6 +106,21 @@ VizAlign.align ([redRect, blueRect], [new VizAlignment (new ScaleToFitAligner(),
 	
 <br>
 
+h2. grouping
+
+grouping allows you to send in multidimensional arrays as targets. if an element in the targets array is an array, VizAlign treats it as a group, where the targets conainted are treated as one (like the have the same parent). you can nest groups as deep as you want theoretically, but i have not tested this much.
+
+say you want to make a button. that button has a textfield and shape. you use VizAlign to center the two on top of each other and then send them in as a group to align the button as a whole to the bottom right hand side of the window.
+
+<pre><code>// center textfield on top of shape
+VizAlign.align( [textfield], [new VizAlignment(new CenterAligner(), shape)], true, true, true);
+
+// treat textfield and shape as one object and place at bottom right of window
+VizAlign.align ( [[textfield, shape]], [new VizAlignment (new BottomRightAligner(), window)], true, true true);
+</code></pre>
+
+<br/>
+
 h2. gotcha!
 
 	*targets != [parent, child]*
