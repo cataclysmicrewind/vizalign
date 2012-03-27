@@ -78,7 +78,21 @@ package ktu.utils.align {
 		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
 		 * 		DisplayObject, Stage, Rectangle
 		 */
-		public var targetCoordinateSpace:*;
+		private var _targetCoordinateSpace:*;
+		public function get targetCoordinateSpace():*  { return _targetCoordinateSpace; }
+		/** @private */
+		public function set targetCoordinateSpace(value:*):void {
+			switch (true) {
+				case targetCoordinateSpace is Stage:
+				case targetCoordinateSpace is DisplayObject:
+				case targetCoordinateSpace is Rectangle:
+				case targetCoordinateSpace == null:
+					break;
+				default:
+					throw new Error (BAD_TCS);
+			}
+			_targetCoordinateSpace = value;
+		}
 		/**
 		 *  ignores the origin of the tcs (if any)	
 		 *  
@@ -97,15 +111,7 @@ package ktu.utils.align {
 		 * @param	targetCoordinateSpace		must be a DisplayObject, Stage, or Rectangle. 
 		 * @param	ignoreTCSOrigin		ignore the origin of the targetCoordinateSpace
 		 */
-		public function VizAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
-			switch (true) {
-				case targetCoordinateSpace is Stage:
-				case targetCoordinateSpace is DisplayObject:
-				case targetCoordinateSpace is Rectangle:
-					break;
-				default:
-					throw new Error (BAD_TCS);
-			}
+		public function VizAlignment (rectangleAligner:IRectangleAligner = null, targetCoordinateSpace:* = null, ignoreTCSOrigin:Boolean = true):void {
 			this.rectangleAligner = rectangleAligner;
 			this.targetCoordinateSpace = targetCoordinateSpace;
 			this.ignoreTCSOrigin = ignoreTCSOrigin
@@ -118,7 +124,7 @@ package ktu.utils.align {
 		 * 	What this won't do is any origin ignoring, repositioning, or maintaining original dimensions
 		 *  (that is what VizAlign is for)
 		 * 
-		 * @param	targets
+		 * @param	targetBounds the array of target Rectangle you want to align 
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {

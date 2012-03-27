@@ -8,7 +8,7 @@ h1.
 
 h2. align your graphics the way you see it.
 
-VizAlign is powerful, extendable, simple library that allows you to *vizually align* DisplayObject. it is a new way of thinking about aligning, and will forever change your alignment habits. when you position something, you expect it to end up where you envision it. VizAlign helps you do that. documentation is something i see as vital so i hope the information you find here is helpful to working with VizAlign. 
+VizAlign is powerful, extendable, alignment utility that allows you to *vizually align* DisplayObject. it is a new way of thinking about aligning, and will forever change your alignment habits. when you position something, you expect it to end up where you envision it; VizAlign helps you do that. the core is so extendable i never run out of new feature ideas. documentation is something i see as vital so i hope the information you find here is helpful to working with VizAlign. 
 
 
 ***
@@ -21,17 +21,6 @@ we are currently on version 0.6. this is the first public release.
 
 <br/>
 
-h2. super simple api:  
-	
-	talk like you mean it: _hey VizAlign! align these targets in these ways._
-	
-<pre><code>var aligner:IRectangleAligner = new CenterAligner();
-var targetCoordinateSpace:* = stage;
-var alignment:VizAlignment = new VizAlignment(aligner, targetCoordianteSpace);
-VizAlign.align ([targets], [alignment], ignoreOrigins, applyResults, pixelHinting);</code></pre>
-
-<br/>
-
 h3. features:
 	
 * *natural api*: i want to align these [targets] to the [left of the stage].
@@ -40,6 +29,26 @@ h3. features:
 * returns results for *animation* or storage
 * *group* - ing!
 
+<br/>
+
+h2. powerful api:  
+	
+	@Aligners:@ are objects that can align Rectangle. they need a targetCoordinateSpace (the thing that doesn't move) and the targets (the things that do move).
+	@VizAlignment:@ are objects that specify a single alignment. each alignment needs two things: the targetCoordinateSpace and the aligner.
+	@VizAlign:@ is like the butler to the alignments. you give him the targets and the alignments you have created, and he will make sure they happen.
+	
+<pre><code>var aligner:IRectangleAligner = new CenterAligner();
+var targetCoordinateSpace:* = stage;
+var alignment:VizAlignment = new VizAlignment(aligner, targetCoordianteSpace);
+var results:Array = VizAlign.align ([targets], [alignment], ignoreOrigins, applyResults, pixelHinting);</code></pre>
+
+	@ignoreOrigins:@ if true, VizAlign will treat each target as if 0,0 for it is at the top left of the graphics.
+	@applyResults:@ if true, VizAlign will move the target to the calculated alignment
+	@pixelHinting:@ if true, VizAlign will round all of the calculations by Math.round();
+	
+	@return:@ array of VizAlignTarget in the same order you sent your targets in as.
+
+<br/>
 
 h3. show me:
 
