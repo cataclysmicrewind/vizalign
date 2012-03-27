@@ -19,6 +19,8 @@ h2. - launch v 0.9 -
 * -spruce up website NOT DONE-
 * verify all links
 * make repo public
+* consider new repo
+* 
 
 <br>
 
