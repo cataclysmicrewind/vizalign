@@ -45,7 +45,7 @@ h3. show me:
 
 come on down and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
 
-h4. "capabilities swf":http://www.cataclysmicrewind.com/vizalign/showme/
+h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/
 
 <br>
 
