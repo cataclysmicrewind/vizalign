@@ -15,9 +15,9 @@ h2. - pre launch -
 
 h2. - launch v 0.6 -
 
-* consider new repo
 * tweak readme
 * get capabilities page pretty and logging
+* make new repo
 * verify all links
 * write blog post about it
 * make repo public

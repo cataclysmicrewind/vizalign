@@ -26,12 +26,14 @@ h2. powerful api:
 	Aligners align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
-	each alignment needs two things: an aligner and a targetCoordinateSpace.
+	each alignment needs two things: an aligner and a targetCoordinateSpace. 
 	@var alignment:VizAlignment = new VizAlignment(new CenterAligner(), stage);@
 
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
 	@var results:Array = VizAlign.align ([logo], [alignment], ignoreOrigins, applyResults, pixelHinting);@
 
+	VizAlignTarget hold the target, its orignal dimensions, calculated dimensions and other settings
+	@var vizAlignTarget:VizAlignTarget = results[i];@
 
 h3. features:
 		
@@ -41,8 +43,9 @@ h3. features:
 * returns results for *animation* or storage
 * *group* - ing!
 
+<br/>
 
-h3. show me:
+h2. show me:
 
 	come on down and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
 
@@ -132,10 +135,12 @@ h2. gotcha!
 h4. example of it becoming a problem:
 	
 h6. this will look really wrong! copy this code and compile it to see for yourself. (don't forget the src!)
+don't forget to click the stage to make the alignment happen!
 	
 <pre><code>
 package {
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	import ktu.utils.align.aligners.CenterAligner;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
@@ -150,7 +155,9 @@ package {
             addChild(greenGuy);
             greenGuy.addChild(brownGuy);
 			
-            VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
+			stage.addEventListner(MouseEvent.CLICK, function (e:Event):void {
+				VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
+			});
         }
     }
 }
@@ -170,11 +177,12 @@ class RectangleSprite extends Sprite {
 h2. contribute
 
 	*a little feedback goes a long way.* <br>
-	please send me "emails":mailto:ktu_flash@cataclysmicrewind.com, 
-	make comments on my "blog":blog.cataclysmicrewind.com,
-	submit issues.
+	send me "emails":mailto:ktu_flash@cataclysmicrewind.com
+	comment on my "blog":blog.cataclysmicrewind.com
+	submit issues
+	teach me how to do pull requests
 
-	tell me things like stories about your own project and how it helped, if you feel confused or need help, or ideas you have, features you'd like, bugs, anything!
+	tell me things like stories about your own project and how it helped, or if you felt confused or needed help, or ideas you have, features you'd like, bugs, anything!
 
 <br>
 
