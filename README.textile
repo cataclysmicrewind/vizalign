@@ -70,11 +70,11 @@ h3. you want:
 h4. example:
     
 h6. NOTE: i use a ficticous `RectangleSprite` to remove boilerplate code from the example. <br>
-    function RectangleSprite (parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint);
+    function RectangleSprite (x:int, y:int, w:int, h:int, color:uint);
 
-<pre><code>
-var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
-var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
+<pre><code>var redRect :RectangleSprite = new RectangleSprite(0, 0, 100, 100, 0xFF0000);
+var blueRect:RectangleSprite = new RectangleSprite(0, 0,  10,  50, 0x0000FF);
+addChild(redRect); addChild(blueRect);
 var targets:Array = [redRect, blueRect];
 
 var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
@@ -89,15 +89,24 @@ VizAlign.align (targets, alignments, ignoreOrigins, applyResults, pixelHinting);
 
 /*
  * below is a shorthand way of doing this
- *
-*/
+ */
 var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
 var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
+addChild(redRect); addChild(blueRect);
 
 var scaleToFit:VizAlignment = new VizAlignment (new ScaleToFitAligner(), stage);
 var center    :VizAlignment = new VizAlignment (new CenterAligner()    , stage);
 
 VizAlign.align ([redRect, blueRect], [scaleToFit, center], true, true, true);
+
+/*
+ * even shorter
+ */
+var redRect :RectangleSprite = new RectangleSprite(stage, 0, 0, 100, 100, 0xFF0000);
+var blueRect:RectangleSprite = new RectangleSprite(stage, 0, 0,  10,  50, 0x0000FF);
+addChild(redRect); addChild(blueRect);
+
+VizAlign.align ([redRect, blueRect], [new VizAlignment (new ScaleToFitAligner(), stage), new VizAlignment (new CenterAligner(), stage)], true, true, true);
 </code></pre>
 	
 <br>
@@ -110,17 +119,20 @@ h2. gotcha!
 	
 h4. example of it becoming a problem:
 	
-h6. this will look really wrong! for more information view the wiki page on this problem (coming)
+h6. this will look really wrong! copy this code and compile it to see for yourself. this is not a bug, but a missing feature that will never get implemented. for more information view the wiki page on this problem (soon)
 	
 <pre><code>
 package {
 	public class Main {
 		public function Main():void {
-			var tcs:RectangleSprite = new RectangleSprite(stage, 0, 0, 300, 300, 0xAACCFF);
+			var tcs:RectangleSprite = new RectangleSprite(0, 0, 300, 300, 0xAACCFF);
+			addChild(tcs);
 			VizAlign.align([tcs], [new VizAlignment (new CenterAligner(), stage)], true, true, true);
 			
-			var greenGuy:RectangleSprite = new RectangleSprite(stage   ,  10,  10, 100, 100, 0x00FF00);
-			var brownGuy:RectangleSprite = new RectangleSprite(greenGuy, 110, 110,  10,  50, 0x623131);
+			var greenGuy:RectangleSprite = new RectangleSprite( 10,  10, 100, 100, 0x00FF00);
+			var brownGuy:RectangleSprite = new RectangleSprite(110, 110,  10,  50, 0x623131);
+			addChild(greenGuy);
+			greenGuy.addChild(brownGuy);
 			
 			VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
 		}
@@ -128,11 +140,10 @@ package {
 }
 // simple class to remove boilerplate from main function.
 class RectangleSprite extends Sprite {
-	public function RectangleSprite(parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint) {
+	public function RectangleSprite(x:int, y:int, w:int, h:int, color:uint) {
 		graphics.beginFill(color);
 		graphics.drawRect(0, 0, w, h);
 		this.x = x; this.y = y;
-		parent.addChild(this);
 	}
 }
 </code></pre>
