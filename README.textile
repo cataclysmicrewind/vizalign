@@ -23,19 +23,14 @@ h2. align your graphics the way you see it.
 
 h2. powerful api:  
 
-	@Aligners:@ aligns Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
+	Aligners align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
-	@VizAlignment:@ each alignment needs two things: an aligner and a targetCoordinateSpace.
+	each alignment needs two things: an aligner and a targetCoordinateSpace.
 	@var alignment:VizAlignment = new VizAlignment(new CenterAligner(), stage);@
 
-	@VizAlign:@ the butler to the alignments. give him the targets and the alignments you have created, he will make sure they happen.
+	VizAlign: the butler to the alignments. give him the targets and the alignments you have created, he will make sure they happen.
 	@var results:Array = VizAlign.align ([logo], [alignment], ignoreOrigins, applyResults, pixelHinting);@
-
-bq.	@ignoreOrigins:@ if true, VizAlign will treat each target as if 0,0 for it is at the top left of the graphics.
-	@applyResults:@ if true, VizAlign will move the target to the calculated alignment
-	@pixelHinting:@ if true, VizAlign will round all of the calculations by Math.round();
-	@return:@ array of VizAlignTarget in the same order you sent your targets in as.
 
 <br/>
 
