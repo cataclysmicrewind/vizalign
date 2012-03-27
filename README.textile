@@ -44,8 +44,7 @@ h3. features:
 h3. show me:
 
 
-* "capabilities swf":http://www.cataclysmicrewind.com/vizalign/examples/capabilities.html
-* "method descriptions":http://www.cataclysmicrewind.com/vizalign/examples/methodDescriptions.html (slightly outdated. working on it)
+* *"capabilities swf":http://www.cataclysmicrewind.com/vizalign/showme/*
 
 <br>
 
