@@ -144,20 +144,20 @@ package {
 	import ktu.utils.align.aligners.CenterAligner;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
-    public class Main extends Sprite {
-        public function Main():void {
+    public class Gotcha extends Sprite {
+        public function Gotcha():void {
             var tcs:RectangleSprite = new RectangleSprite(0, 0, 300, 300, 0xAACCFF);
             addChild(tcs);
             VizAlign.align([tcs], [new VizAlignment (new CenterAligner(), stage)], true, true, true);
             
-            var greenGuy:RectangleSprite = new RectangleSprite( 10,  10, 100, 100, 0x00FF00);
-            var brownGuy:RectangleSprite = new RectangleSprite(110, 110,  10,  50, 0x623131);
+            var greenGuy:RectangleSprite = new RectangleSprite(10, 10, 100, 100, 0x00FF00);
+            var brownGuy:RectangleSprite = new RectangleSprite(80, 70,  60,  50, 0x623131);
             addChild(greenGuy);
             greenGuy.addChild(brownGuy);
 			
-			stage.addEventListner(MouseEvent.CLICK, function (e:Event):void {
-				VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
-			});
+            stage.addEventListener(MouseEvent.CLICK, function (e:MouseEvent):void {
+                VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
+            });
         }
     }
 }
@@ -176,11 +176,12 @@ class RectangleSprite extends Sprite {
 
 h2. contribute
 
-	*a little feedback goes a long way.* <br>
-	send me "emails":mailto:ktu_flash@cataclysmicrewind.com
-	comment on my "blog":blog.cataclysmicrewind.com
-	submit issues
-	teach me how to do pull requests
+h4. a little feedback goes a long way.
+
+* send me "emails":mailto:ktu_flash@cataclysmicrewind.com
+* comment on my "blog":blog.cataclysmicrewind.com
+* submit issues
+* teach me how to do pull requests (and maybe i'll do them)
 
 	tell me things like stories about your own project and how it helped, or if you felt confused or needed help, or ideas you have, features you'd like, bugs, anything!
 

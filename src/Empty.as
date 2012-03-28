@@ -24,11 +24,6 @@
 */
 package  {
 
-	import flash.display.Sprite;
-	import ktu.utils.align.aligners.CenterAligner;
-	import ktu.utils.align.VizAlign;
-	import ktu.utils.align.VizAlignment;
-	
 	/**
 	 * 	compiling this class will give you a comparison about how large an empty swf is and one with VizAlign in it
 	 * @author ktu
@@ -36,31 +31,9 @@ package  {
 	public class Empty extends Sprite {
 		
 		public function Empty() {
-			var p:VizAlignment = new VizAlignment();
-			p.rectangleAligner = new CenterAligner();
-			p.targetCoordinateSpace = stage;
 			
-			var tcs:RectangleSprite = new RectangleSprite(stage, 0, 0, 300, 300, 0xAACCFF);
-            //VizAlign.align([tcs], [new VizAlignment (new CenterAligner(), stage)], true, true, true);
-            VizAlign.align([tcs], [p], true, true, true);
-            
-            var greenGuy:RectangleSprite = new RectangleSprite(stage   ,  10,  10, 100, 100, 0x00FF00);
-            var brownGuy:RectangleSprite = new RectangleSprite(greenGuy, 110, 110,  10,  50, 0x623131);
-			
-            VizAlign.align ([brownGuy, greenGuy], [new VizAlignment (new CenterAligner(), tcs)], true, true, true);
 		}
 		
 	}
 
-}
-// simple class to remove boilerplate from main function.
-import flash.display.Sprite;
-import flash.display.DisplayObjectContainer;
-class RectangleSprite extends Sprite {
-    public function RectangleSprite(parent:DisplayObjectContainer, x:int, y:int, w:int, h:int, color:uint) {
-        graphics.beginFill(color);
-        graphics.drawRect(0, 0, w, h);
-        this.x = x; this.y = y;
-        parent.addChild(this);
-    }
 }
