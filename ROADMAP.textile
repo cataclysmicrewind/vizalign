@@ -18,7 +18,9 @@ h2. - launch v 0.6 -
 * tweak readme
 * get capabilities page pretty and logging
 * make new repo
+* dreamweaver for html shit
 * verify all links
+* download stats in github
 * write blog post about it
 * make repo public
 
