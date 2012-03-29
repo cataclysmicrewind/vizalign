@@ -21,6 +21,7 @@ h2. - pre launch -
 h2. - launch v 0.6 -
 
 * make new repo
+* choose proper license
 * verify all links
 * write blog post about it
 * make repo public
