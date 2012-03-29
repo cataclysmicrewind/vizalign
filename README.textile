@@ -124,7 +124,9 @@ in as3 (i hope) you know that each DisplayObject has its own coordinate plane. t
 
 h3. example:
 
-if you draw on your paper a 4x4 box at position 5x5, and you place the paper at 0,0 on the stage (or parent), the 2x2 box will look 5 to the right and 5 down from 0,0 (flash's y coordinate is flipped from maths).
+if you draw on your paper a 4x4 box at position 5x3, and you place the paper at 5,5 on the stage (or parent), the 4x4 box will look 5 to the right and 3 down from 5,5 (not where you might expet it to land)
+
+h6. duh, flash's y coordinate is flipped from maths
 	
 !=http://cataclysmicrewind.com/vizalign/examples/coordinatePlane.png!
 
