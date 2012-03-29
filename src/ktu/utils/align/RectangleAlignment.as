@@ -33,7 +33,7 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * The VizAlignment class represents how you would like to align targets.																					<br/>
+	 * The RectangleAlignment class is a smaller interface for aligning Rectangle only.																			<br/>
 	 * 																																							<br/>
 	 * Each alignment needs two (2) things:																														<br/>
 	 *  how you wish to align the targets. 																														<br/>
