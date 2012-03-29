@@ -23,13 +23,16 @@ h2. align your graphics the way you see it.
 
 h2. powerful api:
 	
-	once you understand the four primary objects in VizAlign alignment will be easy. each code statement below builds upon the previous, so if you are not sure what the variable referenced is, look up.
+	the first thing to learn is that each alignment will need the objects you want to move and a stationary object to move the targets in relation to. 
+	then, understand the four primary objects in VizAlign and alignment will be easy.
+	each code statement below builds upon the previous, so if you are not sure what the variable referenced is, look up.
 
 	Aligners align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
-	each alignment needs two things: an aligner and a targetCoordinateSpace. alignments therefore, can : alignment.align(targetRectangle:Array);
-	@var alignment:VizAlignment = new VizAlignment(aligner, stage);@ //stage = this.stage;
+	each alignment needs two things: an aligner and a targetCoordinateSpace. 
+	therefore alignments can: alignment.align(targetRectangles:Array);
+	@var alignment:VizAlignment = new VizAlignment(aligner, stage); //stage = this.stage;@
 
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
 	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment], ignoreOrigins, applyResults, pixelHinting);@
@@ -43,6 +46,7 @@ h3. features:
 		
 * *natural api*: i want to align these [targets] to the [left of the stage].
 * *40* alignments (and more coming!)
+* align @Rectangle || DisplayObject@
 * *extend* - able framework 
 * returns results for *animation* or storage
 * *group* - ing!
@@ -51,7 +55,7 @@ h3. features:
 
 h2. show me:
 
-	come on down and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
+	come on up, relax, and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
 
 h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/
 
@@ -67,7 +71,7 @@ bq. _i wish i could make this always stay centered on that_
 	 _i want these two objects, treated as one, to move next to this other object_
 	 _i want this object to always be 30% of the height of this object (in development!)_
 		
-	the way you think about the alignments, the words you use to describe them are exactly how VizAlign functions.
+	the way you think about the alignments, ie. the words you use to describe them are exactly how VizAlign functions.
 
 
 h3. you want: 
@@ -110,14 +114,19 @@ VizAlign.align ([redRect, blueRect], [scaleToFit, center], true, true, true);
  */
 VizAlign.align ([redRect, blueRect], [new VizAlignment (new ScaleToFitAligner(), stage), new VizAlignment (new CenterAligner(), stage)], true, true, true);
 </code></pre>
-	
+
+try reading the one liner above outloud like a sentence. if you can learn to think of your alignments like that VizAlign will be a breeze, and you'll want to raise your arms and just expel the stress into the wind. ahhh.
+
 <br>
 
-h2. grouping
+h2. grouping:
 
-grouping allows you to send in multidimensional arrays as targets. if an element in the targets array is an array, VizAlign treats it as a group, where the targets conainted are treated as one (like the have the same parent). you can nest groups as deep as you want theoretically, but i have not tested this much.
+grouping allows you to send in multidimensional arrays as targets. if an element in the targets array is an array, VizAlign treats it as a group, where the targets conainted are treated as one (like they have the same parent). you can nest groups as deep as you want theoretically, but i have not tested this much. this is the same exact feature that a lot of design tools have. these tools normally have the keyboard shortcut ctrl+g to 'group' objects so you can move them around together. 
 
-say you want to make a button. that button has a textfield and shape. you use VizAlign to center the two on top of each other and then send them in as a group to align the button as a whole to the bottom right hand side of the window.
+
+h3. you want:
+
+to make a button. that button has a textfield and shape. you use VizAlign to center the two on top of each other and then align the two as a group to make the button as a whole align to the bottom right hand side of the window.
 
 <pre><code>// center textfield on top of shape
 VizAlign.align( [textfield], [new VizAlignment(new CenterAligner(), shape)], true, true, true);
@@ -138,7 +147,7 @@ h2. gotcha!
 	
 h4. example of it becoming a problem:
 	
-h6. this will look really wrong! copy this code and compile it to see for yourself. (don't forget the src!)
+h6. this will look really wrong! download the src, it contains this example file so compile and smile! because i was right, this looks wrong.
 don't forget to click the stage to make the alignment happen!
 	
 <pre><code>
