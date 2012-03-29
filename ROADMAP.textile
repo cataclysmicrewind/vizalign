@@ -10,17 +10,18 @@ h2. - pre launch -
 * -scan for obvious problems-
 * -verify license (LICENSE.TXT)-
 * -finish readme - rodamp - wiki home-
+* find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)
+* download stats in github
+* get capabilities page pretty and logging
+* tweak readme
+* prepare structure for launch
 
 <br>
 
 h2. - launch v 0.6 -
 
-* tweak readme
-* get capabilities page pretty and logging
 * make new repo
-* dreamweaver for html shit
 * verify all links
-* download stats in github
 * write blog post about it
 * make repo public
 
@@ -31,7 +32,8 @@ h2. - post launch -
 h3. now:
 	
 * long video
-* explain common issues (wiki)
+* make txt readme
+*
 
 h3. soon:
 	
