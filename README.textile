@@ -23,8 +23,7 @@ h2. align your graphics the way you see it.
 
 h2. powerful api:
 	
-	the first thing to learn is that each alignment will need the objects you want to move and a stationary object to move the targets in relation to. 
-	then, understand the four primary objects in VizAlign and alignment will be easy.
+	the first thing to learn is that each alignment will need the objects you want to move and a stationary object to move the targets in relation to. then, understand the four primary objects in VizAlign and alignment will be easy.
 	each code statement below builds upon the previous, so if you are not sure what the variable referenced is, look up.
 
 	Aligners align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
@@ -35,7 +34,7 @@ h2. powerful api:
 	@var alignment:VizAlignment = new VizAlignment(aligner, stage); //stage = this.stage;@
 
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
-	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment], ignoreOrigins, applyResults, pixelHinting);@
+	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment]); //has 3 more Boolean params@
 
 	VizAlignTarget hold the target, its orignal dimensions, calculated dimensions and other settings
 	@var vizAlignTarget:VizAlignTarget = results[0];@
@@ -44,12 +43,12 @@ h6. NOTE: you *cannot* actually instantiate a new DisplayObject(). this is howev
 	
 h3. features:
 		
-* *natural api*: i want to align these [targets] to the [left of the stage].
+* *natural api*: i want to align these _[targets]_ to the _[left of the stage]_.
 * *40* alignments (and more coming!)
 * align @Rectangle || DisplayObject@
-* *extend* - able framework 
+* *extend*-able framework 
 * returns results for *animation* or storage
-* *group* - ing!
+* *group*-ing!
 
 <br/>
 
@@ -57,7 +56,7 @@ h2. show me:
 
 	come on up, relax, and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
 
-h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/
+h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/ swf+video
 
 <br>
 
