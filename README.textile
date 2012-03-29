@@ -120,13 +120,20 @@ try reading the one liner above outloud like a sentence. if you can learn to thi
 
 h2. origins:
 
-in as3 (i hope) you know that each DisplayObject has its own coordinate plane. think about a DisplayObject like it is a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics. flash will always think the .x and .y properties are at 0,0 of that coordinate plane! so if on your paper you draw a 4x4 box at position 5x5, and you place the paper at 0,0 on the stage (or parent), the 2x2 box will look 5 to the right and 5 down from 0,0 (flash's y coordinate is flipped from maths).
+in as3 (i hope) you know that each DisplayObject has its own coordinate plane. this coordinate plane is like a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics. flash will always think the .x and .y properties are at 0,0 of that coordinate plane! 
+
+h3. example:
+
+if you draw on your paper a 4x4 box at position 5x5, and you place the paper at 0,0 on the stage (or parent), the 2x2 box will look 5 to the right and 5 down from 0,0 (flash's y coordinate is flipped from maths).
 	
 !=http://cataclysmicrewind.com/vizalign/examples/coordinatePlane.png!
 
-this, is the reason i made VizAlign. if you have never encountered issues when trying to position graphics because of the origin point you are a lucky human being.
+h4. this, right here, is the reason i made VizAlign. 
+
 ignoring the origins of a target is implemented in the VizAlignTarget class, and can be turned on for every target through the third parameter of VizAlign.align().
 given the example above, setting ignoreOrigins to true, will make it appear as if the blue box is actually at 0,0, ignoring wherever the origin of the target is, and simply going off the bounding box of the target's graphics.
+
+<br/>
 
 h2. grouping:
 
