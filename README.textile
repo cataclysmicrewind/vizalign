@@ -34,7 +34,7 @@ h2. powerful api:
 	@var alignment:VizAlignment = new VizAlignment(aligner, stage); //stage = this.stage;@
 
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
-	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment]); //has 3 more Boolean params@
+	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment]); //has 3 more Boolean params (explained below)@
 
 	VizAlignTarget hold the target, its orignal dimensions, calculated dimensions and other settings
 	@var vizAlignTarget:VizAlignTarget = results[0];@
@@ -43,7 +43,7 @@ h6. NOTE: you *cannot* actually instantiate a new DisplayObject(). this is howev
 	
 h3. features:
 		
-* *natural api*: i want to align these _[targets]_ to the _[left of the stage]_.
+* *natural api*: i want to align these [_targets_] to the [_left of the stage_].
 * *40* alignments (and more coming!)
 * align @Rectangle || DisplayObject@
 * *extend*-able framework 
@@ -56,7 +56,7 @@ h2. show me:
 
 	come on up, relax, and take a look at the capabilities swf, which will let you play around with VizAlign, get used to how it works, and learn all the alignments available!
 
-h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/ swf+video
+h4. "VizAlign capabilities":http://www.cataclysmicrewind.com/vizalign/showme/ [swf+video]
 
 <br>
 
@@ -118,6 +118,13 @@ try reading the one liner above outloud like a sentence. if you can learn to thi
 
 <br>
 
+h2. origins:
+	
+!>http://cataclysmicrewind.com/vizalign/examples/coordinatePlane.png!
+	
+	in as3 (i hope) you know that each DisplayObject has its own coordinate plane. think about a DisplayObject like it is a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics. flash will always think the .x and .y properties are at 0,0 of that coordinate plane! so if on your paper you draw a 4x4 box at position 5x5, and you place the paper at 0,0 on the stage (or parent), the 2x2 box will look 5 to the right and 5 down from 0,0 (flash's y coordinate is flipped from maths).
+	
+
 h2. grouping:
 
 grouping allows you to send in multidimensional arrays as targets. if an element in the targets array is an array, VizAlign treats it as a group, where the targets conainted are treated as one (like they have the same parent). you can nest groups as deep as you want theoretically, but i have not tested this much. this is the same exact feature that a lot of design tools have. these tools normally have the keyboard shortcut ctrl+g to 'group' objects so you can move them around together. 
@@ -146,7 +153,8 @@ h2. gotcha!
 	
 h4. example of it becoming a problem:
 	
-h6. this will look really wrong! download the src, it contains this example file so compile and smile! because i was right, this looks wrong.
+h6. NOTE: this will look really wrong!
+download the src, it contains this example file so compile and smile! because i was right, this looks wrong.
 don't forget to click the stage to make the alignment happen!
 	
 <pre><code>
