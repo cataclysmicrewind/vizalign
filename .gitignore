@@ -1,3 +1,4 @@
 obj/*
 bin/*
-VizAlign.lxml
+*.lxml
+*.docproj
