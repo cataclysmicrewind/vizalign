@@ -47,6 +47,7 @@ h3. soon:
 h3. later:
 	
 * complete asDocs
+* set originOffest (ex. forcing the origin to be center of graphics)
 * more examples
 * add sort on off for aligners...? ouch, rough but neccesary for some...
 * capabilities changes (usability)?
