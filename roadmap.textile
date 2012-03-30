@@ -1,0 +1,60 @@
+h1. ::: ROADMAP :::
+
+this is the place to find out what i am working on, and what is coming up.
+
+<br>
+
+h2. - pre launch -
+
+* -refactor the whole thing-
+* -scan for obvious problems-
+* -verify license (LICENSE.TXT)-
+* -finish readme - rodamp - wiki home-
+* -find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)-
+* -download stats in github-
+* -fix repo-
+* get capabilities page pretty and logging
+* tweak readme
+* prepare folder structure for launch
+
+<br>
+
+h2. - launch v 0.6 -
+
+* choose proper license
+* verify all links
+* write blog post about it
+* make repo public
+
+<br>
+
+h2. - post launch -
+
+h3. now:
+	
+* long video
+* make txt readme
+
+h3. soon:
+	
+* get swc compiled
+* re-do method descriptions
+* write tests (tiers 1-x)
+* evaluate aligner architecture
+* more aligners (% aligners, pattern [grid, spiral], combo)
+* finish VizAlignTextFieldTarget
+	
+h3. later:
+	
+* complete asDocs
+* set originOffest (ex. forcing the origin to be center of graphics)
+* more examples
+* add sort on off for aligners...? ouch, rough but neccesary for some...
+* capabilities changes (usability)?
+* make acceptable objects be determined at runtime (for targets)
+	
+h3. much later:
+	
+* make layout framework utilizing this
+	
+	
