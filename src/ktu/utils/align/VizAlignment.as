@@ -41,24 +41,17 @@ package ktu.utils.align {
 	 *  how you wish to align the targets. 																														<br/>
 	 *  what object do you want to align the targets to.																										<br/>
 	 * 																																							<br/>
-	 * Given this sentance 'I want to align myMovieClip to the left of the stage':
+	 * Given this sentence 'I want to align myMovieClip to the left of the stage':
 	 * 	- 'myMovieClip' represents the targets,
-<<<<<<< HEAD
-	 * 	- 'to the left' represents the type, and
-	 *  - 'of the stage' represents the targetCoordinateSpace (tcs).															<br/>
-	 * 																																							<br/>
-	 * I use the term targetCoordinateSpace because of the doucmentation relating to DisplayObject.getBounds().
-	 * This particualr method describes its argument as a 'targetCoordinateSpace' and I have determined that
-=======
 	 * 	- 'to the left' represents the type,
 	 *  - 'of the stage' represents the targetCoordinateSpace (tcs).																							<br/>
 	 * 																																							<br/>
 	 * I use the term targetCoordinateSpace because of the doucmentation relating to DisplayObject.getBounds(). 
 	 * This particular method describes its argument as a 'targetCoordinateSpace' and I have determined that
->>>>>>> master
+	 * 
 	 * the same concept applies to alignment. The only major difference being that VizAlignments really only
-	 * use a portion of a targetCoordinateSpace.
-	 *
+	 * use a portion of a targetCoordinateSpace. 
+	 * 
 	 * @example 																																				<listing version="3">
 	 * 		var alignment:VizAlignment = new VizAlignment(new LeftAligner(), stage);
 	 * 		VizAlign.align([mc1, mc2], [alignment], true, true, true);
@@ -86,10 +79,31 @@ package ktu.utils.align {
 		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
 		 * 		DisplayObject, Stage, Rectangle
 		 */
+<<<<<<< HEAD
 		public var targetCoordinateSpace:*;
 		/**
 		 *  ignores the origin of the tcs (if any)
 		 *
+=======
+		private var _targetCoordinateSpace:*;
+		public function get targetCoordinateSpace():*  { return _targetCoordinateSpace; }
+		/** @private */
+		public function set targetCoordinateSpace(value:*):void {
+			switch (true) {
+				case targetCoordinateSpace is Stage:
+				case targetCoordinateSpace is DisplayObject:
+				case targetCoordinateSpace is Rectangle:
+				case targetCoordinateSpace == null:
+					break;
+				default:
+					throw new Error (BAD_TCS);
+			}
+			_targetCoordinateSpace = value;
+		}
+		/**
+		 *  ignores the origin of the tcs (if any)	
+		 *  
+>>>>>>> master
 		 * 	Only applies to tcs that are DisplayObject.
 		 * 	Does not apply to TO_TARGETS (if the targets are set to ignore origin, then it is ignored)
 		 *  Does not apply to Rectangle  (cannot have an origin offset)
@@ -105,6 +119,7 @@ package ktu.utils.align {
 		 * @param	targetCoordinateSpace		must be a DisplayObject, Stage, or Rectangle. 
 		 * @param	ignoreTCSOrigin		ignore the origin of the targetCoordinateSpace
 		 */
+<<<<<<< HEAD
 		public function VizAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true):void {
 			switch (true) {
 				case targetCoordinateSpace is Stage:
@@ -114,6 +129,9 @@ package ktu.utils.align {
 				default:
 					throw new Error (BAD_TCS);
 			}
+=======
+		public function VizAlignment (rectangleAligner:IRectangleAligner = null, targetCoordinateSpace:* = null, ignoreTCSOrigin:Boolean = true):void {
+>>>>>>> master
 			this.rectangleAligner = rectangleAligner;
 			this.targetCoordinateSpace = targetCoordinateSpace;
 			this.ignoreTCSOrigin = ignoreTCSOrigin
@@ -126,7 +144,11 @@ package ktu.utils.align {
 		 * 	What this won't do is any origin ignoring, repositioning, or maintaining original dimensions
 		 *  (that is what VizAlign is for)
 		 * 
+<<<<<<< HEAD
 		 * @param	targets
+=======
+		 * @param	targetBounds the array of target Rectangle you want to align 
+>>>>>>> master
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {

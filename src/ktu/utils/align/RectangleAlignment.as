@@ -33,7 +33,7 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * The VizAlignment class represents how you would like to align targets.																					<br/>
+	 * The RectangleAlignment class is a smaller interface for aligning Rectangle only.																			<br/>
 	 * 																																							<br/>
 	 * Each alignment needs two (2) things:																														<br/>
 	 *  how you wish to align the targets. 																														<br/>
@@ -72,7 +72,11 @@ package ktu.utils.align {
 		 * this is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
 		 * align to the left of the [stage]. The tcs is [].
 		 */
+<<<<<<< HEAD
 		public var tcs :Rectangle;
+=======
+		public var targetCoordinateSpace :Rectangle;
+>>>>>>> master
 		
 		
 		
@@ -87,7 +91,11 @@ package ktu.utils.align {
 		 */
 		public function RectangleAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:Rectangle):void {
 			this.rectangleAligner = rectangleAligner;
+<<<<<<< HEAD
 			this.tcs = targetCoordinateSpace;
+=======
+			this.targetCoordinateSpace = targetCoordinateSpace;
+>>>>>>> master
 		}
 		
 		/**
@@ -102,7 +110,11 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
+<<<<<<< HEAD
 			rectangleAligner.alignRectangles(getTCSBounds(tcs, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
+=======
+			rectangleAligner.alignRectangles(getTCSBounds(targetCoordinateSpace, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
+>>>>>>> master
 		}
 		
 		
@@ -142,7 +154,11 @@ package ktu.utils.align {
 		/** @private **/
 		public function toString ():String {
 			var str:String = "{type: " + rectangleAligner;
+<<<<<<< HEAD
 			str += ", tcs:" + tcs + "}";
+=======
+			str += ", tcs:" + targetCoordinateSpace + "}";
+>>>>>>> master
 			return str;
 		}
 	}
