@@ -36,14 +36,14 @@ h2. powerful api:
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
 	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment]); //has 3 more Boolean params (explained below)@
 
-	VizAlignTarget hold the target, its orignal dimensions, calculated dimensions and other settings
+	VizAlignTarget hold the target, its original dimensions, calculated dimensions and other settings
 	@var vizAlignTarget:VizAlignTarget = results[0];@
 
 h6. NOTE: you *cannot* actually instantiate a new DisplayObject(). this is however, the base class that is accepted for a target in VizAlign. you can also send VizAlignTarget objects in if you want to continue from a previous alignment. (see docs &| src)
 	
 h3. features:
 		
-* *natural api*: i want to align these [_targets_] to the [_left of the stage_].
+* *natural api*: i want to align these [targets] to the [left of the stage].
 * *40* alignments (and more coming!)
 * align @Rectangle || DisplayObject@
 * *extend*-able framework 
@@ -79,7 +79,7 @@ h3. you want:
 
 h4. example:
     
-h6. NOTE: i use a ficticous `RectangleSprite` to remove boilerplate code from the example. <br>
+h6. NOTE: i use a ficticious `RectangleSprite` to remove boilerplate code from the example. <br>
     function RectangleSprite (x:int, y:int, w:int, h:int, color:uint);
 
 <pre><code>var redRect :RectangleSprite = new RectangleSprite(0, 0, 100, 100, 0xFF0000);
@@ -114,7 +114,7 @@ VizAlign.align ([redRect, blueRect], [scaleToFit, center], true, true, true);
 VizAlign.align ([redRect, blueRect], [new VizAlignment (new ScaleToFitAligner(), stage), new VizAlignment (new CenterAligner(), stage)], true, true, true);
 </code></pre>
 
-try reading the one liner above outloud like a sentence. if you can learn to think of your alignments like that, VizAlign will be a breeze and you'll want to raise your arms and just expel the stress into the wind. *ahhh.*
+try reading the one liner above out loud like a sentence. if you can learn to think of your alignments like that, VizAlign will be a breeze and you'll want to raise your arms and just expel the stress into the wind. *ahhh.*
 
 <br>
 
@@ -124,7 +124,7 @@ in as3 (i hope) you know that each DisplayObject has its own coordinate plane. t
 
 h3. example:
 
-if you draw on your paper a 4x4 box at position 5x3, and you place the paper at 5,5 on the stage (or parent), the 4x4 box will look 5 to the right and 3 down from 5,5 (not where you might expet it to land)
+if you draw on your paper a 4x4 box at position 5x3, and you place the paper at 5,5 on the stage (or parent), the 4x4 box will look 5 to the right and 3 down from 5,5 (not where you might expect it to land)
 
 h6. duh, flash's y coordinate is flipped from maths
 	
