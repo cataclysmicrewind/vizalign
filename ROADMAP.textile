@@ -10,17 +10,17 @@ h2. - pre launch -
 * -scan for obvious problems-
 * -verify license (LICENSE.TXT)-
 * -finish readme - rodamp - wiki home-
-* find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)
-* download stats in github
+* -find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)-
+* -download stats in github-
+* -fix repo-
 * get capabilities page pretty and logging
 * tweak readme
-* prepare structure for launch
+* prepare folder structure for launch
 
 <br>
 
 h2. - launch v 0.6 -
 
-* make new repo
 * choose proper license
 * verify all links
 * write blog post about it
@@ -34,7 +34,6 @@ h3. now:
 	
 * long video
 * make txt readme
-*
 
 h3. soon:
 	
@@ -43,6 +42,7 @@ h3. soon:
 * write tests (tiers 1-x)
 * evaluate aligner architecture
 * more aligners (% aligners, pattern [grid, spiral], combo)
+* finish VizAlignTextFieldTarget
 	
 h3. later:
 	
