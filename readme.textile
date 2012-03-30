@@ -24,19 +24,20 @@ h2. align your graphics the way you see it.
 
 h2. powerful api:
 	
-	the first thing to learn is that each alignment will need the objects you want to move (targets) and a stationary object (targetCoordinateSpace). alignments occur by placing the targets in relation to the targetCoordinateSpace. once you understand the four primary objects in VizAlign and alignment will be easy.
+	each alignment you want to happen will need the objects you want to move (targets) a stationary object (targetCoordinateSpace) and an object (aligner) that will place the targets in relation to the targetCoordinateSpace. this utility breaks these pieces down into four main objects. 
 	
 	each code statement below builds upon the previous, so if you are not sure what the variable referenced is, look up.
 
-	IRectangleAligners align Rectangle. the only method align() needs a targetCoordinateSpace and targets.
-	they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
+	IRectangleAligner align Rectangle. in VizAlign, all DisplayObject get treated as Rectangle.
+	aligner.alignRectangles(targetCoordinateSpace, targets); 
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
-	each alignment needs two things: an aligner and a targetCoordinateSpace. 
-	therefore alignments can: alignment.align(targetRectangles:Array);
+	VizAlignment: each alignment needs two things: an aligner and a targetCoordinateSpace. 
+	therefore alignments can: alignment.align(targets:Array);
 	@var alignment:VizAlignment = new VizAlignment(aligner, stage); //stage = this.stage;@
 
 	VizAlign: the butler to the alignments. give him the targets and your alignments, he will make sure they happen.
+	VizAlign requires targets be DisplayObject. 
 	@var results:Array = VizAlign.align ([new DisplayObject()], [alignment]); //has 3 more Boolean params (explained below)@
 
 	VizAlignTarget hold the target, its original dimensions, calculated dimensions and other settings
@@ -123,9 +124,9 @@ try reading the one liner above out loud like a sentence. if you can learn to th
 
 h2. origins:
 
-in as3 (i hope) you know that each DisplayObject has its own coordinate plane. this coordinate plane is like a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics. flash will always think the .x and .y properties are at 0,0 of that coordinate plane! 
+in as3 (i hope) you know that each DisplayObject has its own coordinate plane. this coordinate plane is like a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics, flash will always think the .x and .y properties are at 0,0 of that coordinate plane! 
 
-h3. example:
+h3. hmmm:
 
 if you draw on your paper a 4x4 box at position 5x3, and you place the paper at 5,5 on the stage (or parent), the 4x4 box will look 5 to the right and 3 down from 5,5 (not where you might expect it to land)
 
@@ -135,8 +136,14 @@ h6. duh, flash's y coordinate is flipped from maths
 
 h4. this, right here, is the reason i made VizAlign. 
 
-ignoring the origins of a target is implemented in the VizAlignTarget class, and can be turned on for every target through the third parameter of VizAlign.align().
+ignoring the origins of a target is implemented in the VizAlignTarget class, and can be turned on for every target through the third parameter of VizAlign.align() @ignoreOrigins:Boolean = false@.
 given the example above, setting ignoreOrigins to true, will make it appear as if the blue box is actually at 0,0, ignoring wherever the origin of the target is, and simply going off the bounding box of the target's graphics.
+
+h3. codely
+
+with ignoreOrigins = false, VizAlignTarget will use x,y,width,height to create the bounding Rectangle of each target.
+with ignoreOrigins = true, VizAlignTarget will figure out the bounding box of the graphics within the target, and then determien the distance between the top left corner of the graphics bounding box and 0,0 of the coordinate plane. thus we eliminate that obnoxious problem.
+
 
 <br/>
 
