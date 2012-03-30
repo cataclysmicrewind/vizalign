@@ -72,7 +72,7 @@ package ktu.utils.align {
 		 * this is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
 		 * align to the left of the [stage]. The tcs is [].
 		 */
-		public var tcs :Rectangle;
+		public var targetCoordinateSpace :Rectangle;
 		
 		
 		
@@ -87,7 +87,7 @@ package ktu.utils.align {
 		 */
 		public function RectangleAlignment (rectangleAligner:IRectangleAligner, targetCoordinateSpace:Rectangle):void {
 			this.rectangleAligner = rectangleAligner;
-			this.tcs = targetCoordinateSpace;
+			this.targetCoordinateSpace = targetCoordinateSpace;
 		}
 		
 		/**
@@ -102,7 +102,7 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
-			rectangleAligner.alignRectangles(getTCSBounds(tcs, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
+			rectangleAligner.alignRectangles(getTCSBounds(targetCoordinateSpace, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
 		}
 		
 		
@@ -142,7 +142,7 @@ package ktu.utils.align {
 		/** @private **/
 		public function toString ():String {
 			var str:String = "{type: " + rectangleAligner;
-			str += ", tcs:" + tcs + "}";
+			str += ", tcs:" + targetCoordinateSpace + "}";
 			return str;
 		}
 	}

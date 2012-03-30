@@ -78,7 +78,7 @@ package ktu.utils.align {
 			
 			var length:uint = vizAlignments.length;														// get length of vizAlignments for optimized looping
 			for (var i:int = 0; i < length; i++) {														// for each vizAlignment
-				var vizAlignment:VizAlignment = vizAlignments[i];										//		get reference to RectangleAlignment
+				var vizAlignment:VizAlignment = vizAlignments[i];										//		get reference to VizAlignment
 				if (vizAlignment) vizAlignment.align (targetEndBounds);									//		if (have alignment) align the rectanlges
 			}																							// end loop
 			

@@ -16,6 +16,7 @@ h2. - pre launch -
 * get capabilities page pretty and logging
 * tweak readme
 * prepare folder structure for launch
+* put license in capabilities shit
 
 <br>
 
@@ -34,29 +35,30 @@ h3. version 0.7
 
 tbd
 
-h3. now:
+h3. documentation & examples:
 	
 * long video
 * make txt readme
-
-h3. soon:
-	
-* get swc compiled
-* fix logo colors.
 * re-do method descriptions
-* write tests (tiers 1-x)
-* evaluate aligner architecture
-* more aligners (% aligners, pattern [grid, spiral], combo)
-* finish VizAlignTextFieldTarget
-	
-h3. later:
-	
+* fix logo colors.
 * complete asDocs
-* set originOffest (ex. forcing the origin to be center of graphics)
-* more examples
-* add sort on off for aligners...? ouch, rough but neccesary for some...
 * capabilities changes (usability)?
-* make acceptable objects be determined at runtime (for targets)
+
+h3. aligner features:
+
+* evaluate aligner architecture
+* % aligners
+* pattern aligners
+* add sort on off for aligners...? ouch, rough but neccesary for some...
+* upgrade Alignment to support more data types
+* make targetCoordinateSpace and targets type requirements determined at runtime
+
+h3. VizAlign features
+
+* get swc compiled
+* write tests (tiers 1-x)
+* set originOffest (ex. forcing the origin to be center of graphics)
+* finish VizAlignTextFieldTarget
 	
 h3. much later:
 	

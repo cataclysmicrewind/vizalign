@@ -8,14 +8,15 @@ h1.
 
 h2. align your graphics the way you see it.
 
-	VizAlign is powerful, extendable, alignment utility that allows you to *vizually align* DisplayObject. it is a new way of thinking about aligning, and will forever change your alignment habits. when you position something, you expect it to end up where you envision it; VizAlign helps you do that. the core is so extendable i never run out of new feature ideas. documentation is something i see as vital so i hope the information you find here is helpful to working with VizAlign. 
+	VizAlign is a powerful, extendable, alignment utility that allows you to *vizually align* DisplayObject. it is a new way of thinking about aligning, and will forever change your alignment habits. when you position something, you expect it to end up where you envision it; VizAlign helps you do that. the core is so extendable i never run out of new feature ideas. documentation is something i see as vital so i hope the information you find here is helpful to working with VizAlign. 
 
 
 ***
 
-	*disclaimer:* although i feel confident about the code i have written, i cannot guarantee it is bug free. i do not have unit tests (but looking for help on writing them!)
+	*disclaimer:* although i am confident about the code i have written, i cannot guarantee it is bug free.
+	i do not have unit tests (but looking for help on writing them!)
 	<br>
-	we are currently on version 0.6. this is the first public release.
+	we are currently on version 1.2. this is the first public release.
 
 ***
 
@@ -23,10 +24,12 @@ h2. align your graphics the way you see it.
 
 h2. powerful api:
 	
-	the first thing to learn is that each alignment will need the objects you want to move and a stationary object to move the targets in relation to. then, understand the four primary objects in VizAlign and alignment will be easy.
+	the first thing to learn is that each alignment will need the objects you want to move (targets) and a stationary object (targetCoordinateSpace). alignments occur by placing the targets in relation to the targetCoordinateSpace. once you understand the four primary objects in VizAlign and alignment will be easy.
+	
 	each code statement below builds upon the previous, so if you are not sure what the variable referenced is, look up.
 
-	Aligners align Rectangle. they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
+	IRectangleAligners align Rectangle. the only method align() needs a targetCoordinateSpace and targets.
+	they need a targetCoordinateSpace (thing that doesn't move) and targets (things that do move).
 	@var aligner:IRectangleAligner = new CenterAligner();@
 
 	each alignment needs two things: an aligner and a targetCoordinateSpace. 

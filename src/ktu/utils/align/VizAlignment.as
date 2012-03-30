@@ -41,7 +41,7 @@ package ktu.utils.align {
 	 *  how you wish to align the targets. 																														<br/>
 	 *  what object do you want to align the targets to.																										<br/>
 	 * 																																							<br/>
-	 * Given this sentance 'I want to align myMovieClip to the left of the stage':
+	 * Given this sentence 'I want to align myMovieClip to the left of the stage':
 	 * 	- 'myMovieClip' represents the targets,
 	 * 	- 'to the left' represents the type,
 	 *  - 'of the stage' represents the targetCoordinateSpace (tcs).																							<br/>
