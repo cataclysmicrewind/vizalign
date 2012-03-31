@@ -13,18 +13,19 @@ h2. - pre launch -
 * -find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)-
 * -download stats in github-
 * -fix repo-
+* -prepare folder structure for launch-
 * get capabilities page pretty and logging
-* tweak readme
-* prepare folder structure for launch
+* choose proper license
 * put license in capabilities shit
 
 <br>
 
 h2. - launch v 0.6 -
 
-* choose proper license
+* write asdocs (don't commit that often)
 * verify all links
 * write blog post about it
+* proof readme
 * make repo public
 
 <br>

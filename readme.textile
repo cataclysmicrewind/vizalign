@@ -16,7 +16,7 @@ h2. align your graphics the way you see it.
 	*disclaimer:* although i am confident about the code i have written, i cannot guarantee it is bug free.
 	i do not have unit tests (but looking for help on writing them!)
 	<br>
-	we are currently on version 1.2. this is the first public release.
+	we are currently on version 1.1. this is the first public release.
 
 ***
 

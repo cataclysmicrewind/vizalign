@@ -5,22 +5,71 @@
 
 version 0.6    - 2012.03.26
 _____________________________
-
     documentation
-	    + created quick video explaination of the capabilities swf
-		+ verified all functions have comments
-		+ reamde completed
-		+ incorporated license
-		
+	+ created quick video explaination of the capabilities swf
+	+ verified all functions have comments
+	+ reamde completed
+	+ incorporated license
 
 
 
 
 
-version 0.5    - 2011.xx.xx
+version 0.5    - 2011.11.04
 _____________________________
-	
 	complete re-write of core.
 	faster, leaner, more powerful.
-	
 	thanks ben
+
+
+
+
+
+verion 0.4    - 2010.06.24
+_____________________________
+	refactored untyped objects to be typed
+	cleaned up un-neccessary members
+	enhance enhance enhance
+	
+	
+	
+	
+	
+verion 0.3    - 2009.05.02
+_____________________________
+	re-architected code
+	put in input verification
+	added adjacent methods
+
+
+
+
+
+verion 0.2    - 2009.02.22
+_____________________________
+	implemented full set of alignment algorithms
+	fullscreen logic
+	architected Alignments
+	added grouping
+
+
+
+
+
+verion 0.1    - 2008.12.06
+_____________________________
+	VizAlign is born
+	first capabilities swf created.
+
+
+
+
+
+verion 0.0    - 2008.07.17
+_____________________________
+	first implementation of aligning.
+	started to undesrtand how to solve origins problem
+
+
+
+
