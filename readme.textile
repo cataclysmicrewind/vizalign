@@ -222,8 +222,8 @@ h2. contribute
 
 h4. a little feedback goes a long way.
 
-* send me "emails":mailto:ktu_flash@cataclysmicrewind.com
-* comment on my "blog":blog.cataclysmicrewind.com
+* send me emails [ktu at cataclysmicrewind.com]
+* comment on my "blog":http://blog.cataclysmicrewind.com
 * submit issues
 * teach me how to do pull requests (and maybe i'll do them)
 
