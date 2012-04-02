@@ -6,10 +6,8 @@
 version 0.6    - 2012.03.26
 _____________________________
     documentation
-	+ created quick video explaination of the capabilities swf
-	+ verified all functions have comments
-	+ reamde completed
-	+ incorporated license
+	more aligners
+    cleanup and optimizations
 
 
 
