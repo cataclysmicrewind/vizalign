@@ -124,7 +124,7 @@ try reading the one liner above out loud like a sentence. if you can learn to th
 
 h2. origins:
 
-in as3 (i hope) you know that each DisplayObject has its own coordinate plane. this coordinate plane is like a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics, flash will always think the .x and .y properties are at 0,0 of that coordinate plane! 
+in as3 (i hope) you know that each DisplayObject has its own coordinate plane. this coordinate plane is like a piece of translucent grid paper with a coordinate plane drawn on it. you can draw your graphics anywhere you want on that paper. but no matter where you draw the graphics, flash will always think the .x and .y properties are at 0,0 of that coordinate plane! you might be familiar with it as the registration or rotation point of an object.
 
 h3. hmmm:
 
