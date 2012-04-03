@@ -14,9 +14,13 @@ h2. - pre launch -
 * -download stats in github-
 * -fix repo-
 * -prepare folder structure for launch-
-* get capabilities page pretty and logging
+* -get capabilities page pretty-
+* get capabilities page logging - almost!
 * choose proper license
+* get DBA for license
 * put license in capabilities shit
+* fix origins section of readme and image
+
 
 <br>
 
@@ -24,6 +28,7 @@ h2. - launch v 0.6 -
 
 * write asdocs (don't commit that often)
 * verify all links
+* verify all version numbers are accurate
 * write blog post about it
 * proof readme
 * make repo public
