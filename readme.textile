@@ -233,7 +233,7 @@ h4. a little feedback goes a long way.
 
 h2. license
 
-h4. "WTFPL":http://sam.zoy.org/wtfpl/
+h4. "MIT":http://www.opensource.org/licenses/mit-license.html
 
 <br> 
 	
