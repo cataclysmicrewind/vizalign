@@ -4,29 +4,13 @@ this is the place to find out what i am working on, and what is coming up.
 
 <br>
 
-h2. - pre launch -
-
-* -refactor the whole thing-
-* -scan for obvious problems-
-* -verify license (LICENSE.TXT)-
-* -finish readme - rodamp - wiki home-
-* -find out if alignemtn uses .end to start with (So passing in pre-existing VAT will continue)-
-* -download stats in github-
-* -fix repo-
-* -prepare folder structure for launch-
-* -get capabilities page pretty-
-
-
-<br>
-
 h2. - launch v 0.6 -
 
-* write asdocs (don't commit that often)
+* -write asdocs (don't commit that often)-
 * -verify all links-
-* -verify all version numbers are accurate-
 * write blog post about it
 * -proof readme-
-* make repo public
+* -make repo public-
 
 <br>
 
@@ -44,6 +28,7 @@ h3. documentation & examples:
 * fix logo colors.
 * complete asDocs
 * capabilities changes (usability)?
+* better showme page
 
 h3. aligner features:
 
