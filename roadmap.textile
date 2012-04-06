@@ -33,7 +33,8 @@ h3. documentation & examples:
 h3. aligner features:
 
 * evaluate aligner architecture
-* % aligners
+* -% aligner-
+* -padding aligner-
 * pattern aligners
 * add sort on off for aligners...? ouch, rough but neccesary for some...
 * upgrade Alignment to support more data types
