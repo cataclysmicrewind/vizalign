@@ -30,8 +30,11 @@ package ktu.utils.align.aligners {
 	 * DistributeTopAligner places an even space between the top edge of the targets inside the target coordinate space object.
 	 * @author ktu
 	 */
-	public class DistributeTopAligner implements IRectangleAligner {
+	public class DistributeTopAligner extends SortableAligner implements IRectangleAligner {
 		
+        public function DistributeTopAligner(sortTargets:Boolean = false) {
+            super(sortTargets);
+        }
 		/**
 		 * places an even space between the top edge of the targets inside the target coordinate space object.
 		 * 
@@ -40,7 +43,7 @@ package ktu.utils.align.aligners {
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();																//	copy targets into new array so i do not ruin ordering
-			targets = targets.sort ( sort_rectangle_top ) ;											//	sort by top
+			if (sortTargets) targets = targets.sort ( sort_rectangle_top ) ;											//	sort by top
 			
 			var length:int = targets.length;														// 	targets length for optimized looping
 			var first:Number = targetCoordinateSpace.top;											//	

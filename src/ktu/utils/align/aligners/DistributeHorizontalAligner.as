@@ -32,8 +32,11 @@ package ktu.utils.align.aligners {
 	 * DistributeHorizontalAligner places an even space between the x center of the targets inside the target coordinate space object.
 	 * @author ktu
 	 */
-	public class DistributeHorizontalAligner implements IRectangleAligner {
-		
+	public class DistributeHorizontalAligner extends SortableAligner implements IRectangleAligner {
+        
+		public function DistributeHorizontalAligner(sortTargets:Boolean = false) {
+            super(sortTargets);
+        }
 		/**
 		 * places an even space between the x center of the targets inside the target coordinate space object.
 		 * 
@@ -42,7 +45,7 @@ package ktu.utils.align.aligners {
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();
-			targets = targets.sort ( sort_rectangle_centerX ) ;
+			if (sortTargets) targets = targets.sort ( sort_rectangle_centerX ) ;
 			
 			var length:int = targets.length;														// targets length for optimized looping
 			var first:Number = targetCoordinateSpace.left + (targets[0].width / 2);

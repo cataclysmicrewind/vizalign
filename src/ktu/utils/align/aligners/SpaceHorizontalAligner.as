@@ -32,7 +32,7 @@ package ktu.utils.align.aligners {
 	 * SpaceHorizontalAligner evenly spaces the targets along the x axis inside of the target coordinate space
 	 * @author ktu
 	 */
-	public class SpaceHorizontalAligner implements IRectangleAligner {
+	public class SpaceHorizontalAligner extends SortableAligner implements IRectangleAligner {
 		
 		/**
 		 * evenly spaces the targets along the x axis inside of the target coordinate space
@@ -42,7 +42,7 @@ package ktu.utils.align.aligners {
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();																// 	copy targets into new array so i do not ruin ordering
-			targets = targets.sort ( sort_rectangle_left ) ;										//	sort targets on left edge
+			if (sortTargets) targets = targets.sort ( sort_rectangle_left ) ;										//	sort targets on left edge
 			
 			var objsWidth:Number = 0;																//	total width of all targets
 			var totalWidth:Number = targetCoordinateSpace.width;									//	total width of tcs

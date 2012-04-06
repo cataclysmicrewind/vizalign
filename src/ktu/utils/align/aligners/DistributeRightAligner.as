@@ -32,8 +32,11 @@ package ktu.utils.align.aligners {
 	 * DistributeRightAligner places an even space between the right edge of the targets inside the target coordinate space object.
 	 * @author ktu
 	 */
-	public class DistributeRightAligner implements IRectangleAligner {
+	public class DistributeRightAligner extends SortableAligner implements IRectangleAligner {
 		
+        public function DistributeRightAligner(sortTargets:Boolean = false) {
+            super(sortTargets);
+        }
 		/**
 		 * places an even space between the right edge of the targets inside the target coordinate space object.
 		 * 
@@ -42,7 +45,7 @@ package ktu.utils.align.aligners {
 		 */
 		public function alignRectangles(targetCoordinateSpace:Rectangle, targets:Array/*Rectangle*/):void {
 			targets = targets.concat();
-			targets.sort ( sort_rectangle_right ) ;
+			if (sortTargets) targets.sort ( sort_rectangle_right );
 			
 			var tcsLeftEdge:Number = targetCoordinateSpace.left;
 			var first:Number = tcsLeftEdge + targets[0].width;

@@ -31,10 +31,16 @@ package ktu.utils.align.aligners {
 	
 	/**
 	 * StackVerticalAligner places all the targets flush against each other around the target coordinate space on the y axis
+     * 
+     * WHAT TO DO ABOUT SORTING!!!
+     * 
 	 * @author ktu
 	 */
-	public class StackVerticalAligner implements IRectangleAligner {
+	public class StackVerticalAligner extends SortableAligner implements IRectangleAligner {
 		
+        public function StackVerticalAligner(sortTargets:Boolean = false) {
+            super(sortTargets);
+        }
 		/**
 		 * places all the targets flush against each other around the target coordinate space on the y axis
 		 * 

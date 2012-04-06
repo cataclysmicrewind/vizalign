@@ -36,7 +36,7 @@ h3. aligner features:
 * -% aligner-
 * -padding aligner-
 * pattern aligners
-* add sort on off for aligners...? ouch, rough but neccesary for some...
+* -add sort on off for aligners...? ouch, rough but neccesary for some...-
 * upgrade Alignment to support more data types
 * make targetCoordinateSpace and targets type requirements determined at runtime
 
