@@ -23,10 +23,9 @@ DEALINGS IN THE SOFTWARE.
 */
 package ktu.utils.align {
 	
-	import flash.display.Sprite;
-	import flash.geom.Point;
-	import flash.geom.Rectangle;
-	import ktu.utils.align.VizAlignTarget;
+    import flash.display.Sprite;
+    import flash.geom.Point;
+    import flash.geom.Rectangle;
 
 
 	/**
