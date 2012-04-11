@@ -21,7 +21,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 */
-package ktu.utils.align {
+package ktu.utils.align.targets {
 	
 	import flash.display.DisplayObject;
 	import flash.geom.Point;
@@ -43,36 +43,52 @@ package ktu.utils.align {
 	 */
 	public class VizAlignTarget {
 		
+        //static public var defaultApplyBoundsFunction:Function = null;
+        //static public var defaultGetTargetBoundsFunction:Function = null;
+        
+        
+        //static public function getTargetBounds (target:Object):Rectangle {
+            //if (VizAlign.isDuckRectangle(target))
+                //return new Rectangle(target.x, target.y, target.width, target.height);
+            //else
+                //return new Rectangle();
+        //}
 		/**
-		 * the target DisplayObject
+		 * the target
 		 */
-		protected var _target:DisplayObject;
+		protected var _target:*;
 		/**
 		 * position before alignment
 		 */
-		protected var _orig:Rectangle = new Rectangle();
+		protected var _orig:Rectangle;
 		/**
 		 * position after alignment
 		 */
-		protected var _end:Rectangle = new Rectangle();
+		protected var _end:Rectangle;
 		/**
 		 * the origin location in relation to the top left pixel of the target
 		 */
-		protected var _originOffset:Point = new Point();
+		protected var _originOffset:Point;
 		/**
 		 * whether to ignore the origin offest or not
 		 */
 		protected var _ignoreOriginOffset:Boolean = false;
-		
-		
+        
+        /**
+         * error message to be overridden by each subclass so someone has a bit of help
+         */
+        protected var _badTargetMessage:String = "VizAlignTarget: target must quack like a rectangle or be DisplayObject";
+		public function get badTargetMessage():String { return _badTargetMessage; }
 		/**
 		 * the DisplayObject that will be aligned
 		 */
-		public function get target():DisplayObject { return _target; }
+		public function get target():* { return _target; }
 		/** @private */
-		public function set target(value:DisplayObject):void {
-			_target = value;
-			init();
+		public function set target(value:*):void {
+            if (isAcceptableType(value)) {
+                _target = value;
+                init();
+            } else throw new Error (_badTargetMessage);
 		}
 		/**
 		 * the rectangle before alignment
@@ -109,17 +125,25 @@ package ktu.utils.align {
 		 * this is super crutial for ignoring origin offests. 
 		 */
 		public function get scale():Point {
-			return new Point ((_end.width / _orig.width) * _target.scaleX, (_end.height / _orig.height) * _target.scaleY);
+            var s:Point = new Point();
+            s.x = (_end.width / _orig.width);
+            s.y = (_end.height / _orig.height);
+            if (_target is DisplayObject) {
+                s.x *= _target.scaleX;
+                s.y *= _target.scaleY;
+            }
+			return s;
 		}
 		
 		
 		/**
 		 * constructor
-		 * @param	target
+		 * @param	target  the object for alignment 
+         * @param   ignoreOriginOffset ignore the origin offset?
 		 */
-		public function VizAlignTarget(target:DisplayObject):void {
-			_target = target;
-			init();
+		public function VizAlignTarget(target:*, ignoreOriginOffset:Boolean = false):void {
+			this.target = target;
+            this.ignoreOriginOffset = ignoreOriginOffset;
 		}
 		/**
 		 * setups some of the initial values
@@ -127,33 +151,18 @@ package ktu.utils.align {
 		 * because the VizAlignGroup class must do things differently.
 		 */
 		protected function init():void {
-			_orig.x = _end.x = _target.x;
-			_orig.y = _end.y = _target.y;
-			_orig.width = _end.width = _target.width;
-			_orig.height = _end.height = _target.height;
-			
-			var bounds:Rectangle = _target.getBounds(_target);
-			_originOffset.x = bounds.x;
-			_originOffset.y = bounds.y;
+			_orig = getTargetBounds(_target);
+            _end = _orig.clone();
+			_originOffset = getOriginOffset(_target);
 		}
 		/**
 		 * place the target dimensions at the .orig values
 		 */
-		public function applyOrigBounds():void { setTargetBounds(_orig); }
+		public function applyOrigBounds():void { setTargetBounds(_target, _orig); }
 		/**
 		 * place the target dimensions at the .end values
 		 */
-		public function applyEndBounds():void { setTargetBounds (_end); }
-		/**
-		 * set the target dimensions to the given rectangle
-		 * @param	rect
-		 */
-		protected function setTargetBounds (rect:Rectangle):void {
-			_target.x = rect.x;
-			_target.y = rect.y;
-			_target.width = rect.width;
-			_target.height = rect.height;
-		}
+		public function applyEndBounds():void { setTargetBounds (_target, _end); }
 		/**
 		 *  permanently round the .end values
 		 */
@@ -172,5 +181,33 @@ package ktu.utils.align {
 			str += "originOffset: " + _originOffset + "\n";
 			return str;
 		}
+        protected function getTargetBounds(target:*):Rectangle {
+            return new Rectangle(target.x, target.y, target.width, target.height);
+        }
+        protected function getOriginOffset(target:*):Point {
+            var offset:Point = new Point();
+            if (target is DisplayObject) {
+                var bounds:Rectangle = target.getBounds(target);
+                offset.x = bounds.x;
+                offset.y = bounds.y;
+            }
+            return offset;
+        }
+        /**
+		 * set the target dimensions to the given rectangle
+		 * @param	rect
+		 */
+		protected function setTargetBounds (target:Object, rect:Rectangle):void {
+			target.x = rect.x;
+			target.y = rect.y;
+			target.width = rect.width;
+			target.height = rect.height;
+            
+		}
+        protected function isAcceptableType(duck:Object):Boolean {
+            if (duck && duck.x != null && duck.y != null && duck.width != null && duck.height != null)
+                return true;
+            return false;
+        }
 	}
 }

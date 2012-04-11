@@ -21,11 +21,12 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 */
-package ktu.utils.align {
+package ktu.utils.align.targets {
 	
     import flash.display.Sprite;
     import flash.geom.Point;
     import flash.geom.Rectangle;
+    import ktu.utils.align.targets.VizAlignTarget;
 
 
 	/**

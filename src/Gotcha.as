@@ -26,18 +26,22 @@ package {
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import ktu.utils.align.aligners.CenterAligner;
+    import ktu.utils.align.targets.StageVizAlignTarget;
+    import ktu.utils.align.targets.VizAlignTarget;
 	import ktu.utils.align.VizAlign;
 	import ktu.utils.align.VizAlignment;
-	
+    import ktu.utils.align.aligners.AlignerManifest;
 	/**
 	 * 
 	 *  This class shows you a super simple example of how targets should never be parent and child, or any ancestry. siblings only.
 	 * 
 	 */
+    AlignerManifest;
     public class Gotcha extends Sprite {
 		
         public function Gotcha():void {
-			// create tcs for the nested targets
+            
+			// create tcs 
             var tcs:RectangleSprite = new RectangleSprite(0, 0, 300, 300, 0xAACCFF);
             addChild(tcs);
 			// center it to the stage

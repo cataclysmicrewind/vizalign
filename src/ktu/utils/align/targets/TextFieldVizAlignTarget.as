@@ -21,8 +21,9 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 */
-package ktu.utils.align {
+package ktu.utils.align.targets {
 	import flash.display.DisplayObject;
+    import flash.geom.Rectangle;
 	import flash.text.TextField;
 	
 	/**
@@ -55,9 +56,8 @@ package ktu.utils.align {
 	 *
 	 * @author ktu
 	 */
-	public class VizAlignTextFieldTarget extends VizAlignTarget {
+	public class TextFieldVizAlignTarget extends VizAlignTarget {
 		
-		static private const MUST_TEXTFIELD:String = "VizAlignTextFieldTarget : target must be of type TextField";
 		
 		
 		//	instead of using the bounds of the textfield, we use textWidth, textHeight
@@ -70,15 +70,67 @@ package ktu.utils.align {
 		public var modifyScale:Boolean = false;
 		
 		
-		override public function set target(value:DisplayObject):void {
-			if (value is TextField)
-				super.target = value;
-			else throw new Error(MUST_TEXTFIELD);
+		
+		/**
+		 * no math needed here, the origin is always 0,0
+		 */
+		override public function set ignoreOriginOffset(value:Boolean):void {
+			_ignoreOriginOffset = value;
 		}
 		
-		public function VizAlignTextFieldTarget(target:TextField){
+		/**
+		 * pass that shit along!
+		 * @param	target
+		 */
+		public function TextFieldVizAlignTarget(target:*) {
+            _badTargetMessage = "TextFieldVizAlignTarget : target must be a TextField";
 			super(target);
 		}
 		
+		
+		/**
+		 * there are a number of ways to treat a textField
+         * 
+         * 
+		 * @param	target
+		 * @return
+		 */
+		override protected function getTargetBounds(target):Rectangle {
+			var tf:TextField = target as TextField;
+			var bounds:Rectangle;
+			
+			
+			return bounds;
+		}
+		
+		/**
+		 * stage origin is always 0,0
+		 * @param	target
+		 * @return
+		 */
+		override protected function getOriginOffset(target):Point {
+			return new Point();
+		}
+		
+        /**
+         *  
+         * 
+         * @param	target
+         * @param	rect
+         */
+		override protected function setTargetBounds(target:Object, rect:Rectangle):void {
+			// empty on purpose
+		}
+		
+		/**
+		 * override this to check if the target you were given is cool.
+		 * @param	duck
+		 * @return
+		 */
+		override protected function isAcceptableType(duck:Object):Boolean {
+			if (duck is TextField)
+				return true;
+			return false;
+		}
 	}
 }

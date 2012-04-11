@@ -15,6 +15,10 @@ package ktu.utils.align.aligners {
 		
         public var includeSize:Boolean;
         
+        /**
+         * 
+         * @param	includeSize include the size of the target in determining if it fits
+         */
 		public function ConstraintAligner(includeSize:Boolean = false){
             this.includeSize = includeSize;
 		}

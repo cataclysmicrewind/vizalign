@@ -23,14 +23,9 @@ DEALINGS IN THE SOFTWARE.
 */
 package ktu.utils.align {
 	
-	import flash.display.DisplayObject;
-	import flash.display.Stage;
-	import flash.display.StageDisplayState;
-	import flash.geom.Point;
-	import flash.geom.Rectangle;
-	import flash.utils.describeType;
-	import flash.utils.getQualifiedClassName;
-	import ktu.utils.align.IRectangleAligner;
+    import flash.geom.Rectangle;
+    import ktu.utils.align.IRectangleAligner;
+    import ktu.utils.align.targets.VizAlignTarget;
 
 	/**
 	 * 
@@ -77,32 +72,7 @@ package ktu.utils.align {
 		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
 		 * 		DisplayObject, Stage, Rectangle
 		 */
-		private var _targetCoordinateSpace:*;
-		public function get targetCoordinateSpace():*  { return _targetCoordinateSpace; }
-		/** @private */
-		public function set targetCoordinateSpace(value:*):void {
-			switch (true) {
-				case targetCoordinateSpace is Stage:
-				case targetCoordinateSpace is DisplayObject:
-				case targetCoordinateSpace is Rectangle:
-				case targetCoordinateSpace == null:
-					break;
-				default:
-					throw new Error (BAD_TCS);
-			}
-			_targetCoordinateSpace = value;
-		}
-		/**
-		 *  ignores the origin of the tcs (if any)	
-		 *  
-		 * 	Only applies to tcs that are DisplayObject.
-		 * 	Does not apply to TO_TARGETS (if the targets are set to ignore origin, then it is ignored)
-		 *  Does not apply to Rectangle  (cannot have an origin offset)
-		 * 	Does not apply to Stage		 (Stage have no origin offset)
-		 * 
-		 */
-		public var ignoreTCSOrigin:Boolean = true;
-		
+		public var targetCoordinateSpace:VizAlignTarget;
 		/**
 		 *  The constructor needs to have both the rectangleAligner and targetCoordinateSpace passed in,
 		 *  this makes sure that no VizAlignment objects will be unsuitable for any VizAlign.align() call
@@ -110,10 +80,9 @@ package ktu.utils.align {
 		 * @param	targetCoordinateSpace		must be a DisplayObject, Stage, or Rectangle. 
 		 * @param	ignoreTCSOrigin		ignore the origin of the targetCoordinateSpace
 		 */
-		public function VizAlignment (rectangleAligner:IRectangleAligner = null, targetCoordinateSpace:* = null, ignoreTCSOrigin:Boolean = true):void {
+		public function VizAlignment (rectangleAligner:IRectangleAligner = null, targetCoordinateSpace:* = null):void {
 			this.rectangleAligner = rectangleAligner;
-			this.targetCoordinateSpace = targetCoordinateSpace;
-			this.ignoreTCSOrigin = ignoreTCSOrigin
+			this.targetCoordinateSpace = VizAlign.convertToVizAlignTarget(targetCoordinateSpace);
 		}
 		
 		/**
@@ -127,69 +96,24 @@ package ktu.utils.align {
 		 * @return
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
-			rectangleAligner.alignRectangles(getTCSBounds(targetCoordinateSpace, ignoreTCSOrigin, targetBounds), targetBounds);				//	align them and return the new bounds for the targets
+            var tcsBounds:Rectangle;
+            if (targetCoordinateSpace.target === TO_TARGETS) {
+                if (!targetBounds || targetBounds.length == 0) {
+                    tcsBounds = new Rectangle();
+                } else {
+                    tcsBounds = targetBounds[0].clone();
+                    for (var i:int = 1; i < targetBounds.length; i++)
+                        tcsBounds.union(targetBounds[i]);
+                }
+            } else {
+                tcsBounds = targetCoordinateSpace.end;
+            }
+            rectangleAligner.alignRectangles(tcsBounds, targetBounds);
 		}
-		
-		
-		
-		
-		
-		
-		/** @private */
-		static private const BAD_TCS	:String = "VizAlignment : tcs must be a DisplayObject, Stage, Rectangle or VizAlignment.TO_TARGETS";
-		/** @private */
-		static private const NO_TARGETS	:String = "VizAlignment : attempting to get TO_TARGETS bounds but did not receive any targetBounds";
-		/**
-		 * 
-		 * 	returns a rectangle consisting of the boundaries of the targetCoordinateSpace.
-		 * 
-		 * This accepts a Stage, DisplayObject, TO_TARGETS, or Rectangle object. 
-		 * Only these objects produce a rectangular boundary.
-		 * 
-		 * @param	targetCoordinateSpace	the object to extract the bounds from
-		 * @param	ignoreTCSOrigin			can only ignore the origin on a DisplayObject
-		 * @param	targetBounds			array of Rectangle for when using the TO_TARGETS
-		 * @return
-		 */
-		static public function getTCSBounds(targetCoordinateSpace:*, ignoreTCSOrigin:Boolean = true, targetBounds:Array/*Rectangle*/= null):Rectangle {
-			var tcsBounds:Rectangle;																							// 	the rectangle
-			switch (true) {																										// 	switch (true) is so useful
-				case targetCoordinateSpace is Stage:																			//		case Stage
-					var stage:Stage = targetCoordinateSpace as Stage;															//			get reference to tcs as Stage
-					if (stage.displayState == StageDisplayState.FULL_SCREEN) 													//			if (in fullscreen mode)
-						tcsBounds = new Rectangle (0, 0, stage.fullScreenSourceRect.width, stage.fullScreenSourceRect.height);	//				tcsBounds = the fullscreen bounds
-					else 																										//			else
-						tcsBounds = new Rectangle (0, 0, stage.stageWidth, stage.stageHeight);									//				tcsBounds = stage bounds
-					break;																										//			break
-				case targetCoordinateSpace is DisplayObject:																	//		case DisplayObject
-					tcsBounds = (targetCoordinateSpace as DisplayObject).getBounds(targetCoordinateSpace);						//			tcsBounds = DisplayObject.getBounds itself
-					if (ignoreTCSOrigin) {																						//			if (ignore tcs origin)
-						var dx:Point = targetCoordinateSpace.localToGlobal(new Point(tcsBounds.x, tcsBounds.y));				//				convert tcs x and y to global 
-						tcsBounds.x = dx.x;																						//				set the x
-						tcsBounds.y = dx.y;																						//				set the y
-					}																											//			end if
-					break;																										//			break
-				case targetCoordinateSpace === TO_TARGETS:																		//		case TO_TARGETS
-					if (!targetBounds) throw new Error (NO_TARGETS);															// 			if (no targets) ERROR
-					tcsBounds = targetBounds[0].clone();																		//			tcsBounds = first target bounds
-					for (var i:int = 1; i < targetBounds.length; i++)															//			loop (through rest of targets)
-						tcsBounds.union(targetBounds[i]);																		//				combine tcsBounds with next target
-					break;																										//			break
-				case targetCoordinateSpace is Rectangle:																		//		case Rectangle
-					tcsBounds = targetCoordinateSpace;																			//			tcsBounds = tcs
-					break;																										//			break
-				default:																										//		default
-					return null;																								//			return nothing (fail)
-			}																													//	end switch
-			return tcsBounds;																									//	return tcsBounds
-		}
-		
-		
-		
 		/** @private **/
 		public function toString ():String {
 			var str:String = "{type: " + rectangleAligner;
-			str += ", tcs:" + targetCoordinateSpace.name + "}";
+			str += ", tcs:" + targetCoordinateSpace + "}";
 			return str;
 		}
 	}
