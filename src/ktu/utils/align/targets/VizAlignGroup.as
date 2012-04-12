@@ -77,17 +77,15 @@ package ktu.utils.align.targets {
 		 * and sends an empty Sprite to the base class. this empty Sprite is ignored
 		 * @param	targets
 		 */
-		public function VizAlignGroup(targets:Array) {
+		public function VizAlignGroup(targets:Array, ignoreOriginOffest:Boolean = false) {
 			_targets = targets;
-			super(new Sprite());
+			super(new Sprite(), ignoreOriginOffset);
 		}
 		/**
 		 * called from the base class constructor, it sets up the orig and end rectangles
 		 */
 		override protected function init ():void {
-			var groupEnd:Rectangle = _targets[0].end.clone();
-			for (var i:int = 1; i < _targets.length; i++) 
-				groupEnd = groupEnd.union((_targets[i] as VizAlignTarget).orig);
+			
 			_orig = groupEnd.clone();
 			_end = groupEnd;
 		}
@@ -101,8 +99,14 @@ package ktu.utils.align.targets {
 		 * place each target of the group at its .end property
 		 */
 		override public function applyEndBounds():void {
+            updateTargetsEnds();
 			for each (var t:VizAlignTarget in _targets) t.applyEndBounds();
 		}
+        override public function roundEndValues():void {
+            super.roundEndValues();
+            for each (var t:VizAlignTarget in _targets)
+                t.roundEndValues();
+        }
 		/**
 		 * 	update all of the target end rectangles to account for the end rectangle of the group.
 		 * 
@@ -124,15 +128,32 @@ package ktu.utils.align.targets {
 			}																				//	end loop
 		}
 		
+        /** @private */
+        override public function toString ():String {
+            var str:String = "VizAlignGroup::" + _target.name + "\n";
+            for (var i:int = 0; i < _targets.length; i++) 
+                str += "\t" + _target.toString() + ((i == _targets.length-1) ? "" : "\n");
+            return str;
+        }
 		
+        
+        override protected function getOriginOffset(target:*):Point {
+            return new Point();
+        }
+        override protected function getTargetBounds(target:*):Rectangle {
+            var groupEnd:Rectangle = _targets[0].end.clone();
+			for (var i:int = 1; i < _targets.length; i++) 
+				groupEnd = groupEnd.union((_targets[i] as VizAlignTarget).orig);
+            return groupEnd;
+        }
 		
-		
-		/** @private */
-		override public function toString ():String {
-			var str:String = "VizAlignGroup::" + _target.name + "\n";
-			for (var i:int = 0; i < _targets.length; i++) 
-				str += "\t" + _target.toString() + ((i == _targets.length-1) ? "" : "\n");
-			return str;
-		}
+        override protected function setTargetBounds(target:Object, rect:Rectangle):void {
+            super.setTargetBounds(target, rect);
+        }
+		override protected function isAcceptableType(duck:Object):Boolean {
+            if (duck is Array)
+                return true;
+            return false;
+        }
 	}
 }

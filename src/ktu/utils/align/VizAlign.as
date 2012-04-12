@@ -76,8 +76,8 @@ package ktu.utils.align {
 		 * 
 		 * TODO: add example
 		 * 
-		 * @param	targets			an array of DisplayObject/VizAlignTarget/VizAlignGroup/Array that indicates the targets to be aligned. no matter the state
-		 * 							that they are sent in, they will all be converted to VizAlignTarget/VizAlignGroup accordingly. 
+		 * @param	targets			an array of targets to be aligned. no matter the state that they are sent in, 
+         *                          they will all be converted to VizAlignTarget accordingly. 
 		 * @param	vizAlignments	an array of VizAlignment that specify how you want the targets to be aligned. 
 		 * @param	applyResults	whether you want VizAlign to actually move the targets or just calculate the end position
 		 * @param	ignoreOrigin	whether you want VizAlign to ignore the origin offset.

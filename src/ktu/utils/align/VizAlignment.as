@@ -97,16 +97,16 @@ package ktu.utils.align {
 		 */
 		public function align (targetBounds:Array/*Rectangle*/):void {
             var tcsBounds:Rectangle;
-            if (targetCoordinateSpace.target === TO_TARGETS) {
-                if (!targetBounds || targetBounds.length == 0) {
-                    tcsBounds = new Rectangle();
-                } else {
+            if (!targetBounds || targetBounds.length == 0) {
+                return;
+            } else {
+                if (targetCoordinateSpace.target === TO_TARGETS) {
                     tcsBounds = targetBounds[0].clone();
                     for (var i:int = 1; i < targetBounds.length; i++)
                         tcsBounds.union(targetBounds[i]);
+                } else {
+                    tcsBounds = targetCoordinateSpace.end;
                 }
-            } else {
-                tcsBounds = targetCoordinateSpace.end;
             }
             rectangleAligner.alignRectangles(tcsBounds, targetBounds);
 		}
