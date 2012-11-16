@@ -43,16 +43,6 @@ package ktu.utils.align.targets {
 	 */
 	public class VizAlignTarget {
 		
-        //static public var defaultApplyBoundsFunction:Function = null;
-        //static public var defaultGetTargetBoundsFunction:Function = null;
-        
-        
-        //static public function getTargetBounds (target:Object):Rectangle {
-            //if (VizAlign.isDuckRectangle(target))
-                //return new Rectangle(target.x, target.y, target.width, target.height);
-            //else
-                //return new Rectangle();
-        //}
 		/**
 		 * the target
 		 */
@@ -78,7 +68,6 @@ package ktu.utils.align.targets {
          * error message to be overridden by each subclass so someone has a bit of help
          */
         protected var _badTargetMessage:String = "VizAlignTarget: target must quack like a rectangle or be DisplayObject";
-		public function get badTargetMessage():String { return _badTargetMessage; }
 		/**
 		 * the DisplayObject that will be aligned
 		 */
@@ -111,6 +100,7 @@ package ktu.utils.align.targets {
 		public function get ignoreOriginOffset():Boolean { return _ignoreOriginOffset; }
 		/** @private */
 		public function set ignoreOriginOffset(value:Boolean):void {
+            if (_ignoreOriginOffset == value) return;
 			_ignoreOriginOffset = value;
 			var s:Point = scale;
 			var negate:int = value ? 1 : -1;
@@ -141,8 +131,8 @@ package ktu.utils.align.targets {
 		 * @param	target  the object for alignment 
          * @param   ignoreOriginOffset ignore the origin offset?
 		 */
-		public function VizAlignTarget(target:*, ignoreOriginOffset:Boolean = false):void {
-			this.target = target;
+		public function VizAlignTarget(target:* = null, ignoreOriginOffset:Boolean = false):void {
+			this.target = target ? target : new Rectangle;
             this.ignoreOriginOffset = ignoreOriginOffset;
 		}
 		/**

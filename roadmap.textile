@@ -4,41 +4,53 @@ this is the place to find out what i am working on, and what is coming up.
 
 <br>
 
-h2. - launch v 0.6 -
+h2. version 0.7 - released: tbd
+
+* -ScalePercentageAligner-
+* -PaddingAligner-
+* -SortableAligner-
+* -make targetCoordinateSpace loosely typed-
+* -make targets loosely typed-
+* -allow for custom apply functions (ex: minimal comps only works with setSize())-
+* -make tcs be a VizAlignTarget-
+* finish constraint aligner
+* fix up capabilities to work with new patterns - ya right.
+* more examples
+* fix logo colors.
+
+
+h2. - launch v 0.6 - released: 2012.4.3
 
 * -write asdocs (don't commit that often)-
 * -verify all links-
-* write blog post about it
+* -write blog post about it-
 * -proof readme-
 * -make repo public-
 
 <br>
 
-h2. - post launch -
-
-h3. version 0.7
-
-tbd
+h2. - backlog -
 
 h3. documentation & examples:
 	
 * long video
 * make txt readme
 * re-do method descriptions
-* fix logo colors.
+* + fix logo colors.
 * complete asDocs
 * capabilities changes (usability)?
 * better showme page
+* more examples
 
 h3. aligner features:
 
 * evaluate aligner architecture
-* -% aligner-
-* -padding aligner-
+* -+ % aligner-
+* -+ padding aligner-
 * pattern aligners
-* -add sort on off for aligners...? ouch, rough but neccesary for some...-
-* upgrade Alignment to support more data types
-* make targetCoordinateSpace and targets type requirements determined at runtime
+* -+ add sort on off for aligners...? ouch, rough but neccesary for some...-
+* -+ make targetCoordinateSpace loosely typed-
+* -+ make targets loosely typed-
 
 h3. VizAlign features
 
@@ -46,6 +58,8 @@ h3. VizAlign features
 * write tests (tiers 1-x)
 * set originOffest (ex. forcing the origin to be center of graphics)
 * finish VizAlignTextFieldTarget
+* -+allow for custom apply functions (ex: minimal comps only works with setSize())-
+* targets are children (ignore xy of tcs)
 	
 h3. much later:
 	

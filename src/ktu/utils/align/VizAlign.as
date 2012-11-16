@@ -31,7 +31,7 @@ package ktu.utils.align {
 
 	/**
 	 * 
-	 * the VizAlign class is simple api for visually aligning DisplayObject.
+	 * the VizAlign class is powerful api for visually aligning DisplayObject.
 	 * 
 	 * like the align panel in the flash ide, vizalign will align objects. however, with vizalign
 	 * you are not limited to just the targets themselves or the stage. the object in which you align
@@ -41,6 +41,14 @@ package ktu.utils.align {
 	 *  NOTE: almost all the methods other than align() are utilities that align() uses. they are made public in case you want to utilize their
 	 * functionality. more often than not you will not need to touch any of those methods.
 	 * 
+     * 
+     * in reality, VizAlign is a helper class for the core functionality of the VizAlignment and VizAlignTarget classes.
+     * this class performs a number of tasks that are designed for simplicity of use. if you are looking to work very close with this library
+     * you may find that you don't use VizAlign at all.
+     * 
+     * for the common case though this class will make life simple and fast. 
+     * 
+     * 
 	 * 
 	 * TODO: add more explanation to what this does and how it is used.
 	 * TODO: add in nuances and things to pay attention to when aligning
@@ -50,13 +58,48 @@ package ktu.utils.align {
 	 */
 	public class VizAlign {
 		
-        
         static private var registeredClasses:Array = [ [Stage, StageVizAlignTarget] ];
         static private var registeredBaseClasses:Array = [ ];
+        /**
+         * register a target class with a class that is a subtype of VizAlignTarget.
+         * 
+         * VizAlign will convert your targets into VizAlignTarget. you can do this process yourself if you choose, especially if you have a custom
+         * implementation of VizAlignTarget to handle your own framework. however, you can use this function to register one such class so VizAlign 
+         * can take care of it for you
+         * 
+         * the third paramater 'isBase' allows you to specify that the targetClass you are passing in is a parent/base class. this way you can 
+         * integrate with your own framework like i have with MinimalComps already. 
+         * 
+         * when VizAlign converts a target, first it will check if it is a VizAlignTarget or is an Array (for grouping). 
+         * if neither pass, it will then loop through all of the registered classes to see if there is a match.
+         * it matches using the getQualifiedClassName(). 
+         * if none match, then it will check registered base classes. 
+         * it matches using the 'is' operator
+         * if none match than it just makes a VizAlignTarget.
+         * 
+         * 
+         * @param	targetClass
+         * @param	vizAlignTargetClass
+         * @param	isBase
+         */
         static public function registerClass (targetClass:Class, vizAlignTargetClass:Class, isBase:Boolean = false):void {
-            if (isBase) registeredBaseClasses.push( [targetClass, vizAlignTargetClass] );
-            else registeredClasses.push( [targetClass, vizAlignTargetClass] );
+            var ar:Array = isBase ? registeredBaseClasses : registeredClasses;
+            for (var i:int = 0; i < ar.length; i++) {
+                if (ar[i][0] == targetClass) {
+                    ar[i][1] = vizAlignTargetClass;
+                    return;
+                }
+            }
+            ar.push([targetClass, vizAlignTargetClass]);
         }
+        /**
+         * removes a registered class from VizAlign.
+         * 
+         * @param	targetClass the class you previously registered
+         * @param	isBase if you previously registered it as a base class
+         * 
+         * @see registereClass
+         */
         static public function deregisterClass (targetClass:Class, isBase:Boolean = false):void {
             var ar:Array = isBase ? registeredBaseClasses : registeredClasses;
             for (var i:int = 0; i < ar.length; i++) {
@@ -83,7 +126,7 @@ package ktu.utils.align {
 		 * @param	ignoreOrigin	whether you want VizAlign to ignore the origin offset.
 		 * @param	pixelHinting	whether VizAlign should round the end result before finishing.
 		 * 
-		 * @return
+		 * @return array of VizAlignTarget
 		 */
 		static public function align (targets:Array, vizAlignments:Array/*VizAlignment*/, ignoreOrigin:Boolean = false, applyResults:Boolean = false, pixelHinting:Boolean = false):Array/*VizAlignTarget*/ {
 			if ( !targets.length || !vizAlignments.length )	return [];									// if no targets or vizAlignments, return nothing. idiot

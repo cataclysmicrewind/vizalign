@@ -84,11 +84,11 @@ package ktu.utils.align.targets {
 		/**
 		 * called from the base class constructor, it sets up the orig and end rectangles
 		 */
-		override protected function init ():void {
+		//override protected function init ():void {
 			
-			_orig = groupEnd.clone();
-			_end = groupEnd;
-		}
+			//_orig = groupEnd.clone();
+			//_end = groupEnd;
+		//}
 		/**
 		 * place each target of the group at its .orig property
 		 */

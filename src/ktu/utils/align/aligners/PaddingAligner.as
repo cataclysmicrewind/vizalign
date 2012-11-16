@@ -26,8 +26,8 @@ package ktu.utils.align.aligners {
                 var target:Rectangle = targets[i];                              // reference to current target
 				target.x += tcsX;
                 target.y += tcsY;
-                target.width -= tcsW ? tcsW + tcsX : 0;
-                target.height -= tcsH ? tcsH + tcsY : 0;
+                target.width -= tcsW + tcsX;
+                target.height -= tcsH + tcsY;
             }
 		}
 	

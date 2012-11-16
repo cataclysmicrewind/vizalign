@@ -66,11 +66,9 @@ package ktu.utils.align {
 		public var rectangleAligner	:IRectangleAligner;
 		/**
 		 * the object that defines a rectangle for the targets to align to,
-		 * this is any DisplayObject/Stage/Rectangle. In Flash IDE terminoligy it is the same as saying 
+		 * this is any VizAlignTarget. In Flash IDE terminoligy it is the same as saying 
 		 * align to the left of the [stage]. The tcs is [].
 		 * 
-		 * important to note, that as this is typed as a wildcard (*), it can only be one of three possibilities:
-		 * 		DisplayObject, Stage, Rectangle
 		 */
 		public var targetCoordinateSpace:VizAlignTarget;
 		/**
@@ -82,7 +80,7 @@ package ktu.utils.align {
 		 */
 		public function VizAlignment (rectangleAligner:IRectangleAligner = null, targetCoordinateSpace:* = null):void {
 			this.rectangleAligner = rectangleAligner;
-			this.targetCoordinateSpace = VizAlign.convertToVizAlignTarget(targetCoordinateSpace);
+			this.targetCoordinateSpace = VizAlign.convertToVizAlignTarget(targetCoordinateSpace ? targetCoordinateSpace : new Rectangle);
 		}
 		
 		/**
@@ -103,7 +101,7 @@ package ktu.utils.align {
                 if (targetCoordinateSpace.target === TO_TARGETS) {
                     tcsBounds = targetBounds[0].clone();
                     for (var i:int = 1; i < targetBounds.length; i++)
-                        tcsBounds.union(targetBounds[i]);
+                        tcsBounds = tcsBounds.union(targetBounds[i]);
                 } else {
                     tcsBounds = targetCoordinateSpace.end;
                 }
